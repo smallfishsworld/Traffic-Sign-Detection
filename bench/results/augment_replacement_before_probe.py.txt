@@ -1,0 +1,34 @@
+"""After a 'replace', how much of the old sign is still visible, and is it inside the new label?"""
+import numpy as np, cv2
+from tsd.augment.replacement import ReplacementAugment, resize_template, alpha_blend
+from tsd.augment.templates import SignTemplate, render_speed_limit, render_warning
+from tsd.augment.photometric import PhotometricJitter
+
+def scene_with(sign_bgra, box):
+    img = np.full((192, 256, 3), (90, 140, 90), np.uint8)       # green-ish background
+    x1, y1, x2, y2 = map(int, box)
+    r = resize_template(sign_bgra, x2 - x1, y2 - y1)
+    a = r[..., 3].astype(np.float32) / 255
+    alpha_blend(img, r[..., :3].astype(np.float32), a, x1, y1)
+    mask = np.zeros(img.shape[:2], bool); mask[y1:y2, x1:x2] = a >= 0.5
+    return img, mask
+
+for old_name, old, new_name, new in [("triangle", render_warning(), "disc", render_speed_limit("15")),
+                                      ("disc", render_speed_limit("15"), "triangle", render_warning())]:
+    box = (100, 60, 148, 108)   # 48x48 box: old sign's bbox
+    vis_frac, outside_frac = [], []
+    for seed in range(50):
+        img, old_mask = scene_with(old, box)
+        aug = ReplacementAugment(templates={1: [SignTemplate(1, new, new_name)]}, class_counts={0: 100, 1: 1},
+                                 p_replace=1.0, p_add=0.0, jitter=PhotometricJitter.none(), match_brightness=0.0)
+        res = aug(img, np.array([box], float), np.array([0]), np.random.default_rng(seed))
+        assert [op.kind for op in res.ops] == ["replace"]
+        unchanged = np.all(res.image == img, axis=2)
+        still_visible = old_mask & unchanged
+        x1, y1, x2, y2 = res.boxes[0]
+        lab = np.zeros_like(old_mask); lab[int(np.ceil(y1)):int(y2), int(np.ceil(x1)):int(x2)] = True
+        vis_frac.append(still_visible.sum() / old_mask.sum())
+        outside_frac.append((still_visible & ~lab).sum() / old_mask.sum())
+    print(f"{old_name} replaced by {new_name}: old-sign pixels left untouched: mean {np.mean(vis_frac):.1%} "
+          f"(max {np.max(vis_frac):.1%}); outside the new label box: mean {np.mean(outside_frac):.1%}; "
+          f"new label {res.boxes[0].round(1).tolist()} vs old box {list(box)}; class -> {res.class_ids.tolist()}")

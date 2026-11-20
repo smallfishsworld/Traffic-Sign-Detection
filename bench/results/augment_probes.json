@@ -1,0 +1,125 @@
+{
+  "perspective_border_boxes": [
+    {
+      "corner_shift": 0.08,
+      "seeds": 2000,
+      "before": {
+        "kept": 1766,
+        "max_abs_error_px": 2.45,
+        "share_error_gt_1_5px": 0.0068,
+        "label_to_pixel_area": {
+          "p50": 1.006,
+          "p99": 1.159,
+          "max": 1.401
+        }
+      },
+      "after": {
+        "kept": 1758,
+        "max_abs_error_px": 0.73,
+        "share_error_gt_1_5px": 0.0,
+        "label_to_pixel_area": {
+          "p50": 1.004,
+          "p99": 1.137,
+          "max": 1.392
+        }
+      }
+    },
+    {
+      "corner_shift": 0.15,
+      "seeds": 2000,
+      "before": {
+        "kept": 1444,
+        "max_abs_error_px": 5.57,
+        "share_error_gt_1_5px": 0.0194,
+        "label_to_pixel_area": {
+          "p50": 1.009,
+          "p99": 1.163,
+          "max": 1.23
+        }
+      },
+      "after": {
+        "kept": 1436,
+        "max_abs_error_px": 0.93,
+        "share_error_gt_1_5px": 0.0,
+        "label_to_pixel_area": {
+          "p50": 1.007,
+          "p99": 1.152,
+          "max": 1.23
+        }
+      }
+    }
+  ],
+  "replacement": {
+    "disc_by_disc": {
+      "old": "disc15 (circle)",
+      "rarer_template": "disc60 (circle)",
+      "seeds": 50,
+      "replaced": 50,
+      "new_classes": [
+        1
+      ],
+      "old_pixels_visible_mean": 0.0,
+      "old_pixels_visible_max": 0.0
+    },
+    "triangle_by_triangle": {
+      "old": "triangle_a (triangle)",
+      "rarer_template": "triangle_b (triangle)",
+      "seeds": 50,
+      "replaced": 50,
+      "new_classes": [
+        1
+      ],
+      "old_pixels_visible_mean": 0.0,
+      "old_pixels_visible_max": 0.0
+    },
+    "disc_by_triangle": {
+      "old": "disc15 (circle)",
+      "rarer_template": "triangle_b (triangle)",
+      "seeds": 50,
+      "replaced": 0,
+      "new_classes": [],
+      "old_pixels_visible_mean": null,
+      "old_pixels_visible_max": null
+    },
+    "triangle_by_disc": {
+      "old": "triangle_a (triangle)",
+      "rarer_template": "disc60 (circle)",
+      "seeds": 50,
+      "replaced": 0,
+      "new_classes": [],
+      "old_pixels_visible_mean": null,
+      "old_pixels_visible_max": null
+    }
+  },
+  "code_under_test": {
+    "label": "HEAD (this worktree)",
+    "tsd_source": "<scratch>/p3/wt_v2/src/tsd"
+  },
+  "provenance": {
+    "git": {
+      "commit": "8d47bd49e27009c4dbdd6d055fa4080e720b5eb2",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "bench/augment_probes.py --code-label 'HEAD (this worktree)'",
+    "argv": [
+      "bench/augment_probes.py",
+      "--code-label",
+      "HEAD (this worktree)"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_v2",
+    "tsd_source": "<scratch>/p3/wt_v2/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "1",
+      "PYTHONPATH": "<scratch>/p3/wt_v2/src"
+    },
+    "recorded_unix": 1795087365.7
+  }
+}

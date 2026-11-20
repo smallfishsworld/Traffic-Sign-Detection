@@ -1,0 +1,8 @@
+$ curl -sS -I -A "tsd-downloader/0.1" https://storage.googleapis.com/openimages/v6/oidv6-train-annotations-bbox.csv
+HTTP/1.1 200 Connection Established
+HTTP/2 200 
+last-modified: Mon, 03 Feb 2020 15:15:49 GMT
+x-goog-stored-content-length: 2258447590
+x-goog-hash: crc32c=fw7RlA==
+x-goog-hash: md5=PD5wz6uldX6lwmBLGcrDsg==
+content-length: 2258447590

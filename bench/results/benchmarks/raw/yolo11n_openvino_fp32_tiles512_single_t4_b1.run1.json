@@ -1,0 +1,163 @@
+{
+  "model": "models/yolo11n_openvino_fp32/yolo11n.xml",
+  "backend": "openvino-fp32+tiles512",
+  "threads": 4,
+  "mode": "single",
+  "batch_size": 1,
+  "warmup": 5,
+  "iterations": 60,
+  "images": [
+    "0135b7a0b1010c08.jpg",
+    "08bf84bb9662086d.jpg",
+    "1cd04797f44a04a1.jpg",
+    "2b3e4a4919cd47b4.jpg",
+    "3b17ab5107bef9bb.jpg",
+    "548c1805b8e211bd.jpg",
+    "644395d01b541528.jpg",
+    "79445a6e49ee53b9.jpg",
+    "8406354c09070f9b.jpg",
+    "989532067e3483bb.jpg",
+    "a70e22ce2700b5a3.jpg",
+    "b657fb701244d7c6.jpg",
+    "c8b3ee6984721a12.jpg",
+    "d67533156d52e10c.jpg",
+    "def75350f572342e.jpg",
+    "ee267b62fd17a9b1.jpg"
+  ],
+  "model_size_bytes": 10913648,
+  "first_call_ms": 321.9192819997261,
+  "e2e": {
+    "n": 60,
+    "mean_ms": 228.0247584166318,
+    "std_ms": 48.891876987858055,
+    "min_ms": 112.17454400139104,
+    "p50_ms": 217.46833349970984,
+    "p95_ms": 335.3874807004104,
+    "p99_ms": 346.3049092001165,
+    "max_ms": 347.02519299935375
+  },
+  "infer": {
+    "n": 60,
+    "mean_ms": 228.01599766641326,
+    "std_ms": 48.89066860527254,
+    "min_ms": 112.16795400105184,
+    "p50_ms": 217.4596209988522,
+    "p95_ms": 335.37978549857144,
+    "p99_ms": 346.27430374948744,
+    "max_ms": 347.0175709990144
+  },
+  "throughput_images_per_s": 4.598370640483775,
+  "started_unix": 1795069414.8,
+  "seconds": 14.8,
+  "loadavg_before": [
+    0.86,
+    0.96,
+    0.77
+  ],
+  "loadavg_after": [
+    1.41,
+    1.08,
+    0.81
+  ],
+  "contamination": {
+    "other_processes_cores": 0.267,
+    "steal_cores": 0.038,
+    "own_cores": 3.049
+  },
+  "cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "opencv-python-headless": "5.1.0.95",
+    "torch": "2.15.0",
+    "onnxruntime": "1.32.0",
+    "openvino": "2026.4.1",
+    "tsd": "0.1.0"
+  },
+  "nms": {
+    "conf_threshold": 0.25,
+    "iou": 0.5
+  },
+  "input_size": [
+    640,
+    640
+  ],
+  "letterbox": "fixed square, auto=False (identical for every runtime)",
+  "opencv_threads": 4,
+  "provenance": {
+    "git": {
+      "commit": "cfff803426aa0a2c8182944a8ecaa85fbc61295e",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "<scratch>/p3/wt_bench/bench/bench_one.py --model models/yolo11n_openvino_fp32/yolo11n.xml --threads 4 --mode single --batch-size 1 --precision-hint f32 --warmup 5 --iterations 60 --max-seconds 300.0 --out <scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11n_openvino_fp32_tiles512_single_t4_b1.run1.json --tiles 512 --run 1",
+    "argv": [
+      "<scratch>/p3/wt_bench/bench/bench_one.py",
+      "--model",
+      "models/yolo11n_openvino_fp32/yolo11n.xml",
+      "--threads",
+      "4",
+      "--mode",
+      "single",
+      "--batch-size",
+      "1",
+      "--precision-hint",
+      "f32",
+      "--warmup",
+      "5",
+      "--iterations",
+      "60",
+      "--max-seconds",
+      "300.0",
+      "--out",
+      "<scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11n_openvino_fp32_tiles512_single_t4_b1.run1.json",
+      "--tiles",
+      "512",
+      "--run",
+      "1"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_bench",
+    "tsd_source": "<scratch>/p3/wt_bench/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "PYTHONPATH": "<scratch>/p3/wt_bench/src",
+      "TSD_PARENT_COMMAND": "python bench/run_benchmarks.py --runs 3"
+    },
+    "recorded_unix": 1795069429.6,
+    "runtime_settings": {
+      "runtime": "openvino",
+      "INFERENCE_NUM_THREADS": "4",
+      "NUM_STREAMS": "1",
+      "INFERENCE_PRECISION_HINT": "<Type: 'float32'>",
+      "PERFORMANCE_HINT": "LATENCY",
+      "ENABLE_CPU_PINNING": "True",
+      "ENABLE_HYPER_THREADING": "False",
+      "SCHEDULING_CORE_TYPE": "SchedulingCoreType.ANY_CORE",
+      "EXECUTION_MODE_HINT": "ExecutionMode.PERFORMANCE",
+      "OPTIMAL_NUMBER_OF_INFER_REQUESTS": "1"
+    }
+  },
+  "tiling": {
+    "tile_size": 512,
+    "overlap": 0.2,
+    "full_image": true,
+    "merge_iou": null,
+    "batch_size": 8,
+    "border_margin": 0.02,
+    "rescue_ioa": 0.5
+  },
+  "mean_inferences_per_image": 6.8125,
+  "precision_hint": "f32",
+  "run": 1,
+  "attempt": 2,
+  "contaminated": false
+}

@@ -1,0 +1,154 @@
+{
+  "model": "models/yolo11n_openvino_int8/yolo11n.xml",
+  "backend": "openvino-int8-bf16-nopin",
+  "threads": 4,
+  "mode": "single",
+  "batch_size": 1,
+  "warmup": 20,
+  "iterations": 200,
+  "images": [
+    "0135b7a0b1010c08.jpg",
+    "08bf84bb9662086d.jpg",
+    "1cd04797f44a04a1.jpg",
+    "2b3e4a4919cd47b4.jpg",
+    "3b17ab5107bef9bb.jpg",
+    "548c1805b8e211bd.jpg",
+    "644395d01b541528.jpg",
+    "79445a6e49ee53b9.jpg",
+    "8406354c09070f9b.jpg",
+    "989532067e3483bb.jpg",
+    "a70e22ce2700b5a3.jpg",
+    "b657fb701244d7c6.jpg",
+    "c8b3ee6984721a12.jpg",
+    "d67533156d52e10c.jpg",
+    "def75350f572342e.jpg",
+    "ee267b62fd17a9b1.jpg"
+  ],
+  "model_size_bytes": 3465791,
+  "first_call_ms": 307.6531379992957,
+  "e2e": {
+    "n": 200,
+    "mean_ms": 27.669102315139753,
+    "std_ms": 3.6154874288093737,
+    "min_ms": 23.92932899965672,
+    "p50_ms": 26.423719999911555,
+    "p95_ms": 36.26306520009165,
+    "p99_ms": 39.411934419822465,
+    "max_ms": 44.85774000022502
+  },
+  "infer": {
+    "n": 200,
+    "mean_ms": 21.586056584965263,
+    "std_ms": 3.3382356494619247,
+    "min_ms": 18.174110000472865,
+    "p50_ms": 20.346298999356804,
+    "p95_ms": 28.49036704965327,
+    "p99_ms": 33.29816980120083,
+    "max_ms": 38.415314000303624
+  },
+  "throughput_images_per_s": 37.8447849130761,
+  "started_unix": 1795069842.4,
+  "seconds": 6.3,
+  "loadavg_before": [
+    0.99,
+    0.98,
+    0.88
+  ],
+  "loadavg_after": [
+    1.23,
+    1.03,
+    0.9
+  ],
+  "contamination": {
+    "other_processes_cores": 0.128,
+    "steal_cores": 0.031,
+    "own_cores": 3.119
+  },
+  "cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "opencv-python-headless": "5.1.0.95",
+    "torch": "2.15.0",
+    "onnxruntime": "1.32.0",
+    "openvino": "2026.4.1",
+    "tsd": "0.1.0"
+  },
+  "nms": {
+    "conf_threshold": 0.25,
+    "iou": 0.5
+  },
+  "input_size": [
+    640,
+    640
+  ],
+  "letterbox": "fixed square, auto=False (identical for every runtime)",
+  "opencv_threads": 4,
+  "provenance": {
+    "git": {
+      "commit": "cfff803426aa0a2c8182944a8ecaa85fbc61295e",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "<scratch>/p3/wt_bench/bench/bench_one.py --model models/yolo11n_openvino_int8/yolo11n.xml --threads 4 --mode single --batch-size 1 --precision-hint bf16 --warmup 20 --iterations 200 --max-seconds 300.0 --out <scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11n_openvino_int8_bf16_single_t4_b1_nopin.run1.json --tiles 0 --run 1 --no-cpu-pinning",
+    "argv": [
+      "<scratch>/p3/wt_bench/bench/bench_one.py",
+      "--model",
+      "models/yolo11n_openvino_int8/yolo11n.xml",
+      "--threads",
+      "4",
+      "--mode",
+      "single",
+      "--batch-size",
+      "1",
+      "--precision-hint",
+      "bf16",
+      "--warmup",
+      "20",
+      "--iterations",
+      "200",
+      "--max-seconds",
+      "300.0",
+      "--out",
+      "<scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11n_openvino_int8_bf16_single_t4_b1_nopin.run1.json",
+      "--tiles",
+      "0",
+      "--run",
+      "1",
+      "--no-cpu-pinning"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_bench",
+    "tsd_source": "<scratch>/p3/wt_bench/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "PYTHONPATH": "<scratch>/p3/wt_bench/src",
+      "TSD_PARENT_COMMAND": "python bench/run_benchmarks.py --runs 3"
+    },
+    "recorded_unix": 1795069848.8,
+    "runtime_settings": {
+      "runtime": "openvino",
+      "INFERENCE_NUM_THREADS": "4",
+      "NUM_STREAMS": "1",
+      "INFERENCE_PRECISION_HINT": "<Type: 'bfloat16'>",
+      "PERFORMANCE_HINT": "LATENCY",
+      "ENABLE_CPU_PINNING": "False",
+      "ENABLE_HYPER_THREADING": "False",
+      "SCHEDULING_CORE_TYPE": "SchedulingCoreType.ANY_CORE",
+      "EXECUTION_MODE_HINT": "ExecutionMode.PERFORMANCE",
+      "OPTIMAL_NUMBER_OF_INFER_REQUESTS": "1"
+    }
+  },
+  "precision_hint": "bf16",
+  "run": 1,
+  "attempt": 1,
+  "contaminated": false
+}

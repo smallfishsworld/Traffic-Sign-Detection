@@ -1,0 +1,153 @@
+{
+  "model": "models/yolo11s_openvino_fp32/yolo11s.xml",
+  "backend": "openvino-bf16",
+  "threads": 1,
+  "mode": "single",
+  "batch_size": 1,
+  "warmup": 20,
+  "iterations": 200,
+  "images": [
+    "0135b7a0b1010c08.jpg",
+    "08bf84bb9662086d.jpg",
+    "1cd04797f44a04a1.jpg",
+    "2b3e4a4919cd47b4.jpg",
+    "3b17ab5107bef9bb.jpg",
+    "548c1805b8e211bd.jpg",
+    "644395d01b541528.jpg",
+    "79445a6e49ee53b9.jpg",
+    "8406354c09070f9b.jpg",
+    "989532067e3483bb.jpg",
+    "a70e22ce2700b5a3.jpg",
+    "b657fb701244d7c6.jpg",
+    "c8b3ee6984721a12.jpg",
+    "d67533156d52e10c.jpg",
+    "def75350f572342e.jpg",
+    "ee267b62fd17a9b1.jpg"
+  ],
+  "model_size_bytes": 38224465,
+  "first_call_ms": 227.01202700045542,
+  "e2e": {
+    "n": 200,
+    "mean_ms": 77.63652491502398,
+    "std_ms": 8.445530739900953,
+    "min_ms": 70.48181299978751,
+    "p50_ms": 75.76949250051257,
+    "p95_ms": 91.2939792988254,
+    "p99_ms": 109.02951308931719,
+    "max_ms": 149.2240719999245
+  },
+  "infer": {
+    "n": 200,
+    "mean_ms": 70.40493133499695,
+    "std_ms": 8.124755154676935,
+    "min_ms": 63.82219399893074,
+    "p50_ms": 68.48051649922127,
+    "p95_ms": 83.16691340151009,
+    "p99_ms": 100.65279407959665,
+    "max_ms": 140.47753199884028
+  },
+  "throughput_images_per_s": 13.19792395327493,
+  "started_unix": 1795072562.1,
+  "seconds": 17.1,
+  "loadavg_before": [
+    2.85,
+    2.16,
+    2.03
+  ],
+  "loadavg_after": [
+    2.64,
+    2.15,
+    2.03
+  ],
+  "contamination": {
+    "other_processes_cores": 0.244,
+    "steal_cores": 0.015,
+    "own_cores": 0.991
+  },
+  "cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "opencv-python-headless": "5.1.0.95",
+    "torch": "2.15.0",
+    "onnxruntime": "1.32.0",
+    "openvino": "2026.4.1",
+    "tsd": "0.1.0"
+  },
+  "nms": {
+    "conf_threshold": 0.25,
+    "iou": 0.5
+  },
+  "input_size": [
+    640,
+    640
+  ],
+  "letterbox": "fixed square, auto=False (identical for every runtime)",
+  "opencv_threads": 1,
+  "provenance": {
+    "git": {
+      "commit": "cfff803426aa0a2c8182944a8ecaa85fbc61295e",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "<scratch>/p3/wt_bench/bench/bench_one.py --model models/yolo11s_openvino_fp32/yolo11s.xml --threads 1 --mode single --batch-size 1 --precision-hint bf16 --warmup 20 --iterations 200 --max-seconds 300.0 --out <scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11s_openvino_fp32_bf16_single_t1_b1.run3.json --tiles 0 --run 3",
+    "argv": [
+      "<scratch>/p3/wt_bench/bench/bench_one.py",
+      "--model",
+      "models/yolo11s_openvino_fp32/yolo11s.xml",
+      "--threads",
+      "1",
+      "--mode",
+      "single",
+      "--batch-size",
+      "1",
+      "--precision-hint",
+      "bf16",
+      "--warmup",
+      "20",
+      "--iterations",
+      "200",
+      "--max-seconds",
+      "300.0",
+      "--out",
+      "<scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11s_openvino_fp32_bf16_single_t1_b1.run3.json",
+      "--tiles",
+      "0",
+      "--run",
+      "3"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_bench",
+    "tsd_source": "<scratch>/p3/wt_bench/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "<scratch>/p3/wt_bench/src",
+      "TSD_PARENT_COMMAND": "python bench/run_benchmarks.py --runs 3"
+    },
+    "recorded_unix": 1795072579.3,
+    "runtime_settings": {
+      "runtime": "openvino",
+      "INFERENCE_NUM_THREADS": "1",
+      "NUM_STREAMS": "1",
+      "INFERENCE_PRECISION_HINT": "<Type: 'bfloat16'>",
+      "PERFORMANCE_HINT": "LATENCY",
+      "ENABLE_CPU_PINNING": "True",
+      "ENABLE_HYPER_THREADING": "False",
+      "SCHEDULING_CORE_TYPE": "SchedulingCoreType.ANY_CORE",
+      "EXECUTION_MODE_HINT": "ExecutionMode.PERFORMANCE",
+      "OPTIMAL_NUMBER_OF_INFER_REQUESTS": "1"
+    }
+  },
+  "precision_hint": "bf16",
+  "run": 3,
+  "attempt": 1,
+  "contaminated": false
+}

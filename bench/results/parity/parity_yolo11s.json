@@ -1,0 +1,102 @@
+{
+  "weights": "yolo11s.pt",
+  "tolerance": {
+    "max_abs_box_px": 0.5,
+    "max_abs_score": 0.001,
+    "min_match_rate": 0.98
+  },
+  "passed": true,
+  "images": [
+    "01d3fdb0f6383edb.jpg",
+    "05d4a1a8d2d10d3d.jpg",
+    "0660c06266751279.jpg",
+    "0957f5ff3cb3a2bb.jpg",
+    "1858c0edbff1ae49.jpg",
+    "1cd04797f44a04a1.jpg",
+    "2c0e54cb2dcad01d.jpg",
+    "2e969144f13eb1dc.jpg"
+  ],
+  "files_sha256": {
+    "yolo11s.pt": "85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5",
+    "yolo11s.onnx": "35067a08bd95644728e0cabe21a7bfcd56d9146a47dc8d33ffe0f69f828ec210",
+    "yolo11s.xml": "43f782b471768d55a356b23480ec7bc20354a690197659faf7b6faf90b0a80b9",
+    "yolo11s.bin": "a6f4ddce6b802a21d8971d3db7d61cad597d9ac30bf007c0b7132c79a1d8d76c"
+  },
+  "parity": [
+    {
+      "reference": "pytorch-fp32",
+      "candidate": "onnxruntime-fp32",
+      "images": 8,
+      "input_size": [
+        640,
+        640
+      ],
+      "max_abs_box_px": 0.002685546875,
+      "mean_abs_box_px": 2.9258419090183452e-05,
+      "max_abs_score": 3.2901763916015625e-05,
+      "mean_abs_score": 2.6575225575697914e-08,
+      "reference_detections": 64,
+      "matched_detections": 64,
+      "candidate_detections": 64,
+      "unmatched_candidates": 0,
+      "max_matched_score_diff": 1.5497207641601562e-06,
+      "failures": []
+    },
+    {
+      "reference": "pytorch-fp32",
+      "candidate": "openvino-fp32",
+      "images": 8,
+      "input_size": [
+        640,
+        640
+      ],
+      "max_abs_box_px": 0.00264739990234375,
+      "mean_abs_box_px": 3.0852352210786194e-05,
+      "max_abs_score": 2.3573637008666992e-05,
+      "mean_abs_score": 1.275791972066287e-10,
+      "reference_detections": 64,
+      "matched_detections": 64,
+      "candidate_detections": 64,
+      "unmatched_candidates": 0,
+      "max_matched_score_diff": 1.4901161193847656e-06,
+      "failures": []
+    }
+  ],
+  "provenance": {
+    "git": {
+      "commit": "8d47bd49e27009c4dbdd6d055fa4080e720b5eb2",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "/home/user/work/Traffic-Sign-Detection/.venv/bin/tsd parity models/yolo11s.pt --threads 2 --report bench/results/parity/parity_yolo11s.json",
+    "argv": [
+      "/home/user/work/Traffic-Sign-Detection/.venv/bin/tsd",
+      "parity",
+      "models/yolo11s.pt",
+      "--threads",
+      "2",
+      "--report",
+      "bench/results/parity/parity_yolo11s.json"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python3",
+    "cwd": "<scratch>/p3/wt_v2",
+    "tsd_source": "<scratch>/p3/wt_v2/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "PYTHONPATH": "<scratch>/p3/wt_v2/src"
+    },
+    "recorded_unix": 1795087299.1
+  },
+  "checked": {
+    "onnx": "models/yolo11s.onnx",
+    "openvino": "models/yolo11s_openvino_fp32/yolo11s.xml"
+  }
+}

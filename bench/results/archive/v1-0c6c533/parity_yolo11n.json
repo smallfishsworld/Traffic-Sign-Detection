@@ -1,0 +1,29 @@
+{
+  "weights": "yolo11n.pt",
+  "parity": [
+    {
+      "reference": "pytorch-fp32",
+      "candidate": "onnxruntime-fp32",
+      "images": 8,
+      "max_abs_box_px": 0.0373077392578125,
+      "mean_abs_box_px": 8.699570753378794e-05,
+      "max_abs_score": 7.897615432739258e-06,
+      "mean_abs_score": 2.6106397044145524e-08,
+      "reference_detections": 52,
+      "matched_detections": 52,
+      "max_matched_score_diff": 1.2516975402832031e-06
+    },
+    {
+      "reference": "pytorch-fp32",
+      "candidate": "openvino-fp32",
+      "images": 8,
+      "max_abs_box_px": 0.023895263671875,
+      "mean_abs_box_px": 6.414634844986722e-05,
+      "max_abs_score": 3.9637088775634766e-06,
+      "mean_abs_score": 9.91411883144444e-11,
+      "reference_detections": 52,
+      "matched_detections": 52,
+      "max_matched_score_diff": 1.9073486328125e-06
+    }
+  ]
+}

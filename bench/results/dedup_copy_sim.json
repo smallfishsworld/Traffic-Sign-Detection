@@ -1,0 +1,101 @@
+{
+  "copies": {
+    "cv2_area_640_q70": {
+      "images": 219,
+      "coarse_max": 5,
+      "coarse_p99": 3.0,
+      "fine_max": 41,
+      "fine_p99": 21.45999999999998,
+      "fine_worst_image": "05d4a1a8d2d10d3d.jpg",
+      "flagged_old_rule": 218,
+      "flagged_current_rule": 219
+    },
+    "cv2_linear_640_q70": {
+      "images": 219,
+      "coarse_max": 3,
+      "coarse_p99": 3.0,
+      "fine_max": 27,
+      "fine_p99": 18.45999999999998,
+      "fine_worst_image": "05d4a1a8d2d10d3d.jpg",
+      "flagged_old_rule": 219,
+      "flagged_current_rule": 219
+    },
+    "cv2_cubic_640_q70": {
+      "images": 219,
+      "coarse_max": 5,
+      "coarse_p99": 3.6399999999999864,
+      "fine_max": 41,
+      "fine_p99": 20.639999999999986,
+      "fine_worst_image": "05d4a1a8d2d10d3d.jpg",
+      "flagged_old_rule": 218,
+      "flagged_current_rule": 219
+    },
+    "pil_lanczos_640_q70": {
+      "images": 219,
+      "coarse_max": 5,
+      "coarse_p99": 2.819999999999993,
+      "fine_max": 35,
+      "fine_p99": 20.819999999999993,
+      "fine_worst_image": "05d4a1a8d2d10d3d.jpg",
+      "flagged_old_rule": 219,
+      "flagged_current_rule": 219
+    },
+    "pil_bilinear_640_q70": {
+      "images": 219,
+      "coarse_max": 5,
+      "coarse_p99": 3.0,
+      "fine_max": 41,
+      "fine_p99": 22.099999999999966,
+      "fine_worst_image": "05d4a1a8d2d10d3d.jpg",
+      "flagged_old_rule": 218,
+      "flagged_current_rule": 219
+    },
+    "pil_q70_no_resize": {
+      "images": 219,
+      "coarse_max": 4,
+      "coarse_p99": 3.819999999999993,
+      "fine_max": 34,
+      "fine_p99": 17.45999999999998,
+      "fine_worst_image": "05d4a1a8d2d10d3d.jpg",
+      "flagged_old_rule": 219,
+      "flagged_current_rule": 219
+    }
+  },
+  "unrelated_eval_vs_calibration": {
+    "pairs": 28032,
+    "coarse_min": 9,
+    "fine_min": 53,
+    "same_aspect_pairs": 5280,
+    "coarse_min_same_aspect": 12,
+    "fine_min_same_aspect": 63,
+    "candidates_coarse_le_10": 1,
+    "flagged_current_rule": 0
+  },
+  "provenance": {
+    "git": {
+      "commit": "bb7ea723c52e6cbbbe54f1521d3ffc21b7f460e6",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "bench/dedup_copy_sim.py",
+    "argv": [
+      "bench/dedup_copy_sim.py"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_eval",
+    "tsd_source": "<scratch>/p3/wt_eval/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "PYTHONPATH": "<scratch>/p3/wt_eval/src"
+    },
+    "recorded_unix": 1795076457.8
+  }
+}

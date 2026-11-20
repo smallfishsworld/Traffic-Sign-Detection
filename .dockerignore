@@ -1,0 +1,8 @@
+# Only what the image build needs; models are mounted at run time.
+*
+!pyproject.toml
+!uv.lock
+!README.md
+!LICENSE
+!src/
+**/__pycache__

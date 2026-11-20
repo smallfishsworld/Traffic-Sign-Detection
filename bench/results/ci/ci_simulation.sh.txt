@@ -1,0 +1,35 @@
+#!/bin/bash
+# CI simulation of one commit's `checks` job (.github/workflows/ci.yml) for one Python version:
+# a clean `git archive` of the commit (no models, no data, no untracked files), a virtual
+# environment in a directory that does not exist before the sync, synced exactly to the lock with
+# only the CI extras (no torch, no ultralytics), then the workflow's steps.
+# Usage: bash ci_simulation.sh.txt <commit> <python version, e.g. 3.12 or 3.13>
+set -u -o pipefail
+S=<scratch>/p3/ci
+REPO=/home/user/work/Traffic-Sign-Detection
+COMMIT=$1
+PY=$2
+RUN=$S/run-$COMMIT-py$PY
+rm -rf "$RUN" && mkdir -p "$RUN/src" && git -C $REPO archive "$COMMIT" | tar -x -C "$RUN/src"
+cd "$RUN/src" || exit 1
+export UV_PROJECT_ENVIRONMENT=$RUN/venv UV_PYTHON=$PY UV_PYTHON_DOWNLOADS=never \
+  UV_CONCURRENT_DOWNLOADS=1 UV_CONCURRENT_INSTALLS=2 \
+  OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2
+echo "commit $(git -C $REPO rev-parse "$COMMIT"), python $PY"; date -u
+[ -e "$RUN/venv" ] || echo "environment: $RUN/venv does not exist before the sync"
+echo '$ uv sync --locked --extra onnx --extra openvino --extra eval --extra serve'
+nice -n 19 uv sync --locked --extra onnx --extra openvino --extra eval --extra serve 2>&1 | tail -3
+echo "SYNC_EXIT ${PIPESTATUS[0]}"
+"$RUN/venv/bin/python" -c "import importlib.util as u, sys; print(sys.version.split()[0], 'torch installed:', u.find_spec('torch') is not None, 'ultralytics installed:', u.find_spec('ultralytics') is not None)"
+echo '$ ruff check .'
+nice -n 19 "$RUN/venv/bin/ruff" check . 2>&1 | tail -1; echo "RUFF_CHECK_EXIT ${PIPESTATUS[0]}"
+echo '$ ruff format --check .'
+nice -n 19 "$RUN/venv/bin/ruff" format --check . 2>&1 | tail -1; echo "RUFF_FORMAT_EXIT ${PIPESTATUS[0]}"
+echo '$ mypy'
+nice -n 19 "$RUN/venv/bin/mypy" 2>&1 | tail -2; echo "MYPY_EXIT ${PIPESTATUS[0]}"
+echo '$ pytest -q -rs'
+nice -n 19 "$RUN/venv/bin/python" -m pytest -q -rs -p no:cacheprovider 2>&1 | tail -40
+echo "PYTEST_EXIT ${PIPESTATUS[0]}"
+echo '$ tsd --help (import smoke test)'
+"$RUN/venv/bin/tsd" --help > /dev/null; echo "TSD_HELP_EXIT $?"
+date -u

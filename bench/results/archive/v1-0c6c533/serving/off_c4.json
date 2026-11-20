@@ -1,0 +1,32 @@
+{
+  "requests": 565,
+  "ok": 565,
+  "errors": {},
+  "error_rate": 0.0,
+  "seconds": 20.09644904200013,
+  "throughput_rps": 28.11441955836032,
+  "latency_ms": {
+    "mean": 141.93824186368147,
+    "p50": 138.61590400028945,
+    "p95": 171.39253799941798,
+    "p99": 192.2500220804432,
+    "max": 198.61901500007662
+  },
+  "server_mean_batch_size": 1.0,
+  "concurrency": 4,
+  "setting": "off",
+  "server_env": {
+    "TSD_MAX_BATCH_SIZE": "1",
+    "TSD_MAX_WAIT_MS": "0",
+    "TSD_MODEL_PATH": "models/yolo11n_openvino_int8/yolo11n.xml",
+    "TSD_THREADS": "2",
+    "TSD_PREPROCESS_THREADS": "1",
+    "TSD_QUEUE_SIZE": "64",
+    "TSD_HOST": "127.0.0.1",
+    "TSD_PORT": "8765"
+  },
+  "other_processes_cores": 0.083,
+  "server_cpu_cores": 2.009,
+  "client_cpu_cores": 0.069,
+  "started_unix": 1795056406.9
+}

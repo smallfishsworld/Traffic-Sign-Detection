@@ -1,0 +1,541 @@
+2026-11-19 06:42:29,330 INFO tsd.data.openimages: skipped 01d3fdb0f6383edb.jpg (355251 bytes)
+2026-11-19 06:42:29,331 INFO tsd.data.openimages: skipped 05d4a1a8d2d10d3d.jpg (360743 bytes)
+2026-11-19 06:42:29,332 INFO tsd.data.openimages: skipped 0660c06266751279.jpg (1133053 bytes)
+2026-11-19 06:42:29,334 INFO tsd.data.openimages: skipped 0957f5ff3cb3a2bb.jpg (852761 bytes)
+2026-11-19 06:42:29,776 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/0eaede8b9cf24377.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:29,845 INFO tsd.data.openimages: downloaded 0eaede8b9cf24377.jpg (97161 bytes)
+2026-11-19 06:42:29,846 INFO tsd.data.openimages: skipped 1858c0edbff1ae49.jpg (628247 bytes)
+2026-11-19 06:42:29,847 INFO tsd.data.openimages: skipped 1cd04797f44a04a1.jpg (323746 bytes)
+2026-11-19 06:42:29,955 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/21ac5b1090ba0546.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:29,979 INFO tsd.data.openimages: downloaded 21ac5b1090ba0546.jpg (121927 bytes)
+2026-11-19 06:42:30,114 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/222a266190060531.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:30,116 INFO tsd.data.openimages: downloaded 222a266190060531.jpg (115420 bytes)
+2026-11-19 06:42:30,252 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/236bfb9d94aa652f.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:30,279 INFO tsd.data.openimages: downloaded 236bfb9d94aa652f.jpg (145199 bytes)
+2026-11-19 06:42:30,432 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/26893d56f015cfbf.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:30,442 INFO tsd.data.openimages: downloaded 26893d56f015cfbf.jpg (154650 bytes)
+2026-11-19 06:42:30,552 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/27e5f43f784f53df.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:30,558 INFO tsd.data.openimages: downloaded 27e5f43f784f53df.jpg (232054 bytes)
+2026-11-19 06:42:30,559 INFO tsd.data.openimages: skipped 2c0e54cb2dcad01d.jpg (309820 bytes)
+2026-11-19 06:42:30,671 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/2d2514b6e1730785.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:30,672 INFO tsd.data.openimages: downloaded 2d2514b6e1730785.jpg (90350 bytes)
+2026-11-19 06:42:30,673 INFO tsd.data.openimages: skipped 2e969144f13eb1dc.jpg (69607 bytes)
+2026-11-19 06:42:30,673 INFO tsd.data.openimages: skipped 2fbe14d7e980e019.jpg (148580 bytes)
+2026-11-19 06:42:30,742 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/309d8afcf4ab8792.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:30,743 INFO tsd.data.openimages: downloaded 309d8afcf4ab8792.jpg (53327 bytes)
+2026-11-19 06:42:30,744 INFO tsd.data.openimages: skipped 359cf178d5d71e1e.jpg (88060 bytes)
+2026-11-19 06:42:30,744 INFO tsd.data.openimages: skipped 37be73f83c029f49.jpg (277632 bytes)
+2026-11-19 06:42:30,745 INFO tsd.data.openimages: skipped 4688e6220a92562a.jpg (118064 bytes)
+2026-11-19 06:42:30,745 INFO tsd.data.openimages: skipped 472433c727aa4d93.jpg (697083 bytes)
+2026-11-19 06:42:30,819 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/4b5db81b7145ad1e.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:30,820 INFO tsd.data.openimages: downloaded 4b5db81b7145ad1e.jpg (46973 bytes)
+2026-11-19 06:42:30,821 INFO tsd.data.openimages: skipped 4f45af2129579818.jpg (145241 bytes)
+2026-11-19 06:42:30,821 INFO tsd.data.openimages: skipped 55b7a4a581331b4b.jpg (117835 bytes)
+2026-11-19 06:42:30,822 INFO tsd.data.openimages: skipped 5b54678ebd8b8af3.jpg (1287658 bytes)
+2026-11-19 06:42:30,947 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/5c4658dfb87ef8bf.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:30,952 INFO tsd.data.openimages: downloaded 5c4658dfb87ef8bf.jpg (168994 bytes)
+2026-11-19 06:42:30,952 INFO tsd.data.openimages: skipped 5e0a138b32ed3dbf.jpg (135631 bytes)
+2026-11-19 06:42:30,953 INFO tsd.data.openimages: skipped 5fc1b05213e13e19.jpg (438169 bytes)
+2026-11-19 06:42:31,017 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/6163afc061ffa0f8.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:31,019 INFO tsd.data.openimages: downloaded 6163afc061ffa0f8.jpg (163064 bytes)
+2026-11-19 06:42:31,020 INFO tsd.data.openimages: skipped 644395d01b541528.jpg (306015 bytes)
+2026-11-19 06:42:31,133 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/645b0e5ea57a1e83.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:31,136 INFO tsd.data.openimages: downloaded 645b0e5ea57a1e83.jpg (267014 bytes)
+2026-11-19 06:42:31,238 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/64e5be517800a068.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:31,242 INFO tsd.data.openimages: downloaded 64e5be517800a068.jpg (171655 bytes)
+2026-11-19 06:42:31,356 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/68dbe6bf4e001211.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:31,367 INFO tsd.data.openimages: downloaded 68dbe6bf4e001211.jpg (157517 bytes)
+2026-11-19 06:42:31,475 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/6ee84b7fda1f4942.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:31,480 INFO tsd.data.openimages: downloaded 6ee84b7fda1f4942.jpg (334128 bytes)
+2026-11-19 06:42:31,481 INFO tsd.data.openimages: skipped 71c3eb3687efa946.jpg (639534 bytes)
+2026-11-19 06:42:31,581 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/71df582bfb39b541.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:31,585 INFO tsd.data.openimages: downloaded 71df582bfb39b541.jpg (343142 bytes)
+2026-11-19 06:42:31,688 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/748a2ded73a33143.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:31,690 INFO tsd.data.openimages: downloaded 748a2ded73a33143.jpg (111282 bytes)
+2026-11-19 06:42:31,791 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/74eb7c491624caf5.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:33,876 INFO tsd.data.openimages: downloaded 74eb7c491624caf5.jpg (4486058 bytes)
+2026-11-19 06:42:33,877 INFO tsd.data.openimages: skipped 7607c938b6d5f873.jpg (453829 bytes)
+2026-11-19 06:42:33,989 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/76c278b53be81d03.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:34,106 INFO tsd.data.openimages: downloaded 76c278b53be81d03.jpg (466658 bytes)
+2026-11-19 06:42:34,212 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/78ecfe63cd61269a.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:34,214 INFO tsd.data.openimages: downloaded 78ecfe63cd61269a.jpg (120145 bytes)
+2026-11-19 06:42:34,214 INFO tsd.data.openimages: skipped 79445a6e49ee53b9.jpg (261580 bytes)
+2026-11-19 06:42:34,215 INFO tsd.data.openimages: skipped 7f27492e450462f2.jpg (338867 bytes)
+2026-11-19 06:42:34,215 INFO tsd.data.openimages: skipped 7f41370fa8018909.jpg (246612 bytes)
+2026-11-19 06:42:34,216 INFO tsd.data.openimages: skipped 85089b167f044962.jpg (132374 bytes)
+2026-11-19 06:42:34,216 INFO tsd.data.openimages: skipped 858c5f7849432243.jpg (661700 bytes)
+2026-11-19 06:42:34,361 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/85a14b7b7c9397c7.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:34,472 INFO tsd.data.openimages: downloaded 85a14b7b7c9397c7.jpg (626951 bytes)
+2026-11-19 06:42:34,588 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/8c2b6a7e0e6ea902.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:34,594 INFO tsd.data.openimages: downloaded 8c2b6a7e0e6ea902.jpg (212302 bytes)
+2026-11-19 06:42:34,594 INFO tsd.data.openimages: skipped 8d1e53413cd9c13f.jpg (275172 bytes)
+2026-11-19 06:42:34,595 INFO tsd.data.openimages: skipped 94c99b3aea7ee041.jpg (449611 bytes)
+2026-11-19 06:42:34,701 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/9600526bf219ec53.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:34,702 INFO tsd.data.openimages: downloaded 9600526bf219ec53.jpg (88110 bytes)
+2026-11-19 06:42:34,703 INFO tsd.data.openimages: skipped 97293a439963c5f2.jpg (256036 bytes)
+2026-11-19 06:42:34,703 INFO tsd.data.openimages: skipped 9c7e9f0b7713352b.jpg (310625 bytes)
+2026-11-19 06:42:34,828 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/9cf230d6cba7bf08.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:34,830 INFO tsd.data.openimages: downloaded 9cf230d6cba7bf08.jpg (122324 bytes)
+2026-11-19 06:42:34,955 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/9d67e0779ade6975.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:34,960 INFO tsd.data.openimages: downloaded 9d67e0779ade6975.jpg (448330 bytes)
+2026-11-19 06:42:34,961 INFO tsd.data.openimages: skipped 9d73a254d53ebda2.jpg (256722 bytes)
+2026-11-19 06:42:35,067 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/a04f3f2311a4c0d0.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:35,084 INFO tsd.data.openimages: downloaded a04f3f2311a4c0d0.jpg (278331 bytes)
+2026-11-19 06:42:35,085 INFO tsd.data.openimages: skipped a0766aebae64a7bf.jpg (72631 bytes)
+2026-11-19 06:42:35,153 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/ab40dc67263bc0ab.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:35,156 INFO tsd.data.openimages: downloaded ab40dc67263bc0ab.jpg (150778 bytes)
+2026-11-19 06:42:35,270 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/abc5a8e498074414.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:35,271 INFO tsd.data.openimages: downloaded abc5a8e498074414.jpg (124108 bytes)
+2026-11-19 06:42:35,274 INFO tsd.data.openimages: skipped ac9dbbe1e4b0607c.jpg (3193615 bytes)
+2026-11-19 06:42:35,275 INFO tsd.data.openimages: skipped acceb61fd5fd7294.jpg (89127 bytes)
+2026-11-19 06:42:35,276 INFO tsd.data.openimages: skipped ad9a8dc4642fc95f.jpg (511967 bytes)
+2026-11-19 06:42:35,402 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/af448b18c726f9e8.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:35,404 INFO tsd.data.openimages: downloaded af448b18c726f9e8.jpg (164889 bytes)
+2026-11-19 06:42:35,406 INFO tsd.data.openimages: skipped b26ed3fdc5e763a1.jpg (452374 bytes)
+2026-11-19 06:42:35,536 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/b412003135ad1d64.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:35,540 INFO tsd.data.openimages: downloaded b412003135ad1d64.jpg (164910 bytes)
+2026-11-19 06:42:35,541 INFO tsd.data.openimages: skipped b8a3f2ea385e45b3.jpg (316357 bytes)
+2026-11-19 06:42:35,660 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/b944890c1b51a305.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:35,662 INFO tsd.data.openimages: downloaded b944890c1b51a305.jpg (38601 bytes)
+2026-11-19 06:42:35,662 INFO tsd.data.openimages: skipped be61e39e9ddd4f79.jpg (356065 bytes)
+2026-11-19 06:42:35,663 INFO tsd.data.openimages: skipped bea1f735697cd5f8.jpg (211589 bytes)
+2026-11-19 06:42:35,663 INFO tsd.data.openimages: skipped bfc788cdd15200ab.jpg (177413 bytes)
+2026-11-19 06:42:35,664 INFO tsd.data.openimages: skipped c7b1e6f7c38fa1a0.jpg (239051 bytes)
+2026-11-19 06:42:35,664 INFO tsd.data.openimages: skipped cc0626b08c279b2e.jpg (205497 bytes)
+2026-11-19 06:42:35,665 INFO tsd.data.openimages: skipped ccc6cc13dd83bfe7.jpg (483631 bytes)
+2026-11-19 06:42:35,665 INFO tsd.data.openimages: skipped ce8836de53d6b11e.jpg (384478 bytes)
+2026-11-19 06:42:35,773 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/ceaa93a50d68bf0b.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:35,775 INFO tsd.data.openimages: downloaded ceaa93a50d68bf0b.jpg (240166 bytes)
+2026-11-19 06:42:35,776 INFO tsd.data.openimages: skipped d149f8fd6f33910c.jpg (300512 bytes)
+2026-11-19 06:42:35,887 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/d226048fa11a41dc.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:35,893 INFO tsd.data.openimages: downloaded d226048fa11a41dc.jpg (284088 bytes)
+2026-11-19 06:42:35,893 INFO tsd.data.openimages: skipped d7deef955e16cc20.jpg (211740 bytes)
+2026-11-19 06:42:36,007 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/d84ee93f857d14ad.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:36,011 INFO tsd.data.openimages: downloaded d84ee93f857d14ad.jpg (303520 bytes)
+2026-11-19 06:42:36,012 INFO tsd.data.openimages: skipped da5523ace6ba9635.jpg (127937 bytes)
+2026-11-19 06:42:36,012 INFO tsd.data.openimages: skipped dae81f70ddcef155.jpg (343212 bytes)
+2026-11-19 06:42:36,121 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/e0ae81fd3f5d5259.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:36,155 INFO tsd.data.openimages: downloaded e0ae81fd3f5d5259.jpg (429842 bytes)
+2026-11-19 06:42:36,256 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/e245b01e755009d6.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:36,367 INFO tsd.data.openimages: downloaded e245b01e755009d6.jpg (424499 bytes)
+2026-11-19 06:42:36,471 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/ed9510af3715039d.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:36,645 INFO tsd.data.openimages: downloaded ed9510af3715039d.jpg (556561 bytes)
+2026-11-19 06:42:36,646 INFO tsd.data.openimages: skipped ee267b62fd17a9b1.jpg (54161 bytes)
+2026-11-19 06:42:36,765 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/f13970faf1b8342e.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:36,766 INFO tsd.data.openimages: downloaded f13970faf1b8342e.jpg (82458 bytes)
+2026-11-19 06:42:36,888 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/f2e0c211fb046437.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:36,892 INFO tsd.data.openimages: downloaded f2e0c211fb046437.jpg (132515 bytes)
+2026-11-19 06:42:36,996 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/validation/f3053265997a798a.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:37,001 INFO tsd.data.openimages: downloaded f3053265997a798a.jpg (497116 bytes)
+2026-11-19 06:42:37,002 INFO tsd.data.openimages: skipped f59f624620f099df.jpg (68268 bytes)
+2026-11-19 06:42:37,002 INFO tsd.data.openimages: skipped f8abba74ae677e3a.jpg (106905 bytes)
+2026-11-19 06:42:37,002 INFO tsd.data.openimages: skipped ff34bd4af5e3f7c4.jpg (92624 bytes)
+2026-11-19 06:42:37,002 INFO tsd.data.openimages: skipped 0135b7a0b1010c08.jpg (157297 bytes)
+2026-11-19 06:42:37,109 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/01c58f9781416695.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:37,170 INFO tsd.data.openimages: downloaded 01c58f9781416695.jpg (337599 bytes)
+2026-11-19 06:42:37,170 INFO tsd.data.openimages: skipped 01e835e68b6af93d.jpg (233732 bytes)
+2026-11-19 06:42:37,170 INFO tsd.data.openimages: skipped 02dd78f664219bde.jpg (103603 bytes)
+2026-11-19 06:42:37,171 INFO tsd.data.openimages: skipped 03390446d74c6576.jpg (151702 bytes)
+2026-11-19 06:42:37,171 INFO tsd.data.openimages: skipped 03d45f0207d68aa2.jpg (116527 bytes)
+2026-11-19 06:42:37,231 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/0462e1bdd5e99a9e.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:37,293 INFO tsd.data.openimages: downloaded 0462e1bdd5e99a9e.jpg (244454 bytes)
+2026-11-19 06:42:37,294 INFO tsd.data.openimages: skipped 04e2cd7a942d424c.jpg (237511 bytes)
+2026-11-19 06:42:37,294 INFO tsd.data.openimages: skipped 05f71f870920c816.jpg (109968 bytes)
+2026-11-19 06:42:37,294 INFO tsd.data.openimages: skipped 06cad6838bb43a0c.jpg (241645 bytes)
+2026-11-19 06:42:37,294 INFO tsd.data.openimages: skipped 07937fe4aeb1a4e4.jpg (60722 bytes)
+2026-11-19 06:42:37,295 INFO tsd.data.openimages: skipped 0886a4ed78b45997.jpg (122104 bytes)
+2026-11-19 06:42:37,295 INFO tsd.data.openimages: skipped 08bf84bb9662086d.jpg (125493 bytes)
+2026-11-19 06:42:37,400 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/0a3f2759fe861fba.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:37,402 INFO tsd.data.openimages: downloaded 0a3f2759fe861fba.jpg (91136 bytes)
+2026-11-19 06:42:37,402 INFO tsd.data.openimages: skipped 0b67618ee472538f.jpg (51856 bytes)
+2026-11-19 06:42:37,402 INFO tsd.data.openimages: skipped 0c127cd585c05f7e.jpg (73558 bytes)
+2026-11-19 06:42:37,403 INFO tsd.data.openimages: skipped 0e88c20dd40e6b87.jpg (525714 bytes)
+2026-11-19 06:42:37,403 INFO tsd.data.openimages: skipped 0f739ac580276e5f.jpg (582236 bytes)
+2026-11-19 06:42:37,404 INFO tsd.data.openimages: skipped 0f8f5bc9b71be618.jpg (267755 bytes)
+2026-11-19 06:42:37,530 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/10b705a4f813b8e4.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:37,673 INFO tsd.data.openimages: downloaded 10b705a4f813b8e4.jpg (668775 bytes)
+2026-11-19 06:42:37,739 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/10df0f62171ca73c.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:37,750 INFO tsd.data.openimages: downloaded 10df0f62171ca73c.jpg (155848 bytes)
+2026-11-19 06:42:37,817 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/1192ec35ab96b895.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:37,819 INFO tsd.data.openimages: downloaded 1192ec35ab96b895.jpg (67629 bytes)
+2026-11-19 06:42:37,922 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/11c4d7bbd2fc9afa.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:37,924 INFO tsd.data.openimages: downloaded 11c4d7bbd2fc9afa.jpg (80137 bytes)
+2026-11-19 06:42:38,047 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/124adf9628b5d280.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:38,049 INFO tsd.data.openimages: downloaded 124adf9628b5d280.jpg (75355 bytes)
+2026-11-19 06:42:38,157 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/13b416c8becf947b.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:38,159 INFO tsd.data.openimages: downloaded 13b416c8becf947b.jpg (73782 bytes)
+2026-11-19 06:42:38,279 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/1443225ccf2aed0c.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:38,282 INFO tsd.data.openimages: downloaded 1443225ccf2aed0c.jpg (148556 bytes)
+2026-11-19 06:42:38,283 INFO tsd.data.openimages: skipped 15826e408ef990a4.jpg (314469 bytes)
+2026-11-19 06:42:38,383 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/15b3135fd8e76a5f.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:38,385 INFO tsd.data.openimages: downloaded 15b3135fd8e76a5f.jpg (82590 bytes)
+2026-11-19 06:42:38,385 INFO tsd.data.openimages: skipped 16c912d7bfb98b66.jpg (157496 bytes)
+2026-11-19 06:42:38,460 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/16dea83384a4da64.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:38,466 INFO tsd.data.openimages: downloaded 16dea83384a4da64.jpg (188158 bytes)
+2026-11-19 06:42:38,467 INFO tsd.data.openimages: skipped 17204d61674438dc.jpg (400744 bytes)
+2026-11-19 06:42:38,467 INFO tsd.data.openimages: skipped 18e19684837166f2.jpg (259771 bytes)
+2026-11-19 06:42:38,468 INFO tsd.data.openimages: skipped 1aae1ebd06a23670.jpg (692100 bytes)
+2026-11-19 06:42:38,468 INFO tsd.data.openimages: skipped 1af769a9e200a9e3.jpg (134509 bytes)
+2026-11-19 06:42:38,577 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/1b3fef4e935c9365.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:38,578 INFO tsd.data.openimages: downloaded 1b3fef4e935c9365.jpg (108049 bytes)
+2026-11-19 06:42:38,680 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/1b52e64a6c5a652e.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:38,687 INFO tsd.data.openimages: downloaded 1b52e64a6c5a652e.jpg (473850 bytes)
+2026-11-19 06:42:38,688 INFO tsd.data.openimages: skipped 1d01568a9f8b528f.jpg (147577 bytes)
+2026-11-19 06:42:38,688 INFO tsd.data.openimages: skipped 1e77cd8bee353623.jpg (307460 bytes)
+2026-11-19 06:42:38,689 INFO tsd.data.openimages: skipped 1e77e36490ba8249.jpg (374638 bytes)
+2026-11-19 06:42:38,760 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/1ed589fc8003b2f2.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:38,761 INFO tsd.data.openimages: downloaded 1ed589fc8003b2f2.jpg (102443 bytes)
+2026-11-19 06:42:38,762 INFO tsd.data.openimages: skipped 1f2c589e49a3bcd0.jpg (404007 bytes)
+2026-11-19 06:42:38,904 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/1f70bb54b5e1dff9.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:38,906 INFO tsd.data.openimages: downloaded 1f70bb54b5e1dff9.jpg (108452 bytes)
+2026-11-19 06:42:38,906 INFO tsd.data.openimages: skipped 1facf3b79b412cf8.jpg (204538 bytes)
+2026-11-19 06:42:38,906 INFO tsd.data.openimages: skipped 20dca9baee45bf08.jpg (170588 bytes)
+2026-11-19 06:42:38,906 INFO tsd.data.openimages: skipped 224b3ee5ac6b9eef.jpg (125952 bytes)
+2026-11-19 06:42:38,996 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/2252ae1cc08ff3fc.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:38,997 INFO tsd.data.openimages: downloaded 2252ae1cc08ff3fc.jpg (43429 bytes)
+2026-11-19 06:42:39,065 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/23460fe72910272c.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:39,066 INFO tsd.data.openimages: downloaded 23460fe72910272c.jpg (121743 bytes)
+2026-11-19 06:42:39,067 INFO tsd.data.openimages: skipped 243cb9f462917e8a.jpg (517847 bytes)
+2026-11-19 06:42:39,168 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/2472ac8c758f5c67.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:39,176 INFO tsd.data.openimages: downloaded 2472ac8c758f5c67.jpg (272058 bytes)
+2026-11-19 06:42:39,176 INFO tsd.data.openimages: skipped 2476bfd11397eaef.jpg (54122 bytes)
+2026-11-19 06:42:39,176 INFO tsd.data.openimages: skipped 25301a30e7c9b7d8.jpg (155567 bytes)
+2026-11-19 06:42:39,177 INFO tsd.data.openimages: skipped 257d9a91fefd665a.jpg (294122 bytes)
+2026-11-19 06:42:39,275 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/26155211864db2f5.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:39,277 INFO tsd.data.openimages: downloaded 26155211864db2f5.jpg (219671 bytes)
+2026-11-19 06:42:39,380 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/27fef65a2e161d84.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:39,384 INFO tsd.data.openimages: downloaded 27fef65a2e161d84.jpg (232175 bytes)
+2026-11-19 06:42:39,503 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/2815458002b89f5b.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:39,505 INFO tsd.data.openimages: downloaded 2815458002b89f5b.jpg (210899 bytes)
+2026-11-19 06:42:39,505 INFO tsd.data.openimages: skipped 28c4285201398287.jpg (410326 bytes)
+2026-11-19 06:42:39,507 INFO tsd.data.openimages: skipped 294aff231c7c290a.jpg (762896 bytes)
+2026-11-19 06:42:39,612 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/2afe4ffdc493ad50.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:39,613 INFO tsd.data.openimages: downloaded 2afe4ffdc493ad50.jpg (139417 bytes)
+2026-11-19 06:42:39,614 INFO tsd.data.openimages: skipped 2b3e4a4919cd47b4.jpg (583161 bytes)
+2026-11-19 06:42:39,614 INFO tsd.data.openimages: skipped 2bc5e1bb91dbca92.jpg (84813 bytes)
+2026-11-19 06:42:39,614 INFO tsd.data.openimages: skipped 2cb9ea657bfa2a48.jpg (60746 bytes)
+2026-11-19 06:42:39,728 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/2d14a6386d30bfdc.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:39,731 INFO tsd.data.openimages: downloaded 2d14a6386d30bfdc.jpg (190265 bytes)
+2026-11-19 06:42:39,731 INFO tsd.data.openimages: skipped 2d1c892833f8fd51.jpg (82722 bytes)
+2026-11-19 06:42:39,732 INFO tsd.data.openimages: skipped 308467964f386972.jpg (334420 bytes)
+2026-11-19 06:42:39,836 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/33fec07745969ab2.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:39,839 INFO tsd.data.openimages: downloaded 33fec07745969ab2.jpg (339639 bytes)
+2026-11-19 06:42:39,840 INFO tsd.data.openimages: skipped 35d8b6cab489e841.jpg (204370 bytes)
+2026-11-19 06:42:39,918 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/3637c43fc1b877d2.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:39,919 INFO tsd.data.openimages: downloaded 3637c43fc1b877d2.jpg (76525 bytes)
+2026-11-19 06:42:40,044 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/366e79e4e757ad13.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:40,048 INFO tsd.data.openimages: downloaded 366e79e4e757ad13.jpg (243453 bytes)
+2026-11-19 06:42:40,170 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/36c05c3eb00ebece.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:40,175 INFO tsd.data.openimages: downloaded 36c05c3eb00ebece.jpg (218507 bytes)
+2026-11-19 06:42:40,280 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/372cff83b0e0ce68.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:40,284 INFO tsd.data.openimages: downloaded 372cff83b0e0ce68.jpg (178494 bytes)
+2026-11-19 06:42:40,284 INFO tsd.data.openimages: skipped 39aa876c04a3d4bc.jpg (107894 bytes)
+2026-11-19 06:42:40,285 INFO tsd.data.openimages: skipped 3a25f2b1e9bcfc8d.jpg (393250 bytes)
+2026-11-19 06:42:40,285 INFO tsd.data.openimages: skipped 3b17ab5107bef9bb.jpg (308930 bytes)
+2026-11-19 06:42:40,389 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/4020f210e71dd21e.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:40,391 INFO tsd.data.openimages: downloaded 4020f210e71dd21e.jpg (121185 bytes)
+2026-11-19 06:42:40,391 INFO tsd.data.openimages: skipped 4156ff808a7f3bc0.jpg (209910 bytes)
+2026-11-19 06:42:40,542 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/42665a124522f0dc.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:40,543 INFO tsd.data.openimages: downloaded 42665a124522f0dc.jpg (145450 bytes)
+2026-11-19 06:42:40,545 INFO tsd.data.openimages: skipped 441821fc78530878.jpg (298812 bytes)
+2026-11-19 06:42:40,545 INFO tsd.data.openimages: skipped 44aa11da733dd16e.jpg (106122 bytes)
+2026-11-19 06:42:40,645 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/452bd71aedd38e93.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:40,651 INFO tsd.data.openimages: downloaded 452bd71aedd38e93.jpg (357005 bytes)
+2026-11-19 06:42:40,781 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/456d5bff7d47d911.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:40,791 INFO tsd.data.openimages: downloaded 456d5bff7d47d911.jpg (243516 bytes)
+2026-11-19 06:42:40,792 INFO tsd.data.openimages: skipped 459f93453f7fbdca.jpg (1072041 bytes)
+2026-11-19 06:42:40,910 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/45c6bf665bca9785.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:40,914 INFO tsd.data.openimages: downloaded 45c6bf665bca9785.jpg (356828 bytes)
+2026-11-19 06:42:40,915 INFO tsd.data.openimages: skipped 45f9b594fd32feb1.jpg (257543 bytes)
+2026-11-19 06:42:41,038 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/46c925b04e7cc5aa.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:41,406 INFO tsd.data.openimages: downloaded 46c925b04e7cc5aa.jpg (1055949 bytes)
+2026-11-19 06:42:41,511 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/46faa5ff401a8108.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:41,513 INFO tsd.data.openimages: downloaded 46faa5ff401a8108.jpg (124055 bytes)
+2026-11-19 06:42:41,513 INFO tsd.data.openimages: skipped 47a0ccf41b7023e2.jpg (58998 bytes)
+2026-11-19 06:42:41,514 INFO tsd.data.openimages: skipped 47bf14d20a0ea25f.jpg (199413 bytes)
+2026-11-19 06:42:41,620 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/47c7d922dbf4dadc.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:41,623 INFO tsd.data.openimages: downloaded 47c7d922dbf4dadc.jpg (291287 bytes)
+2026-11-19 06:42:41,719 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/4b224c146bcc409f.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:41,821 INFO tsd.data.openimages: downloaded 4b224c146bcc409f.jpg (419708 bytes)
+2026-11-19 06:42:41,822 INFO tsd.data.openimages: skipped 4b3189f87731c7d0.jpg (113929 bytes)
+2026-11-19 06:42:41,894 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/4b3424745d354764.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:41,898 INFO tsd.data.openimages: downloaded 4b3424745d354764.jpg (144203 bytes)
+2026-11-19 06:42:42,011 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/4e44275743db3065.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:42,128 INFO tsd.data.openimages: downloaded 4e44275743db3065.jpg (468547 bytes)
+2026-11-19 06:42:42,128 INFO tsd.data.openimages: skipped 4efc085fb84a38df.jpg (53354 bytes)
+2026-11-19 06:42:42,233 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/5026efd41fcdf8d0.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:42,234 INFO tsd.data.openimages: downloaded 5026efd41fcdf8d0.jpg (126108 bytes)
+2026-11-19 06:42:42,235 INFO tsd.data.openimages: skipped 5177da9960ab6e14.jpg (611591 bytes)
+2026-11-19 06:42:42,336 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/532cd2e9ec45a281.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:42,399 INFO tsd.data.openimages: downloaded 532cd2e9ec45a281.jpg (415707 bytes)
+2026-11-19 06:42:42,499 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/53580ef07602a669.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:42,512 INFO tsd.data.openimages: downloaded 53580ef07602a669.jpg (227733 bytes)
+2026-11-19 06:42:42,621 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/53e1fe153e32150a.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:42,627 INFO tsd.data.openimages: downloaded 53e1fe153e32150a.jpg (213066 bytes)
+2026-11-19 06:42:42,629 INFO tsd.data.openimages: skipped 548c1805b8e211bd.jpg (200633 bytes)
+2026-11-19 06:42:42,752 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/548f6f05e5c2ea6e.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:42,753 INFO tsd.data.openimages: downloaded 548f6f05e5c2ea6e.jpg (54397 bytes)
+2026-11-19 06:42:42,754 INFO tsd.data.openimages: skipped 5572f67e8b749698.jpg (309314 bytes)
+2026-11-19 06:42:42,754 INFO tsd.data.openimages: skipped 57ba59b487d9ec76.jpg (308425 bytes)
+2026-11-19 06:42:42,754 INFO tsd.data.openimages: skipped 5875bb24076e0403.jpg (286322 bytes)
+2026-11-19 06:42:42,755 INFO tsd.data.openimages: skipped 5dc9465b0bad69fc.jpg (206086 bytes)
+2026-11-19 06:42:42,755 INFO tsd.data.openimages: skipped 5efd8178715f0d89.jpg (277953 bytes)
+2026-11-19 06:42:42,756 INFO tsd.data.openimages: skipped 60ff2c943623994e.jpg (238323 bytes)
+2026-11-19 06:42:42,756 INFO tsd.data.openimages: skipped 6100121f7039342a.jpg (331020 bytes)
+2026-11-19 06:42:42,817 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/620ccc1723c85142.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:43,050 INFO tsd.data.openimages: downloaded 620ccc1723c85142.jpg (805876 bytes)
+2026-11-19 06:42:43,051 INFO tsd.data.openimages: skipped 626d5c61f5747a04.jpg (405160 bytes)
+2026-11-19 06:42:43,051 INFO tsd.data.openimages: skipped 63cbeba5233632ad.jpg (106999 bytes)
+2026-11-19 06:42:43,052 INFO tsd.data.openimages: skipped 6538a7e058b50c78.jpg (231742 bytes)
+2026-11-19 06:42:43,157 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/66b4ba45205090d1.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:43,172 INFO tsd.data.openimages: downloaded 66b4ba45205090d1.jpg (246503 bytes)
+2026-11-19 06:42:43,172 INFO tsd.data.openimages: skipped 6811f8285b18bc64.jpg (55976 bytes)
+2026-11-19 06:42:43,252 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/68fe2bc4f516fe3e.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:43,253 INFO tsd.data.openimages: downloaded 68fe2bc4f516fe3e.jpg (34800 bytes)
+2026-11-19 06:42:43,253 INFO tsd.data.openimages: skipped 69353fa7657ff1e6.jpg (126136 bytes)
+2026-11-19 06:42:43,365 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/6935fb42284f9880.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:43,414 INFO tsd.data.openimages: downloaded 6935fb42284f9880.jpg (448951 bytes)
+2026-11-19 06:42:43,525 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/6a167932ce61dd8a.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:43,590 INFO tsd.data.openimages: downloaded 6a167932ce61dd8a.jpg (350955 bytes)
+2026-11-19 06:42:43,591 INFO tsd.data.openimages: skipped 6a23839d173029a4.jpg (725162 bytes)
+2026-11-19 06:42:43,592 INFO tsd.data.openimages: skipped 6a45a745afb68f73.jpg (517672 bytes)
+2026-11-19 06:42:43,669 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/6aca090d80ec8eac.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:43,670 INFO tsd.data.openimages: downloaded 6aca090d80ec8eac.jpg (69925 bytes)
+2026-11-19 06:42:43,671 INFO tsd.data.openimages: skipped 6b79e1664522ca64.jpg (302379 bytes)
+2026-11-19 06:42:43,775 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/6c9a1b16bbd3a296.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:43,891 INFO tsd.data.openimages: downloaded 6c9a1b16bbd3a296.jpg (521805 bytes)
+2026-11-19 06:42:43,995 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/6d6adeb90d2ba250.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:44,259 INFO tsd.data.openimages: downloaded 6d6adeb90d2ba250.jpg (743421 bytes)
+2026-11-19 06:42:44,370 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/6edaa7f0b1828981.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:44,395 INFO tsd.data.openimages: downloaded 6edaa7f0b1828981.jpg (276748 bytes)
+2026-11-19 06:42:44,396 INFO tsd.data.openimages: skipped 6f3e3b25d9b345c3.jpg (130905 bytes)
+2026-11-19 06:42:44,509 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/7179e818740d3f0b.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:44,793 INFO tsd.data.openimages: downloaded 7179e818740d3f0b.jpg (792099 bytes)
+2026-11-19 06:42:44,897 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/71b4d7175719713b.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:44,899 INFO tsd.data.openimages: downloaded 71b4d7175719713b.jpg (128451 bytes)
+2026-11-19 06:42:45,020 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/742f490d1110733d.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:45,025 INFO tsd.data.openimages: downloaded 742f490d1110733d.jpg (276655 bytes)
+2026-11-19 06:42:45,025 INFO tsd.data.openimages: skipped 76d7d9a132c3c1d6.jpg (96057 bytes)
+2026-11-19 06:42:45,026 INFO tsd.data.openimages: skipped 77bbdd2308cb2cad.jpg (799185 bytes)
+2026-11-19 06:42:45,026 INFO tsd.data.openimages: skipped 78066a4752bc11fe.jpg (389774 bytes)
+2026-11-19 06:42:45,112 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/790c48002aa8c3fb.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:45,114 INFO tsd.data.openimages: downloaded 790c48002aa8c3fb.jpg (102761 bytes)
+2026-11-19 06:42:45,237 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/797bda04916e0b40.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:45,271 INFO tsd.data.openimages: downloaded 797bda04916e0b40.jpg (451468 bytes)
+2026-11-19 06:42:45,274 INFO tsd.data.openimages: skipped 79847a2870686886.jpg (164872 bytes)
+2026-11-19 06:42:45,373 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/7988879597305a0b.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:45,401 INFO tsd.data.openimages: downloaded 7988879597305a0b.jpg (260790 bytes)
+2026-11-19 06:42:45,402 INFO tsd.data.openimages: skipped 7a70cee165246048.jpg (189111 bytes)
+2026-11-19 06:42:45,402 INFO tsd.data.openimages: skipped 7c08f32689c9e2e1.jpg (94384 bytes)
+2026-11-19 06:42:45,402 INFO tsd.data.openimages: skipped 7de4d90206cb3554.jpg (175164 bytes)
+2026-11-19 06:42:45,403 INFO tsd.data.openimages: skipped 7e416e1b7c83e0e7.jpg (289505 bytes)
+2026-11-19 06:42:45,403 INFO tsd.data.openimages: skipped 7ebeee3412864b41.jpg (56968 bytes)
+2026-11-19 06:42:45,683 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/7ef3d4e191901e2c.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:45,723 INFO tsd.data.openimages: downloaded 7ef3d4e191901e2c.jpg (329268 bytes)
+2026-11-19 06:42:45,862 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/7f69241c29da3a82.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:45,866 INFO tsd.data.openimages: downloaded 7f69241c29da3a82.jpg (321804 bytes)
+2026-11-19 06:42:45,867 INFO tsd.data.openimages: skipped 7f8fa84cf0f95971.jpg (342012 bytes)
+2026-11-19 06:42:45,867 INFO tsd.data.openimages: skipped 80baa9ad9e61c6a1.jpg (394384 bytes)
+2026-11-19 06:42:45,972 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/80d050a113a74578.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:45,974 INFO tsd.data.openimages: downloaded 80d050a113a74578.jpg (153302 bytes)
+2026-11-19 06:42:45,975 INFO tsd.data.openimages: skipped 81da569b065335f6.jpg (181589 bytes)
+2026-11-19 06:42:45,975 INFO tsd.data.openimages: skipped 821f75f1f4061c79.jpg (156905 bytes)
+2026-11-19 06:42:45,976 INFO tsd.data.openimages: skipped 836fa14b9a909258.jpg (140768 bytes)
+2026-11-19 06:42:45,976 INFO tsd.data.openimages: skipped 8406354c09070f9b.jpg (94048 bytes)
+2026-11-19 06:42:46,088 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/85ba52c58b8fb7cd.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:46,097 INFO tsd.data.openimages: downloaded 85ba52c58b8fb7cd.jpg (346160 bytes)
+2026-11-19 06:42:46,098 INFO tsd.data.openimages: skipped 85d86e58ea8df974.jpg (197537 bytes)
+2026-11-19 06:42:46,180 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/868a4552ddad8728.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:46,182 INFO tsd.data.openimages: downloaded 868a4552ddad8728.jpg (56342 bytes)
+2026-11-19 06:42:46,285 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/878770571be8f1fa.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:46,287 INFO tsd.data.openimages: downloaded 878770571be8f1fa.jpg (74518 bytes)
+2026-11-19 06:42:46,419 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/88f460100f006ce5.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:46,424 INFO tsd.data.openimages: downloaded 88f460100f006ce5.jpg (298064 bytes)
+2026-11-19 06:42:46,598 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/8b8199969c3ea53f.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:46,603 INFO tsd.data.openimages: downloaded 8b8199969c3ea53f.jpg (455746 bytes)
+2026-11-19 06:42:46,713 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/8bb6828990635aee.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:46,715 INFO tsd.data.openimages: downloaded 8bb6828990635aee.jpg (83365 bytes)
+2026-11-19 06:42:46,716 INFO tsd.data.openimages: skipped 8bba4c4b9f6f8cca.jpg (942806 bytes)
+2026-11-19 06:42:46,839 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/8d152e7807cec289.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:46,841 INFO tsd.data.openimages: downloaded 8d152e7807cec289.jpg (123113 bytes)
+2026-11-19 06:42:46,842 INFO tsd.data.openimages: skipped 8df8d4edab0bd9fa.jpg (958820 bytes)
+2026-11-19 06:42:46,943 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/8e48e24e24679d8b.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:46,946 INFO tsd.data.openimages: downloaded 8e48e24e24679d8b.jpg (192526 bytes)
+2026-11-19 06:42:47,034 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/8f608b4161baeeea.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:47,035 INFO tsd.data.openimages: downloaded 8f608b4161baeeea.jpg (59425 bytes)
+2026-11-19 06:42:47,035 INFO tsd.data.openimages: skipped 8f6b5a81b9cecc3e.jpg (553389 bytes)
+2026-11-19 06:42:47,133 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/9082dc0812166752.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:47,135 INFO tsd.data.openimages: downloaded 9082dc0812166752.jpg (136459 bytes)
+2026-11-19 06:42:47,136 INFO tsd.data.openimages: skipped 92ebd2ebe77e874c.jpg (265482 bytes)
+2026-11-19 06:42:47,136 INFO tsd.data.openimages: skipped 93db63bb2dd881db.jpg (278784 bytes)
+2026-11-19 06:42:47,207 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/93de853413e272b3.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:47,212 INFO tsd.data.openimages: downloaded 93de853413e272b3.jpg (285354 bytes)
+2026-11-19 06:42:47,213 INFO tsd.data.openimages: skipped 94358d7676f57516.jpg (432814 bytes)
+2026-11-19 06:42:47,285 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/944468b7446e684d.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:47,287 INFO tsd.data.openimages: downloaded 944468b7446e684d.jpg (77034 bytes)
+2026-11-19 06:42:47,287 INFO tsd.data.openimages: skipped 9534dcd470194472.jpg (947779 bytes)
+2026-11-19 06:42:47,288 INFO tsd.data.openimages: skipped 989532067e3483bb.jpg (436656 bytes)
+2026-11-19 06:42:47,289 INFO tsd.data.openimages: skipped 98af206642e8b4fd.jpg (764071 bytes)
+2026-11-19 06:42:47,289 INFO tsd.data.openimages: skipped 99bf42b3a390542d.jpg (143228 bytes)
+2026-11-19 06:42:47,352 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/9a095a7b91c543ad.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:47,354 INFO tsd.data.openimages: downloaded 9a095a7b91c543ad.jpg (122178 bytes)
+2026-11-19 06:42:47,355 INFO tsd.data.openimages: skipped 9c5ad5f3cc309ca2.jpg (841491 bytes)
+2026-11-19 06:42:47,463 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/9c6d81d5fb5d664e.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:47,467 INFO tsd.data.openimages: downloaded 9c6d81d5fb5d664e.jpg (148085 bytes)
+2026-11-19 06:42:47,467 INFO tsd.data.openimages: skipped 9c6dd0ebf617ad0d.jpg (194324 bytes)
+2026-11-19 06:42:47,467 INFO tsd.data.openimages: skipped 9cd654ace535902c.jpg (272908 bytes)
+2026-11-19 06:42:47,624 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/9f794ca72c70da37.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:47,631 INFO tsd.data.openimages: downloaded 9f794ca72c70da37.jpg (196510 bytes)
+2026-11-19 06:42:47,631 INFO tsd.data.openimages: skipped a0ef8f5283977eff.jpg (55140 bytes)
+2026-11-19 06:42:47,707 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/a1fd0d68848eb7d0.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:47,730 INFO tsd.data.openimages: downloaded a1fd0d68848eb7d0.jpg (189043 bytes)
+2026-11-19 06:42:47,730 INFO tsd.data.openimages: skipped a2d69c09f6da7065.jpg (400970 bytes)
+2026-11-19 06:42:47,731 INFO tsd.data.openimages: skipped a3348bfcc05061b5.jpg (421319 bytes)
+2026-11-19 06:42:47,832 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/a4156577e7790a35.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:47,841 INFO tsd.data.openimages: downloaded a4156577e7790a35.jpg (312826 bytes)
+2026-11-19 06:42:47,942 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/a473e937a7342b38.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:48,009 INFO tsd.data.openimages: downloaded a473e937a7342b38.jpg (537283 bytes)
+2026-11-19 06:42:48,010 INFO tsd.data.openimages: skipped a60a058fa04eeed0.jpg (487469 bytes)
+2026-11-19 06:42:48,010 INFO tsd.data.openimages: skipped a70e22ce2700b5a3.jpg (70072 bytes)
+2026-11-19 06:42:48,010 INFO tsd.data.openimages: skipped a73131b1a97b999d.jpg (140633 bytes)
+2026-11-19 06:42:48,133 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/a735393ea628acfb.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:48,188 INFO tsd.data.openimages: downloaded a735393ea628acfb.jpg (357910 bytes)
+2026-11-19 06:42:48,188 INFO tsd.data.openimages: skipped a7c91fcbe2e958ce.jpg (113633 bytes)
+2026-11-19 06:42:48,188 INFO tsd.data.openimages: skipped aa16deaffe1bff25.jpg (197151 bytes)
+2026-11-19 06:42:48,189 INFO tsd.data.openimages: skipped ab4683781632491c.jpg (282272 bytes)
+2026-11-19 06:42:48,306 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/ab7633a6f88c9ebe.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:48,313 INFO tsd.data.openimages: downloaded ab7633a6f88c9ebe.jpg (227926 bytes)
+2026-11-19 06:42:48,314 INFO tsd.data.openimages: skipped acb0ad30dff621ff.jpg (525513 bytes)
+2026-11-19 06:42:48,315 INFO tsd.data.openimages: skipped afb9c4929fd78652.jpg (742453 bytes)
+2026-11-19 06:42:48,315 INFO tsd.data.openimages: skipped afd383a6b94c70f3.jpg (327693 bytes)
+2026-11-19 06:42:48,406 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/b0c3388942f6e101.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:48,407 INFO tsd.data.openimages: downloaded b0c3388942f6e101.jpg (53605 bytes)
+2026-11-19 06:42:48,408 INFO tsd.data.openimages: skipped b2a1264ac79c0cc9.jpg (454290 bytes)
+2026-11-19 06:42:48,529 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/b4beda2b085457cd.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:48,531 INFO tsd.data.openimages: downloaded b4beda2b085457cd.jpg (80584 bytes)
+2026-11-19 06:42:48,532 INFO tsd.data.openimages: skipped b53469875a0542b3.jpg (382211 bytes)
+2026-11-19 06:42:48,628 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/b58d05704c4130b7.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:48,630 INFO tsd.data.openimages: downloaded b58d05704c4130b7.jpg (127028 bytes)
+2026-11-19 06:42:48,630 INFO tsd.data.openimages: skipped b657fb701244d7c6.jpg (86853 bytes)
+2026-11-19 06:42:48,708 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/b79535f1bc86bfd9.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:48,709 INFO tsd.data.openimages: downloaded b79535f1bc86bfd9.jpg (102504 bytes)
+2026-11-19 06:42:48,817 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/b812523e3ad63a32.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:48,823 INFO tsd.data.openimages: downloaded b812523e3ad63a32.jpg (250373 bytes)
+2026-11-19 06:42:48,823 INFO tsd.data.openimages: skipped b895b1556120420e.jpg (154630 bytes)
+2026-11-19 06:42:48,893 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/b90af703a68698aa.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:48,894 INFO tsd.data.openimages: downloaded b90af703a68698aa.jpg (75441 bytes)
+2026-11-19 06:42:48,894 INFO tsd.data.openimages: skipped b98299663d776aaf.jpg (279354 bytes)
+2026-11-19 06:42:48,990 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/ba9afb62a8560e2f.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:48,994 INFO tsd.data.openimages: downloaded ba9afb62a8560e2f.jpg (140139 bytes)
+2026-11-19 06:42:49,111 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/bb7486fba2c56b77.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:49,115 INFO tsd.data.openimages: downloaded bb7486fba2c56b77.jpg (497185 bytes)
+2026-11-19 06:42:49,218 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/bccba4e83f42ee15.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:49,243 INFO tsd.data.openimages: downloaded bccba4e83f42ee15.jpg (263667 bytes)
+2026-11-19 06:42:49,244 INFO tsd.data.openimages: skipped bdd6fd042dec9f9f.jpg (92981 bytes)
+2026-11-19 06:42:49,347 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/bf862b8f59bf93ad.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:49,349 INFO tsd.data.openimages: downloaded bf862b8f59bf93ad.jpg (85579 bytes)
+2026-11-19 06:42:49,350 INFO tsd.data.openimages: skipped bf9c1ddbe87e34a0.jpg (59681 bytes)
+2026-11-19 06:42:49,350 INFO tsd.data.openimages: skipped bfd66bb003c69415.jpg (88359 bytes)
+2026-11-19 06:42:49,350 INFO tsd.data.openimages: skipped c02e5d9e7b25e182.jpg (91385 bytes)
+2026-11-19 06:42:49,351 INFO tsd.data.openimages: skipped c1034d2988b33706.jpg (41350 bytes)
+2026-11-19 06:42:49,456 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/c13ce5393d20cd46.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:49,666 INFO tsd.data.openimages: downloaded c13ce5393d20cd46.jpg (755966 bytes)
+2026-11-19 06:42:49,768 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/c2e63455cf8d8b60.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:49,772 INFO tsd.data.openimages: downloaded c2e63455cf8d8b60.jpg (195032 bytes)
+2026-11-19 06:42:49,773 INFO tsd.data.openimages: skipped c34e0a29a4f28902.jpg (161674 bytes)
+2026-11-19 06:42:49,774 INFO tsd.data.openimages: skipped c8b3ee6984721a12.jpg (954847 bytes)
+2026-11-19 06:42:49,775 INFO tsd.data.openimages: skipped ca9831058cb63318.jpg (128432 bytes)
+2026-11-19 06:42:49,858 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/caa839081546a2d0.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:49,926 INFO tsd.data.openimages: downloaded caa839081546a2d0.jpg (327921 bytes)
+2026-11-19 06:42:49,927 INFO tsd.data.openimages: skipped cd2f0a3e2c35714e.jpg (721831 bytes)
+2026-11-19 06:42:49,929 INFO tsd.data.openimages: skipped cd44033be4e80926.jpg (791532 bytes)
+2026-11-19 06:42:50,044 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/cd56d080d59ddd7c.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:50,048 INFO tsd.data.openimages: downloaded cd56d080d59ddd7c.jpg (151719 bytes)
+2026-11-19 06:42:50,049 INFO tsd.data.openimages: skipped cdbfba37f38e4c71.jpg (426633 bytes)
+2026-11-19 06:42:50,049 INFO tsd.data.openimages: skipped ce0731a57599ab5b.jpg (49060 bytes)
+2026-11-19 06:42:50,049 INFO tsd.data.openimages: skipped d017436a31753edb.jpg (76440 bytes)
+2026-11-19 06:42:50,049 INFO tsd.data.openimages: skipped d1aca327d966d497.jpg (179503 bytes)
+2026-11-19 06:42:50,050 INFO tsd.data.openimages: skipped d578805ec96c3b59.jpg (202760 bytes)
+2026-11-19 06:42:50,155 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/d5f4943e4fafa08a.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:50,169 INFO tsd.data.openimages: downloaded d5f4943e4fafa08a.jpg (210178 bytes)
+2026-11-19 06:42:50,170 INFO tsd.data.openimages: skipped d67533156d52e10c.jpg (179391 bytes)
+2026-11-19 06:42:50,170 INFO tsd.data.openimages: skipped d71a9e82a6cb405e.jpg (215991 bytes)
+2026-11-19 06:42:50,171 INFO tsd.data.openimages: skipped d7f5d90a47ef433a.jpg (240894 bytes)
+2026-11-19 06:42:50,171 INFO tsd.data.openimages: skipped d94e5a587686c0e3.jpg (91215 bytes)
+2026-11-19 06:42:50,171 INFO tsd.data.openimages: skipped d96b7d7f1dcf3a5c.jpg (143960 bytes)
+2026-11-19 06:42:50,283 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/d9a550c645b1f454.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:50,286 INFO tsd.data.openimages: downloaded d9a550c645b1f454.jpg (162781 bytes)
+2026-11-19 06:42:50,394 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/d9b28866cde5bca3.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:50,396 INFO tsd.data.openimages: downloaded d9b28866cde5bca3.jpg (97281 bytes)
+2026-11-19 06:42:50,456 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/da1ea24197996573.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:50,459 INFO tsd.data.openimages: downloaded da1ea24197996573.jpg (101023 bytes)
+2026-11-19 06:42:50,559 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/da35f10210fa2292.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:50,564 INFO tsd.data.openimages: downloaded da35f10210fa2292.jpg (384410 bytes)
+2026-11-19 06:42:50,667 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/da3bfc47d0d34559.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:50,671 INFO tsd.data.openimages: downloaded da3bfc47d0d34559.jpg (311109 bytes)
+2026-11-19 06:42:50,672 INFO tsd.data.openimages: skipped da74bb2b26b1bc3a.jpg (162041 bytes)
+2026-11-19 06:42:50,778 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/daebb1d91aa7fdf5.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:50,781 INFO tsd.data.openimages: downloaded daebb1d91aa7fdf5.jpg (242085 bytes)
+2026-11-19 06:42:50,781 INFO tsd.data.openimages: skipped dbc95fea78b63ae1.jpg (446988 bytes)
+2026-11-19 06:42:50,781 INFO tsd.data.openimages: skipped dc65b7e42f057a82.jpg (149297 bytes)
+2026-11-19 06:42:50,782 INFO tsd.data.openimages: skipped dde9828bc53087c2.jpg (650286 bytes)
+2026-11-19 06:42:50,782 INFO tsd.data.openimages: skipped de282a1f2e13b254.jpg (87496 bytes)
+2026-11-19 06:42:50,783 INFO tsd.data.openimages: skipped de85e455d6f28d16.jpg (432903 bytes)
+2026-11-19 06:42:50,783 INFO tsd.data.openimages: skipped def75350f572342e.jpg (56607 bytes)
+2026-11-19 06:42:50,783 INFO tsd.data.openimages: skipped df3578d86e6ce6b2.jpg (201585 bytes)
+2026-11-19 06:42:50,783 INFO tsd.data.openimages: skipped e060bb09b4f825e1.jpg (274981 bytes)
+2026-11-19 06:42:50,784 INFO tsd.data.openimages: skipped e0f6bdc5e2e340b6.jpg (67013 bytes)
+2026-11-19 06:42:50,784 INFO tsd.data.openimages: skipped e11f725f4db3144a.jpg (61203 bytes)
+2026-11-19 06:42:50,784 INFO tsd.data.openimages: skipped e1b19352e4432f9e.jpg (105984 bytes)
+2026-11-19 06:42:50,784 INFO tsd.data.openimages: skipped e2d374466ed3743a.jpg (244746 bytes)
+2026-11-19 06:42:50,869 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/e34708395f7b6543.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:50,870 INFO tsd.data.openimages: downloaded e34708395f7b6543.jpg (48825 bytes)
+2026-11-19 06:42:50,870 INFO tsd.data.openimages: skipped e62ca87d5d4ddcdb.jpg (176479 bytes)
+2026-11-19 06:42:50,975 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/e72d923f2721a29f.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:50,977 INFO tsd.data.openimages: downloaded e72d923f2721a29f.jpg (115621 bytes)
+2026-11-19 06:42:51,050 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/e8d2367054b67fc4.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:51,052 INFO tsd.data.openimages: downloaded e8d2367054b67fc4.jpg (205209 bytes)
+2026-11-19 06:42:51,053 INFO tsd.data.openimages: skipped e93b027ce1557d48.jpg (63090 bytes)
+2026-11-19 06:42:51,054 INFO tsd.data.openimages: skipped e9a622da36f44229.jpg (300865 bytes)
+2026-11-19 06:42:51,165 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/ea98e26610e4ee62.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:51,191 INFO tsd.data.openimages: downloaded ea98e26610e4ee62.jpg (450253 bytes)
+2026-11-19 06:42:51,191 INFO tsd.data.openimages: skipped eaaedc847347df2f.jpg (96387 bytes)
+2026-11-19 06:42:51,191 INFO tsd.data.openimages: skipped eadfa36847d10308.jpg (188788 bytes)
+2026-11-19 06:42:51,307 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/eae3a48ebef0f65e.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:51,383 INFO tsd.data.openimages: downloaded eae3a48ebef0f65e.jpg (383978 bytes)
+2026-11-19 06:42:51,383 INFO tsd.data.openimages: skipped eaff4ea720f4181e.jpg (127599 bytes)
+2026-11-19 06:42:51,384 INFO tsd.data.openimages: skipped ee0505f54863a31c.jpg (706494 bytes)
+2026-11-19 06:42:51,506 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/ef877d8e04dddacc.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:51,599 INFO tsd.data.openimages: downloaded ef877d8e04dddacc.jpg (430482 bytes)
+2026-11-19 06:42:51,599 INFO tsd.data.openimages: skipped efaa0ce551058199.jpg (126166 bytes)
+2026-11-19 06:42:51,600 INFO tsd.data.openimages: skipped efac4488147bcaa4.jpg (590248 bytes)
+2026-11-19 06:42:51,723 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/f150f7bcc9ca2667.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:51,729 INFO tsd.data.openimages: downloaded f150f7bcc9ca2667.jpg (134234 bytes)
+2026-11-19 06:42:51,866 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/f1760966a9e2f66b.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:51,870 INFO tsd.data.openimages: downloaded f1760966a9e2f66b.jpg (224545 bytes)
+2026-11-19 06:42:51,982 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/f1d0ad003a23acb6.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:51,983 INFO tsd.data.openimages: downloaded f1d0ad003a23acb6.jpg (194563 bytes)
+2026-11-19 06:42:52,118 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/f292ccf958e26354.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:52,122 INFO tsd.data.openimages: downloaded f292ccf958e26354.jpg (151766 bytes)
+2026-11-19 06:42:52,224 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/f491a2c1716508fe.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:52,419 INFO tsd.data.openimages: downloaded f491a2c1716508fe.jpg (882296 bytes)
+2026-11-19 06:42:52,419 INFO tsd.data.openimages: skipped f4a14ed159d9a251.jpg (86973 bytes)
+2026-11-19 06:42:52,539 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/f53093425725ba4c.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:52,544 INFO tsd.data.openimages: downloaded f53093425725ba4c.jpg (174049 bytes)
+2026-11-19 06:42:52,544 INFO tsd.data.openimages: skipped f5c34a3ee9a0860f.jpg (104336 bytes)
+2026-11-19 06:42:52,545 INFO tsd.data.openimages: skipped f6199f9633be7c5d.jpg (248860 bytes)
+2026-11-19 06:42:52,649 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/f684040cce2bed8e.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:52,654 INFO tsd.data.openimages: downloaded f684040cce2bed8e.jpg (282074 bytes)
+2026-11-19 06:42:52,758 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/f79850c2fd22a19f.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:52,760 INFO tsd.data.openimages: downloaded f79850c2fd22a19f.jpg (90534 bytes)
+2026-11-19 06:42:52,861 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/f80e9407245bd6e2.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:52,865 INFO tsd.data.openimages: downloaded f80e9407245bd6e2.jpg (296274 bytes)
+2026-11-19 06:42:52,865 INFO tsd.data.openimages: skipped f84d977383738e28.jpg (82924 bytes)
+2026-11-19 06:42:52,865 INFO tsd.data.openimages: skipped f9796848b90791a9.jpg (176068 bytes)
+2026-11-19 06:42:52,866 INFO tsd.data.openimages: skipped fa71959273ea204c.jpg (245585 bytes)
+2026-11-19 06:42:52,998 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/fb31837566ede8b1.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:53,001 INFO tsd.data.openimages: downloaded fb31837566ede8b1.jpg (245476 bytes)
+2026-11-19 06:42:53,002 INFO tsd.data.openimages: skipped fc4ac866c71b1ab5.jpg (241224 bytes)
+2026-11-19 06:42:53,103 INFO httpx: HTTP Request: GET https://open-images-dataset.s3.amazonaws.com/test/fce51362074d20a7.jpg "HTTP/1.1 200 OK"
+2026-11-19 06:42:53,109 INFO tsd.data.openimages: downloaded fce51362074d20a7.jpg (155547 bytes)
+2026-11-19 06:42:53,109 INFO tsd.data.openimages: skipped fd9057ccc7dee19f.jpg (133846 bytes)

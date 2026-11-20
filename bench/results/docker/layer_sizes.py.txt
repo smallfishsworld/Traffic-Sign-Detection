@@ -1,0 +1,47 @@
+"""Sizes inside an image tar written by `docker save` (read from stdin, nothing is written to disk):
+every file's stored size and, for gzip-compressed blobs (the layers), the uncompressed size,
+counted by decompressing in chunks."""
+
+import sys
+import tarfile
+import zlib
+
+CHUNK = 1 << 20
+
+
+def gunzipped_size(fh, head: bytes) -> int:
+    total, data = 0, head
+    d = zlib.decompressobj(16 + zlib.MAX_WBITS)
+    while True:
+        while data:
+            total += len(d.decompress(data))
+            data = d.unused_data  # a second gzip member, if any
+            if data:
+                total += len(d.flush())
+                d = zlib.decompressobj(16 + zlib.MAX_WBITS)
+        data = fh.read(CHUNK)
+        if not data:
+            return total + len(d.flush())
+
+
+stored_all = stored_gz = unpacked_gz = n_gz = 0
+rows = []
+with tarfile.open(fileobj=sys.stdin.buffer, mode="r|") as tar:
+    for member in tar:
+        if not member.isfile():
+            continue
+        fh = tar.extractfile(member)
+        head = fh.read(2) if fh else b""
+        stored_all += member.size
+        if head == b"\x1f\x8b":
+            size = gunzipped_size(fh, head)
+            n_gz += 1
+            stored_gz += member.size
+            unpacked_gz += size
+            rows.append((member.size, size, member.name))
+        else:
+            rows.append((member.size, None, member.name))
+for stored, size, name in sorted(rows, reverse=True)[:12]:
+    print(f"{stored:>12} stored  {'' if size is None else f'{size:>12} uncompressed'}  {name}")
+print(f"files: {len(rows)}, stored bytes in the tar: {stored_all}")
+print(f"gzip layers: {n_gz}, compressed {stored_gz} bytes, uncompressed {unpacked_gz} bytes")

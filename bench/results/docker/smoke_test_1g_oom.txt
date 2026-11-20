@@ -1,0 +1,174 @@
+# Smoke test of tsd-serve:a45e982 (lock: /home/user/work/bench.lock, held by flock for this script)
+$ date -u +%FT%TZ
+2026-11-19T12:04:33Z
+
+$ docker image inspect --format id={{.Id}} created={{.Created}} size={{.Size}} user={{.Config.User}} labels={{.Config.Labels}} tsd-serve:a45e982
+
+template parsing error: template: :1:85: executing "" at <.Config.Labels>: map has no entry for key "Labels"
+
+## Image size
+$ docker save tsd-serve:a45e982 | nice -n 19 gzip -c | wc -c   # compressed bytes
+199929753
+
+$ docker save tsd-serve:a45e982 | wc -c   # uncompressed tar bytes
+201208320
+
+$ docker history --format {{.Size}}\t{{.CreatedBy}} tsd-serve:a45e982
+0B	CMD ["tsd" "serve"]
+0B	HEALTHCHECK &{["CMD-SHELL" "python -c \"impo…
+0B	EXPOSE map[8000/tcp:{}]
+0B	USER tsd
+4.1kB	WORKDIR /app
+0B	ENV PATH=/app/.venv/bin:/usr/local/bin:/usr/…
+474MB	COPY /app/.venv /app/.venv # buildkit
+69.6kB	RUN /bin/sh -c useradd --create-home --uid 1…
+0B	CMD ["python3"]
+16.4kB	RUN /bin/sh -c set -eux;  for src in idle3 p…
+45MB	RUN /bin/sh -c set -eux;   savedAptMark="$(a…
+0B	ENV PYTHON_SHA256=b5796915dc45ff745cfb4e990a…
+0B	ENV PYTHON_VERSION=3.12.16
+0B	ENV GPG_KEY=7169605F62C751356D054A26A821E680…
+9.68MB	RUN /bin/sh -c set -eux;  apt-get update;  a…
+0B	ENV LANG=C.UTF-8
+0B	ENV PATH=/usr/local/bin:/usr/local/sbin:/usr…
+85.3MB	# debian.sh --arch 'amd64' out/ 'bookworm' '…
+
+$ docker images tsd-serve:a45e982
+IMAGE               ID             DISK USAGE   CONTENT SIZE   EXTRA
+tsd-serve:a45e982   9a02567e0be4        815MB          201MB        
+
+$ docker run --rm --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 1g --entrypoint sh tsd-serve:a45e982 -c du -sm /app/.venv/lib/python3.12/site-packages/* | sort -n | tail -6; du -sm /app/.venv
+15	/app/.venv/lib/python3.12/site-packages/pillow.libs
+28	/app/.venv/lib/python3.12/site-packages/numpy.libs
+30	/app/.venv/lib/python3.12/site-packages/numpy
+79	/app/.venv/lib/python3.12/site-packages/cv2
+93	/app/.venv/lib/python3.12/site-packages/opencv_python_headless.libs
+178	/app/.venv/lib/python3.12/site-packages/openvino
+452	/app/.venv
+
+## The CI docker job's checks (no model mounted)
+$ docker run --rm --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 1g tsd-serve:a45e982 tsd --help
+                                                                                
+ Usage: tsd [OPTIONS] COMMAND [ARGS]...                                         
+                                                                                
+ Command-line interface: ``tsd <command> --help`` documents every option.       
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --verbose  -v      <bool>                                                    │
+│ --help             <bool>  Show this message and exit.                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ───────────────────────────────────────────────────────────────────╮
+│ tt100k        Convert TT100K annotations to a YOLO dataset (train / val /    │
+│               test).                                                         │
+│ openimages    Build the Open Images traffic-sign/stop-sign/traffic-light     │
+│               evaluation set.                                                │
+│ fetch-assets  Download the pinned YOLO11 weights and the COCO128 calibration │
+│               images (once).                                                 │
+│ export        Export to ONNX (dynamic batch) and OpenVINO IR (FP32), then    │
+│               gate on parity with PyTorch:                                   │
+│               the exports are written to a staging directory inside OUT_DIR  │
+│               and moved into place only if                                   │
+│               both runtimes' raw outputs and detections are within           │
+│               ``tsd.infer.export.PARITY_TOLERANCE``;                         │
+│               otherwise nothing is installed and the exit status is 1. ``tsd │
+│               parity`` re-checks exports                                     │
+│               that are already in place.                                     │
+│ parity        Check-only: run the export parity gate on exports that are     │
+│               already in place (the files a                                  │
+│               benchmark or the service uses), without exporting. The report  │
+│               records every compared                                         │
+│               file's SHA-256; the exit status is 1 if either export is       │
+│               outside the tolerance.                                         │
+│ quantize      Post-training INT8 quantization (NNCF) of an OpenVINO IR.      │
+│ eval          mAP50 / mAP50-95 with 95% bootstrap intervals on the Open      │
+│               Images evaluation set.                                         │
+│ serve         Run the HTTP service (settings from TSD_* environment          │
+│               variables; options override).                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+$ docker run --rm --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 1g tsd-serve:a45e982 python -c import tsd.serve.app, openvino, fastapi; print('imports ok')
+imports ok
+
+## Service with defaults (the compose security settings)
+$ docker run -d --name tsd-smoke --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=8799 -e TSD_THREADS=2 -v /home/user/work/Traffic-Sign-Detection/models:/models:ro --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 1g tsd-serve:a45e982
+df235c178c7255c11d2e09603f697dbda849ac9ec84e4c2a82a7a62ad5c0a0eb
+
+NOT HEALTHY
+$ docker inspect --format health={{.State.Health.Status}} user={{.Config.User}} readonly={{.HostConfig.ReadonlyRootfs}} capdrop={{.HostConfig.CapDrop}} secopt={{.HostConfig.SecurityOpt}} tmpfs={{.HostConfig.Tmpfs}} tsd-smoke
+health=unhealthy user=tsd readonly=true capdrop=[ALL] secopt=[no-new-privileges:true] tmpfs=map[/tmp:]
+
+$ docker exec tsd-smoke id
+Error response from daemon: container df235c178c7255c11d2e09603f697dbda849ac9ec84e4c2a82a7a62ad5c0a0eb is not running
+
+$ docker exec tsd-smoke sh -c touch /app/x 2>&1; touch /tmp/x && echo "/tmp writable (tmpfs)"
+Error response from daemon: container df235c178c7255c11d2e09603f697dbda849ac9ec84e4c2a82a7a62ad5c0a0eb is not running
+
+$ curl -sS --noproxy * http://127.0.0.1:8799/healthz
+curl: (7) Failed to connect to 127.0.0.1 port 8799 after 0 ms: Couldn't connect to server
+
+$ curl -sS --noproxy * -F image=@/home/user/work/Traffic-Sign-Detection/data/openimages-traffic/images/validation/05d4a1a8d2d10d3d.jpg http://127.0.0.1:8799/v1/detect
+curl: (7) Failed to connect to 127.0.0.1 port 8799 after 0 ms: Couldn't connect to server
+
+$ ls -l /home/user/work/Traffic-Sign-Detection/data/openimages-traffic/images/validation/0660c06266751279.jpg
+-rw-r--r-- 2 root root 1133053 Nov 19 00:56 /home/user/work/Traffic-Sign-Detection/data/openimages-traffic/images/validation/0660c06266751279.jpg
+
+$ curl -sS --noproxy * -F image=@/home/user/work/Traffic-Sign-Detection/data/openimages-traffic/images/validation/0660c06266751279.jpg http://127.0.0.1:8799/v1/detect
+curl: (7) Failed to connect to 127.0.0.1 port 8799 after 0 ms: Couldn't connect to server
+
+$ curl -sS --noproxy * -o /dev/null -w %{http_code}\n -F image=@/home/user/work/Traffic-Sign-Detection/README.md http://127.0.0.1:8799/v1/detect
+curl: (7) Failed to connect to 127.0.0.1 port 8799 after 0 ms: Couldn't connect to server
+000
+
+$ /home/user/work/Traffic-Sign-Detection/.venv/bin/python -I /home/user/work/Traffic-Sign-Detection/bench/http_checks.py --url http://127.0.0.1:8799 --image /home/user/work/Traffic-Sign-Detection/data/openimages-traffic/images/validation/05d4a1a8d2d10d3d.jpg
+Traceback (most recent call last):
+  File "/home/user/work/Traffic-Sign-Detection/bench/http_checks.py", line 117, in <module>
+    main()
+  File "/home/user/work/Traffic-Sign-Detection/bench/http_checks.py", line 85, in main
+    with connect(host, port) as s:  # 411: headers only, chunked, no Content-Length
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/user/work/Traffic-Sign-Detection/bench/http_checks.py", line 61, in connect
+    return socket.create_connection((host, port), timeout=30)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+$ sh -c curl -sS --noproxy '*' http://127.0.0.1:8799/metrics | grep -E '^tsd_(requests_total|rejected_total|batch_size_count|model_info)'
+curl: (7) Failed to connect to 127.0.0.1 port 8799 after 0 ms: Couldn't connect to server
+
+$ docker stats --no-stream --format {{.MemUsage}} tsd-smoke
+0B / 0B
+
+## Service with TSD_MAX_INFLIGHT=1 (admission limit)
+$ docker run -d --name tsd-smoke --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=8799 -e TSD_THREADS=2 -e TSD_MAX_INFLIGHT=1 -v /home/user/work/Traffic-Sign-Detection/models:/models:ro --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 1g tsd-serve:a45e982
+7c776c4733cccd17debd46073bdb407f0e3f10f451810c327cf53b3189e080c5
+
+NOT HEALTHY
+$ curl -sS --noproxy * http://127.0.0.1:8799/healthz
+curl: (7) Failed to connect to 127.0.0.1 port 8799 after 0 ms: Couldn't connect to server
+
+$ /home/user/work/Traffic-Sign-Detection/.venv/bin/python -I /home/user/work/Traffic-Sign-Detection/bench/http_checks.py --url http://127.0.0.1:8799 --image /home/user/work/Traffic-Sign-Detection/data/openimages-traffic/images/validation/05d4a1a8d2d10d3d.jpg --expect-429
+Traceback (most recent call last):
+  File "/home/user/work/Traffic-Sign-Detection/bench/http_checks.py", line 117, in <module>
+    main()
+  File "/home/user/work/Traffic-Sign-Detection/bench/http_checks.py", line 85, in main
+    with connect(host, port) as s:  # 411: headers only, chunked, no Content-Length
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/user/work/Traffic-Sign-Detection/bench/http_checks.py", line 61, in connect
+    return socket.create_connection((host, port), timeout=30)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+$ sh -c curl -sS --noproxy '*' http://127.0.0.1:8799/metrics | grep -E '^tsd_(requests_total|rejected_total)'
+curl: (7) Failed to connect to 127.0.0.1 port 8799 after 0 ms: Couldn't connect to server
+
+$ date -u +%FT%TZ
+2026-11-19T12:10:58Z
+

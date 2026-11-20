@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+# Run under: flock /home/user/work/bench.lock timeout 900 bash smoke.sh <image tag> <out dir>
+# Sizes and a smoke test of the image with the compose settings on the command line (2 CPUs,
+# 2 GiB: the 1 GiB of the first compose file got the service OOM-killed, smoke_test_1g_oom.txt).
+set -u -o pipefail
+IMG=$1; OUT=$2
+R=/home/user/work/Traffic-Sign-Detection
+PORT=8799
+V=$R/data/openimages-traffic/images/validation/05d4a1a8d2d10d3d.jpg   # a stop sign (360,743 bytes)
+BIG=$R/data/openimages-traffic/images/validation/0660c06266751279.jpg  # 1,133,053 bytes (> 1 MB)
+run() { echo "\$ $*"; "$@" 2>&1; echo; }
+SEC=(--read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 2g)
+wait_healthy() {
+  for _ in $(seq 1 90); do
+    [ "$(docker inspect --format '{{.State.Health.Status}}' "$1" 2>/dev/null)" = healthy ] && return 0
+    python3 -c "import time; time.sleep(2)"
+  done
+  return 1
+}
+{
+echo "# Smoke test of $IMG (lock: /home/user/work/bench.lock, held by flock for this script)"
+run date -u +%FT%TZ
+run docker image inspect --format 'id={{.Id}} created={{.Created}} size={{.Size}} user={{.Config.User}}' "$IMG"
+echo "## Image size"
+echo "\$ docker save $IMG | nice -n 19 gzip -c | wc -c   # bytes after gzip"
+docker save "$IMG" | nice -n 19 gzip -c | wc -c; echo
+echo "\$ docker save $IMG | wc -c   # bytes of the saved tar, as stored (see the next command)"
+docker save "$IMG" | wc -c; echo
+echo "\$ docker save $IMG | nice -n 19 python3 -I layer_sizes.py   # every blob; gzip layers decompressed and counted"
+docker save "$IMG" | nice -n 19 python3 -I "$OUT/layer_sizes.py"; echo
+run sh -c "docker info 2>/dev/null | grep -E 'Storage Driver|driver-type'"
+run docker history --format '{{.Size}}\t{{.CreatedBy}}' "$IMG"
+run docker images "$IMG"
+run docker run --rm "${SEC[@]}" --entrypoint sh "$IMG" -c "du -sm /app/.venv/lib/python3.12/site-packages/* | sort -n | tail -6; du -sm /app/.venv"
+echo "## The CI docker job's checks (no model mounted)"
+run docker run --rm "${SEC[@]}" "$IMG" tsd --help
+run docker run --rm "${SEC[@]}" "$IMG" python -c "import tsd.serve.app, openvino, fastapi; print('imports ok')"
+echo "## Service with defaults (the compose security settings)"
+docker rm -f tsd-smoke >/dev/null 2>&1
+run docker run -d --name tsd-smoke --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=$PORT -e TSD_THREADS=2 -v "$R/models:/models:ro" "${SEC[@]}" "$IMG"
+wait_healthy tsd-smoke && echo "healthy" || echo "NOT HEALTHY"
+run docker inspect --format 'health={{.State.Health.Status}} user={{.Config.User}} readonly={{.HostConfig.ReadonlyRootfs}} capdrop={{.HostConfig.CapDrop}} secopt={{.HostConfig.SecurityOpt}} tmpfs={{.HostConfig.Tmpfs}}' tsd-smoke
+run docker exec tsd-smoke id
+run docker exec tsd-smoke sh -c 'touch /app/x 2>&1; touch /tmp/x && echo "/tmp writable (tmpfs)"'
+run curl -sS --noproxy '*' http://127.0.0.1:$PORT/healthz
+run curl -sS --noproxy '*' -F image=@$V http://127.0.0.1:$PORT/v1/detect
+echo "\$ ls -l $BIG"; ls -l "$BIG"; echo
+run curl -sS --noproxy '*' -F image=@$BIG http://127.0.0.1:$PORT/v1/detect
+run curl -sS --noproxy '*' -o /dev/null -w '%{http_code}\n' -F image=@$R/README.md http://127.0.0.1:$PORT/v1/detect
+run $R/.venv/bin/python -I $R/bench/http_checks.py --url http://127.0.0.1:$PORT --image $V
+run sh -c "curl -sS --noproxy '*' http://127.0.0.1:$PORT/metrics | grep -E '^tsd_(requests_total|rejected_total|batch_size_count|model_info)'"
+run docker stats --no-stream --format '{{.MemUsage}}' tsd-smoke
+run docker exec tsd-smoke sh -c 'echo peak_bytes=$(cat /sys/fs/cgroup/memory/memory.max_usage_in_bytes) limit_bytes=$(cat /sys/fs/cgroup/memory/memory.limit_in_bytes)'
+run docker inspect --format 'oom_killed={{.State.OOMKilled}} restarts={{.RestartCount}}' tsd-smoke
+docker rm -f tsd-smoke >/dev/null 2>&1
+echo "## Service with TSD_MAX_INFLIGHT=1 (admission limit)"
+run docker run -d --name tsd-smoke --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=$PORT -e TSD_THREADS=2 -e TSD_MAX_INFLIGHT=1 -v "$R/models:/models:ro" "${SEC[@]}" "$IMG"
+wait_healthy tsd-smoke && echo "healthy" || echo "NOT HEALTHY"
+run curl -sS --noproxy '*' http://127.0.0.1:$PORT/healthz
+run $R/.venv/bin/python -I $R/bench/http_checks.py --url http://127.0.0.1:$PORT --image $V --expect-429
+run sh -c "curl -sS --noproxy '*' http://127.0.0.1:$PORT/metrics | grep -E '^tsd_(requests_total|rejected_total)'"
+docker rm -f tsd-smoke >/dev/null 2>&1
+run date -u +%FT%TZ
+} > "$OUT/smoke_test.txt" 2>&1

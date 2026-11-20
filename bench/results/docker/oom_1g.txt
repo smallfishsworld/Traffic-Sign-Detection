@@ -1,0 +1,62 @@
+# tsd-serve:a45e982 under a 1 GiB memory limit, 5 attempts
+$ date -u +%FT%TZ
+2026-11-19T12:56:32Z
+
+## attempt 1
+$ docker run -d --name tsd-oom1g --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=8797 -e TSD_THREADS=2 -v /home/user/work/Traffic-Sign-Detection/models:/models:ro --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 1g --cpu-shares 2 tsd-serve:a45e982
+f1cbec7948295dca612709c04449a6e30ff23393bdeee721ac3b8a5898a57421
+
+$ docker inspect --format running={{.State.Running}} health={{.State.Health.Status}} oom_killed={{.State.OOMKilled}} exit_code={{.State.ExitCode}} started={{.State.StartedAt}} finished={{.State.FinishedAt}} tsd-oom1g
+running=false health=unhealthy oom_killed=true exit_code=137 started=2026-11-19T12:56:32.193643997Z finished=2026-11-19T12:56:40.267570637Z
+
+$ docker logs tsd-oom1g
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+
+## attempt 2
+$ docker run -d --name tsd-oom1g --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=8797 -e TSD_THREADS=2 -v /home/user/work/Traffic-Sign-Detection/models:/models:ro --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 1g --cpu-shares 2 tsd-serve:a45e982
+2315e7c7ea29ed7b8df84be51b74d3292ef6c34c85d80d34015db34c2b6b6e18
+
+$ docker inspect --format running={{.State.Running}} health={{.State.Health.Status}} oom_killed={{.State.OOMKilled}} exit_code={{.State.ExitCode}} started={{.State.StartedAt}} finished={{.State.FinishedAt}} tsd-oom1g
+running=false health=unhealthy oom_killed=true exit_code=137 started=2026-11-19T12:56:40.838618337Z finished=2026-11-19T12:56:49.985508048Z
+
+$ docker logs tsd-oom1g
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+
+## attempt 3
+$ docker run -d --name tsd-oom1g --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=8797 -e TSD_THREADS=2 -v /home/user/work/Traffic-Sign-Detection/models:/models:ro --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 1g --cpu-shares 2 tsd-serve:a45e982
+645a10d7c4cd67585052244d74b2f87c600a6365ad7c083104ef567d85f8b6e2
+
+$ docker inspect --format running={{.State.Running}} health={{.State.Health.Status}} oom_killed={{.State.OOMKilled}} exit_code={{.State.ExitCode}} started={{.State.StartedAt}} finished={{.State.FinishedAt}} tsd-oom1g
+running=false health=unhealthy oom_killed=true exit_code=137 started=2026-11-19T12:56:51.436026165Z finished=2026-11-19T12:57:00.533074224Z
+
+$ docker logs tsd-oom1g
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+
+## attempt 4
+$ docker run -d --name tsd-oom1g --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=8797 -e TSD_THREADS=2 -v /home/user/work/Traffic-Sign-Detection/models:/models:ro --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 1g --cpu-shares 2 tsd-serve:a45e982
+036deb5fba98fc167c1d5a6800bd94d87daae121f296f9c2d228e52b60db1349
+
+$ docker inspect --format running={{.State.Running}} health={{.State.Health.Status}} oom_killed={{.State.OOMKilled}} exit_code={{.State.ExitCode}} started={{.State.StartedAt}} finished={{.State.FinishedAt}} tsd-oom1g
+running=false health=unhealthy oom_killed=true exit_code=137 started=2026-11-19T12:57:02.060594978Z finished=2026-11-19T12:57:11.676307025Z
+
+$ docker logs tsd-oom1g
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+
+## attempt 5
+$ docker run -d --name tsd-oom1g --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=8797 -e TSD_THREADS=2 -v /home/user/work/Traffic-Sign-Detection/models:/models:ro --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 1g --cpu-shares 2 tsd-serve:a45e982
+d4a5ec30888d1b71c6292fe00a810c81e0227797d0b354466516d5d17e2aa59a
+
+$ docker inspect --format running={{.State.Running}} health={{.State.Health.Status}} oom_killed={{.State.OOMKilled}} exit_code={{.State.ExitCode}} started={{.State.StartedAt}} finished={{.State.FinishedAt}} tsd-oom1g
+running=false health=unhealthy oom_killed=true exit_code=137 started=2026-11-19T12:57:12.672904756Z finished=2026-11-19T12:57:21.876918113Z
+
+$ docker logs tsd-oom1g
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+
+$ date -u +%FT%TZ
+2026-11-19T12:57:23Z
+

@@ -1,0 +1,6 @@
+# Box-less images with a verified-negative label for a data-set class (the candidates of the
+# verified-negatives variant), and how many of them also have a positive verified label (the
+# builder drops those). Command, from the repository root:
+# nice -n 19 python3 -I bench/results/network/negative_candidates.py.txt data/openimages/metadata /home/user/work/oi
+validation boxed 52 neg-only-candidates 40 with a positive too 0 Counter()
+test boxed 167 neg-only-candidates 121 with a positive too 0 Counter()

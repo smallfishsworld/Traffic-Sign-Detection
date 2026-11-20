@@ -1,0 +1,250 @@
+{
+  "label": "openvino-int8-bf16",
+  "model": "models/yolo11n_openvino_int8/yolo11n.xml",
+  "precision_hint": "bf16",
+  "threads": 4,
+  "runs": 100,
+  "image": "01d3fdb0f6383edb.jpg",
+  "sum_of_node_times_ms": {
+    "median": 18.453,
+    "min": 18.205
+  },
+  "request_wall_ms": {
+    "median": 20.284,
+    "min": 17.787
+  },
+  "by_precision": [
+    {
+      "name": "I8",
+      "ms_per_inference": 13.607,
+      "share": 0.7373
+    },
+    {
+      "name": "BF16",
+      "ms_per_inference": 2.753,
+      "share": 0.1492
+    },
+    {
+      "name": "F32",
+      "ms_per_inference": 2.094,
+      "share": 0.1135
+    }
+  ],
+  "executed_nodes_by_precision": {
+    "F32": 34,
+    "I8": 149,
+    "BF16": 44
+  },
+  "by_node_type": [
+    {
+      "name": "Convolution",
+      "ms_per_inference": 11.364,
+      "share": 0.6158
+    },
+    {
+      "name": "Reorder",
+      "ms_per_inference": 3.116,
+      "share": 0.1689
+    },
+    {
+      "name": "FakeQuantize",
+      "ms_per_inference": 0.988,
+      "share": 0.0535
+    },
+    {
+      "name": "Concat",
+      "ms_per_inference": 0.754,
+      "share": 0.0409
+    },
+    {
+      "name": "GroupConvolution",
+      "ms_per_inference": 0.548,
+      "share": 0.0297
+    },
+    {
+      "name": "VariadicSplit",
+      "ms_per_inference": 0.442,
+      "share": 0.024
+    },
+    {
+      "name": "MatMul",
+      "ms_per_inference": 0.312,
+      "share": 0.0169
+    },
+    {
+      "name": "Softmax",
+      "ms_per_inference": 0.22,
+      "share": 0.0119
+    },
+    {
+      "name": "Add",
+      "ms_per_inference": 0.189,
+      "share": 0.0103
+    },
+    {
+      "name": "Sigmoid",
+      "ms_per_inference": 0.165,
+      "share": 0.0089
+    },
+    {
+      "name": "Interpolate",
+      "ms_per_inference": 0.088,
+      "share": 0.0048
+    },
+    {
+      "name": "MaxPool",
+      "ms_per_inference": 0.067,
+      "share": 0.0036
+    },
+    {
+      "name": "Transpose",
+      "ms_per_inference": 0.055,
+      "share": 0.003
+    },
+    {
+      "name": "Subtract",
+      "ms_per_inference": 0.054,
+      "share": 0.0029
+    },
+    {
+      "name": "Convert",
+      "ms_per_inference": 0.05,
+      "share": 0.0027
+    }
+  ],
+  "by_kernel": [
+    {
+      "name": "brgconv_avx512_amx_I8",
+      "ms_per_inference": 6.762,
+      "share": 0.3664
+    },
+    {
+      "name": "brgconv_avx512_amx_1x1_I8",
+      "ms_per_inference": 4.12,
+      "share": 0.2233
+    },
+    {
+      "name": "jit_uni_bf16",
+      "ms_per_inference": 1.872,
+      "share": 0.1014
+    },
+    {
+      "name": "jit_avx512_f32",
+      "ms_per_inference": 1.194,
+      "share": 0.0647
+    },
+    {
+      "name": "jit_uni_I8",
+      "ms_per_inference": 0.837,
+      "share": 0.0454
+    },
+    {
+      "name": "jit_avx512_I8",
+      "ms_per_inference": 0.591,
+      "share": 0.032
+    },
+    {
+      "name": "ref_I8",
+      "ms_per_inference": 0.463,
+      "share": 0.0251
+    },
+    {
+      "name": "ref_bf16",
+      "ms_per_inference": 0.459,
+      "share": 0.0249
+    },
+    {
+      "name": "jit_avx512_amx_1x1_I8",
+      "ms_per_inference": 0.435,
+      "share": 0.0236
+    },
+    {
+      "name": "jit_uni_f32",
+      "ms_per_inference": 0.337,
+      "share": 0.0183
+    },
+    {
+      "name": "ref_f32",
+      "ms_per_inference": 0.266,
+      "share": 0.0144
+    },
+    {
+      "name": "brgconv_avx512_dw_I8",
+      "ms_per_inference": 0.255,
+      "share": 0.0138
+    },
+    {
+      "name": "jit_avx512_bf16",
+      "ms_per_inference": 0.239,
+      "share": 0.0129
+    },
+    {
+      "name": "brgemm_avx512_f32",
+      "ms_per_inference": 0.231,
+      "share": 0.0125
+    },
+    {
+      "name": "brgemm_avx512_amx_bf16",
+      "ms_per_inference": 0.081,
+      "share": 0.0044
+    }
+  ],
+  "contamination": {
+    "other_processes_cores": 0.07,
+    "steal_cores": 0.057,
+    "own_cores": 3.603
+  },
+  "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+  "provenance": {
+    "git": {
+      "commit": "cfff803426aa0a2c8182944a8ecaa85fbc61295e",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "<scratch>/p3/wt_bench/bench/profile_ops.py --one openvino-int8-bf16 --model yolo11n --threads 4 --runs 100 --image <scratch>/p3/wt_bench/data/openimages-traffic/images/validation --result <scratch>/p3/wt_bench/bench/results/benchmarks/profile/yolo11n_openvino-int8-bf16.json",
+    "argv": [
+      "<scratch>/p3/wt_bench/bench/profile_ops.py",
+      "--one",
+      "openvino-int8-bf16",
+      "--model",
+      "yolo11n",
+      "--threads",
+      "4",
+      "--runs",
+      "100",
+      "--image",
+      "<scratch>/p3/wt_bench/data/openimages-traffic/images/validation",
+      "--result",
+      "<scratch>/p3/wt_bench/bench/results/benchmarks/profile/yolo11n_openvino-int8-bf16.json"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_bench",
+    "tsd_source": "<scratch>/p3/wt_bench/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "4",
+      "PYTHONPATH": "<scratch>/p3/wt_bench/src",
+      "TSD_PARENT_COMMAND": "python bench/profile_ops.py"
+    },
+    "recorded_unix": 1795072943.2,
+    "runtime_settings": {
+      "runtime": "openvino",
+      "INFERENCE_NUM_THREADS": "4",
+      "NUM_STREAMS": "1",
+      "INFERENCE_PRECISION_HINT": "<Type: 'bfloat16'>",
+      "PERFORMANCE_HINT": "LATENCY",
+      "ENABLE_CPU_PINNING": "True",
+      "ENABLE_HYPER_THREADING": "False",
+      "SCHEDULING_CORE_TYPE": "SchedulingCoreType.ANY_CORE",
+      "EXECUTION_MODE_HINT": "ExecutionMode.PERFORMANCE",
+      "OPTIMAL_NUMBER_OF_INFER_REQUESTS": "1"
+    }
+  },
+  "attempt": 2,
+  "contaminated": false
+}

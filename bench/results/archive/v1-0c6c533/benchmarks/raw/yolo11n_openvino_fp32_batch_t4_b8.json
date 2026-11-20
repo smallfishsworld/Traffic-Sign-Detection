@@ -1,0 +1,83 @@
+{
+  "model": "models/yolo11n_openvino_fp32/yolo11n.xml",
+  "backend": "openvino-fp32",
+  "threads": 4,
+  "mode": "batch",
+  "batch_size": 8,
+  "warmup": 3,
+  "iterations": 30,
+  "images": [
+    "0135b7a0b1010c08.jpg",
+    "08bf84bb9662086d.jpg",
+    "1cd04797f44a04a1.jpg",
+    "2b3e4a4919cd47b4.jpg",
+    "3b17ab5107bef9bb.jpg",
+    "548c1805b8e211bd.jpg",
+    "644395d01b541528.jpg",
+    "79445a6e49ee53b9.jpg",
+    "8406354c09070f9b.jpg",
+    "989532067e3483bb.jpg",
+    "a70e22ce2700b5a3.jpg",
+    "b657fb701244d7c6.jpg",
+    "c8b3ee6984721a12.jpg",
+    "d67533156d52e10c.jpg",
+    "def75350f572342e.jpg",
+    "ee267b62fd17a9b1.jpg"
+  ],
+  "model_size_bytes": 10913648,
+  "first_call_ms": 401.6381659998842,
+  "e2e": {
+    "n": 30,
+    "mean_ms": 229.57556876661633,
+    "std_ms": 31.15793061741199,
+    "min_ms": 203.99876200008293,
+    "p50_ms": 216.71879850009645,
+    "p95_ms": 296.0548538499324,
+    "p99_ms": 315.53905329973077,
+    "max_ms": 320.8555449996311
+  },
+  "infer": {
+    "n": 30,
+    "mean_ms": 195.51272693330853,
+    "std_ms": 30.262491550831896,
+    "min_ms": 172.2122810001565,
+    "p50_ms": 183.932818500125,
+    "p95_ms": 258.9508721500351,
+    "p99_ms": 281.37254435009254,
+    "max_ms": 287.5393320000512
+  },
+  "throughput_images_per_s": 36.91419505537928,
+  "started_unix": 1795053025.9,
+  "seconds": 7.7,
+  "loadavg_before": [
+    0.92,
+    1.08,
+    1.24
+  ],
+  "loadavg_after": [
+    0.93,
+    1.08,
+    1.24
+  ],
+  "contamination": {
+    "other_processes_cores": 0.087,
+    "steal_cores": 0.026
+  },
+  "cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "opencv-python-headless": "5.1.0.95",
+    "torch": "2.15.0",
+    "onnxruntime": "1.32.0",
+    "openvino": "2026.4.1",
+    "tsd": "0.1.0"
+  },
+  "nms": {
+    "conf_threshold": 0.25,
+    "iou": 0.5
+  },
+  "precision_hint": "f32",
+  "attempt": 5,
+  "contaminated": false
+}

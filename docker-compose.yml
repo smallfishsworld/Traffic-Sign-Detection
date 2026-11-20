@@ -1,0 +1,30 @@
+# docker compose up --build  ->  http://127.0.0.1:8000 (published on loopback only)
+# Needs the INT8 model in ./models (tsd fetch-assets; tsd export models/yolo11n.pt;
+# tsd quantize models/yolo11n_openvino_fp32/yolo11n.xml).
+services:
+  tsd:
+    build: .
+    image: tsd-serve:0.1.0
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./models:/models:ro
+    environment:
+      TSD_MODEL_PATH: /models/yolo11n_openvino_int8/yolo11n.xml
+      TSD_THREADS: "2"
+      TSD_MAX_BATCH_SIZE: "8"
+      TSD_MAX_WAIT_MS: "5"
+      TSD_QUEUE_SIZE: "64"
+    cpus: 2
+    # The start-up warm-up of every batch size (1-8) peaks at 1.08 GiB in the container
+    # (bench/results/docker/memory_probe.txt); under 1 GiB, 9 of 10 starts were OOM-killed
+    # (oom_1g*.txt). Uploads over 1 MB are spooled to the /tmp tmpfs, which counts against it.
+    mem_limit: 2g
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped

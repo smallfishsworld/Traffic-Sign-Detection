@@ -1,0 +1,59 @@
+"""Are the deployed model files the ones the committed results used?
+
+Run from the repository root: python -I bench/results/parity/check_deployed_files.py.txt
+* evaluation reports (bench/results/eval/*.json) record each model file's SHA-256;
+* the parity reports (bench/results/parity/parity_*.json) record SHA-256 values;
+* benchmark raw files (bench/results/benchmarks/raw/*.json, attempts included) record the model
+  path and its size in bytes only (they were written before raw files recorded hashes).
+Each recorded value is compared with the file in models/ now.
+"""
+import glob
+import hashlib
+import json
+from pathlib import Path
+
+
+def sha(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def files_of(model: Path) -> list[Path]:
+    return [model, model.with_suffix(".bin")] if model.suffix == ".xml" else [model]
+
+
+cache: dict[Path, str] = {}
+checked = mismatched = 0
+for report in sorted(glob.glob("bench/results/eval/*.json")):
+    for run in json.loads(Path(report).read_text())["runs"].values():
+        for path in files_of(Path(run["model"])):
+            cache.setdefault(path, sha(path))
+            checked += 1
+            if cache[path] != run["files_sha256"][path.name]:
+                mismatched += 1
+                print("SHA-256 MISMATCH", report, path)
+for report in sorted(glob.glob("bench/results/parity/parity_*.json")):
+    doc = json.loads(Path(report).read_text())
+    models = [Path("models") / doc["weights"], *map(Path, doc["checked"].values())]
+    for path in [f for m in models for f in files_of(m)]:
+        cache.setdefault(path, sha(path))
+        checked += 1
+        if cache[path] != doc["files_sha256"][path.name]:
+            mismatched += 1
+            print("SHA-256 MISMATCH", report, path)
+print(f"SHA-256: {checked} recorded values in eval and parity reports, {mismatched} differ")
+
+sizes = size_mismatch = 0
+for raw in sorted(glob.glob("bench/results/benchmarks/raw/*.json")):
+    doc = json.loads(Path(raw).read_text())
+    if "model_size_bytes" not in doc:
+        continue
+    model = Path(doc["model"])
+    sizes += 1
+    if sum(f.stat().st_size for f in files_of(model)) != doc["model_size_bytes"]:
+        size_mismatch += 1
+        print("SIZE MISMATCH", raw, model)
+print(f"sizes: {sizes} benchmark raw files with model_size_bytes, {size_mismatch} differ")
+print("deployed files now:")
+for path in sorted(Path("models").rglob("*")):
+    if path.suffix in (".pt", ".onnx", ".xml", ".bin"):
+        print(f"  {sha(path)}  {path.stat().st_size:>9}  {path}")

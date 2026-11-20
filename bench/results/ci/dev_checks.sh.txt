@@ -1,0 +1,31 @@
+#!/bin/bash
+# Checks in the full development environment (PyTorch, Ultralytics, the cached weights) for one
+# commit, from a clean worktree of it: ruff, the format check, strict mypy and the whole pytest
+# suite, under nice -n 19 with 2 threads. Each step's exit status is the command's own.
+# Usage: bash dev_checks.sh.txt <commit> > dev_checks_<commit>.log 2>&1
+set -u -o pipefail
+REPO=/home/user/work/Traffic-Sign-Detection
+S=<scratch>/p3
+COMMIT=$(git -C $REPO rev-parse --short "$1")
+WT=$S/wt_dev_$COMMIT
+VENV=$REPO/.venv   # the development environment (uv sync with every extra)
+rm -rf "$WT"; git -C $REPO worktree prune
+git -C $REPO worktree add -q --detach "$WT" "$COMMIT" || exit 1
+cd "$WT" || exit 1
+export PYTHONPATH=$WT/src TSD_TEST_WEIGHTS=$REPO/models/yolo11n.pt \
+  OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2
+echo "commit $(git rev-parse HEAD) in a clean worktree"; date -u
+echo '$ git status --porcelain   # before (empty = clean)'; git status --porcelain; echo "(end of status)"
+"$VENV/bin/python" -c "import importlib.util as u, sys; import tsd; print(sys.version.split()[0], 'tsd from', tsd.__file__); print('torch installed:', u.find_spec('torch') is not None, 'ultralytics installed:', u.find_spec('ultralytics') is not None)"
+echo "weights for the real-model tests: $TSD_TEST_WEIGHTS"
+echo '$ ruff check .'
+nice -n 19 "$VENV/bin/ruff" check . 2>&1 | tail -1; echo "RUFF_CHECK_EXIT ${PIPESTATUS[0]}"
+echo '$ ruff format --check .'
+nice -n 19 "$VENV/bin/ruff" format --check . 2>&1 | tail -1; echo "RUFF_FORMAT_EXIT ${PIPESTATUS[0]}"
+echo '$ mypy'
+nice -n 19 "$VENV/bin/mypy" 2>&1 | tail -2; echo "MYPY_EXIT ${PIPESTATUS[0]}"
+echo '$ pytest -q -rs'
+nice -n 19 "$VENV/bin/python" -m pytest -q -rs -p no:cacheprovider 2>&1 | tail -15
+echo "PYTEST_EXIT ${PIPESTATUS[0]}"
+echo '$ git status --porcelain   # after (the checks change no tracked file)'; git status --porcelain --untracked-files=no; echo "(end of status)"
+date -u

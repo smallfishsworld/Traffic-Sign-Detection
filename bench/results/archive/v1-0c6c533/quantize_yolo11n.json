@@ -1,0 +1,32 @@
+{
+  "model": "models/yolo11n_openvino_fp32/yolo11n.xml",
+  "calibration_dir": "data/calibration/coco128",
+  "calibration_eval_overlap": {
+    "pairs_compared": 28032,
+    "min_distance": 9,
+    "closest_pair": [
+      "000000000531.jpg",
+      "01e835e68b6af93d.jpg"
+    ],
+    "threshold": 10,
+    "fine_threshold": 40,
+    "candidates": [
+      {
+        "a": "000000000531.jpg",
+        "b": "01e835e68b6af93d.jpg",
+        "distance": 9,
+        "fine_distance": 53,
+        "aspect_log_ratio": 0.5754,
+        "duplicate": false
+      }
+    ]
+  },
+  "calibration_images": 128,
+  "preset": "mixed",
+  "ignore_head_decode": true,
+  "ignored_ops": 28,
+  "fake_quantize_ops": 109,
+  "nncf": "3.4.0",
+  "openvino": "2026.4.1",
+  "output": "models/yolo11n_openvino_int8/yolo11n.xml"
+}

@@ -1,0 +1,4051 @@
+{
+  "cpu": {
+    "model_name": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "cpus": 4,
+    "threads_per_core": 1,
+    "hypervisor": "KVM",
+    "flags": {
+      "avx2": true,
+      "avx512f": true,
+      "avx512_vnni": true,
+      "avx_vnni": true,
+      "avx512_bf16": true,
+      "amx_tile": true,
+      "amx_int8": true,
+      "amx_bf16": true
+    }
+  },
+  "accuracy_report": "bench/results/eval/coco_classes.json",
+  "measured_at_commits": [
+    "cfff803426aa0a2c8182944a8ecaa85fbc61295e"
+  ],
+  "any_dirty": false,
+  "aggregated_by": {
+    "command": "bench/run_benchmarks.py --aggregate-only",
+    "git": {
+      "commit": "8d47bd49e27009c4dbdd6d055fa4080e720b5eb2",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    }
+  },
+  "run_to_run": {
+    "configurations": 42,
+    "spread_median": 0.06227710808599526,
+    "spread_above_10pct": 8,
+    "largest": [
+      {
+        "family": "yolo11s",
+        "backend": "openvino-bf16",
+        "setting": "batch_t4_b8",
+        "p50_ms": [
+          252.2,
+          193.5,
+          194.0
+        ],
+        "spread": 0.3022679825783819
+      },
+      {
+        "family": "yolo11s",
+        "backend": "openvino-bf16",
+        "setting": "single_t4_b1",
+        "p50_ms": [
+          38.7,
+          30.6,
+          30.0
+        ],
+        "spread": 0.28207979110213705
+      },
+      {
+        "family": "yolo11n",
+        "backend": "openvino-fp32",
+        "setting": "single_t4_b1",
+        "p50_ms": [
+          31.0,
+          38.6,
+          33.7
+        ],
+        "spread": 0.2244838349295349
+      },
+      {
+        "family": "yolo11n",
+        "backend": "openvino-fp32-nopin",
+        "setting": "single_t4_b1",
+        "p50_ms": [
+          29.2,
+          35.3,
+          34.0
+        ],
+        "spread": 0.1786868412626538
+      },
+      {
+        "family": "yolo11s",
+        "backend": "openvino-int8",
+        "setting": "single_t1_b1",
+        "p50_ms": [
+          98.7,
+          84.8,
+          84.5
+        ],
+        "spread": 0.1678385964820099
+      }
+    ],
+    "fastest_per_round": [
+      {
+        "family": "yolo11n",
+        "setting": "batch_t4_b8",
+        "run": 1,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11n",
+        "setting": "batch_t4_b8",
+        "run": 2,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11n",
+        "setting": "batch_t4_b8",
+        "run": 3,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11n",
+        "setting": "single_t1_b1",
+        "run": 1,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11n",
+        "setting": "single_t1_b1",
+        "run": 2,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11n",
+        "setting": "single_t1_b1",
+        "run": 3,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11n",
+        "setting": "single_t4_b1",
+        "run": 1,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11n",
+        "setting": "single_t4_b1",
+        "run": 2,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11n",
+        "setting": "single_t4_b1",
+        "run": 3,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11s",
+        "setting": "batch_t4_b8",
+        "run": 1,
+        "fastest": "openvino-int8"
+      },
+      {
+        "family": "yolo11s",
+        "setting": "batch_t4_b8",
+        "run": 2,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11s",
+        "setting": "batch_t4_b8",
+        "run": 3,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11s",
+        "setting": "single_t1_b1",
+        "run": 1,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11s",
+        "setting": "single_t1_b1",
+        "run": 2,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11s",
+        "setting": "single_t1_b1",
+        "run": 3,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11s",
+        "setting": "single_t4_b1",
+        "run": 1,
+        "fastest": "openvino-int8"
+      },
+      {
+        "family": "yolo11s",
+        "setting": "single_t4_b1",
+        "run": 2,
+        "fastest": "openvino-bf16"
+      },
+      {
+        "family": "yolo11s",
+        "setting": "single_t4_b1",
+        "run": 3,
+        "fastest": "openvino-bf16"
+      }
+    ],
+    "fastest_counts": {
+      "openvino-bf16": 16,
+      "openvino-int8": 2
+    }
+  },
+  "rows": [
+    {
+      "family": "yolo11n",
+      "backend": "pytorch-fp32",
+      "model_size_bytes": 5613764,
+      "precision_hint": "f32",
+      "batch_t4_b8": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 456.2940270334366,
+          "p50_ms": 432.7305039996645,
+          "p95_ms": 519.2685327504478,
+          "p99_ms": 578.0075240697989,
+          "min_ms": 391.6420149998885,
+          "max_ms": 600.181044999772
+        },
+        "infer": {
+          "mean_ms": 404.3198777996319,
+          "p50_ms": 381.7806440001732,
+          "p95_ms": 478.6055903497981,
+          "p99_ms": 538.2526315506767,
+          "min_ms": 344.84963600152696,
+          "max_ms": 560.4906740009028
+        },
+        "e2e_p50_range_ms": [
+          409.4999455001016,
+          454.31313300014153
+        ],
+        "throughput_images_per_s": 18.487256909455596,
+        "throughput_range": [
+          17.609000090247243,
+          19.536022136046938
+        ],
+        "throughput_mean_images_per_s": 17.532554725757503,
+        "other_load_cores": 0.109,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 409.4999455001016,
+            "p95_ms": 519.2685327504478,
+            "p99_ms": 578.0075240697989,
+            "throughput_images_per_s": 19.536022136046938,
+            "other_load_cores": 0.109,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069201.5
+          },
+          {
+            "run": 2,
+            "p50_ms": 432.7305039996645,
+            "p95_ms": 579.7996215494093,
+            "p99_ms": 680.5597525403756,
+            "throughput_images_per_s": 18.487256909455596,
+            "other_load_cores": 0.106,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795070835.1
+          },
+          {
+            "run": 3,
+            "p50_ms": 454.31313300014153,
+            "p95_ms": 507.69661830145196,
+            "p99_ms": 511.5588437595761,
+            "throughput_images_per_s": 17.609000090247243,
+            "other_load_cores": 0.053,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071724.1
+          }
+        ]
+      },
+      "single_t1_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 123.93614635508129,
+          "p50_ms": 122.59843750052823,
+          "p95_ms": 138.07950405043806,
+          "p99_ms": 160.76721307064864,
+          "min_ms": 102.93593899950793,
+          "max_ms": 178.65907499981404
+        },
+        "infer": {
+          "mean_ms": 118.88489618999301,
+          "p50_ms": 117.52598400016723,
+          "p95_ms": 132.07244310133314,
+          "p99_ms": 154.65372344928247,
+          "min_ms": 98.58357799930673,
+          "max_ms": 171.19817699858686
+        },
+        "e2e_p50_range_ms": [
+          121.99159650117508,
+          124.63251450026291
+        ],
+        "throughput_images_per_s": 8.156710806332187,
+        "throughput_range": [
+          8.023588419199314,
+          8.197285949859403
+        ],
+        "throughput_mean_images_per_s": 8.06867108111435,
+        "other_load_cores": 0.124,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 121.99159650117508,
+            "p95_ms": 138.07950405043806,
+            "p99_ms": 155.42295148927224,
+            "throughput_images_per_s": 8.197285949859403,
+            "other_load_cores": 0.069,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069148.6
+          },
+          {
+            "run": 2,
+            "p50_ms": 124.63251450026291,
+            "p95_ms": 141.88120300023,
+            "p99_ms": 160.76721307064864,
+            "throughput_images_per_s": 8.023588419199314,
+            "other_load_cores": 0.124,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070727.2
+          },
+          {
+            "run": 3,
+            "p50_ms": 122.59843750052823,
+            "p95_ms": 136.80322624941255,
+            "p99_ms": 162.52197670022716,
+            "throughput_images_per_s": 8.156710806332187,
+            "other_load_cores": 0.057,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071671.6
+          }
+        ]
+      },
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 71.5296285099248,
+          "p50_ms": 65.95256750006229,
+          "p95_ms": 97.57082529886246,
+          "p99_ms": 152.8675130794726,
+          "min_ms": 57.62323599992669,
+          "max_ms": 199.44356199994218
+        },
+        "infer": {
+          "mean_ms": 65.93983114002185,
+          "p50_ms": 60.193438499482,
+          "p95_ms": 91.16345884940527,
+          "p99_ms": 147.82742886151016,
+          "min_ms": 52.7377329999581,
+          "max_ms": 191.7949899998348
+        },
+        "e2e_p50_range_ms": [
+          63.110604499343026,
+          68.27154950042313
+        ],
+        "throughput_images_per_s": 15.162411986448527,
+        "throughput_range": [
+          14.647389832477762,
+          15.845197616676447
+        ],
+        "throughput_mean_images_per_s": 13.980220795656013,
+        "other_load_cores": 0.146,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 65.95256750006229,
+            "p95_ms": 97.57082529886246,
+            "p99_ms": 152.8675130794726,
+            "throughput_images_per_s": 15.162411986448527,
+            "other_load_cores": 0.082,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069180.8
+          },
+          {
+            "run": 2,
+            "p50_ms": 68.27154950042313,
+            "p95_ms": 133.78184959910868,
+            "p99_ms": 172.68272777077053,
+            "throughput_images_per_s": 14.647389832477762,
+            "other_load_cores": 0.146,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070759.7
+          },
+          {
+            "run": 3,
+            "p50_ms": 63.110604499343026,
+            "p95_ms": 96.32011610092373,
+            "p99_ms": 146.51037572004486,
+            "throughput_images_per_s": 15.845197616676447,
+            "other_load_cores": 0.078,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071704.0
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "batch_t4_b8": {
+          "median": 1.0,
+          "range": [
+            1.0,
+            1.0
+          ],
+          "runs": 3,
+          "per_run": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "ratio_of_medians": 1.0
+        },
+        "single_t1_b1": {
+          "median": 1.0,
+          "range": [
+            1.0,
+            1.0
+          ],
+          "runs": 3,
+          "per_run": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "ratio_of_medians": 1.0
+        },
+        "single_t4_b1": {
+          "median": 1.0,
+          "range": [
+            1.0,
+            1.0
+          ],
+          "runs": 3,
+          "per_run": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "ratio_of_medians": 1.0
+        }
+      },
+      "accuracy": {
+        "map50": 0.814055,
+        "map50_95": 0.669039,
+        "ci95": {
+          "map50": [
+            0.770379,
+            0.859972
+          ],
+          "map50_95": [
+            0.633947,
+            0.708827
+          ]
+        },
+        "delta_vs_pytorch": null
+      }
+    },
+    {
+      "family": "yolo11n",
+      "backend": "onnxruntime-fp32",
+      "model_size_bytes": 10720320,
+      "precision_hint": "f32",
+      "batch_t4_b8": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 279.84020570014155,
+          "p50_ms": 267.91426349973335,
+          "p95_ms": 337.8698646004523,
+          "p99_ms": 345.6657602408996,
+          "min_ms": 252.20844600153214,
+          "max_ms": 357.1373320010025
+        },
+        "infer": {
+          "mean_ms": 240.48199813350948,
+          "p50_ms": 228.3733044996552,
+          "p95_ms": 296.96111030107204,
+          "p99_ms": 306.39539279954994,
+          "min_ms": 214.58279800026503,
+          "max_ms": 318.2121329991787
+        },
+        "e2e_p50_range_ms": [
+          263.52483949995076,
+          275.33322399995086
+        ],
+        "throughput_images_per_s": 29.860298946002036,
+        "throughput_range": [
+          29.05570161050171,
+          30.357669566103635
+        ],
+        "throughput_mean_images_per_s": 28.587743423017194,
+        "other_load_cores": 0.068,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 267.91426349973335,
+            "p95_ms": 337.8698646004523,
+            "p99_ms": 344.03007139033434,
+            "throughput_images_per_s": 29.860298946002036,
+            "other_load_cores": 0.068,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069255.0
+          },
+          {
+            "run": 2,
+            "p50_ms": 263.52483949995076,
+            "p95_ms": 345.37742600032277,
+            "p99_ms": 382.00580128954243,
+            "throughput_images_per_s": 30.357669566103635,
+            "other_load_cores": 0.059,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070888.8
+          },
+          {
+            "run": 3,
+            "p50_ms": 275.33322399995086,
+            "p95_ms": 317.41208104995167,
+            "p99_ms": 345.6657602408996,
+            "throughput_images_per_s": 29.05570161050171,
+            "other_load_cores": 0.065,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071777.3
+          }
+        ]
+      },
+      "single_t1_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 83.54752921991349,
+          "p50_ms": 82.36233250045188,
+          "p95_ms": 100.5938859507296,
+          "p99_ms": 111.23494143028434,
+          "min_ms": 77.00138200016227,
+          "max_ms": 118.63280100078555
+        },
+        "infer": {
+          "mean_ms": 78.5573772250882,
+          "p50_ms": 77.39312650119246,
+          "p95_ms": 95.11907440100913,
+          "p99_ms": 106.12220742923452,
+          "min_ms": 72.20384100037336,
+          "max_ms": 113.22867399940151
+        },
+        "e2e_p50_range_ms": [
+          81.6372669996781,
+          84.04264200089528
+        ],
+        "throughput_images_per_s": 12.141472559613504,
+        "throughput_range": [
+          11.898721603603885,
+          12.249307659992379
+        ],
+        "throughput_mean_images_per_s": 11.969234869505282,
+        "other_load_cores": 0.171,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 84.04264200089528,
+            "p95_ms": 103.76979839948025,
+            "p99_ms": 116.35948013043159,
+            "throughput_images_per_s": 11.898721603603885,
+            "other_load_cores": 0.171,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069219.5
+          },
+          {
+            "run": 2,
+            "p50_ms": 82.36233250045188,
+            "p95_ms": 87.06738104974647,
+            "p99_ms": 97.28049721899878,
+            "throughput_images_per_s": 12.141472559613504,
+            "other_load_cores": 0.092,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070854.1
+          },
+          {
+            "run": 3,
+            "p50_ms": 81.6372669996781,
+            "p95_ms": 100.5938859507296,
+            "p99_ms": 111.23494143028434,
+            "throughput_images_per_s": 12.249307659992379,
+            "other_load_cores": 0.048,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071743.0
+          }
+        ]
+      },
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 43.456788270041216,
+          "p50_ms": 40.81672800020897,
+          "p95_ms": 57.12555515092387,
+          "p99_ms": 84.40265875869947,
+          "min_ms": 35.50280399940675,
+          "max_ms": 94.48176599835278
+        },
+        "infer": {
+          "mean_ms": 38.374434669976836,
+          "p50_ms": 35.71595600078581,
+          "p95_ms": 52.13588495007568,
+          "p99_ms": 78.03289643936291,
+          "min_ms": 31.236910999723477,
+          "max_ms": 87.29204699920956
+        },
+        "e2e_p50_range_ms": [
+          38.435729999036994,
+          41.29659299997002
+        ],
+        "throughput_images_per_s": 24.499759020244845,
+        "throughput_range": [
+          24.215072657464166,
+          26.0174582354766
+        ],
+        "throughput_mean_images_per_s": 23.01136461778959,
+        "other_load_cores": 0.187,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 41.29659299997002,
+            "p95_ms": 69.75114625029164,
+            "p99_ms": 96.14779217998142,
+            "throughput_images_per_s": 24.215072657464166,
+            "other_load_cores": 0.187,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069241.9
+          },
+          {
+            "run": 2,
+            "p50_ms": 40.81672800020897,
+            "p95_ms": 57.12555515092387,
+            "p99_ms": 82.73072922955173,
+            "throughput_images_per_s": 24.499759020244845,
+            "other_load_cores": 0.113,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070875.7
+          },
+          {
+            "run": 3,
+            "p50_ms": 38.435729999036994,
+            "p95_ms": 52.22078990009322,
+            "p99_ms": 84.40265875869947,
+            "throughput_images_per_s": 26.0174582354766,
+            "other_load_cores": 0.082,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071764.8
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "batch_t4_b8": {
+          "median": 1.6420862064494128,
+          "range": [
+            1.528473848875572,
+            1.6500483537730364
+          ],
+          "runs": 3,
+          "per_run": [
+            1.528473848875572,
+            1.6420862064494128,
+            1.6500483537730364
+          ],
+          "ratio_of_medians": 1.615182776560514
+        },
+        "single_t1_b1": {
+          "median": 1.5017459795783175,
+          "range": [
+            1.45154404474666,
+            1.5132222548405743
+          ],
+          "runs": 3,
+          "per_run": [
+            1.45154404474666,
+            1.5132222548405743,
+            1.5017459795783175
+          ],
+          "ratio_of_medians": 1.4885255647641549
+        },
+        "single_t4_b1": {
+          "median": 1.6419775167773387,
+          "range": [
+            1.597046213960318,
+            1.6726365106990841
+          ],
+          "runs": 3,
+          "per_run": [
+            1.597046213960318,
+            1.6726365106990841,
+            1.6419775167773387
+          ],
+          "ratio_of_medians": 1.6158220105179582
+        }
+      },
+      "accuracy": {
+        "map50": 0.814055,
+        "map50_95": 0.669039,
+        "ci95": {
+          "map50": [
+            0.770379,
+            0.859972
+          ],
+          "map50_95": [
+            0.633947,
+            0.708827
+          ]
+        },
+        "delta_vs_pytorch": {
+          "map50": 0.0,
+          "map50_95": 0.0,
+          "ci95": {
+            "map50": [
+              0.0,
+              0.0
+            ],
+            "map50_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "family": "yolo11n",
+      "backend": "openvino-bf16",
+      "model_size_bytes": 10913648,
+      "precision_hint": "bf16",
+      "batch_t4_b8": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 134.0313746666046,
+          "p50_ms": 130.74872600009257,
+          "p95_ms": 169.25790149925882,
+          "p99_ms": 179.29110708992084,
+          "min_ms": 116.28045699944778,
+          "max_ms": 180.35003600016353
+        },
+        "infer": {
+          "mean_ms": 99.59432540011524,
+          "p50_ms": 93.92103550089814,
+          "p95_ms": 134.33453015013578,
+          "p99_ms": 143.52039725074064,
+          "min_ms": 83.98298000065552,
+          "max_ms": 144.16682900082378
+        },
+        "e2e_p50_range_ms": [
+          126.97580349959026,
+          133.55957099975058
+        ],
+        "throughput_images_per_s": 61.18606463511037,
+        "throughput_range": [
+          59.89836550175008,
+          63.004129759460945
+        ],
+        "throughput_mean_images_per_s": 59.687517343603645,
+        "other_load_cores": 0.239,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 133.55957099975058,
+            "p95_ms": 198.52637525036695,
+            "p99_ms": 205.7644751697444,
+            "throughput_images_per_s": 59.89836550175008,
+            "other_load_cores": 0.239,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069456.0
+          },
+          {
+            "run": 2,
+            "p50_ms": 126.97580349959026,
+            "p95_ms": 169.25790149925882,
+            "p99_ms": 179.29110708992084,
+            "throughput_images_per_s": 63.004129759460945,
+            "other_load_cores": 0.157,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070989.0
+          },
+          {
+            "run": 3,
+            "p50_ms": 130.74872600009257,
+            "p95_ms": 147.16857374996835,
+            "p99_ms": 160.5760401897169,
+            "throughput_images_per_s": 61.18606463511037,
+            "other_load_cores": 0.053,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071910.0
+          }
+        ]
+      },
+      "single_t1_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 45.29030280495135,
+          "p50_ms": 44.41913450045831,
+          "p95_ms": 49.39399979966765,
+          "p99_ms": 60.27012547010598,
+          "min_ms": 40.69794099996216,
+          "max_ms": 62.77816500005429
+        },
+        "infer": {
+          "mean_ms": 37.97832206498242,
+          "p50_ms": 37.16134900059842,
+          "p95_ms": 41.48707329968601,
+          "p99_ms": 52.42528648874213,
+          "min_ms": 34.439651999491616,
+          "max_ms": 54.397479001636384
+        },
+        "e2e_p50_range_ms": [
+          43.052447499576374,
+          44.7046005001539
+        ],
+        "throughput_images_per_s": 22.512820460058315,
+        "throughput_range": [
+          22.36906244127061,
+          23.227483176417316
+        ],
+        "throughput_mean_images_per_s": 22.07978172075006,
+        "other_load_cores": 0.11,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 44.41913450045831,
+            "p95_ms": 49.39399979966765,
+            "p99_ms": 65.70878095055376,
+            "throughput_images_per_s": 22.512820460058315,
+            "other_load_cores": 0.11,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069433.3
+          },
+          {
+            "run": 2,
+            "p50_ms": 43.052447499576374,
+            "p95_ms": 48.8106386505933,
+            "p99_ms": 59.96213414940939,
+            "throughput_images_per_s": 23.227483176417316,
+            "other_load_cores": 0.064,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070966.9
+          },
+          {
+            "run": 3,
+            "p50_ms": 44.7046005001539,
+            "p95_ms": 52.20092665022093,
+            "p99_ms": 60.27012547010598,
+            "throughput_images_per_s": 22.36906244127061,
+            "other_load_cores": 0.094,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071887.5
+          }
+        ]
+      },
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 23.25395266495434,
+          "p50_ms": 22.295073499662976,
+          "p95_ms": 29.762153249703257,
+          "p99_ms": 37.19556156147519,
+          "min_ms": 19.564936999813654,
+          "max_ms": 39.08199599936779
+        },
+        "infer": {
+          "mean_ms": 17.453263175020766,
+          "p50_ms": 16.363337998882344,
+          "p95_ms": 22.649936200014036,
+          "p99_ms": 28.443750699825603,
+          "min_ms": 14.292900999862468,
+          "max_ms": 30.178083999999217
+        },
+        "e2e_p50_range_ms": [
+          21.826046499882068,
+          23.186705000625807
+        ],
+        "throughput_images_per_s": 44.85295821137869,
+        "throughput_range": [
+          43.128163314839696,
+          45.81681799337334
+        ],
+        "throughput_mean_images_per_s": 43.003441797965124,
+        "other_load_cores": 0.098,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 23.186705000625807,
+            "p95_ms": 30.325778250244174,
+            "p99_ms": 37.19556156147519,
+            "throughput_images_per_s": 43.128163314839696,
+            "other_load_cores": 0.098,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069446.9
+          },
+          {
+            "run": 2,
+            "p50_ms": 21.826046499882068,
+            "p95_ms": 29.762153249703257,
+            "p99_ms": 39.34370554998168,
+            "throughput_images_per_s": 45.81681799337334,
+            "other_load_cores": 0.098,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070980.2
+          },
+          {
+            "run": 3,
+            "p50_ms": 22.295073499662976,
+            "p95_ms": 27.959465749881925,
+            "p99_ms": 32.465788749505,
+            "throughput_images_per_s": 44.85295821137869,
+            "other_load_cores": 0.049,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071901.2
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "batch_t4_b8": {
+          "median": 3.4079761031089744,
+          "range": [
+            3.066047176063978,
+            3.4747040900407695
+          ],
+          "runs": 3,
+          "per_run": [
+            3.066047176063978,
+            3.4079761031089744,
+            3.4747040900407695
+          ],
+          "ratio_of_medians": 3.30963457341342
+        },
+        "single_t1_b1": {
+          "median": 2.746374909666833,
+          "range": [
+            2.7424121036515285,
+            2.8948996337894437
+          ],
+          "runs": 3,
+          "per_run": [
+            2.746374909666833,
+            2.8948996337894437,
+            2.7424121036515285
+          ],
+          "ratio_of_medians": 2.760036612133073
+        },
+        "single_t4_b1": {
+          "median": 2.8444131021756753,
+          "range": [
+            2.8306973063038807,
+            3.1279851575864654
+          ],
+          "runs": 3,
+          "per_run": [
+            2.8444131021756753,
+            3.1279851575864654,
+            2.8306973063038807
+          ],
+          "ratio_of_medians": 2.9581677540134264
+        }
+      },
+      "accuracy": {
+        "map50": 0.813954,
+        "map50_95": 0.669152,
+        "ci95": {
+          "map50": [
+            0.771797,
+            0.859965
+          ],
+          "map50_95": [
+            0.634367,
+            0.710143
+          ]
+        },
+        "delta_vs_pytorch": {
+          "map50": -0.000101,
+          "map50_95": 0.000113,
+          "ci95": {
+            "map50": [
+              -0.002735,
+              0.00254
+            ],
+            "map50_95": [
+              -0.00195,
+              0.00279
+            ]
+          }
+        }
+      }
+    },
+    {
+      "family": "yolo11n",
+      "backend": "openvino-fp32",
+      "model_size_bytes": 10913648,
+      "precision_hint": "f32",
+      "batch_t4_b8": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 254.48989316688917,
+          "p50_ms": 234.47474049953598,
+          "p95_ms": 331.6946796499904,
+          "p99_ms": 426.20478323085996,
+          "min_ms": 209.12720299929788,
+          "max_ms": 453.2126900012372
+        },
+        "infer": {
+          "mean_ms": 219.0202818998538,
+          "p50_ms": 196.00295750024088,
+          "p95_ms": 291.4371504998596,
+          "p99_ms": 390.52578597940743,
+          "min_ms": 175.90225799904147,
+          "max_ms": 417.92899899883196
+        },
+        "e2e_p50_range_ms": [
+          231.30155000035302,
+          252.24705849996099
+        ],
+        "throughput_images_per_s": 34.11881374921847,
+        "throughput_range": [
+          31.714938709587518,
+          34.586884523635014
+        ],
+        "throughput_mean_images_per_s": 31.43543305570004,
+        "other_load_cores": 0.266,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 252.24705849996099,
+            "p95_ms": 331.6946796499904,
+            "p99_ms": 426.20478323085996,
+            "throughput_images_per_s": 31.714938709587518,
+            "other_load_cores": 0.232,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069369.0
+          },
+          {
+            "run": 2,
+            "p50_ms": 234.47474049953598,
+            "p95_ms": 308.43681659971475,
+            "p99_ms": 327.09958398096205,
+            "throughput_images_per_s": 34.11881374921847,
+            "other_load_cores": 0.128,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070937.9
+          },
+          {
+            "run": 3,
+            "p50_ms": 231.30155000035302,
+            "p95_ms": 398.8793445997542,
+            "p99_ms": 487.37675552036313,
+            "throughput_images_per_s": 34.586884523635014,
+            "other_load_cores": 0.266,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071825.1
+          }
+        ]
+      },
+      "single_t1_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 90.44539597496623,
+          "p50_ms": 89.15470649935742,
+          "p95_ms": 102.53528005041517,
+          "p99_ms": 115.81187054025571,
+          "min_ms": 83.31536699915887,
+          "max_ms": 123.0695869999181
+        },
+        "infer": {
+          "mean_ms": 83.1727188700279,
+          "p50_ms": 81.96270050120802,
+          "p95_ms": 94.84889069926794,
+          "p99_ms": 107.9144791309954,
+          "min_ms": 76.9146290003846,
+          "max_ms": 113.76386499978253
+        },
+        "e2e_p50_range_ms": [
+          87.661018500512,
+          89.91754700036836
+        ],
+        "throughput_images_per_s": 11.216457764988633,
+        "throughput_range": [
+          11.121299828118124,
+          11.40757907112566
+        ],
+        "throughput_mean_images_per_s": 11.056394736519072,
+        "other_load_cores": 0.242,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 89.91754700036836,
+            "p95_ms": 103.92595605026145,
+            "p99_ms": 115.68390958027518,
+            "throughput_images_per_s": 11.121299828118124,
+            "other_load_cores": 0.242,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069267.9
+          },
+          {
+            "run": 2,
+            "p50_ms": 89.15470649935742,
+            "p95_ms": 101.97218225066536,
+            "p99_ms": 120.47221749928192,
+            "throughput_images_per_s": 11.216457764988633,
+            "other_load_cores": 0.082,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070901.7
+          },
+          {
+            "run": 3,
+            "p50_ms": 87.661018500512,
+            "p95_ms": 102.53528005041517,
+            "p99_ms": 115.81187054025571,
+            "throughput_images_per_s": 11.40757907112566,
+            "other_load_cores": 0.106,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071790.3
+          }
+        ]
+      },
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 35.73370828507905,
+          "p50_ms": 33.743276000677724,
+          "p95_ms": 51.09788460067643,
+          "p99_ms": 57.680509380952564,
+          "min_ms": 29.81670199915243,
+          "max_ms": 71.91699999930279
+        },
+        "infer": {
+          "mean_ms": 30.359013540037267,
+          "p50_ms": 27.361740499145526,
+          "p95_ms": 46.94448575019119,
+          "p99_ms": 53.38359619052425,
+          "min_ms": 24.280734000058146,
+          "max_ms": 65.5934829992475
+        },
+        "e2e_p50_range_ms": [
+          30.97912350040133,
+          38.5539435001192
+        ],
+        "throughput_images_per_s": 29.63553390547839,
+        "throughput_range": [
+          25.937683910257018,
+          32.279802880383144
+        ],
+        "throughput_mean_images_per_s": 27.98478098108725,
+        "other_load_cores": 0.188,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 30.97912350040133,
+            "p95_ms": 51.09788460067643,
+            "p99_ms": 57.680509380952564,
+            "throughput_images_per_s": 32.279802880383144,
+            "other_load_cores": 0.141,
+            "contaminated": false,
+            "attempt": 3,
+            "started_unix": 1795069357.8
+          },
+          {
+            "run": 2,
+            "p50_ms": 38.5539435001192,
+            "p95_ms": 60.08214710054744,
+            "p99_ms": 70.50003808053589,
+            "throughput_images_per_s": 25.937683910257018,
+            "other_load_cores": 0.188,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070925.2
+          },
+          {
+            "run": 3,
+            "p50_ms": 33.743276000677724,
+            "p95_ms": 46.880769249673904,
+            "p99_ms": 53.680536340616484,
+            "throughput_images_per_s": 29.63553390547839,
+            "other_load_cores": 0.092,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071813.6
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "batch_t4_b8": {
+          "median": 1.845531433696249,
+          "range": [
+            1.623408209139394,
+            1.9641594835808414
+          ],
+          "runs": 3,
+          "per_run": [
+            1.623408209139394,
+            1.845531433696249,
+            1.9641594835808414
+          ],
+          "ratio_of_medians": 1.845531433696249
+        },
+        "single_t1_b1": {
+          "median": 1.3979353350365322,
+          "range": [
+            1.356705121200374,
+            1.3985513697837333
+          ],
+          "runs": 3,
+          "per_run": [
+            1.356705121200374,
+            1.3979353350365322,
+            1.3985513697837333
+          ],
+          "ratio_of_medians": 1.3751201962782735
+        },
+        "single_t4_b1": {
+          "median": 1.8703164594355173,
+          "range": [
+            1.7708058710054406,
+            2.1289358783571743
+          ],
+          "runs": 3,
+          "per_run": [
+            2.1289358783571743,
+            1.7708058710054406,
+            1.8703164594355173
+          ],
+          "ratio_of_medians": 1.954539550301448
+        }
+      },
+      "accuracy": {
+        "map50": 0.814055,
+        "map50_95": 0.669039,
+        "ci95": {
+          "map50": [
+            0.770379,
+            0.859974
+          ],
+          "map50_95": [
+            0.633947,
+            0.708827
+          ]
+        },
+        "delta_vs_pytorch": {
+          "map50": 0.0,
+          "map50_95": 0.0,
+          "ci95": {
+            "map50": [
+              0.0,
+              5e-06
+            ],
+            "map50_95": [
+              -0.0,
+              3e-06
+            ]
+          }
+        }
+      }
+    },
+    {
+      "family": "yolo11n",
+      "backend": "openvino-fp32+tiles512",
+      "model_size_bytes": 10913648,
+      "precision_hint": "f32",
+      "tiling": {
+        "tile_size": 512,
+        "overlap": 0.2,
+        "full_image": true,
+        "merge_iou": null,
+        "batch_size": 8,
+        "border_margin": 0.02,
+        "rescue_ioa": 0.5
+      },
+      "untiled_backend": "openvino-fp32",
+      "mean_inferences_per_image": 6.8125,
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 207.65400761659598,
+          "p50_ms": 203.0324634997669,
+          "p95_ms": 269.18480999884196,
+          "p99_ms": 314.096132960785,
+          "min_ms": 109.10951400001068,
+          "max_ms": 347.02519299935375
+        },
+        "infer": {
+          "mean_ms": 207.64634733319932,
+          "p50_ms": 203.02438300041104,
+          "p95_ms": 269.1780018000827,
+          "p99_ms": 314.08792089918245,
+          "min_ms": 109.10169199996744,
+          "max_ms": 347.0175709990144
+        },
+        "e2e_p50_range_ms": [
+          197.91132850059512,
+          217.46833349970984
+        ],
+        "throughput_images_per_s": 4.925320723408097,
+        "throughput_range": [
+          4.598370640483775,
+          5.0527678611231845
+        ],
+        "throughput_mean_images_per_s": 4.815702867851026,
+        "other_load_cores": 0.267,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 217.46833349970984,
+            "p95_ms": 335.3874807004104,
+            "p99_ms": 346.3049092001165,
+            "throughput_images_per_s": 4.598370640483775,
+            "other_load_cores": 0.267,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795069414.8
+          },
+          {
+            "run": 2,
+            "p50_ms": 197.91132850059512,
+            "p95_ms": 262.07302839975455,
+            "p99_ms": 314.096132960785,
+            "throughput_images_per_s": 5.0527678611231845,
+            "other_load_cores": 0.098,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070949.6
+          },
+          {
+            "run": 3,
+            "p50_ms": 203.0324634997669,
+            "p95_ms": 269.18480999884196,
+            "p99_ms": 293.3624190299997,
+            "throughput_images_per_s": 4.925320723408097,
+            "other_load_cores": 0.09,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795071870.3
+          }
+        ]
+      },
+      "slowdown_vs_untiled": {
+        "single_t4_b1": {
+          "median": 6.016975455960146,
+          "range": [
+            5.133361480907477,
+            7.019834938096056
+          ],
+          "runs": 3,
+          "per_run": [
+            7.019834938096056,
+            5.133361480907477,
+            6.016975455960146
+          ],
+          "ratio_of_medians": 6.016975455960146
+        }
+      }
+    },
+    {
+      "family": "yolo11n",
+      "backend": "openvino-fp32-nopin",
+      "model_size_bytes": 10913648,
+      "precision_hint": "f32",
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 36.40564682495096,
+          "p50_ms": 33.9676915000382,
+          "p95_ms": 47.876004350655414,
+          "p99_ms": 54.14187116035464,
+          "min_ms": 31.338315000539296,
+          "max_ms": 60.959469999943394
+        },
+        "infer": {
+          "mean_ms": 29.827725469986035,
+          "p50_ms": 27.57124849995307,
+          "p95_ms": 40.71605879980779,
+          "p99_ms": 47.29448738011342,
+          "min_ms": 25.34233900041727,
+          "max_ms": 53.988436000508955
+        },
+        "e2e_p50_range_ms": [
+          29.208151499915402,
+          35.27773099904152
+        ],
+        "throughput_images_per_s": 29.439739818611912,
+        "throughput_range": [
+          28.346494280688557,
+          34.237017703872716
+        ],
+        "throughput_mean_images_per_s": 27.468266250241165,
+        "other_load_cores": 0.117,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 29.208151499915402,
+            "p95_ms": 36.843443199268215,
+            "p99_ms": 41.60471829951347,
+            "throughput_images_per_s": 34.237017703872716,
+            "other_load_cores": 0.049,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069831.8
+          },
+          {
+            "run": 2,
+            "p50_ms": 35.27773099904152,
+            "p95_ms": 48.86041109975849,
+            "p99_ms": 60.445758299756555,
+            "throughput_images_per_s": 28.346494280688557,
+            "other_load_cores": 0.117,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071069.1
+          },
+          {
+            "run": 3,
+            "p50_ms": 33.9676915000382,
+            "p95_ms": 47.876004350655414,
+            "p99_ms": 54.14187116035464,
+            "throughput_images_per_s": 29.439739818611912,
+            "other_load_cores": 0.102,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071992.2
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "single_t4_b1": {
+          "median": 1.93525908744749,
+          "range": [
+            1.857959776255977,
+            2.258019221115493
+          ],
+          "runs": 3,
+          "per_run": [
+            2.258019221115493,
+            1.93525908744749,
+            1.857959776255977
+          ],
+          "ratio_of_medians": 1.9416264275712736
+        }
+      }
+    },
+    {
+      "family": "yolo11n",
+      "backend": "openvino-int8",
+      "model_size_bytes": 3465791,
+      "precision_hint": "f32",
+      "batch_t4_b8": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 152.17906970004455,
+          "p50_ms": 149.50444799978868,
+          "p95_ms": 186.09181285082735,
+          "p99_ms": 200.36226544927558,
+          "min_ms": 131.71024400071474,
+          "max_ms": 204.17092099887668
+        },
+        "infer": {
+          "mean_ms": 117.77563440009544,
+          "p50_ms": 114.37609699987661,
+          "p95_ms": 149.14330780038648,
+          "p99_ms": 164.54179103046044,
+          "min_ms": 99.23299900037819,
+          "max_ms": 168.8924850004696
+        },
+        "e2e_p50_range_ms": [
+          136.99474750046647,
+          151.69646599952102
+        ],
+        "throughput_images_per_s": 53.51011362559131,
+        "throughput_range": [
+          52.736891049428,
+          58.39639946759827
+        ],
+        "throughput_mean_images_per_s": 52.56964716480756,
+        "other_load_cores": 0.236,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 149.50444799978868,
+            "p95_ms": 185.33525795019156,
+            "p99_ms": 200.36226544927558,
+            "throughput_images_per_s": 53.51011362559131,
+            "other_load_cores": 0.16,
+            "contaminated": false,
+            "attempt": 3,
+            "started_unix": 1795069604.5
+          },
+          {
+            "run": 2,
+            "p50_ms": 136.99474750046647,
+            "p95_ms": 186.09181285082735,
+            "p99_ms": 205.2521295706356,
+            "throughput_images_per_s": 58.39639946759827,
+            "other_load_cores": 0.097,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071023.7
+          },
+          {
+            "run": 3,
+            "p50_ms": 151.69646599952102,
+            "p95_ms": 188.33546004925665,
+            "p99_ms": 194.7462901007748,
+            "throughput_images_per_s": 52.736891049428,
+            "other_load_cores": 0.236,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071945.9
+          }
+        ]
+      },
+      "single_t1_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 54.45687338992684,
+          "p50_ms": 53.53450550046546,
+          "p95_ms": 62.682398350443684,
+          "p99_ms": 67.47636890047939,
+          "min_ms": 49.45635100011714,
+          "max_ms": 77.92805600001884
+        },
+        "infer": {
+          "mean_ms": 47.70730287508741,
+          "p50_ms": 46.887880499525636,
+          "p95_ms": 54.50748084858786,
+          "p99_ms": 59.32360332069943,
+          "min_ms": 43.06672500024433,
+          "max_ms": 68.29342899982294
+        },
+        "e2e_p50_range_ms": [
+          53.01865599994926,
+          54.33688950051874
+        ],
+        "throughput_images_per_s": 18.679541179124286,
+        "throughput_range": [
+          18.40370343595861,
+          18.861285355874674
+        ],
+        "throughput_mean_images_per_s": 18.363154873760617,
+        "other_load_cores": 0.227,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 53.53450550046546,
+            "p95_ms": 62.682398350443684,
+            "p99_ms": 65.83448621990098,
+            "throughput_images_per_s": 18.679541179124286,
+            "other_load_cores": 0.088,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069464.8
+          },
+          {
+            "run": 2,
+            "p50_ms": 53.01865599994926,
+            "p95_ms": 59.50957144914353,
+            "p99_ms": 67.47636890047939,
+            "throughput_images_per_s": 18.861285355874674,
+            "other_load_cores": 0.096,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070997.5
+          },
+          {
+            "run": 3,
+            "p50_ms": 54.33688950051874,
+            "p95_ms": 66.17359550082254,
+            "p99_ms": 72.63788001986539,
+            "throughput_images_per_s": 18.40370343595861,
+            "other_load_cores": 0.227,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071918.4
+          }
+        ]
+      },
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 27.032370464930864,
+          "p50_ms": 25.746793499820342,
+          "p95_ms": 34.66770849991008,
+          "p99_ms": 40.72198040974388,
+          "min_ms": 23.12481300032232,
+          "max_ms": 74.74074299898348
+        },
+        "infer": {
+          "mean_ms": 21.467337220001355,
+          "p50_ms": 20.204911999826436,
+          "p95_ms": 28.88140649974957,
+          "p99_ms": 34.27539368945872,
+          "min_ms": 17.420301999663934,
+          "max_ms": 64.19800399999076
+        },
+        "e2e_p50_range_ms": [
+          25.52497249962471,
+          27.00270500008628
+        ],
+        "throughput_images_per_s": 38.8397879528951,
+        "throughput_range": [
+          37.033326846210585,
+          39.17731938848134
+        ],
+        "throughput_mean_images_per_s": 36.99268627948487,
+        "other_load_cores": 0.206,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 25.52497249962471,
+            "p95_ms": 33.50750655117735,
+            "p99_ms": 40.72198040974388,
+            "throughput_images_per_s": 39.17731938848134,
+            "other_load_cores": 0.069,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795069514.1
+          },
+          {
+            "run": 2,
+            "p50_ms": 25.746793499820342,
+            "p95_ms": 34.66770849991008,
+            "p99_ms": 40.14926770969395,
+            "throughput_images_per_s": 38.8397879528951,
+            "other_load_cores": 0.178,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071013.6
+          },
+          {
+            "run": 3,
+            "p50_ms": 27.00270500008628,
+            "p95_ms": 38.86210555128846,
+            "p99_ms": 63.10908950968951,
+            "throughput_images_per_s": 37.033326846210585,
+            "other_load_cores": 0.206,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071934.8
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "batch_t4_b8": {
+          "median": 2.9948827746690947,
+          "range": [
+            2.7390485766729857,
+            3.1587379216724427
+          ],
+          "runs": 3,
+          "per_run": [
+            2.7390485766729857,
+            3.1587379216724427,
+            2.9948827746690947
+          ],
+          "ratio_of_medians": 2.8944323047851803
+        },
+        "single_t1_b1": {
+          "median": 2.2787470503508143,
+          "range": [
+            2.256265285471629,
+            2.350729420609647
+          ],
+          "runs": 3,
+          "per_run": [
+            2.2787470503508143,
+            2.350729420609647,
+            2.256265285471629
+          ],
+          "ratio_of_medians": 2.2900825617874125
+        },
+        "single_t4_b1": {
+          "median": 2.5838448014403146,
+          "range": [
+            2.3371956438860986,
+            2.6516525058120157
+          ],
+          "runs": 3,
+          "per_run": [
+            2.5838448014403146,
+            2.6516525058120157,
+            2.3371956438860986
+          ],
+          "ratio_of_medians": 2.56158373665142
+        }
+      },
+      "accuracy": {
+        "map50": 0.808802,
+        "map50_95": 0.66662,
+        "ci95": {
+          "map50": [
+            0.765199,
+            0.855575
+          ],
+          "map50_95": [
+            0.628972,
+            0.709595
+          ]
+        },
+        "delta_vs_pytorch": {
+          "map50": -0.005253,
+          "map50_95": -0.002419,
+          "ci95": {
+            "map50": [
+              -0.017426,
+              0.005634
+            ],
+            "map50_95": [
+              -0.01374,
+              0.00824
+            ]
+          }
+        }
+      }
+    },
+    {
+      "family": "yolo11n",
+      "backend": "openvino-int8-bf16",
+      "model_size_bytes": 3465791,
+      "precision_hint": "bf16",
+      "batch_t4_b8": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 161.62711406650487,
+          "p50_ms": 155.33528899959492,
+          "p95_ms": 193.80895979948036,
+          "p99_ms": 203.2605888208127,
+          "min_ms": 139.7055460001866,
+          "max_ms": 207.8301020010258
+        },
+        "infer": {
+          "mean_ms": 127.19209986674589,
+          "p50_ms": 120.74272700101574,
+          "p95_ms": 158.1587117505478,
+          "p99_ms": 166.76700346944926,
+          "min_ms": 106.76347900152905,
+          "max_ms": 170.28213899902767
+        },
+        "e2e_p50_range_ms": [
+          148.05924499978573,
+          157.92686599979788
+        ],
+        "throughput_images_per_s": 51.50149751239631,
+        "throughput_range": [
+          50.6563588744314,
+          54.03242465549231
+        ],
+        "throughput_mean_images_per_s": 49.496645697133665,
+        "other_load_cores": 0.256,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 155.33528899959492,
+            "p95_ms": 204.29568420049688,
+            "p99_ms": 219.76583731993742,
+            "throughput_images_per_s": 51.50149751239631,
+            "other_load_cores": 0.256,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069822.4
+          },
+          {
+            "run": 2,
+            "p50_ms": 157.92686599979788,
+            "p95_ms": 191.62583479974273,
+            "p99_ms": 203.2605888208127,
+            "throughput_images_per_s": 50.6563588744314,
+            "other_load_cores": 0.092,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071059.7
+          },
+          {
+            "run": 3,
+            "p50_ms": 148.05924499978573,
+            "p95_ms": 193.80895979948036,
+            "p99_ms": 202.5153269803377,
+            "throughput_images_per_s": 54.03242465549231,
+            "other_load_cores": 0.064,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071982.8
+          }
+        ]
+      },
+      "single_t1_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 55.1743272549902,
+          "p50_ms": 54.4281594993663,
+          "p95_ms": 64.12819460047099,
+          "p99_ms": 70.81489471924213,
+          "min_ms": 51.64245800006029,
+          "max_ms": 76.43657799962966
+        },
+        "infer": {
+          "mean_ms": 48.25124485501874,
+          "p50_ms": 47.52043549979135,
+          "p95_ms": 55.95882809966495,
+          "p99_ms": 62.18466664029619,
+          "min_ms": 44.95893999956024,
+          "max_ms": 66.91429899910872
+        },
+        "e2e_p50_range_ms": [
+          53.765869500239205,
+          56.510032000005594
+        ],
+        "throughput_images_per_s": 18.372842462395642,
+        "throughput_range": [
+          17.69597299113016,
+          18.599159825650194
+        ],
+        "throughput_mean_images_per_s": 18.124371419672464,
+        "other_load_cores": 0.434,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 54.4281594993663,
+            "p95_ms": 61.15777109998815,
+            "p99_ms": 70.81489471924213,
+            "throughput_images_per_s": 18.372842462395642,
+            "other_load_cores": 0.434,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069613.8
+          },
+          {
+            "run": 2,
+            "p50_ms": 53.765869500239205,
+            "p95_ms": 64.31439089992635,
+            "p99_ms": 73.51997185880462,
+            "throughput_images_per_s": 18.599159825650194,
+            "other_load_cores": 0.113,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071032.8
+          },
+          {
+            "run": 3,
+            "p50_ms": 56.510032000005594,
+            "p95_ms": 64.12819460047099,
+            "p99_ms": 69.56614952045129,
+            "throughput_images_per_s": 17.69597299113016,
+            "other_load_cores": 0.088,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071955.5
+          }
+        ]
+      },
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 28.861770080038696,
+          "p50_ms": 27.3549744997581,
+          "p95_ms": 34.94272240041027,
+          "p99_ms": 42.20796315012185,
+          "min_ms": 24.920279000070877,
+          "max_ms": 58.58736099980888
+        },
+        "infer": {
+          "mean_ms": 22.599949555051353,
+          "p50_ms": 21.17006749904249,
+          "p95_ms": 29.0827331004948,
+          "p99_ms": 35.79340316988228,
+          "min_ms": 19.26373300011619,
+          "max_ms": 52.85917800028983
+        },
+        "e2e_p50_range_ms": [
+          26.473214998986805,
+          27.98003099997004
+        ],
+        "throughput_images_per_s": 36.556422306620796,
+        "throughput_range": [
+          35.73977455568476,
+          37.774029336379144
+        ],
+        "throughput_mean_images_per_s": 34.64790957820073,
+        "other_load_cores": 0.142,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 26.473214998986805,
+            "p95_ms": 34.28685895114539,
+            "p99_ms": 38.96509066009454,
+            "throughput_images_per_s": 37.774029336379144,
+            "other_load_cores": 0.083,
+            "contaminated": false,
+            "attempt": 6,
+            "started_unix": 1795069812.2
+          },
+          {
+            "run": 2,
+            "p50_ms": 27.3549744997581,
+            "p95_ms": 37.77616170100372,
+            "p99_ms": 42.20796315012185,
+            "throughput_images_per_s": 36.556422306620796,
+            "other_load_cores": 0.142,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071049.2
+          },
+          {
+            "run": 3,
+            "p50_ms": 27.98003099997004,
+            "p95_ms": 34.94272240041027,
+            "p99_ms": 42.7104140404844,
+            "throughput_images_per_s": 35.73977455568476,
+            "other_load_cores": 0.105,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071972.3
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "batch_t4_b8": {
+          "median": 2.740068963315072,
+          "range": [
+            2.636232553062489,
+            3.068455016103851
+          ],
+          "runs": 3,
+          "per_run": [
+            2.636232553062489,
+            2.740068963315072,
+            3.068455016103851
+          ],
+          "ratio_of_medians": 2.7857836219095904
+        },
+        "single_t1_b1": {
+          "median": 2.2413323842522255,
+          "range": [
+            2.1694986387641064,
+            2.318060056663055
+          ],
+          "runs": 3,
+          "per_run": [
+            2.2413323842522255,
+            2.318060056663055,
+            2.1694986387641064
+          ],
+          "ratio_of_medians": 2.2524817783330637
+        },
+        "single_t4_b1": {
+          "median": 2.4912942195568784,
+          "range": [
+            2.255558776879504,
+            2.495763595064834
+          ],
+          "runs": 3,
+          "per_run": [
+            2.4912942195568784,
+            2.495763595064834,
+            2.255558776879504
+          ],
+          "ratio_of_medians": 2.410989909738191
+        }
+      },
+      "accuracy": {
+        "map50": 0.807029,
+        "map50_95": 0.66606,
+        "ci95": {
+          "map50": [
+            0.762518,
+            0.855297
+          ],
+          "map50_95": [
+            0.627678,
+            0.711718
+          ]
+        },
+        "delta_vs_pytorch": {
+          "map50": -0.007026,
+          "map50_95": -0.002979,
+          "ci95": {
+            "map50": [
+              -0.023138,
+              0.00653
+            ],
+            "map50_95": [
+              -0.019075,
+              0.010617
+            ]
+          }
+        }
+      }
+    },
+    {
+      "family": "yolo11n",
+      "backend": "openvino-int8-bf16-nopin",
+      "model_size_bytes": 3465791,
+      "precision_hint": "bf16",
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 28.781490425099037,
+          "p50_ms": 27.938034500039066,
+          "p95_ms": 36.26306520009165,
+          "p99_ms": 39.411934419822465,
+          "min_ms": 24.559582998335827,
+          "max_ms": 44.85774000022502
+        },
+        "infer": {
+          "mean_ms": 22.393163719943914,
+          "p50_ms": 21.822340999278822,
+          "p95_ms": 28.49036704965327,
+          "p99_ms": 33.29816980120083,
+          "min_ms": 18.779485999402823,
+          "max_ms": 38.415314000303624
+        },
+        "e2e_p50_range_ms": [
+          26.423719999911555,
+          28.22414199999912
+        ],
+        "throughput_images_per_s": 35.793498644244345,
+        "throughput_range": [
+          35.430660744267485,
+          37.8447849130761
+        ],
+        "throughput_mean_images_per_s": 34.74455232269505,
+        "other_load_cores": 0.139,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 26.423719999911555,
+            "p95_ms": 36.26306520009165,
+            "p99_ms": 39.411934419822465,
+            "throughput_images_per_s": 37.8447849130761,
+            "other_load_cores": 0.128,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069842.4
+          },
+          {
+            "run": 2,
+            "p50_ms": 27.938034500039066,
+            "p95_ms": 37.22568324956227,
+            "p99_ms": 44.573548391563236,
+            "throughput_images_per_s": 35.793498644244345,
+            "other_load_cores": 0.139,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071081.2
+          },
+          {
+            "run": 3,
+            "p50_ms": 28.22414199999912,
+            "p95_ms": 34.0230615008295,
+            "p99_ms": 35.639551139629425,
+            "throughput_images_per_s": 35.430660744267485,
+            "other_load_cores": 0.066,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072004.1
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "single_t4_b1": {
+          "median": 2.443677614483856,
+          "range": [
+            2.236050417381864,
+            2.49596073150499
+          ],
+          "runs": 3,
+          "per_run": [
+            2.49596073150499,
+            2.443677614483856,
+            2.236050417381864
+          ],
+          "ratio_of_medians": 2.360673135397913
+        }
+      }
+    },
+    {
+      "family": "yolo11s",
+      "backend": "pytorch-fp32",
+      "model_size_bytes": 19313732,
+      "precision_hint": "f32",
+      "batch_t4_b8": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 1154.0897386332897,
+          "p50_ms": 1077.717798500089,
+          "p95_ms": 1659.9814416004847,
+          "p99_ms": 2364.080261180153,
+          "min_ms": 977.2915360008483,
+          "max_ms": 2646.8247100001463
+        },
+        "infer": {
+          "mean_ms": 1100.1132189666653,
+          "p50_ms": 1021.5511155001877,
+          "p95_ms": 1609.9487266013057,
+          "p99_ms": 2306.4645303205552,
+          "min_ms": 929.2005919996882,
+          "max_ms": 2586.1464150002575
+        },
+        "e2e_p50_range_ms": [
+          1049.1362594993916,
+          1130.7164979989466
+        ],
+        "throughput_images_per_s": 7.4230935140293495,
+        "throughput_range": [
+          7.07515987796921,
+          7.62532028377067
+        ],
+        "throughput_mean_images_per_s": 6.931869968338734,
+        "other_load_cores": 0.291,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 1049.1362594993916,
+            "p95_ms": 1659.9814416004847,
+            "p99_ms": 2364.080261180153,
+            "throughput_images_per_s": 7.62532028377067,
+            "other_load_cores": 0.217,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069960.6
+          },
+          {
+            "run": 2,
+            "p50_ms": 1077.717798500089,
+            "p95_ms": 1890.2347527005059,
+            "p99_ms": 2930.8008635097767,
+            "throughput_images_per_s": 7.4230935140293495,
+            "other_load_cores": 0.291,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071200.3
+          },
+          {
+            "run": 3,
+            "p50_ms": 1130.7164979989466,
+            "p95_ms": 1342.0283212498362,
+            "p99_ms": 1373.3166994000749,
+            "throughput_images_per_s": 7.07515987796921,
+            "other_load_cores": 0.12,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072121.2
+          }
+        ]
+      },
+      "single_t1_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 309.38313620499684,
+          "p50_ms": 305.58546249994833,
+          "p95_ms": 344.6912666485332,
+          "p99_ms": 361.2098923584562,
+          "min_ms": 282.62263299984625,
+          "max_ms": 375.70391899862443
+        },
+        "infer": {
+          "mean_ms": 303.68015343996376,
+          "p50_ms": 299.78082749948953,
+          "p95_ms": 338.5321517495868,
+          "p99_ms": 354.61177521961866,
+          "min_ms": 278.34273600092274,
+          "max_ms": 370.5852019993472
+        },
+        "e2e_p50_range_ms": [
+          304.5163084998421,
+          305.87853900033224
+        ],
+        "throughput_images_per_s": 3.272406978457521,
+        "throughput_range": [
+          3.269271532642288,
+          3.2838963697095993
+        ],
+        "throughput_mean_images_per_s": 3.2322382281928945,
+        "other_load_cores": 0.133,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 304.5163084998421,
+            "p95_ms": 340.4963483002575,
+            "p99_ms": 361.2098923584562,
+            "throughput_images_per_s": 3.2838963697095993,
+            "other_load_cores": 0.133,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069853.5
+          },
+          {
+            "run": 2,
+            "p50_ms": 305.58546249994833,
+            "p95_ms": 350.71410834980264,
+            "p99_ms": 386.8620825499237,
+            "throughput_images_per_s": 3.272406978457521,
+            "other_load_cores": 0.094,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071092.7
+          },
+          {
+            "run": 3,
+            "p50_ms": 305.87853900033224,
+            "p95_ms": 344.6912666485332,
+            "p99_ms": 357.89042255044467,
+            "throughput_images_per_s": 3.269271532642288,
+            "other_load_cores": 0.06,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072015.5
+          }
+        ]
+      },
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 131.33189136995497,
+          "p50_ms": 121.88373300068633,
+          "p95_ms": 174.85613485105202,
+          "p99_ms": 226.75764393899934,
+          "min_ms": 110.6262590001279,
+          "max_ms": 490.19950999900175
+        },
+        "infer": {
+          "mean_ms": 124.33422517999134,
+          "p50_ms": 114.73926400049095,
+          "p95_ms": 168.25695920106224,
+          "p99_ms": 221.4317608499366,
+          "min_ms": 105.06129500026873,
+          "max_ms": 485.29311699894606
+        },
+        "e2e_p50_range_ms": [
+          115.63235750054446,
+          123.47187900013523
+        ],
+        "throughput_images_per_s": 8.204540305590813,
+        "throughput_range": [
+          8.099010139781745,
+          8.64809834907406
+        ],
+        "throughput_mean_images_per_s": 7.614296798506107,
+        "other_load_cores": 0.102,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 123.47187900013523,
+            "p95_ms": 174.85613485105202,
+            "p99_ms": 236.5893280910673,
+            "throughput_images_per_s": 8.099010139781745,
+            "other_load_cores": 0.102,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795069926.3
+          },
+          {
+            "run": 2,
+            "p50_ms": 121.88373300068633,
+            "p95_ms": 183.16969404868348,
+            "p99_ms": 212.42121202994875,
+            "throughput_images_per_s": 8.204540305590813,
+            "other_load_cores": 0.09,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071166.2
+          },
+          {
+            "run": 3,
+            "p50_ms": 115.63235750054446,
+            "p95_ms": 160.3330578001987,
+            "p99_ms": 226.75764393899934,
+            "throughput_images_per_s": 8.64809834907406,
+            "other_load_cores": 0.09,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072088.7
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "batch_t4_b8": {
+          "median": 1.0,
+          "range": [
+            1.0,
+            1.0
+          ],
+          "runs": 3,
+          "per_run": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "ratio_of_medians": 1.0
+        },
+        "single_t1_b1": {
+          "median": 1.0,
+          "range": [
+            1.0,
+            1.0
+          ],
+          "runs": 3,
+          "per_run": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "ratio_of_medians": 1.0
+        },
+        "single_t4_b1": {
+          "median": 1.0,
+          "range": [
+            1.0,
+            1.0
+          ],
+          "runs": 3,
+          "per_run": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "ratio_of_medians": 1.0
+        }
+      },
+      "accuracy": {
+        "map50": 0.847764,
+        "map50_95": 0.701599,
+        "ci95": {
+          "map50": [
+            0.803948,
+            0.892233
+          ],
+          "map50_95": [
+            0.664034,
+            0.74412
+          ]
+        },
+        "delta_vs_pytorch": null
+      }
+    },
+    {
+      "family": "yolo11s",
+      "backend": "onnxruntime-fp32",
+      "model_size_bytes": 38030490,
+      "precision_hint": "f32",
+      "batch_t4_b8": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 601.6768795000947,
+          "p50_ms": 579.4101219998993,
+          "p95_ms": 689.9534540501918,
+          "p99_ms": 724.8315673399339,
+          "min_ms": 530.9661960000085,
+          "max_ms": 746.9346870002482
+        },
+        "infer": {
+          "mean_ms": 561.4225894333382,
+          "p50_ms": 540.3232325006684,
+          "p95_ms": 647.1903338506309,
+          "p99_ms": 686.4053875405444,
+          "min_ms": 490.7172310013266,
+          "max_ms": 709.3762800013792
+        },
+        "e2e_p50_range_ms": [
+          571.3287560001845,
+          604.7903630005749
+        ],
+        "throughput_images_per_s": 13.807145743997532,
+        "throughput_range": [
+          13.22772400060944,
+          14.002445905238869
+        ],
+        "throughput_mean_images_per_s": 13.296173199553266,
+        "other_load_cores": 0.098,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 604.7903630005749,
+            "p95_ms": 689.9534540501918,
+            "p99_ms": 712.1583623508923,
+            "throughput_images_per_s": 13.22772400060944,
+            "other_load_cores": 0.091,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070131.0
+          },
+          {
+            "run": 2,
+            "p50_ms": 571.3287560001845,
+            "p95_ms": 659.2450178490252,
+            "p99_ms": 724.8315673399339,
+            "throughput_images_per_s": 14.002445905238869,
+            "other_load_cores": 0.075,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071316.6
+          },
+          {
+            "run": 3,
+            "p50_ms": 579.4101219998993,
+            "p95_ms": 711.1467208000248,
+            "p99_ms": 753.0817303996628,
+            "throughput_images_per_s": 13.807145743997532,
+            "other_load_cores": 0.098,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072301.4
+          }
+        ]
+      },
+      "single_t1_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 214.8099774649927,
+          "p50_ms": 212.22261049933877,
+          "p95_ms": 242.3782521994326,
+          "p99_ms": 264.53252936948047,
+          "min_ms": 198.21704700007103,
+          "max_ms": 274.5467140011897
+        },
+        "infer": {
+          "mean_ms": 209.78964106500825,
+          "p50_ms": 207.1643799999947,
+          "p95_ms": 237.0742793993486,
+          "p99_ms": 258.81556819082107,
+          "min_ms": 193.7103410000418,
+          "max_ms": 269.3097659994237
+        },
+        "e2e_p50_range_ms": [
+          211.9087600003695,
+          214.67307050079398
+        ],
+        "throughput_images_per_s": 4.712033263784189,
+        "throughput_range": [
+          4.658246130579762,
+          4.7190120880243756
+        ],
+        "throughput_mean_images_per_s": 4.655277244572909,
+        "other_load_cores": 0.37,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 214.67307050079398,
+            "p95_ms": 243.8754315509868,
+            "p99_ms": 264.53252936948047,
+            "throughput_images_per_s": 4.658246130579762,
+            "other_load_cores": 0.37,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070002.4
+          },
+          {
+            "run": 2,
+            "p50_ms": 212.22261049933877,
+            "p95_ms": 242.3782521994326,
+            "p99_ms": 269.72534925011104,
+            "throughput_images_per_s": 4.712033263784189,
+            "other_load_cores": 0.16,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071244.4
+          },
+          {
+            "run": 3,
+            "p50_ms": 211.9087600003695,
+            "p95_ms": 233.0225503503243,
+            "p99_ms": 256.3665030696029,
+            "throughput_images_per_s": 4.7190120880243756,
+            "other_load_cores": 0.172,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072162.7
+          }
+        ]
+      },
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 84.24165227005687,
+          "p50_ms": 78.07193100052245,
+          "p95_ms": 107.50244249993551,
+          "p99_ms": 137.32308747017638,
+          "min_ms": 70.29934599995613,
+          "max_ms": 163.12744800052315
+        },
+        "infer": {
+          "mean_ms": 79.32894010996279,
+          "p50_ms": 73.20730349965743,
+          "p95_ms": 102.21256844988596,
+          "p99_ms": 131.7239202494417,
+          "min_ms": 65.7456809985888,
+          "max_ms": 158.0695470001956
+        },
+        "e2e_p50_range_ms": [
+          77.53759699880902,
+          79.87569899978553
+        ],
+        "throughput_images_per_s": 12.808700735137549,
+        "throughput_range": [
+          12.519452255468652,
+          12.896969195671101
+        ],
+        "throughput_mean_images_per_s": 11.870612375861997,
+        "other_load_cores": 0.123,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 79.87569899978553,
+            "p95_ms": 107.50244249993551,
+            "p99_ms": 137.32308747017638,
+            "throughput_images_per_s": 12.519452255468652,
+            "other_load_cores": 0.104,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795070108.9
+          },
+          {
+            "run": 2,
+            "p50_ms": 77.53759699880902,
+            "p95_ms": 100.57177860089723,
+            "p99_ms": 118.26225711041842,
+            "throughput_images_per_s": 12.896969195671101,
+            "other_load_cores": 0.057,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071295.2
+          },
+          {
+            "run": 3,
+            "p50_ms": 78.07193100052245,
+            "p95_ms": 113.65076275051248,
+            "p99_ms": 158.28437342046524,
+            "throughput_images_per_s": 12.808700735137549,
+            "other_load_cores": 0.123,
+            "contaminated": false,
+            "attempt": 3,
+            "started_unix": 1795072279.4
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "batch_t4_b8": {
+          "median": 1.8863356468263275,
+          "range": [
+            1.7347106099612144,
+            1.9514959353767438
+          ],
+          "runs": 3,
+          "per_run": [
+            1.7347106099612144,
+            1.8863356468263275,
+            1.9514959353767438
+          ],
+          "ratio_of_medians": 1.8600258393488618
+        },
+        "single_t1_b1": {
+          "median": 1.4399288642286325,
+          "range": [
+            1.4185119157678228,
+            1.4434445230098032
+          ],
+          "runs": 3,
+          "per_run": [
+            1.4185119157678228,
+            1.4399288642286325,
+            1.4434445230098032
+          ],
+          "ratio_of_medians": 1.4399288642286325
+        },
+        "single_t4_b1": {
+          "median": 1.5458002940351956,
+          "range": [
+            1.4811002625229117,
+            1.5719307499632527
+          ],
+          "runs": 3,
+          "per_run": [
+            1.5458002940351956,
+            1.5719307499632527,
+            1.4811002625229117
+          ],
+          "ratio_of_medians": 1.5611722604871996
+        }
+      },
+      "accuracy": {
+        "map50": 0.847764,
+        "map50_95": 0.701599,
+        "ci95": {
+          "map50": [
+            0.803948,
+            0.892233
+          ],
+          "map50_95": [
+            0.664034,
+            0.74412
+          ]
+        },
+        "delta_vs_pytorch": {
+          "map50": 0.0,
+          "map50_95": -0.0,
+          "ci95": {
+            "map50": [
+              -0.0,
+              0.0
+            ],
+            "map50_95": [
+              -0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "family": "yolo11s",
+      "backend": "openvino-bf16",
+      "model_size_bytes": 38224465,
+      "precision_hint": "bf16",
+      "batch_t4_b8": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 204.98415893325728,
+          "p50_ms": 194.04994699925737,
+          "p95_ms": 254.46845470014517,
+          "p99_ms": 275.5661039896768,
+          "min_ms": 180.94939599905047,
+          "max_ms": 283.8134049998189
+        },
+        "infer": {
+          "mean_ms": 169.81525539995346,
+          "p50_ms": 158.53820299980725,
+          "p95_ms": 218.8338122500681,
+          "p99_ms": 236.44472680929542,
+          "min_ms": 148.5295700003917,
+          "max_ms": 244.8319069990248
+        },
+        "e2e_p50_range_ms": [
+          193.5259305009822,
+          252.18101649988967
+        ],
+        "throughput_images_per_s": 41.22649927871723,
+        "throughput_range": [
+          31.7232443228077,
+          41.33812962061638
+        ],
+        "throughput_mean_images_per_s": 39.02740602801798,
+        "other_load_cores": 0.113,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 252.18101649988967,
+            "p95_ms": 290.28780780063244,
+            "p99_ms": 329.22242165022914,
+            "throughput_images_per_s": 31.7232443228077,
+            "other_load_cores": 0.113,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070451.2
+          },
+          {
+            "run": 2,
+            "p50_ms": 193.5259305009822,
+            "p95_ms": 254.46845470014517,
+            "p99_ms": 267.6019209007609,
+            "throughput_images_per_s": 41.33812962061638,
+            "other_load_cores": 0.079,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071497.9
+          },
+          {
+            "run": 3,
+            "p50_ms": 194.04994699925737,
+            "p95_ms": 252.707875499982,
+            "p99_ms": 275.5661039896768,
+            "throughput_images_per_s": 41.22649927871723,
+            "other_load_cores": 0.072,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795072709.8
+          }
+        ]
+      },
+      "single_t1_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 77.63652491502398,
+          "p50_ms": 75.76949250051257,
+          "p95_ms": 91.2939792988254,
+          "p99_ms": 107.94304840079347,
+          "min_ms": 68.82701900030952,
+          "max_ms": 117.4342690010235
+        },
+        "infer": {
+          "mean_ms": 70.40493133499695,
+          "p50_ms": 68.48051649922127,
+          "p95_ms": 83.16691340151009,
+          "p99_ms": 99.35873365115185,
+          "min_ms": 62.77059599960921,
+          "max_ms": 106.96103400005086
+        },
+        "e2e_p50_range_ms": [
+          72.91918450027879,
+          80.85795199986023
+        ],
+        "throughput_images_per_s": 13.19792395327493,
+        "throughput_range": [
+          12.367367405023176,
+          13.713812172380736
+        ],
+        "throughput_mean_images_per_s": 12.88053530338377,
+        "other_load_cores": 0.244,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 80.85795199986023,
+            "p95_ms": 101.12854519929897,
+            "p99_ms": 107.94304840079347,
+            "throughput_images_per_s": 12.367367405023176,
+            "other_load_cores": 0.097,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070416.7
+          },
+          {
+            "run": 2,
+            "p50_ms": 72.91918450027879,
+            "p95_ms": 89.16153619902614,
+            "p99_ms": 102.20777925002037,
+            "throughput_images_per_s": 13.713812172380736,
+            "other_load_cores": 0.062,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071466.9
+          },
+          {
+            "run": 3,
+            "p50_ms": 75.76949250051257,
+            "p95_ms": 91.2939792988254,
+            "p99_ms": 109.02951308931719,
+            "throughput_images_per_s": 13.19792395327493,
+            "other_load_cores": 0.244,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072562.1
+          }
+        ]
+      },
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 32.60850016499717,
+          "p50_ms": 30.58633149976231,
+          "p95_ms": 44.03089515017198,
+          "p99_ms": 56.85679118932967,
+          "min_ms": 26.504575998842483,
+          "max_ms": 60.11038799988455
+        },
+        "infer": {
+          "mean_ms": 28.435192269862455,
+          "p50_ms": 26.497405499867455,
+          "p95_ms": 40.256525998756835,
+          "p99_ms": 50.263436088371215,
+          "min_ms": 22.823050001534284,
+          "max_ms": 55.73486599860189
+        },
+        "e2e_p50_range_ms": [
+          30.04153299934842,
+          38.669318999382085
+        ],
+        "throughput_images_per_s": 32.69434256958116,
+        "throughput_range": [
+          25.860295083447927,
+          33.28724935647223
+        ],
+        "throughput_mean_images_per_s": 30.666850512598142,
+        "other_load_cores": 0.104,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 38.669318999382085,
+            "p95_ms": 52.5262836497859,
+            "p99_ms": 66.92703418051669,
+            "throughput_images_per_s": 25.860295083447927,
+            "other_load_cores": 0.08,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070438.7
+          },
+          {
+            "run": 2,
+            "p50_ms": 30.58633149976231,
+            "p95_ms": 44.03089515017198,
+            "p99_ms": 56.85679118932967,
+            "throughput_images_per_s": 32.69434256958116,
+            "other_load_cores": 0.104,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071487.0
+          },
+          {
+            "run": 3,
+            "p50_ms": 30.04153299934842,
+            "p95_ms": 43.96594359959636,
+            "p99_ms": 47.382942209114816,
+            "throughput_images_per_s": 33.28724935647223,
+            "other_load_cores": 0.093,
+            "contaminated": false,
+            "attempt": 3,
+            "started_unix": 1795072666.0
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "batch_t4_b8": {
+          "median": 5.56885475610525,
+          "range": [
+            4.160250736001973,
+            5.826935361148405
+          ],
+          "runs": 3,
+          "per_run": [
+            4.160250736001973,
+            5.56885475610525,
+            5.826935361148405
+          ],
+          "ratio_of_medians": 5.55381650531558
+        },
+        "single_t1_b1": {
+          "median": 4.036961696665225,
+          "range": [
+            3.7660650680389294,
+            4.190741635334389
+          ],
+          "runs": 3,
+          "per_run": [
+            3.7660650680389294,
+            4.190741635334389,
+            4.036961696665225
+          ],
+          "ratio_of_medians": 4.033093695300666
+        },
+        "single_t4_b1": {
+          "median": 3.8490831177973654,
+          "range": [
+            3.1930192254512746,
+            3.984908520383803
+          ],
+          "runs": 3,
+          "per_run": [
+            3.1930192254512746,
+            3.984908520383803,
+            3.8490831177973654
+          ],
+          "ratio_of_medians": 3.984908520383803
+        }
+      },
+      "accuracy": {
+        "map50": 0.847541,
+        "map50_95": 0.700091,
+        "ci95": {
+          "map50": [
+            0.803259,
+            0.892084
+          ],
+          "map50_95": [
+            0.662884,
+            0.742516
+          ]
+        },
+        "delta_vs_pytorch": {
+          "map50": -0.000222,
+          "map50_95": -0.001508,
+          "ci95": {
+            "map50": [
+              -0.001711,
+              0.00186
+            ],
+            "map50_95": [
+              -0.004151,
+              0.000546
+            ]
+          }
+        }
+      }
+    },
+    {
+      "family": "yolo11s",
+      "backend": "openvino-fp32",
+      "model_size_bytes": 38224465,
+      "precision_hint": "f32",
+      "batch_t4_b8": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 559.3939913001426,
+          "p50_ms": 555.9181199996601,
+          "p95_ms": 649.1758340996967,
+          "p99_ms": 670.5885370204305,
+          "min_ms": 486.944055001004,
+          "max_ms": 683.2733500014001
+        },
+        "infer": {
+          "mean_ms": 523.0001254999783,
+          "p50_ms": 519.1352989995721,
+          "p95_ms": 614.729289349907,
+          "p99_ms": 635.5288085203028,
+          "min_ms": 454.59765499981586,
+          "max_ms": 646.6039799997816
+        },
+        "e2e_p50_range_ms": [
+          515.787220000675,
+          574.8441919995457
+        ],
+        "throughput_images_per_s": 14.390608458678935,
+        "throughput_range": [
+          13.9168145235541,
+          15.510271852004264
+        ],
+        "throughput_mean_images_per_s": 14.301190438972025,
+        "other_load_cores": 0.088,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 574.8441919995457,
+            "p95_ms": 700.0364396999429,
+            "p99_ms": 742.6715544197577,
+            "throughput_images_per_s": 13.9168145235541,
+            "other_load_cores": 0.078,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070283.2
+          },
+          {
+            "run": 2,
+            "p50_ms": 515.787220000675,
+            "p95_ms": 600.822746700578,
+            "p99_ms": 666.0707057313812,
+            "throughput_images_per_s": 15.510271852004264,
+            "other_load_cores": 0.063,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071412.2
+          },
+          {
+            "run": 3,
+            "p50_ms": 555.9181199996601,
+            "p95_ms": 649.1758340996967,
+            "p99_ms": 670.5885370204305,
+            "throughput_images_per_s": 14.390608458678935,
+            "other_load_cores": 0.088,
+            "contaminated": false,
+            "attempt": 3,
+            "started_unix": 1795072505.2
+          }
+        ]
+      },
+      "single_t1_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 219.686526350024,
+          "p50_ms": 217.83754599982785,
+          "p95_ms": 244.17681034992705,
+          "p99_ms": 266.3770765696245,
+          "min_ms": 203.90183700146736,
+          "max_ms": 305.5735609996191
+        },
+        "infer": {
+          "mean_ms": 214.70631667493763,
+          "p50_ms": 212.82017049998103,
+          "p95_ms": 239.6940474493021,
+          "p99_ms": 260.7256937197417,
+          "min_ms": 199.47466700068617,
+          "max_ms": 301.00519100051315
+        },
+        "e2e_p50_range_ms": [
+          215.74662550028734,
+          220.05999150042044
+        ],
+        "throughput_images_per_s": 4.59057686961269,
+        "throughput_range": [
+          4.544215389547943,
+          4.63506670234649
+        ],
+        "throughput_mean_images_per_s": 4.551940515490292,
+        "other_load_cores": 0.213,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 220.05999150042044,
+            "p95_ms": 279.456161049984,
+            "p99_ms": 322.06370300871635,
+            "throughput_images_per_s": 4.544215389547943,
+            "other_load_cores": 0.213,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070154.9
+          },
+          {
+            "run": 2,
+            "p50_ms": 215.74662550028734,
+            "p95_ms": 242.0992489006494,
+            "p99_ms": 265.44827698055076,
+            "throughput_images_per_s": 4.63506670234649,
+            "other_load_cores": 0.053,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071339.8
+          },
+          {
+            "run": 3,
+            "p50_ms": 217.83754599982785,
+            "p95_ms": 244.17681034992705,
+            "p99_ms": 266.3770765696245,
+            "throughput_images_per_s": 4.59057686961269,
+            "other_load_cores": 0.142,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072325.1
+          }
+        ]
+      },
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 74.19914409506418,
+          "p50_ms": 68.72821000069962,
+          "p95_ms": 105.60338105069602,
+          "p99_ms": 135.91792774048366,
+          "min_ms": 62.29591400006029,
+          "max_ms": 152.0389150009578
+        },
+        "infer": {
+          "mean_ms": 69.96956573509124,
+          "p50_ms": 64.5002535002277,
+          "p95_ms": 101.61659329887696,
+          "p99_ms": 131.36880523006764,
+          "min_ms": 58.32216000089829,
+          "max_ms": 146.2051029993745
+        },
+        "e2e_p50_range_ms": [
+          68.51176750024024,
+          74.11167949976516
+        ],
+        "throughput_images_per_s": 14.550066122627383,
+        "throughput_range": [
+          13.493149888786,
+          14.596032717977879
+        ],
+        "throughput_mean_images_per_s": 13.477244410242749,
+        "other_load_cores": 0.142,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 74.11167949976516,
+            "p95_ms": 120.51017880003195,
+            "p99_ms": 135.91792774048366,
+            "throughput_images_per_s": 13.493149888786,
+            "other_load_cores": 0.142,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795070262.0
+          },
+          {
+            "run": 2,
+            "p50_ms": 68.51176750024024,
+            "p95_ms": 102.24827210031435,
+            "p99_ms": 111.32273055969549,
+            "throughput_images_per_s": 14.596032717977879,
+            "other_load_cores": 0.045,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071392.7
+          },
+          {
+            "run": 3,
+            "p50_ms": 68.72821000069962,
+            "p95_ms": 105.60338105069602,
+            "p99_ms": 150.60298177026186,
+            "throughput_images_per_s": 14.550066122627383,
+            "other_load_cores": 0.133,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072377.2
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "batch_t4_b8": {
+          "median": 2.033962300058933,
+          "range": [
+            1.8250793416735445,
+            2.0894620043099916
+          ],
+          "runs": 3,
+          "per_run": [
+            1.8250793416735445,
+            2.0894620043099916,
+            2.033962300058933
+          ],
+          "ratio_of_medians": 1.9386268583955275
+        },
+        "single_t1_b1": {
+          "median": 1.4041589460458481,
+          "range": [
+            1.3837876954533117,
+            1.4164090019546627
+          ],
+          "runs": 3,
+          "per_run": [
+            1.3837876954533117,
+            1.4164090019546627,
+            1.4041589460458481
+          ],
+          "ratio_of_medians": 1.4028135558421588
+        },
+        "single_t4_b1": {
+          "median": 1.6824584475482103,
+          "range": [
+            1.6660245703988732,
+            1.7790189546672976
+          ],
+          "runs": 3,
+          "per_run": [
+            1.6660245703988732,
+            1.7790189546672976,
+            1.6824584475482103
+          ],
+          "ratio_of_medians": 1.7734163744326472
+        }
+      },
+      "accuracy": {
+        "map50": 0.847764,
+        "map50_95": 0.701599,
+        "ci95": {
+          "map50": [
+            0.803948,
+            0.892233
+          ],
+          "map50_95": [
+            0.664034,
+            0.74412
+          ]
+        },
+        "delta_vs_pytorch": {
+          "map50": 0.0,
+          "map50_95": -0.0,
+          "ci95": {
+            "map50": [
+              -0.0,
+              0.0
+            ],
+            "map50_95": [
+              -0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "family": "yolo11s",
+      "backend": "openvino-fp32+tiles512",
+      "model_size_bytes": 38224465,
+      "precision_hint": "f32",
+      "tiling": {
+        "tile_size": 512,
+        "overlap": 0.2,
+        "full_image": true,
+        "merge_iou": null,
+        "batch_size": 8,
+        "border_margin": 0.02,
+        "rescue_ioa": 0.5
+      },
+      "untiled_backend": "openvino-fp32",
+      "mean_inferences_per_image": 6.8125,
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 455.22092271670164,
+          "p50_ms": 455.5642805007665,
+          "p95_ms": 547.2247575004985,
+          "p99_ms": 586.2157559696969,
+          "min_ms": 241.572165999969,
+          "max_ms": 605.8272480004234
+        },
+        "infer": {
+          "mean_ms": 455.2125255331096,
+          "p50_ms": 455.5553094996867,
+          "p95_ms": 547.217167648887,
+          "p99_ms": 586.2083120090391,
+          "min_ms": 241.5647230009199,
+          "max_ms": 605.8194759989419
+        },
+        "e2e_p50_range_ms": [
+          451.22250900021754,
+          476.9431335007539
+        ],
+        "throughput_images_per_s": 2.195079910349375,
+        "throughput_range": [
+          2.0966860192744954,
+          2.216201497163161
+        ],
+        "throughput_mean_images_per_s": 2.1967355850696073,
+        "other_load_cores": 0.088,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 451.22250900021754,
+            "p95_ms": 547.2247575004985,
+            "p99_ms": 586.2157559696969,
+            "throughput_images_per_s": 2.216201497163161,
+            "other_load_cores": 0.081,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795070383.0
+          },
+          {
+            "run": 2,
+            "p50_ms": 455.5642805007665,
+            "p95_ms": 533.4565105485126,
+            "p99_ms": 551.6256235300533,
+            "throughput_images_per_s": 2.195079910349375,
+            "other_load_cores": 0.086,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071433.6
+          },
+          {
+            "run": 3,
+            "p50_ms": 476.9431335007539,
+            "p95_ms": 578.8616220002041,
+            "p99_ms": 686.0891183787497,
+            "throughput_images_per_s": 2.0966860192744954,
+            "other_load_cores": 0.088,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072527.3
+          }
+        ]
+      },
+      "slowdown_vs_untiled": {
+        "single_t4_b1": {
+          "median": 6.649431143331239,
+          "range": [
+            6.088412947134025,
+            6.9395541291690686
+          ],
+          "runs": 3,
+          "per_run": [
+            6.088412947134025,
+            6.649431143331239,
+            6.9395541291690686
+          ],
+          "ratio_of_medians": 6.628490404393321
+        }
+      }
+    },
+    {
+      "family": "yolo11s",
+      "backend": "openvino-fp32-nopin",
+      "model_size_bytes": 38224465,
+      "precision_hint": "f32",
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 73.08847523992881,
+          "p50_ms": 69.04068299900246,
+          "p95_ms": 96.57787885153084,
+          "p99_ms": 115.2773209289989,
+          "min_ms": 62.6183989988931,
+          "max_ms": 129.71307699990575
+        },
+        "infer": {
+          "mean_ms": 68.63753852504487,
+          "p50_ms": 64.82296549984312,
+          "p95_ms": 92.42681559871926,
+          "p99_ms": 111.17847518900811,
+          "min_ms": 58.65395399996487,
+          "max_ms": 125.76081099905423
+        },
+        "e2e_p50_range_ms": [
+          67.2089709996726,
+          69.41316899974481
+        ],
+        "throughput_images_per_s": 14.484213605106552,
+        "throughput_range": [
+          14.40648819827944,
+          14.878966083335383
+        ],
+        "throughput_mean_images_per_s": 13.68204763770598,
+        "other_load_cores": 0.155,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 69.04068299900246,
+            "p95_ms": 96.57787885153084,
+            "p99_ms": 112.19428263930234,
+            "throughput_images_per_s": 14.484213605106552,
+            "other_load_cores": 0.129,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795070693.1
+          },
+          {
+            "run": 2,
+            "p50_ms": 67.2089709996726,
+            "p95_ms": 109.78374420092221,
+            "p99_ms": 115.2773209289989,
+            "throughput_images_per_s": 14.878966083335383,
+            "other_load_cores": 0.155,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071637.2
+          },
+          {
+            "run": 3,
+            "p50_ms": 69.41316899974481,
+            "p95_ms": 91.01486510153336,
+            "p99_ms": 116.1507601097945,
+            "throughput_images_per_s": 14.40648819827944,
+            "other_load_cores": 0.085,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072849.7
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "single_t4_b1": {
+          "median": 1.7883930696618289,
+          "range": [
+            1.665856193670823,
+            1.8135039294275173
+          ],
+          "runs": 3,
+          "per_run": [
+            1.7883930696618289,
+            1.8135039294275173,
+            1.665856193670823
+          ],
+          "ratio_of_medians": 1.7653900237697153
+        }
+      }
+    },
+    {
+      "family": "yolo11s",
+      "backend": "openvino-int8",
+      "model_size_bytes": 10345824,
+      "precision_hint": "f32",
+      "batch_t4_b8": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 225.46680369996466,
+          "p50_ms": 222.44504450100067,
+          "p95_ms": 270.6049422498836,
+          "p99_ms": 282.19831055102986,
+          "min_ms": 193.973460000052,
+          "max_ms": 286.480829001448
+        },
+        "infer": {
+          "mean_ms": 188.4006922999712,
+          "p50_ms": 187.91559599958418,
+          "p95_ms": 223.67347379931743,
+          "p99_ms": 244.45430518031574,
+          "min_ms": 161.31490299994766,
+          "max_ms": 251.96317600057228
+        },
+        "e2e_p50_range_ms": [
+          210.60492800006614,
+          224.88241999963066
+        ],
+        "throughput_images_per_s": 35.96393894926264,
+        "throughput_range": [
+          35.57414581367961,
+          37.98581579248463
+        ],
+        "throughput_mean_images_per_s": 35.48194177022102,
+        "other_load_cores": 0.117,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 224.88241999963066,
+            "p95_ms": 310.15104084926855,
+            "p99_ms": 356.9959587709673,
+            "throughput_images_per_s": 35.57414581367961,
+            "other_load_cores": 0.117,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795070580.0
+          },
+          {
+            "run": 2,
+            "p50_ms": 210.60492800006614,
+            "p95_ms": 262.1719822495834,
+            "p99_ms": 270.6729612108393,
+            "throughput_images_per_s": 37.98581579248463,
+            "other_load_cores": 0.077,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071544.5
+          },
+          {
+            "run": 3,
+            "p50_ms": 222.44504450100067,
+            "p95_ms": 270.6049422498836,
+            "p99_ms": 282.19831055102986,
+            "throughput_images_per_s": 35.96393894926264,
+            "other_load_cores": 0.099,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072756.6
+          }
+        ]
+      },
+      "single_t1_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 86.22802814500574,
+          "p50_ms": 84.82355249998363,
+          "p95_ms": 101.1413319991334,
+          "p99_ms": 109.60705972122012,
+          "min_ms": 79.20464299968444,
+          "max_ms": 118.15045499861299
+        },
+        "infer": {
+          "mean_ms": 78.03968868499396,
+          "p50_ms": 76.63658499950543,
+          "p95_ms": 92.1740119008973,
+          "p99_ms": 100.14415129091502,
+          "min_ms": 71.94885299941234,
+          "max_ms": 107.3242950005806
+        },
+        "e2e_p50_range_ms": [
+          84.49997600018833,
+          98.73664200040366
+        ],
+        "throughput_images_per_s": 11.789178483183582,
+        "throughput_range": [
+          10.127952295520762,
+          11.834322887828646
+        ],
+        "throughput_mean_images_per_s": 11.597157229646324,
+        "other_load_cores": 0.864,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 98.73664200040366,
+            "p95_ms": 119.34375090040702,
+            "p99_ms": 143.15426861085143,
+            "throughput_images_per_s": 10.127952295520762,
+            "other_load_cores": 0.11,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070464.7
+          },
+          {
+            "run": 2,
+            "p50_ms": 84.82355249998363,
+            "p95_ms": 101.1413319991334,
+            "p99_ms": 109.06450153097462,
+            "throughput_images_per_s": 11.789178483183582,
+            "other_load_cores": 0.067,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071508.7
+          },
+          {
+            "run": 3,
+            "p50_ms": 84.49997600018833,
+            "p95_ms": 99.93630285052859,
+            "p99_ms": 109.60705972122012,
+            "throughput_images_per_s": 11.834322887828646,
+            "other_load_cores": 0.864,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072720.7
+          }
+        ]
+      },
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 38.51470781499302,
+          "p50_ms": 37.07071500048187,
+          "p95_ms": 48.93054565063721,
+          "p99_ms": 59.80181226001143,
+          "min_ms": 33.11684900108958,
+          "max_ms": 70.89717999951972
+        },
+        "infer": {
+          "mean_ms": 32.027195970031244,
+          "p50_ms": 30.658933000268007,
+          "p95_ms": 41.300228950694866,
+          "p99_ms": 53.20727902037102,
+          "min_ms": 27.39066700087278,
+          "max_ms": 63.218207000318216
+        },
+        "e2e_p50_range_ms": [
+          36.027691500748915,
+          37.33759950046078
+        ],
+        "throughput_images_per_s": 26.975471068928705,
+        "throughput_range": [
+          26.78265376936348,
+          27.756427302016085
+        ],
+        "throughput_mean_images_per_s": 25.964107135475132,
+        "other_load_cores": 0.153,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 36.027691500748915,
+            "p95_ms": 48.93054565063721,
+            "p99_ms": 59.80181226001143,
+            "throughput_images_per_s": 27.756427302016085,
+            "other_load_cores": 0.063,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795070524.5
+          },
+          {
+            "run": 2,
+            "p50_ms": 37.07071500048187,
+            "p95_ms": 47.32553190078761,
+            "p99_ms": 59.086110130974696,
+            "throughput_images_per_s": 26.975471068928705,
+            "other_load_cores": 0.073,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071531.9
+          },
+          {
+            "run": 3,
+            "p50_ms": 37.33759950046078,
+            "p95_ms": 49.41031135049343,
+            "p99_ms": 68.9531799096403,
+            "throughput_images_per_s": 26.78265376936348,
+            "other_load_cores": 0.153,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072743.8
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "batch_t4_b8": {
+          "median": 5.083127387869771,
+          "range": [
+            4.66526578423122,
+            5.117248721263306
+          ],
+          "runs": 3,
+          "per_run": [
+            4.66526578423122,
+            5.117248721263306,
+            5.083127387869771
+          ],
+          "ratio_of_medians": 4.844872138723867
+        },
+        "single_t1_b1": {
+          "median": 3.602601559278094,
+          "range": [
+            3.084126645694485,
+            3.6198653949872193
+          ],
+          "runs": 3,
+          "per_run": [
+            3.084126645694485,
+            3.602601559278094,
+            3.6198653949872193
+          ],
+          "ratio_of_medians": 3.602601559278094
+        },
+        "single_t4_b1": {
+          "median": 3.2878711133330447,
+          "range": [
+            3.0969413954723426,
+            3.4271382333105804
+          ],
+          "runs": 3,
+          "per_run": [
+            3.4271382333105804,
+            3.2878711133330447,
+            3.0969413954723426
+          ],
+          "ratio_of_medians": 3.2878711133330447
+        }
+      },
+      "accuracy": {
+        "map50": 0.846796,
+        "map50_95": 0.701684,
+        "ci95": {
+          "map50": [
+            0.805566,
+            0.888956
+          ],
+          "map50_95": [
+            0.664006,
+            0.74483
+          ]
+        },
+        "delta_vs_pytorch": {
+          "map50": -0.000967,
+          "map50_95": 8.5e-05,
+          "ci95": {
+            "map50": [
+              -0.005394,
+              0.006245
+            ],
+            "map50_95": [
+              -0.004508,
+              0.006773
+            ]
+          }
+        }
+      }
+    },
+    {
+      "family": "yolo11s",
+      "backend": "openvino-int8-bf16",
+      "model_size_bytes": 10345824,
+      "precision_hint": "bf16",
+      "batch_t4_b8": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 230.88328189993868,
+          "p50_ms": 225.6726619998517,
+          "p95_ms": 279.67125065015347,
+          "p99_ms": 287.32397718056745,
+          "min_ms": 201.92442900042806,
+          "max_ms": 287.68687500087253
+        },
+        "infer": {
+          "mean_ms": 194.37347846693834,
+          "p50_ms": 188.74246650011628,
+          "p95_ms": 241.04723970076518,
+          "p99_ms": 250.01034255974446,
+          "min_ms": 168.663825999829,
+          "max_ms": 250.80415199954587
+        },
+        "e2e_p50_range_ms": [
+          222.31905799981178,
+          241.0490474994731
+        ],
+        "throughput_images_per_s": 35.44957519048212,
+        "throughput_range": [
+          33.188266383908804,
+          35.98431943700829
+        ],
+        "throughput_mean_images_per_s": 34.649542115687176,
+        "other_load_cores": 0.154,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 241.0490474994731,
+            "p95_ms": 286.39084725045905,
+            "p99_ms": 287.3611644007724,
+            "throughput_images_per_s": 33.188266383908804,
+            "other_load_cores": 0.154,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070629.3
+          },
+          {
+            "run": 2,
+            "p50_ms": 222.31905799981178,
+            "p95_ms": 251.40325209995353,
+            "p99_ms": 273.9201491809945,
+            "throughput_images_per_s": 35.98431943700829,
+            "other_load_cores": 0.073,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795071625.7
+          },
+          {
+            "run": 3,
+            "p50_ms": 225.6726619998517,
+            "p95_ms": 279.67125065015347,
+            "p99_ms": 287.32397718056745,
+            "throughput_images_per_s": 35.44957519048212,
+            "other_load_cores": 0.038,
+            "contaminated": false,
+            "attempt": 2,
+            "started_unix": 1795072838.0
+          }
+        ]
+      },
+      "single_t1_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 84.91465774493918,
+          "p50_ms": 83.783713500452,
+          "p95_ms": 97.10468340090301,
+          "p99_ms": 109.00340507077995,
+          "min_ms": 78.39926300039224,
+          "max_ms": 113.5562489998847
+        },
+        "infer": {
+          "mean_ms": 78.22897556498901,
+          "p50_ms": 77.05165799961833,
+          "p95_ms": 89.26763680083239,
+          "p99_ms": 97.59045999095177,
+          "min_ms": 72.24995000069612,
+          "max_ms": 105.24042599899985
+        },
+        "e2e_p50_range_ms": [
+          82.41716449992964,
+          83.79562650043226
+        ],
+        "throughput_images_per_s": 11.935493883242657,
+        "throughput_range": [
+          11.933797046016972,
+          12.133394858553448
+        ],
+        "throughput_mean_images_per_s": 11.776529830735836,
+        "other_load_cores": 0.341,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 82.41716449992964,
+            "p95_ms": 97.10468340090301,
+            "p99_ms": 109.00340507077995,
+            "throughput_images_per_s": 12.133394858553448,
+            "other_load_cores": 0.341,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070592.6
+          },
+          {
+            "run": 2,
+            "p50_ms": 83.79562650043226,
+            "p95_ms": 97.18608555112947,
+            "p99_ms": 110.53968041933327,
+            "throughput_images_per_s": 11.933797046016972,
+            "other_load_cores": 0.089,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071556.3
+          },
+          {
+            "run": 3,
+            "p50_ms": 83.783713500452,
+            "p95_ms": 96.79559939968384,
+            "p99_ms": 104.31614909031848,
+            "throughput_images_per_s": 11.935493883242657,
+            "other_load_cores": 0.047,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072768.5
+          }
+        ]
+      },
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 41.34011511007884,
+          "p50_ms": 40.06627700073295,
+          "p95_ms": 55.31852414924287,
+          "p99_ms": 63.06351950976022,
+          "min_ms": 35.40904299916292,
+          "max_ms": 71.10998399912205
+        },
+        "infer": {
+          "mean_ms": 34.76874665995638,
+          "p50_ms": 33.70463899955212,
+          "p95_ms": 47.39482979884995,
+          "p99_ms": 56.74671337106702,
+          "min_ms": 29.493961999833118,
+          "max_ms": 59.93646900060412
+        },
+        "e2e_p50_range_ms": [
+          39.196428000650485,
+          41.99674250048702
+        ],
+        "throughput_images_per_s": 24.95864539601986,
+        "throughput_range": [
+          23.811370607813295,
+          25.512528845317345
+        ],
+        "throughput_mean_images_per_s": 24.189579475945802,
+        "other_load_cores": 0.14,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 41.99674250048702,
+            "p95_ms": 56.01786379966139,
+            "p99_ms": 68.39570443997214,
+            "throughput_images_per_s": 23.811370607813295,
+            "other_load_cores": 0.14,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070615.4
+          },
+          {
+            "run": 2,
+            "p50_ms": 39.196428000650485,
+            "p95_ms": 55.31852414924287,
+            "p99_ms": 63.06351950976022,
+            "throughput_images_per_s": 25.512528845317345,
+            "other_load_cores": 0.125,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071579.2
+          },
+          {
+            "run": 3,
+            "p50_ms": 40.06627700073295,
+            "p95_ms": 50.26894320126303,
+            "p99_ms": 58.80178248035004,
+            "throughput_images_per_s": 24.95864539601986,
+            "other_load_cores": 0.119,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072791.5
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "batch_t4_b8": {
+          "median": 4.847617690522067,
+          "range": [
+            4.352376706660435,
+            5.010427439366536
+          ],
+          "runs": 3,
+          "per_run": [
+            4.352376706660435,
+            4.847617690522067,
+            5.010427439366536
+          ],
+          "ratio_of_medians": 4.775579766506221
+        },
+        "single_t1_b1": {
+          "median": 3.6508114312536657,
+          "range": [
+            3.6467948896876137,
+            3.6948166118976604
+          ],
+          "runs": 3,
+          "per_run": [
+            3.6948166118976604,
+            3.6467948896876137,
+            3.6508114312536657
+          ],
+          "ratio_of_medians": 3.6473134184760116
+        },
+        "single_t4_b1": {
+          "median": 2.9400346705153,
+          "range": [
+            2.8860270071618865,
+            3.109562253954967
+          ],
+          "runs": 3,
+          "per_run": [
+            2.9400346705153,
+            3.109562253954967,
+            2.8860270071618865
+          ],
+          "ratio_of_medians": 3.042052871507294
+        }
+      },
+      "accuracy": {
+        "map50": 0.849573,
+        "map50_95": 0.703037,
+        "ci95": {
+          "map50": [
+            0.808197,
+            0.8918
+          ],
+          "map50_95": [
+            0.665484,
+            0.744378
+          ]
+        },
+        "delta_vs_pytorch": {
+          "map50": 0.001809,
+          "map50_95": 0.001438,
+          "ci95": {
+            "map50": [
+              -0.002977,
+              0.009001
+            ],
+            "map50_95": [
+              -0.004505,
+              0.009574
+            ]
+          }
+        }
+      }
+    },
+    {
+      "family": "yolo11s",
+      "backend": "openvino-int8-bf16-nopin",
+      "model_size_bytes": 10345824,
+      "precision_hint": "bf16",
+      "single_t4_b1": {
+        "runs": 3,
+        "e2e": {
+          "mean_ms": 40.818476885051496,
+          "p50_ms": 38.97096350010543,
+          "p95_ms": 50.391948449305346,
+          "p99_ms": 54.35403308951208,
+          "min_ms": 35.196759999962524,
+          "max_ms": 62.175654000384384
+        },
+        "infer": {
+          "mean_ms": 34.371405300016704,
+          "p50_ms": 32.43753100014146,
+          "p95_ms": 43.08759694977198,
+          "p99_ms": 46.77567463093508,
+          "min_ms": 29.227426999568706,
+          "max_ms": 54.34758800038253
+        },
+        "e2e_p50_range_ms": [
+          37.990757999978086,
+          40.035493000686984
+        ],
+        "throughput_images_per_s": 25.66013026589129,
+        "throughput_range": [
+          24.977836540762485,
+          26.32219130770112
+        ],
+        "throughput_mean_images_per_s": 24.498709317745735,
+        "other_load_cores": 0.114,
+        "contaminated": false,
+        "per_run": [
+          {
+            "run": 1,
+            "p50_ms": 38.97096350010543,
+            "p95_ms": 52.1612861512949,
+            "p99_ms": 60.75224212067042,
+            "throughput_images_per_s": 25.66013026589129,
+            "other_load_cores": 0.114,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795070713.2
+          },
+          {
+            "run": 2,
+            "p50_ms": 37.990757999978086,
+            "p95_ms": 48.18679215150041,
+            "p99_ms": 54.35403308951208,
+            "throughput_images_per_s": 26.32219130770112,
+            "other_load_cores": 0.07,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795071657.9
+          },
+          {
+            "run": 3,
+            "p50_ms": 40.035493000686984,
+            "p95_ms": 50.391948449305346,
+            "p99_ms": 53.92493420995377,
+            "throughput_images_per_s": 24.977836540762485,
+            "other_load_cores": 0.064,
+            "contaminated": false,
+            "attempt": 1,
+            "started_unix": 1795072869.6
+          }
+        ]
+      },
+      "speedup_vs_pytorch": {
+        "single_t4_b1": {
+          "median": 3.1683044993178373,
+          "range": [
+            2.8882461244716104,
+            3.2082469373408298
+          ],
+          "runs": 3,
+          "per_run": [
+            3.1683044993178373,
+            3.2082469373408298,
+            2.8882461244716104
+          ],
+          "ratio_of_medians": 3.1275524660907243
+        }
+      }
+    }
+  ]
+}

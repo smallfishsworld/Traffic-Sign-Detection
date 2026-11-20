@@ -1,0 +1,1047 @@
+{
+  "aggregated_by": {
+    "commit": "8d47bd49e27009c4dbdd6d055fa4080e720b5eb2",
+    "dirty": false,
+    "dirty_paths": [],
+    "checked_paths": [
+      "src",
+      "bench",
+      "pyproject.toml",
+      "uv.lock"
+    ]
+  },
+  "rows": [
+    {
+      "setting": "adaptive",
+      "concurrency": 1,
+      "runs": 3,
+      "throughput_rps": {
+        "median": 22.578545316453155,
+        "min": 22.3654911352598,
+        "max": 22.757492709676363
+      },
+      "error_rate_max": 0.0,
+      "mean_batch": {
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "other_load_max": 0.177,
+      "contaminated": false,
+      "per_run": [
+        {
+          "run": 1,
+          "throughput_rps": 22.578545316453155,
+          "p50_ms": 43.00556150064949,
+          "p95_ms": 53.87182690046757,
+          "p99_ms": 61.34942234979462,
+          "other_load": 0.177,
+          "slowest_1pct_ms": {
+            "latency": 62.886,
+            "outside": 3.741,
+            "preprocess": 9.724,
+            "queue_wait": 0.058,
+            "inference": 49.362,
+            "batch_size": 1.0,
+            "count": 5
+          }
+        },
+        {
+          "run": 2,
+          "throughput_rps": 22.3654911352598,
+          "p50_ms": 43.11324549962592,
+          "p95_ms": 56.11527760065655,
+          "p99_ms": 64.01418071020086,
+          "other_load": 0.165,
+          "slowest_1pct_ms": {
+            "latency": 68.138,
+            "outside": 8.783,
+            "preprocess": 10.334,
+            "queue_wait": 0.036,
+            "inference": 48.985,
+            "batch_size": 1.0,
+            "count": 4
+          }
+        },
+        {
+          "run": 3,
+          "throughput_rps": 22.757492709676363,
+          "p50_ms": 42.51593950084498,
+          "p95_ms": 52.841460749732505,
+          "p99_ms": 60.31835909998335,
+          "other_load": 0.159,
+          "slowest_1pct_ms": {
+            "latency": 67.049,
+            "outside": 5.548,
+            "preprocess": 15.97,
+            "queue_wait": 0.058,
+            "inference": 45.473,
+            "batch_size": 1.0,
+            "count": 5
+          }
+        }
+      ],
+      "p50_ms": {
+        "median": 43.00556150064949,
+        "min": 42.51593950084498,
+        "max": 43.11324549962592
+      },
+      "p95_ms": {
+        "median": 53.87182690046757,
+        "min": 52.841460749732505,
+        "max": 56.11527760065655
+      },
+      "p99_ms": {
+        "median": 61.34942234979462,
+        "min": 60.31835909998335,
+        "max": 64.01418071020086
+      }
+    },
+    {
+      "setting": "fixed",
+      "concurrency": 1,
+      "runs": 3,
+      "throughput_rps": {
+        "median": 20.438557402103502,
+        "min": 19.86373613859104,
+        "max": 20.497585029875317
+      },
+      "error_rate_max": 0.0,
+      "mean_batch": {
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "other_load_max": 0.281,
+      "contaminated": false,
+      "per_run": [
+        {
+          "run": 1,
+          "throughput_rps": 19.86373613859104,
+          "p50_ms": 48.83762349982135,
+          "p95_ms": 61.085524250484006,
+          "p99_ms": 69.05180820907842,
+          "other_load": 0.281,
+          "slowest_1pct_ms": {
+            "latency": 78.509,
+            "outside": 4.4,
+            "preprocess": 8.481,
+            "queue_wait": 5.282,
+            "inference": 60.346,
+            "batch_size": 1.0,
+            "count": 4
+          }
+        },
+        {
+          "run": 2,
+          "throughput_rps": 20.497585029875317,
+          "p50_ms": 47.54619149935024,
+          "p95_ms": 57.3018635000153,
+          "p99_ms": 61.94935452076605,
+          "other_load": 0.154,
+          "slowest_1pct_ms": {
+            "latency": 66.916,
+            "outside": 4.298,
+            "preprocess": 12.104,
+            "queue_wait": 5.277,
+            "inference": 45.238,
+            "batch_size": 1.0,
+            "count": 4
+          }
+        },
+        {
+          "run": 3,
+          "throughput_rps": 20.438557402103502,
+          "p50_ms": 47.34133599959023,
+          "p95_ms": 57.936734800750855,
+          "p99_ms": 63.07683248043761,
+          "other_load": 0.104,
+          "slowest_1pct_ms": {
+            "latency": 68.165,
+            "outside": 4.516,
+            "preprocess": 11.248,
+            "queue_wait": 5.337,
+            "inference": 47.065,
+            "batch_size": 1.0,
+            "count": 4
+          }
+        }
+      ],
+      "p50_ms": {
+        "median": 47.54619149935024,
+        "min": 47.34133599959023,
+        "max": 48.83762349982135
+      },
+      "p95_ms": {
+        "median": 57.936734800750855,
+        "min": 57.3018635000153,
+        "max": 61.085524250484006
+      },
+      "p99_ms": {
+        "median": 63.07683248043761,
+        "min": 61.94935452076605,
+        "max": 69.05180820907842
+      }
+    },
+    {
+      "setting": "off",
+      "concurrency": 1,
+      "runs": 3,
+      "throughput_rps": {
+        "median": 22.902261897777358,
+        "min": 22.62703826823838,
+        "max": 23.79138725254082
+      },
+      "error_rate_max": 0.0,
+      "mean_batch": {
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "other_load_max": 0.169,
+      "contaminated": false,
+      "per_run": [
+        {
+          "run": 1,
+          "throughput_rps": 22.62703826823838,
+          "p50_ms": 43.01496500011126,
+          "p95_ms": 55.43805499946756,
+          "p99_ms": 59.01701459995821,
+          "other_load": 0.169,
+          "slowest_1pct_ms": {
+            "latency": 60.071,
+            "outside": 8.955,
+            "preprocess": 7.809,
+            "queue_wait": 0.049,
+            "inference": 43.259,
+            "batch_size": 1.0,
+            "count": 5
+          }
+        },
+        {
+          "run": 2,
+          "throughput_rps": 22.902261897777358,
+          "p50_ms": 42.41149500012398,
+          "p95_ms": 52.388011899529374,
+          "p99_ms": 58.72896098004276,
+          "other_load": 0.118,
+          "slowest_1pct_ms": {
+            "latency": 61.785,
+            "outside": 9.977,
+            "preprocess": 7.096,
+            "queue_wait": 0.06,
+            "inference": 44.652,
+            "batch_size": 1.0,
+            "count": 5
+          }
+        },
+        {
+          "run": 3,
+          "throughput_rps": 23.79138725254082,
+          "p50_ms": 40.53146899877902,
+          "p95_ms": 51.80276374994719,
+          "p99_ms": 61.01235724963772,
+          "other_load": 0.154,
+          "slowest_1pct_ms": {
+            "latency": 64.421,
+            "outside": 3.569,
+            "preprocess": 6.818,
+            "queue_wait": 0.05,
+            "inference": 53.984,
+            "batch_size": 1.0,
+            "count": 5
+          }
+        }
+      ],
+      "p50_ms": {
+        "median": 42.41149500012398,
+        "min": 40.53146899877902,
+        "max": 43.01496500011126
+      },
+      "p95_ms": {
+        "median": 52.388011899529374,
+        "min": 51.80276374994719,
+        "max": 55.43805499946756
+      },
+      "p99_ms": {
+        "median": 59.01701459995821,
+        "min": 58.72896098004276,
+        "max": 61.01235724963772
+      }
+    },
+    {
+      "setting": "adaptive",
+      "concurrency": 4,
+      "runs": 3,
+      "throughput_rps": {
+        "median": 30.56446249093745,
+        "min": 30.100756877451623,
+        "max": 31.197862318769467
+      },
+      "error_rate_max": 0.0,
+      "mean_batch": {
+        "median": 1.9967532467532467,
+        "min": 1.9966996699669968,
+        "max": 1.9968152866242037
+      },
+      "other_load_max": 0.193,
+      "contaminated": false,
+      "per_run": [
+        {
+          "run": 1,
+          "throughput_rps": 30.100756877451623,
+          "p50_ms": 131.19373300105508,
+          "p95_ms": 151.22164620006515,
+          "p99_ms": 160.99031299963826,
+          "other_load": 0.193,
+          "slowest_1pct_ms": {
+            "latency": 171.989,
+            "outside": 9.66,
+            "preprocess": 12.055,
+            "queue_wait": 65.546,
+            "inference": 84.728,
+            "batch_size": 2.0,
+            "count": 6
+          }
+        },
+        {
+          "run": 2,
+          "throughput_rps": 31.197862318769467,
+          "p50_ms": 126.66647399964859,
+          "p95_ms": 147.0800289993349,
+          "p99_ms": 165.28866607935927,
+          "other_load": 0.088,
+          "slowest_1pct_ms": {
+            "latency": 171.34,
+            "outside": 6.18,
+            "preprocess": 12.324,
+            "queue_wait": 58.536,
+            "inference": 94.301,
+            "batch_size": 2.5,
+            "count": 6
+          }
+        },
+        {
+          "run": 3,
+          "throughput_rps": 30.56446249093745,
+          "p50_ms": 128.3706689991959,
+          "p95_ms": 155.17040009999616,
+          "p99_ms": 165.91659248089857,
+          "other_load": 0.128,
+          "slowest_1pct_ms": {
+            "latency": 172.317,
+            "outside": 5.556,
+            "preprocess": 11.426,
+            "queue_wait": 70.776,
+            "inference": 84.558,
+            "batch_size": 2.0,
+            "count": 6
+          }
+        }
+      ],
+      "p50_ms": {
+        "median": 128.3706689991959,
+        "min": 126.66647399964859,
+        "max": 131.19373300105508
+      },
+      "p95_ms": {
+        "median": 151.22164620006515,
+        "min": 147.0800289993349,
+        "max": 155.17040009999616
+      },
+      "p99_ms": {
+        "median": 165.28866607935927,
+        "min": 160.99031299963826,
+        "max": 165.91659248089857
+      }
+    },
+    {
+      "setting": "fixed",
+      "concurrency": 4,
+      "runs": 3,
+      "throughput_rps": {
+        "median": 30.84387127075837,
+        "min": 30.16146389623446,
+        "max": 31.013528703948083
+      },
+      "error_rate_max": 0.0,
+      "mean_batch": {
+        "median": 2.0,
+        "min": 2.0,
+        "max": 2.0
+      },
+      "other_load_max": 0.222,
+      "contaminated": false,
+      "per_run": [
+        {
+          "run": 1,
+          "throughput_rps": 30.16146389623446,
+          "p50_ms": 128.52773049962707,
+          "p95_ms": 149.2526427505254,
+          "p99_ms": 213.24665019974418,
+          "other_load": 0.1,
+          "slowest_1pct_ms": {
+            "latency": 380.536,
+            "outside": 9.163,
+            "preprocess": 12.301,
+            "queue_wait": 153.696,
+            "inference": 205.376,
+            "batch_size": 2.0,
+            "count": 6
+          }
+        },
+        {
+          "run": 2,
+          "throughput_rps": 31.013528703948083,
+          "p50_ms": 127.24623000030988,
+          "p95_ms": 145.93070485016142,
+          "p99_ms": 158.87177541040728,
+          "other_load": 0.1,
+          "slowest_1pct_ms": {
+            "latency": 166.259,
+            "outside": 5.19,
+            "preprocess": 8.127,
+            "queue_wait": 67.965,
+            "inference": 84.977,
+            "batch_size": 2.0,
+            "count": 6
+          }
+        },
+        {
+          "run": 3,
+          "throughput_rps": 30.84387127075837,
+          "p50_ms": 127.38693750088714,
+          "p95_ms": 151.76465920094415,
+          "p99_ms": 165.7481331002417,
+          "other_load": 0.222,
+          "slowest_1pct_ms": {
+            "latency": 168.967,
+            "outside": 6.067,
+            "preprocess": 17.938,
+            "queue_wait": 60.22,
+            "inference": 84.741,
+            "batch_size": 2.0,
+            "count": 6
+          }
+        }
+      ],
+      "p50_ms": {
+        "median": 127.38693750088714,
+        "min": 127.24623000030988,
+        "max": 128.52773049962707
+      },
+      "p95_ms": {
+        "median": 149.2526427505254,
+        "min": 145.93070485016142,
+        "max": 151.76465920094415
+      },
+      "p99_ms": {
+        "median": 165.7481331002417,
+        "min": 158.87177541040728,
+        "max": 213.24665019974418
+      }
+    },
+    {
+      "setting": "off",
+      "concurrency": 4,
+      "runs": 3,
+      "throughput_rps": {
+        "median": 28.21567380021923,
+        "min": 27.799533793215538,
+        "max": 29.33577829404097
+      },
+      "error_rate_max": 0.0,
+      "mean_batch": {
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "other_load_max": 0.141,
+      "contaminated": false,
+      "per_run": [
+        {
+          "run": 1,
+          "throughput_rps": 28.21567380021923,
+          "p50_ms": 138.27622800090467,
+          "p95_ms": 167.9260779004835,
+          "p99_ms": 184.43855931876908,
+          "other_load": 0.141,
+          "slowest_1pct_ms": {
+            "latency": 195.836,
+            "outside": 4.693,
+            "preprocess": 8.508,
+            "queue_wait": 134.012,
+            "inference": 48.624,
+            "batch_size": 1.0,
+            "count": 6
+          }
+        },
+        {
+          "run": 2,
+          "throughput_rps": 27.799533793215538,
+          "p50_ms": 140.89425400015898,
+          "p95_ms": 167.73196779977297,
+          "p99_ms": 183.0186799608782,
+          "other_load": 0.139,
+          "slowest_1pct_ms": {
+            "latency": 184.952,
+            "outside": 4.803,
+            "preprocess": 5.726,
+            "queue_wait": 126.789,
+            "inference": 47.635,
+            "batch_size": 1.0,
+            "count": 6
+          }
+        },
+        {
+          "run": 3,
+          "throughput_rps": 29.33577829404097,
+          "p50_ms": 133.91435099947557,
+          "p95_ms": 155.90262695113776,
+          "p99_ms": 169.65539189948686,
+          "other_load": 0.107,
+          "slowest_1pct_ms": {
+            "latency": 175.901,
+            "outside": 3.584,
+            "preprocess": 5.948,
+            "queue_wait": 121.991,
+            "inference": 44.377,
+            "batch_size": 1.0,
+            "count": 6
+          }
+        }
+      ],
+      "p50_ms": {
+        "median": 138.27622800090467,
+        "min": 133.91435099947557,
+        "max": 140.89425400015898
+      },
+      "p95_ms": {
+        "median": 167.73196779977297,
+        "min": 155.90262695113776,
+        "max": 167.9260779004835
+      },
+      "p99_ms": {
+        "median": 183.0186799608782,
+        "min": 169.65539189948686,
+        "max": 184.43855931876908
+      }
+    },
+    {
+      "setting": "adaptive",
+      "concurrency": 8,
+      "runs": 3,
+      "throughput_rps": {
+        "median": 33.93532771566539,
+        "min": 32.86963597938267,
+        "max": 34.27132016371057
+      },
+      "error_rate_max": 0.0,
+      "mean_batch": {
+        "median": 3.9820359281437128,
+        "min": 3.9770114942528734,
+        "max": 3.988372093023256
+      },
+      "other_load_max": 0.172,
+      "contaminated": false,
+      "per_run": [
+        {
+          "run": 1,
+          "throughput_rps": 32.86963597938267,
+          "p50_ms": 236.6552599996794,
+          "p95_ms": 267.2712580009829,
+          "p99_ms": 488.62378212019394,
+          "other_load": 0.172,
+          "slowest_1pct_ms": {
+            "latency": 519.631,
+            "outside": 13.283,
+            "preprocess": 35.154,
+            "queue_wait": 188.398,
+            "inference": 282.797,
+            "batch_size": 4.143,
+            "count": 7
+          }
+        },
+        {
+          "run": 2,
+          "throughput_rps": 34.27132016371057,
+          "p50_ms": 223.69581049952103,
+          "p95_ms": 260.37773529960754,
+          "p99_ms": 554.7424486583623,
+          "other_load": 0.067,
+          "slowest_1pct_ms": {
+            "latency": 576.445,
+            "outside": 12.838,
+            "preprocess": 45.22,
+            "queue_wait": 174.711,
+            "inference": 343.675,
+            "batch_size": 4.429,
+            "count": 7
+          }
+        },
+        {
+          "run": 3,
+          "throughput_rps": 33.93532771566539,
+          "p50_ms": 224.7661834999235,
+          "p95_ms": 274.6030267489914,
+          "p99_ms": 558.2357959006004,
+          "other_load": 0.111,
+          "slowest_1pct_ms": {
+            "latency": 563.191,
+            "outside": 14.541,
+            "preprocess": 26.84,
+            "queue_wait": 93.447,
+            "inference": 428.363,
+            "batch_size": 6.429,
+            "count": 7
+          }
+        }
+      ],
+      "p50_ms": {
+        "median": 224.7661834999235,
+        "min": 223.69581049952103,
+        "max": 236.6552599996794
+      },
+      "p95_ms": {
+        "median": 267.2712580009829,
+        "min": 260.37773529960754,
+        "max": 274.6030267489914
+      },
+      "p99_ms": {
+        "median": 554.7424486583623,
+        "min": 488.62378212019394,
+        "max": 558.2357959006004
+      }
+    },
+    {
+      "setting": "fixed",
+      "concurrency": 8,
+      "runs": 3,
+      "throughput_rps": {
+        "median": 32.6350578057843,
+        "min": 32.13465884469539,
+        "max": 33.77720333572293
+      },
+      "error_rate_max": 0.0,
+      "mean_batch": {
+        "median": 3.981818181818182,
+        "min": 3.9709302325581395,
+        "max": 3.9877300613496933
+      },
+      "other_load_max": 0.124,
+      "contaminated": false,
+      "per_run": [
+        {
+          "run": 1,
+          "throughput_rps": 32.6350578057843,
+          "p50_ms": 235.70071299945994,
+          "p95_ms": 275.9971064006095,
+          "p99_ms": 592.6757221201827,
+          "other_load": 0.124,
+          "slowest_1pct_ms": {
+            "latency": 611.092,
+            "outside": 18.278,
+            "preprocess": 36.903,
+            "queue_wait": 27.289,
+            "inference": 528.622,
+            "batch_size": 7.0,
+            "count": 7
+          }
+        },
+        {
+          "run": 2,
+          "throughput_rps": 32.13465884469539,
+          "p50_ms": 231.1544664999019,
+          "p95_ms": 276.9378927492653,
+          "p99_ms": 890.472652590051,
+          "other_load": 0.094,
+          "slowest_1pct_ms": {
+            "latency": 933.679,
+            "outside": 16.207,
+            "preprocess": 25.157,
+            "queue_wait": 354.122,
+            "inference": 538.193,
+            "batch_size": 6.0,
+            "count": 6
+          }
+        },
+        {
+          "run": 3,
+          "throughput_rps": 33.77720333572293,
+          "p50_ms": 225.74697900017782,
+          "p95_ms": 275.5573460999585,
+          "p99_ms": 536.3665283989758,
+          "other_load": 0.096,
+          "slowest_1pct_ms": {
+            "latency": 548.721,
+            "outside": 15.163,
+            "preprocess": 35.779,
+            "queue_wait": 86.151,
+            "inference": 411.629,
+            "batch_size": 6.429,
+            "count": 7
+          }
+        }
+      ],
+      "p50_ms": {
+        "median": 231.1544664999019,
+        "min": 225.74697900017782,
+        "max": 235.70071299945994
+      },
+      "p95_ms": {
+        "median": 275.9971064006095,
+        "min": 275.5573460999585,
+        "max": 276.9378927492653
+      },
+      "p99_ms": {
+        "median": 592.6757221201827,
+        "min": 536.3665283989758,
+        "max": 890.472652590051
+      }
+    },
+    {
+      "setting": "off",
+      "concurrency": 8,
+      "runs": 3,
+      "throughput_rps": {
+        "median": 28.264516711485086,
+        "min": 27.437971333295273,
+        "max": 28.766247712925008
+      },
+      "error_rate_max": 0.0,
+      "mean_batch": {
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "other_load_max": 0.178,
+      "contaminated": false,
+      "per_run": [
+        {
+          "run": 1,
+          "throughput_rps": 27.437971333295273,
+          "p50_ms": 288.0942169995251,
+          "p95_ms": 328.58897340029216,
+          "p99_ms": 337.7910516396514,
+          "other_load": 0.121,
+          "slowest_1pct_ms": {
+            "latency": 341.21,
+            "outside": 4.98,
+            "preprocess": 7.657,
+            "queue_wait": 286.211,
+            "inference": 42.362,
+            "batch_size": 1.0,
+            "count": 6
+          }
+        },
+        {
+          "run": 2,
+          "throughput_rps": 28.264516711485086,
+          "p50_ms": 277.57190500051365,
+          "p95_ms": 321.5297338009804,
+          "p99_ms": 335.1707859397537,
+          "other_load": 0.178,
+          "slowest_1pct_ms": {
+            "latency": 346.282,
+            "outside": 5.417,
+            "preprocess": 16.429,
+            "queue_wait": 285.411,
+            "inference": 39.025,
+            "batch_size": 1.0,
+            "count": 6
+          }
+        },
+        {
+          "run": 3,
+          "throughput_rps": 28.766247712925008,
+          "p50_ms": 271.470005500305,
+          "p95_ms": 319.83609714952763,
+          "p99_ms": 344.2226146306711,
+          "other_load": 0.147,
+          "slowest_1pct_ms": {
+            "latency": 357.871,
+            "outside": 4.167,
+            "preprocess": 5.496,
+            "queue_wait": 310.832,
+            "inference": 37.376,
+            "batch_size": 1.0,
+            "count": 6
+          }
+        }
+      ],
+      "p50_ms": {
+        "median": 277.57190500051365,
+        "min": 271.470005500305,
+        "max": 288.0942169995251
+      },
+      "p95_ms": {
+        "median": 321.5297338009804,
+        "min": 319.83609714952763,
+        "max": 328.58897340029216
+      },
+      "p99_ms": {
+        "median": 337.7910516396514,
+        "min": 335.1707859397537,
+        "max": 344.2226146306711
+      }
+    },
+    {
+      "setting": "adaptive",
+      "concurrency": 16,
+      "runs": 3,
+      "throughput_rps": {
+        "median": 36.84533466546543,
+        "min": 35.908108532963,
+        "max": 37.69622999154153
+      },
+      "error_rate_max": 0.0,
+      "mean_batch": {
+        "median": 7.907216494845361,
+        "min": 7.894736842105263,
+        "max": 7.923913043478261
+      },
+      "other_load_max": 0.102,
+      "contaminated": false,
+      "per_run": [
+        {
+          "run": 1,
+          "throughput_rps": 35.908108532963,
+          "p50_ms": 438.6582699989958,
+          "p95_ms": 487.76466220042494,
+          "p99_ms": 509.75073960056767,
+          "other_load": 0.102,
+          "slowest_1pct_ms": {
+            "latency": 567.006,
+            "outside": 35.28,
+            "preprocess": 59.974,
+            "queue_wait": 227.426,
+            "inference": 244.325,
+            "batch_size": 8.0,
+            "count": 7
+          }
+        },
+        {
+          "run": 2,
+          "throughput_rps": 37.69622999154153,
+          "p50_ms": 418.69120199953613,
+          "p95_ms": 469.5450909999636,
+          "p99_ms": 484.9276545008616,
+          "other_load": 0.077,
+          "slowest_1pct_ms": {
+            "latency": 514.542,
+            "outside": 18.977,
+            "preprocess": 54.383,
+            "queue_wait": 194.83,
+            "inference": 246.353,
+            "batch_size": 8.0,
+            "count": 8
+          }
+        },
+        {
+          "run": 3,
+          "throughput_rps": 36.84533466546543,
+          "p50_ms": 429.58913699931145,
+          "p95_ms": 481.5350830992429,
+          "p99_ms": 512.3600126897145,
+          "other_load": 0.089,
+          "slowest_1pct_ms": {
+            "latency": 554.279,
+            "outside": 26.625,
+            "preprocess": 43.301,
+            "queue_wait": 233.951,
+            "inference": 250.402,
+            "batch_size": 8.0,
+            "count": 8
+          }
+        }
+      ],
+      "p50_ms": {
+        "median": 429.58913699931145,
+        "min": 418.69120199953613,
+        "max": 438.6582699989958
+      },
+      "p95_ms": {
+        "median": 481.5350830992429,
+        "min": 469.5450909999636,
+        "max": 487.76466220042494
+      },
+      "p99_ms": {
+        "median": 509.75073960056767,
+        "min": 484.9276545008616,
+        "max": 512.3600126897145
+      }
+    },
+    {
+      "setting": "fixed",
+      "concurrency": 16,
+      "runs": 3,
+      "throughput_rps": {
+        "median": 36.65931326239732,
+        "min": 36.09217282760151,
+        "max": 37.33211607650117
+      },
+      "error_rate_max": 0.0,
+      "mean_batch": {
+        "median": 7.924731182795699,
+        "min": 7.914893617021277,
+        "max": 7.927083333333333
+      },
+      "other_load_max": 0.167,
+      "contaminated": false,
+      "per_run": [
+        {
+          "run": 1,
+          "throughput_rps": 36.09217282760151,
+          "p50_ms": 439.23695199919166,
+          "p95_ms": 491.457177000484,
+          "p99_ms": 544.6436694006842,
+          "other_load": 0.167,
+          "slowest_1pct_ms": {
+            "latency": 550.821,
+            "outside": 19.415,
+            "preprocess": 32.126,
+            "queue_wait": 211.913,
+            "inference": 287.366,
+            "batch_size": 8.0,
+            "count": 7
+          }
+        },
+        {
+          "run": 2,
+          "throughput_rps": 36.65931326239732,
+          "p50_ms": 435.89659900044353,
+          "p95_ms": 474.9870326009841,
+          "p99_ms": 482.39759525005866,
+          "other_load": 0.06,
+          "slowest_1pct_ms": {
+            "latency": 500.441,
+            "outside": 15.696,
+            "preprocess": 39.074,
+            "queue_wait": 204.999,
+            "inference": 240.671,
+            "batch_size": 8.0,
+            "count": 7
+          }
+        },
+        {
+          "run": 3,
+          "throughput_rps": 37.33211607650117,
+          "p50_ms": 422.2981080001773,
+          "p95_ms": 473.26380199956475,
+          "p99_ms": 497.64492660069664,
+          "other_load": 0.108,
+          "slowest_1pct_ms": {
+            "latency": 515.049,
+            "outside": 30.057,
+            "preprocess": 58.431,
+            "queue_wait": 209.938,
+            "inference": 216.623,
+            "batch_size": 8.0,
+            "count": 8
+          }
+        }
+      ],
+      "p50_ms": {
+        "median": 435.89659900044353,
+        "min": 422.2981080001773,
+        "max": 439.23695199919166
+      },
+      "p95_ms": {
+        "median": 474.9870326009841,
+        "min": 473.26380199956475,
+        "max": 491.457177000484
+      },
+      "p99_ms": {
+        "median": 497.64492660069664,
+        "min": 482.39759525005866,
+        "max": 544.6436694006842
+      }
+    },
+    {
+      "setting": "off",
+      "concurrency": 16,
+      "runs": 3,
+      "throughput_rps": {
+        "median": 28.062474303825162,
+        "min": 27.86599644455516,
+        "max": 28.434144577832072
+      },
+      "error_rate_max": 0.0,
+      "mean_batch": {
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "other_load_max": 0.228,
+      "contaminated": false,
+      "per_run": [
+        {
+          "run": 1,
+          "throughput_rps": 28.062474303825162,
+          "p50_ms": 565.438453499155,
+          "p95_ms": 615.7459722494423,
+          "p99_ms": 640.5257290002737,
+          "other_load": 0.174,
+          "slowest_1pct_ms": {
+            "latency": 650.124,
+            "outside": 12.521,
+            "preprocess": 26.923,
+            "queue_wait": 567.461,
+            "inference": 43.219,
+            "batch_size": 1.0,
+            "count": 6
+          }
+        },
+        {
+          "run": 2,
+          "throughput_rps": 28.434144577832072,
+          "p50_ms": 552.5014130016643,
+          "p95_ms": 612.7839840004526,
+          "p99_ms": 633.4128880009301,
+          "other_load": 0.107,
+          "slowest_1pct_ms": {
+            "latency": 643.846,
+            "outside": 8.807,
+            "preprocess": 23.825,
+            "queue_wait": 569.607,
+            "inference": 41.608,
+            "batch_size": 1.0,
+            "count": 6
+          }
+        },
+        {
+          "run": 3,
+          "throughput_rps": 27.86599644455516,
+          "p50_ms": 563.7333169997873,
+          "p95_ms": 629.4633694004006,
+          "p99_ms": 656.9720506008889,
+          "other_load": 0.228,
+          "slowest_1pct_ms": {
+            "latency": 665.501,
+            "outside": 11.303,
+            "preprocess": 21.805,
+            "queue_wait": 591.709,
+            "inference": 40.684,
+            "batch_size": 1.0,
+            "count": 6
+          }
+        }
+      ],
+      "p50_ms": {
+        "median": 563.7333169997873,
+        "min": 552.5014130016643,
+        "max": 565.438453499155
+      },
+      "p95_ms": {
+        "median": 615.7459722494423,
+        "min": 612.7839840004526,
+        "max": 629.4633694004006
+      },
+      "p99_ms": {
+        "median": 640.5257290002737,
+        "min": 633.4128880009301,
+        "max": 656.9720506008889
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+$ cd <clean worktree at 8d47bd4> && python3 -I bench/results/parity/check_deployed_files.py.txt
+SHA-256: 100 recorded values in eval and parity reports, 0 differ
+sizes: 140 benchmark raw files with model_size_bytes, 0 differ
+deployed files now:
+  ef2fa193b4555f9fc92e5e14ec9bd6bd9c4c70f0c00af803a6871a88ebfb5885   10720320  models/yolo11n.onnx
+  0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1    5613764  models/yolo11n.pt
+  f3bdffd7e09c7084e7c701de9fe5b18ee9a88344b41f9b7536d985bf97a6f342   10566056  models/yolo11n_openvino_fp32/yolo11n.bin
+  a9bab312ffd6a2ff799e1a1983635a537690481014896e403b3cb467f259bdf2     347592  models/yolo11n_openvino_fp32/yolo11n.xml
+  5b291bf72f7a033831a599082a6e31ed3360d79fad48c201148bafad3a4f796e    2777616  models/yolo11n_openvino_int8/yolo11n.bin
+  031c844407887a4a78bc877e88cafea8ea406f6fc5be78b11600638f12af9178     688175  models/yolo11n_openvino_int8/yolo11n.xml
+  159de4723ed48f1a6aa88cea1a8fcdb43f8a3c8a486306f0e53555f272ed2f4c    2777596  models/yolo11n_openvino_int8_fullq/yolo11n.bin
+  ea7872e306b46ee3267cf39249f7487e0bddb524c148922c76d5542bbf958dc7     698268  models/yolo11n_openvino_int8_fullq/yolo11n.xml
+  35067a08bd95644728e0cabe21a7bfcd56d9146a47dc8d33ffe0f69f828ec210   38030490  models/yolo11s.onnx
+  85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5   19313732  models/yolo11s.pt
+  a6f4ddce6b802a21d8971d3db7d61cad597d9ac30bf007c0b7132c79a1d8d76c   37876104  models/yolo11s_openvino_fp32/yolo11s.bin
+  43f782b471768d55a356b23480ec7bc20354a690197659faf7b6faf90b0a80b9     348361  models/yolo11s_openvino_fp32/yolo11s.xml
+  06a4c986ac1ff09b44a46d98c9105e8e47ed6331e7fe29c85211a0d1b427b1c9    9656404  models/yolo11s_openvino_int8/yolo11s.bin
+  32b582fb63fdbdbc23b752a239061e8182cb75c56623a560fbc8a1e9bf208bc6     689420  models/yolo11s_openvino_int8/yolo11s.xml
+  29766c063755b9eca65d589a7e6819969ccd630e54246b75547c24085781ba90    9656384  models/yolo11s_openvino_int8_fullq/yolo11s.bin
+  8e524cfe7be0b0c4e2403f5d0fb613ea411f3bc1c10f80167164193acc37bd88     699513  models/yolo11s_openvino_int8_fullq/yolo11s.xml

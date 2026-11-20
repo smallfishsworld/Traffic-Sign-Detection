@@ -1,0 +1,41 @@
+# Resident memory of the service's detector (OpenVINO INT8 YOLO11n, 2 threads) as each batch size is warmed up, on the host (no container), commit ed409e6 (src/ unchanged since dcc2d5b); script: warmup_rss.py.txt
+2026-11-19T12:15:22Z
+
+$ OMP_NUM_THREADS=2 nice -n 19 .venv/bin/python -I warmup_rss.py.txt models/yolo11n_openvino_int8/yolo11n.xml 1,2,3,4,5,6,7,8
+model models/yolo11n_openvino_int8/yolo11n.xml, threads 2, warm-up order [1, 2, 3, 4, 5, 6, 7, 8], 3 calls per size
+before load: rss 40.5 MiB
+after load: rss 117.2 MiB
+after batch 1: rss 215.6 MiB, peak 215.0 MiB
+after batch 2: rss 315.6 MiB, peak 315.0 MiB
+after batch 3: rss 422.2 MiB, peak 421.6 MiB
+after batch 4: rss 567.4 MiB, peak 566.7 MiB
+after batch 5: rss 702.0 MiB, peak 701.3 MiB
+after batch 6: rss 826.4 MiB, peak 825.8 MiB
+after batch 7: rss 978.0 MiB, peak 977.4 MiB
+after batch 8: rss 1073.5 MiB, peak 1110.5 MiB
+
+$ OMP_NUM_THREADS=2 nice -n 19 .venv/bin/python -I warmup_rss.py.txt models/yolo11n_openvino_int8/yolo11n.xml 8,7,6,5,4,3,2,1
+model models/yolo11n_openvino_int8/yolo11n.xml, threads 2, warm-up order [8, 7, 6, 5, 4, 3, 2, 1], 3 calls per size
+before load: rss 40.5 MiB
+after load: rss 117.1 MiB
+after batch 8: rss 482.1 MiB, peak 521.5 MiB
+after batch 7: rss 525.3 MiB, peak 557.7 MiB
+after batch 6: rss 594.9 MiB, peak 599.9 MiB
+after batch 5: rss 644.7 MiB, peak 644.3 MiB
+after batch 4: rss 692.5 MiB, peak 692.0 MiB
+after batch 3: rss 739.8 MiB, peak 739.3 MiB
+after batch 2: rss 787.1 MiB, peak 786.7 MiB
+after batch 1: rss 831.8 MiB, peak 831.4 MiB
+
+$ OMP_NUM_THREADS=2 nice -n 19 .venv/bin/python -I warmup_rss.py.txt models/yolo11n_openvino_int8/yolo11n.xml 1,8,2,3,4,5,6,7
+model models/yolo11n_openvino_int8/yolo11n.xml, threads 2, warm-up order [1, 8, 2, 3, 4, 5, 6, 7], 3 calls per size
+before load: rss 40.6 MiB
+after load: rss 117.2 MiB
+after batch 1: rss 215.1 MiB, peak 214.8 MiB
+after batch 8: rss 533.1 MiB, peak 570.2 MiB
+after batch 2: rss 585.8 MiB, peak 585.4 MiB
+after batch 3: rss 632.7 MiB, peak 632.3 MiB
+after batch 4: rss 680.1 MiB, peak 679.6 MiB
+after batch 5: rss 743.2 MiB, peak 750.9 MiB
+after batch 6: rss 797.8 MiB, peak 797.4 MiB
+after batch 7: rss 819.7 MiB, peak 852.2 MiB

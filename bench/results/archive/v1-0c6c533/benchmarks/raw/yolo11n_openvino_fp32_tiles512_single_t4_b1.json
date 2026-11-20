@@ -1,0 +1,92 @@
+{
+  "model": "models/yolo11n_openvino_fp32/yolo11n.xml",
+  "backend": "openvino-fp32+tiles512",
+  "threads": 4,
+  "mode": "single",
+  "batch_size": 1,
+  "warmup": 5,
+  "iterations": 60,
+  "images": [
+    "0135b7a0b1010c08.jpg",
+    "08bf84bb9662086d.jpg",
+    "1cd04797f44a04a1.jpg",
+    "2b3e4a4919cd47b4.jpg",
+    "3b17ab5107bef9bb.jpg",
+    "548c1805b8e211bd.jpg",
+    "644395d01b541528.jpg",
+    "79445a6e49ee53b9.jpg",
+    "8406354c09070f9b.jpg",
+    "989532067e3483bb.jpg",
+    "a70e22ce2700b5a3.jpg",
+    "b657fb701244d7c6.jpg",
+    "c8b3ee6984721a12.jpg",
+    "d67533156d52e10c.jpg",
+    "def75350f572342e.jpg",
+    "ee267b62fd17a9b1.jpg"
+  ],
+  "model_size_bytes": 10913648,
+  "first_call_ms": 348.14233999986754,
+  "e2e": {
+    "n": 60,
+    "mean_ms": 193.4283393999825,
+    "std_ms": 24.160271721843852,
+    "min_ms": 106.19253700042464,
+    "p50_ms": 190.72599199989781,
+    "p95_ms": 230.21076764985082,
+    "p99_ms": 238.6577584203769,
+    "max_ms": 241.46660800033715
+  },
+  "infer": {
+    "n": 60,
+    "mean_ms": 193.42024140002346,
+    "std_ms": 24.160218866094926,
+    "min_ms": 106.18543300006422,
+    "p50_ms": 190.71825099990747,
+    "p95_ms": 230.20372054952531,
+    "p99_ms": 238.65034782012114,
+    "max_ms": 241.45945700001903
+  },
+  "throughput_images_per_s": 5.24312386326734,
+  "started_unix": 1795056120.9,
+  "seconds": 12.7,
+  "loadavg_before": [
+    1.59,
+    1.97,
+    2.15
+  ],
+  "loadavg_after": [
+    2.13,
+    2.07,
+    2.18
+  ],
+  "contamination": {
+    "other_processes_cores": 0.034,
+    "steal_cores": 0.024
+  },
+  "cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "opencv-python-headless": "5.1.0.95",
+    "torch": "2.15.0",
+    "onnxruntime": "1.32.0",
+    "openvino": "2026.4.1",
+    "tsd": "0.1.0"
+  },
+  "nms": {
+    "conf_threshold": 0.25,
+    "iou": 0.5
+  },
+  "tiling": {
+    "tile_size": 512,
+    "overlap": 0.2,
+    "full_image": true,
+    "merge_iou": 0.5,
+    "batch_size": 8,
+    "border_margin": 0.02
+  },
+  "mean_inferences_per_image": 6.8125,
+  "precision_hint": "f32",
+  "attempt": 1,
+  "contaminated": false
+}

@@ -1,0 +1,149 @@
+{
+  "model": "models/yolo11s.pt",
+  "backend": "pytorch-fp32",
+  "threads": 4,
+  "mode": "single",
+  "batch_size": 1,
+  "warmup": 20,
+  "iterations": 200,
+  "images": [
+    "0135b7a0b1010c08.jpg",
+    "08bf84bb9662086d.jpg",
+    "1cd04797f44a04a1.jpg",
+    "2b3e4a4919cd47b4.jpg",
+    "3b17ab5107bef9bb.jpg",
+    "548c1805b8e211bd.jpg",
+    "644395d01b541528.jpg",
+    "79445a6e49ee53b9.jpg",
+    "8406354c09070f9b.jpg",
+    "989532067e3483bb.jpg",
+    "a70e22ce2700b5a3.jpg",
+    "b657fb701244d7c6.jpg",
+    "c8b3ee6984721a12.jpg",
+    "d67533156d52e10c.jpg",
+    "def75350f572342e.jpg",
+    "ee267b62fd17a9b1.jpg"
+  ],
+  "model_size_bytes": 19313732,
+  "first_call_ms": 192.52175799920224,
+  "e2e": {
+    "n": 200,
+    "mean_ms": 131.33189136995497,
+    "std_ms": 26.591344233519276,
+    "min_ms": 112.53635400134954,
+    "p50_ms": 121.88373300068633,
+    "p95_ms": 183.16969404868348,
+    "p99_ms": 212.42121202994875,
+    "max_ms": 338.59502300038
+  },
+  "infer": {
+    "n": 200,
+    "mean_ms": 124.33422517999134,
+    "std_ms": 26.455360854102466,
+    "min_ms": 106.03651700148475,
+    "p50_ms": 114.73926400049095,
+    "p95_ms": 176.1900316999344,
+    "p99_ms": 205.72382561078464,
+    "max_ms": 332.49629700003425
+  },
+  "throughput_images_per_s": 8.204540305590813,
+  "started_unix": 1795071166.2,
+  "seconds": 29.0,
+  "loadavg_before": [
+    1.19,
+    1.71,
+    1.66
+  ],
+  "loadavg_after": [
+    2.46,
+    1.97,
+    1.74
+  ],
+  "contamination": {
+    "other_processes_cores": 0.09,
+    "steal_cores": 0.031,
+    "own_cores": 3.802
+  },
+  "cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "opencv-python-headless": "5.1.0.95",
+    "torch": "2.15.0",
+    "onnxruntime": "1.32.0",
+    "openvino": "2026.4.1",
+    "tsd": "0.1.0"
+  },
+  "nms": {
+    "conf_threshold": 0.25,
+    "iou": 0.5
+  },
+  "input_size": [
+    640,
+    640
+  ],
+  "letterbox": "fixed square, auto=False (identical for every runtime)",
+  "opencv_threads": 1,
+  "provenance": {
+    "git": {
+      "commit": "cfff803426aa0a2c8182944a8ecaa85fbc61295e",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "<scratch>/p3/wt_bench/bench/bench_one.py --model models/yolo11s.pt --threads 4 --mode single --batch-size 1 --precision-hint f32 --warmup 20 --iterations 200 --max-seconds 300.0 --out <scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11s.pt_single_t4_b1.run2.json --tiles 0 --run 2",
+    "argv": [
+      "<scratch>/p3/wt_bench/bench/bench_one.py",
+      "--model",
+      "models/yolo11s.pt",
+      "--threads",
+      "4",
+      "--mode",
+      "single",
+      "--batch-size",
+      "1",
+      "--precision-hint",
+      "f32",
+      "--warmup",
+      "20",
+      "--iterations",
+      "200",
+      "--max-seconds",
+      "300.0",
+      "--out",
+      "<scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11s.pt_single_t4_b1.run2.json",
+      "--tiles",
+      "0",
+      "--run",
+      "2"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_bench",
+    "tsd_source": "<scratch>/p3/wt_bench/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "PYTHONPATH": "<scratch>/p3/wt_bench/src",
+      "TSD_PARENT_COMMAND": "python bench/run_benchmarks.py --runs 3"
+    },
+    "recorded_unix": 1795071195.2,
+    "runtime_settings": {
+      "runtime": "pytorch",
+      "torch_num_threads": 4,
+      "torch_num_interop_threads": 4,
+      "mkldnn_enabled": true,
+      "thread_pinning": "not set (OpenMP default)",
+      "input": "fixed 640x640 letterbox (auto=False)"
+    }
+  },
+  "precision_hint": "f32",
+  "run": 2,
+  "attempt": 1,
+  "contaminated": false
+}

@@ -1,0 +1,41 @@
+# Resident memory of the service's detector (OpenVINO INT8 YOLO11n, 2 threads) as each batch size is warmed up, on the host (no container), from a clean worktree at dcc2d5b (git status --porcelain --untracked-files=no: empty); script: warmup_rss.py.txt
+2026-11-19T12:50:09Z
+
+$ cd <worktree> && PYTHONPATH=<worktree>/src OMP_NUM_THREADS=2 nice -n 19 .venv/bin/python warmup_rss.py.txt /home/user/work/Traffic-Sign-Detection/models/yolo11n_openvino_int8/yolo11n.xml 1,2,3,4,5,6,7,8
+model /home/user/work/Traffic-Sign-Detection/models/yolo11n_openvino_int8/yolo11n.xml, threads 2, warm-up order [1, 2, 3, 4, 5, 6, 7, 8], 3 calls per size
+before load: rss 40.5 MiB
+after load: rss 117.2 MiB
+after batch 1: rss 209.3 MiB, peak 208.8 MiB
+after batch 2: rss 298.4 MiB, peak 297.8 MiB
+after batch 3: rss 399.3 MiB, peak 398.7 MiB
+after batch 4: rss 525.4 MiB, peak 524.9 MiB
+after batch 5: rss 666.6 MiB, peak 666.1 MiB
+after batch 6: rss 800.8 MiB, peak 800.3 MiB
+after batch 7: rss 894.8 MiB, peak 927.2 MiB
+after batch 8: rss 1029.8 MiB, peak 1066.8 MiB
+
+$ cd <worktree> && PYTHONPATH=<worktree>/src OMP_NUM_THREADS=2 nice -n 19 .venv/bin/python warmup_rss.py.txt /home/user/work/Traffic-Sign-Detection/models/yolo11n_openvino_int8/yolo11n.xml 8,7,6,5,4,3,2,1
+model /home/user/work/Traffic-Sign-Detection/models/yolo11n_openvino_int8/yolo11n.xml, threads 2, warm-up order [8, 7, 6, 5, 4, 3, 2, 1], 3 calls per size
+before load: rss 40.5 MiB
+after load: rss 117.2 MiB
+after batch 8: rss 471.8 MiB, peak 511.6 MiB
+after batch 7: rss 505.2 MiB, peak 537.6 MiB
+after batch 6: rss 576.5 MiB, peak 576.1 MiB
+after batch 5: rss 618.6 MiB, peak 618.2 MiB
+after batch 4: rss 659.5 MiB, peak 659.0 MiB
+after batch 3: rss 706.0 MiB, peak 705.5 MiB
+after batch 2: rss 738.9 MiB, peak 738.4 MiB
+after batch 1: rss 778.6 MiB, peak 778.1 MiB
+
+$ cd <worktree> && PYTHONPATH=<worktree>/src OMP_NUM_THREADS=2 nice -n 19 .venv/bin/python warmup_rss.py.txt /home/user/work/Traffic-Sign-Detection/models/yolo11n_openvino_int8/yolo11n.xml 1,8,2,3,4,5,6,7
+model /home/user/work/Traffic-Sign-Detection/models/yolo11n_openvino_int8/yolo11n.xml, threads 2, warm-up order [1, 8, 2, 3, 4, 5, 6, 7], 3 calls per size
+before load: rss 40.4 MiB
+after load: rss 117.1 MiB
+after batch 1: rss 209.7 MiB, peak 209.1 MiB
+after batch 8: rss 526.4 MiB, peak 563.4 MiB
+after batch 2: rss 570.2 MiB, peak 569.7 MiB
+after batch 3: rss 604.6 MiB, peak 604.0 MiB
+after batch 4: rss 652.6 MiB, peak 652.0 MiB
+after batch 5: rss 710.8 MiB, peak 723.8 MiB
+after batch 6: rss 769.3 MiB, peak 769.0 MiB
+after batch 7: rss 813.3 MiB, peak 845.5 MiB

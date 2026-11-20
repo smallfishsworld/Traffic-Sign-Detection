@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Does the service start under the first compose file's 1 GiB? N times: starts the container with
+# the compose security settings and --memory 1g (lowest CPU weight), waits until it is healthy or
+# has stopped, and records its state and logs. Usage: bash oom_1g.sh <image tag> <out file> <N>
+set -u -o pipefail
+IMG=$1; OUT=$2; N=${3:-1}
+R=/home/user/work/Traffic-Sign-Detection
+run() { echo "\$ $*"; "$@" 2>&1; echo; }
+{
+echo "# $IMG under a 1 GiB memory limit, $N attempts"
+run date -u +%FT%TZ
+for attempt in $(seq 1 "$N"); do
+echo "## attempt $attempt"
+docker rm -f tsd-oom1g >/dev/null 2>&1
+run docker run -d --name tsd-oom1g --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=8797 -e TSD_THREADS=2 -v "$R/models:/models:ro" --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 1g --cpu-shares 2 "$IMG"
+for _ in $(seq 1 60); do
+  st=$(docker inspect --format '{{.State.Running}} {{.State.Health.Status}}' tsd-oom1g 2>/dev/null)
+  [ "$st" = "true healthy" ] && break
+  [ "${st%% *}" = true ] || break
+  python3 -c "import time; time.sleep(2)"
+done
+run docker inspect --format 'running={{.State.Running}} health={{.State.Health.Status}} oom_killed={{.State.OOMKilled}} exit_code={{.State.ExitCode}} started={{.State.StartedAt}} finished={{.State.FinishedAt}}' tsd-oom1g
+run docker logs tsd-oom1g
+docker rm -f tsd-oom1g >/dev/null 2>&1
+done
+run date -u +%FT%TZ
+} > "$OUT" 2>&1

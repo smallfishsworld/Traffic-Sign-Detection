@@ -1,0 +1,135 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.60kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7
+#2 DONE 0.8s
+
+#3 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#3 resolve docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#4 DONE 0.6s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 177B done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 DONE 0.0s
+
+#7 [runtime 1/4] FROM docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#7 resolve docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#7 resolve docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 0.2s done
+#7 DONE 0.2s
+
+#8 [build 2/7] WORKDIR /app
+#8 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 613.99kB 0.0s done
+#6 DONE 0.0s
+
+#9 [build 3/7] RUN --mount=type=secret,id=ca_bundle,required=false     if [ -f /run/secrets/ca_bundle ]; then export PIP_CERT=/run/secrets/ca_bundle; fi;     pip install --no-compile uv==0.11.32
+#9 2.781 Collecting uv==0.11.32
+#9 3.107   Downloading uv-0.11.32-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+#9 3.147 Downloading uv-0.11.32-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (27.0 MB)
+#9 4.593    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 27.0/27.0 MB 19.5 MB/s eta 0:00:00
+#9 4.643 Installing collected packages: uv
+#9 5.032 Successfully installed uv-0.11.32
+#9 5.033 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 DONE 5.2s
+
+#10 [build 4/7] RUN --mount=type=secret,id=ca_bundle,required=false     --mount=type=cache,target=/root/.cache/uv     --mount=type=bind,source=pyproject.toml,target=pyproject.toml     --mount=type=bind,source=uv.lock,target=uv.lock     if [ -f /run/secrets/ca_bundle ]; then export SSL_CERT_FILE=/run/secrets/ca_bundle; fi;     uv sync --locked --no-dev --no-install-project --extra openvino --extra serve
+#10 0.184 Using CPython 3.12.16 interpreter at: /usr/local/bin/python3
+#10 0.184 Creating virtual environment at: .venv
+#10 0.192 Resolved 114 packages in 1ms
+#10 0.545 Downloading opencv-python-headless (60.8MiB)
+#10 3.267  Downloaded opencv-python-headless
+#10 3.306 Downloading openvino (56.4MiB)
+#10 6.171  Downloaded openvino
+#10 6.206 Downloading numpy (15.9MiB)
+#10 6.868  Downloaded numpy
+#10 6.903 Downloading pillow (6.8MiB)
+#10 7.195  Downloaded pillow
+#10 7.247 Downloading pydantic-core (2.2MiB)
+#10 7.318  Downloaded pydantic-core
+#10 7.354 Downloading pygments (1.2MiB)
+#10 7.407  Downloaded pygments
+#10 8.814 Prepared 33 packages in 8.62s
+#10 9.184 Installed 33 packages in 369ms
+#10 9.184  + annotated-doc==0.0.7
+#10 9.184  + annotated-types==0.8.0
+#10 9.184  + anyio==4.16.0
+#10 9.184  + certifi==2026.10.23
+#10 9.184  + click==8.5.1
+#10 9.184  + fastapi==0.165.0
+#10 9.184  + h11==0.16.0
+#10 9.184  + httpcore==1.0.9
+#10 9.184  + httpx==0.28.1
+#10 9.184  + idna==3.20
+#10 9.184  + ijson==3.6.0
+#10 9.184  + markdown-it-py==4.3.0
+#10 9.184  + mdurl==0.1.2
+#10 9.184  + numpy==2.4.6
+#10 9.184  + opencv-python-headless==5.1.0.95
+#10 9.184  + opentelemetry-api==1.45.2
+#10 9.184  + openvino==2026.4.1
+#10 9.184  + pillow==13.0.0
+#10 9.184  + prometheus-client==0.26.0
+#10 9.184  + pydantic==2.14.3
+#10 9.184  + pydantic-core==2.50.4
+#10 9.184  + pydantic-settings==2.16.3
+#10 9.184  + pygments==2.21.0
+#10 9.184  + python-dotenv==1.2.4
+#10 9.184  + python-multipart==0.0.34
+#10 9.184  + pyyaml==6.0.3
+#10 9.184  + rich==15.0.0
+#10 9.184  + shellingham==1.5.4
+#10 9.184  + starlette==1.10.0
+#10 9.184  + typer==0.29.2
+#10 9.184  + typing-extensions==4.16.0
+#10 9.184  + typing-inspection==0.4.5
+#10 9.184  + uvicorn==0.54.0
+#10 DONE 10.2s
+
+#11 [build 5/7] COPY pyproject.toml uv.lock README.md LICENSE ./
+#11 DONE 0.0s
+
+#12 [build 6/7] COPY src ./src
+#12 DONE 0.0s
+
+#13 [build 7/7] RUN --mount=type=secret,id=ca_bundle,required=false     --mount=type=cache,target=/root/.cache/uv     if [ -f /run/secrets/ca_bundle ]; then export SSL_CERT_FILE=/run/secrets/ca_bundle; fi;     uv sync --locked --no-dev --no-editable --extra openvino --extra serve
+#13 0.163 Resolved 114 packages in 1ms
+#13 0.167    Building tsd @ file:///app
+#13 0.176       Built tsd @ file:///app
+#13 0.182 Prepared 1 package in 15ms
+#13 0.192 Installed 1 package in 10ms
+#13 0.192  + tsd==0.1.0 (from file:///app)
+#13 DONE 0.2s
+
+#14 [runtime 2/4] RUN useradd --create-home --uid 10001 tsd
+#14 CACHED
+
+#15 [runtime 3/4] COPY --from=build /app/.venv /app/.venv
+#15 DONE 0.9s
+
+#16 [runtime 4/4] WORKDIR /app
+#16 DONE 0.0s
+
+#17 exporting to image
+#17 exporting layers
+#17 exporting layers 15.9s done
+#17 exporting manifest sha256:387632a1175a516d1161bd3c9fc2642944bab83bf76f18c76fb8f6a52c2a6813 done
+#17 exporting config sha256:c4e9f1263ed83cbedbd487ab8ae3206e6666a1d05b5d9946f93e076f7674d2f6 done
+#17 exporting attestation manifest sha256:7661ea49bf6cd39363cafbb187f9e771020edab374a4dd64287a8ca2cdb46637 done
+#17 exporting manifest list sha256:9a02567e0be46f9adfdd6681e19626e3a32d2484551bb86833745a5b6e64da7f done
+#17 naming to docker.io/library/tsd-serve:0.1.0 done
+#17 unpacking to docker.io/library/tsd-serve:0.1.0
+#17 unpacking to docker.io/library/tsd-serve:0.1.0 2.8s done
+#17 naming to docker.io/library/tsd-serve:a45e982 done
+#17 unpacking to docker.io/library/tsd-serve:a45e982 done
+#17 DONE 18.7s

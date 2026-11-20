@@ -1,0 +1,128 @@
+[project]
+name = "tsd"
+version = "0.1.0"
+description = "Traffic-sign detection: dataset tooling, augmentations, multi-backend CPU inference (PyTorch, ONNX Runtime, OpenVINO FP32/INT8), evaluation and a micro-batching FastAPI service."
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = "AGPL-3.0-only"
+license-files = ["LICENSE"]
+authors = [{ name = "smallfishsworld", email = "smallfishsworld@gmail.com" }]
+dependencies = [
+    "numpy>=1.26",
+    "opencv-python-headless>=4.10",
+    "pydantic>=2.7",
+    "pyyaml>=6.0",
+    "typer>=0.12",
+    "httpx>=0.27",
+    "ijson>=3.3",
+    "pillow>=10.4",
+]
+
+[project.optional-dependencies]
+# Inference runtimes. The serving image installs only these (no PyTorch).
+onnx = ["onnxruntime>=1.20"]
+openvino = ["openvino>=2025.0"]
+# PyTorch / Ultralytics: the FP32 baseline backend, ONNX export and training.
+torch = ["torch>=2.5", "torchvision>=0.20", "ultralytics>=8.3.0", "onnx>=1.17"]
+# Post-training INT8 quantization for OpenVINO IR.
+quant = ["nncf>=2.14"]
+# Reference COCO evaluator used to cross-check tsd.eval.
+eval = ["pycocotools>=2.0.8"]
+serve = [
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "python-multipart>=0.0.9",
+    "prometheus-client>=0.20",
+    "pydantic-settings>=2.4",
+]
+
+[project.scripts]
+tsd = "tsd.cli:app"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-cov>=5.0",
+    "ruff>=0.8",
+    "mypy>=1.13",
+    "types-pyyaml>=6.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.11,<0.12"]
+build-backend = "uv_build"
+
+[tool.uv]
+# Never-true markers are uv's documented way to drop a transitive dependency:
+# * opencv-python (from ultralytics): this project uses opencv-python-headless. Both install the
+#   same `cv2` module, so having both makes one overwrite the other, and the GUI build needs libGL
+#   in slim containers.
+# * openvino-telemetry (from openvino and nncf): with it installed, ov.convert_model() sends usage
+#   events to Google Analytics unless a per-user opt-out file exists. OpenVINO and NNCF fall back to
+#   a no-op stub when the package is absent, so no code path can send telemetry.
+# (Dropping torch's CUDA wheels the same way does not work: the PyPI torch build links
+# libcudart/libcublas/libcudnn at import time; see docs/ENGINEERING_NOTES.md.)
+override-dependencies = [
+    "opencv-python ; sys_platform == 'never'",
+    "openvino-telemetry ; sys_platform == 'never'",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests", "bench"]
+# Unchanged copies of the 2024 project's surviving files (kept byte-for-byte).
+extend-exclude = ["docs/2024-course-project"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF", "PT", "NPY", "N", "C4", "PIE", "RET", "PTH"]
+ignore = [
+    "N803", # argument names like `H` for a homography are conventional
+    "N806", # same for local variables (H, M, W)
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["tsd"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src/tsd", "bench"]
+plugins = ["pydantic.mypy"]
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+module = [
+    "ijson.*",
+    "onnxruntime.*",
+    "openvino.*",
+    "nncf.*",
+    "ultralytics.*",
+    "pycocotools.*",
+    "torch.*",
+    "torchvision.*",
+    "onnx.*",
+    "prometheus_client.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "weights: needs the cached yolo11n.pt weight file (skipped when absent)",
+    "slow: takes more than a few seconds on CPU",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning:google.*",
+    # The TorchScript-based ONNX exporter is used on purpose (as Ultralytics does); see export.py.
+    "ignore:You are using the legacy TorchScript-based ONNX export:DeprecationWarning",
+    "ignore:The feature will be removed:DeprecationWarning",
+    # Starlette's TestClient recommends a different HTTP client; not our code.
+    "ignore:Using `httpx` with `starlette.testclient` is deprecated",
+    # torch.jit.TracerWarning is registered in tests/conftest.py, only when torch is installed.
+]
+
+[tool.coverage.run]
+source = ["tsd"]
+branch = true

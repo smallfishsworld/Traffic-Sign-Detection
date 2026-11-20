@@ -1,0 +1,152 @@
+{
+  "model": "models/yolo11s.onnx",
+  "backend": "onnxruntime-fp32",
+  "threads": 4,
+  "mode": "single",
+  "batch_size": 1,
+  "warmup": 20,
+  "iterations": 200,
+  "images": [
+    "0135b7a0b1010c08.jpg",
+    "08bf84bb9662086d.jpg",
+    "1cd04797f44a04a1.jpg",
+    "2b3e4a4919cd47b4.jpg",
+    "3b17ab5107bef9bb.jpg",
+    "548c1805b8e211bd.jpg",
+    "644395d01b541528.jpg",
+    "79445a6e49ee53b9.jpg",
+    "8406354c09070f9b.jpg",
+    "989532067e3483bb.jpg",
+    "a70e22ce2700b5a3.jpg",
+    "b657fb701244d7c6.jpg",
+    "c8b3ee6984721a12.jpg",
+    "d67533156d52e10c.jpg",
+    "def75350f572342e.jpg",
+    "ee267b62fd17a9b1.jpg"
+  ],
+  "model_size_bytes": 38030490,
+  "first_call_ms": 102.32879899922409,
+  "e2e": {
+    "n": 200,
+    "mean_ms": 81.56208319001053,
+    "std_ms": 10.269038740273434,
+    "min_ms": 71.7253510010778,
+    "p50_ms": 77.53759699880902,
+    "p95_ms": 100.57177860089723,
+    "p99_ms": 118.26225711041842,
+    "max_ms": 145.51123499950336
+  },
+  "infer": {
+    "n": 200,
+    "mean_ms": 76.47550045005119,
+    "std_ms": 10.097618693207878,
+    "min_ms": 67.3443319992657,
+    "p50_ms": 72.48942200112651,
+    "p95_ms": 95.4748113509595,
+    "p99_ms": 111.61904408851113,
+    "max_ms": 140.71974499893258
+  },
+  "throughput_images_per_s": 12.896969195671101,
+  "started_unix": 1795071295.2,
+  "seconds": 18.0,
+  "loadavg_before": [
+    2.08,
+    2.13,
+    1.83
+  ],
+  "loadavg_after": [
+    3.48,
+    2.45,
+    1.95
+  ],
+  "contamination": {
+    "other_processes_cores": 0.057,
+    "steal_cores": 0.039,
+    "own_cores": 3.931
+  },
+  "cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "opencv-python-headless": "5.1.0.95",
+    "torch": "2.15.0",
+    "onnxruntime": "1.32.0",
+    "openvino": "2026.4.1",
+    "tsd": "0.1.0"
+  },
+  "nms": {
+    "conf_threshold": 0.25,
+    "iou": 0.5
+  },
+  "input_size": [
+    640,
+    640
+  ],
+  "letterbox": "fixed square, auto=False (identical for every runtime)",
+  "opencv_threads": 4,
+  "provenance": {
+    "git": {
+      "commit": "cfff803426aa0a2c8182944a8ecaa85fbc61295e",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "<scratch>/p3/wt_bench/bench/bench_one.py --model models/yolo11s.onnx --threads 4 --mode single --batch-size 1 --precision-hint f32 --warmup 20 --iterations 200 --max-seconds 300.0 --out <scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11s.onnx_single_t4_b1.run2.json --tiles 0 --run 2",
+    "argv": [
+      "<scratch>/p3/wt_bench/bench/bench_one.py",
+      "--model",
+      "models/yolo11s.onnx",
+      "--threads",
+      "4",
+      "--mode",
+      "single",
+      "--batch-size",
+      "1",
+      "--precision-hint",
+      "f32",
+      "--warmup",
+      "20",
+      "--iterations",
+      "200",
+      "--max-seconds",
+      "300.0",
+      "--out",
+      "<scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11s.onnx_single_t4_b1.run2.json",
+      "--tiles",
+      "0",
+      "--run",
+      "2"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_bench",
+    "tsd_source": "<scratch>/p3/wt_bench/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "PYTHONPATH": "<scratch>/p3/wt_bench/src",
+      "TSD_PARENT_COMMAND": "python bench/run_benchmarks.py --runs 3"
+    },
+    "recorded_unix": 1795071313.1,
+    "runtime_settings": {
+      "runtime": "onnxruntime",
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "intra_op_num_threads": 4,
+      "inter_op_num_threads": 1,
+      "execution_mode": "ExecutionMode.ORT_SEQUENTIAL",
+      "graph_optimization_level": "GraphOptimizationLevel.ORT_ENABLE_ALL",
+      "thread_pinning": "none (ONNX Runtime default)"
+    }
+  },
+  "precision_hint": "f32",
+  "run": 2,
+  "attempt": 1,
+  "contaminated": false
+}

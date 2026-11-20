@@ -1,0 +1,22 @@
+"""Resident memory of the service's detector as each batch size is warmed up (host, no container)."""
+import os, resource, sys
+from pathlib import Path
+import numpy as np
+from tsd.infer import NMSConfig, load_detector
+
+def rss_mib() -> float:
+    with open("/proc/self/statm") as f:
+        return int(f.read().split()[1]) * os.sysconf("SC_PAGE_SIZE") / 2**20
+
+model = Path(sys.argv[1]); order = [int(x) for x in sys.argv[2].split(",")]
+nms = NMSConfig()
+print(f"model {model}, threads 2, warm-up order {order}, 3 calls per size")
+print(f"before load: rss {rss_mib():.1f} MiB")
+det = load_detector(model, 2, nms, "f32")
+print(f"after load: rss {rss_mib():.1f} MiB")
+dummy = np.full((480, 640, 3), 114, np.uint8)
+for b in order:
+    for _ in range(3):
+        det.predict([dummy] * b, nms)
+    peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024
+    print(f"after batch {b}: rss {rss_mib():.1f} MiB, peak {peak:.1f} MiB")

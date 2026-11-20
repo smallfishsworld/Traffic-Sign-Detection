@@ -1,0 +1,4 @@
+# Sign replacement before the fix: the probe from my re-check (bench/results/augment_replacement_before_probe.py.txt, verbatim copy) run against commit cfff803 (git worktree)
+$ OMP_NUM_THREADS=1 PYTHONPATH=<worktree at cfff803>/src nice -n 19 python bench/results/augment_replacement_before_probe.py.txt
+triangle replaced by disc: old-sign pixels left untouched: mean 5.5% (max 7.1%); outside the new label box: mean 0.0%; new label [99.0, 59.0, 149.0, 109.0] vs old box [100, 60, 148, 108]; class -> [1]
+disc replaced by triangle: old-sign pixels left untouched: mean 34.6% (max 37.5%); outside the new label box: mean 1.2%; new label [99.0, 62.0, 149.0, 106.0] vs old box [100, 60, 148, 108]; class -> [1]

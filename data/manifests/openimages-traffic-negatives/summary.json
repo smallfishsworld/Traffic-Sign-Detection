@@ -1,0 +1,48 @@
+{
+  "test": {
+    "images": 288,
+    "classes": {
+      "Traffic sign": {
+        "images": 87,
+        "boxes": 166,
+        "boxes_lt_1pct_area": 96,
+        "group_of": 1
+      },
+      "Stop sign": {
+        "images": 34,
+        "boxes": 34,
+        "boxes_lt_1pct_area": 0,
+        "group_of": 1
+      },
+      "Traffic light": {
+        "images": 73,
+        "boxes": 168,
+        "boxes_lt_1pct_area": 122,
+        "group_of": 3
+      }
+    }
+  },
+  "validation": {
+    "images": 92,
+    "classes": {
+      "Traffic sign": {
+        "images": 27,
+        "boxes": 46,
+        "boxes_lt_1pct_area": 21,
+        "group_of": 0
+      },
+      "Stop sign": {
+        "images": 13,
+        "boxes": 13,
+        "boxes_lt_1pct_area": 0,
+        "group_of": 0
+      },
+      "Traffic light": {
+        "images": 22,
+        "boxes": 65,
+        "boxes_lt_1pct_area": 49,
+        "group_of": 4
+      }
+    }
+  }
+}

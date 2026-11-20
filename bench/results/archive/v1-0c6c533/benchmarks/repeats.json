@@ -1,0 +1,304 @@
+{
+  "model": "yolo11n",
+  "runs": 3,
+  "rows": [
+    {
+      "backend": "pytorch-fp32",
+      "threads": 1,
+      "p50_ms_per_run": [
+        134.11587849986972,
+        118.98130700001275,
+        110.27664899984302
+      ],
+      "min_ms": 110.27664899984302,
+      "max_ms": 134.11587849986972,
+      "median_ms": 118.98130700001275,
+      "spread_pct": 20.036113319905077,
+      "runs": [
+        {
+          "file": "bench/results/benchmarks/raw/yolo11n.pt_single_t1_b1.json",
+          "p50_ms": 134.11587849986972,
+          "p95_ms": 154.71210309983684,
+          "p99_ms": 175.5746253803181,
+          "other_processes_cores": 0.075,
+          "contaminated": false,
+          "started_unix": 1795052453.1
+        },
+        {
+          "file": "bench/results/benchmarks/repeats/yolo11n.pt_single_t1_b1.run2.json",
+          "p50_ms": 118.98130700001275,
+          "p95_ms": 147.69429165025937,
+          "p99_ms": 157.82631908986323,
+          "other_processes_cores": 0.013,
+          "contaminated": false,
+          "started_unix": 1795056173.5
+        },
+        {
+          "file": "bench/results/benchmarks/repeats/yolo11n.pt_single_t1_b1.run3.json",
+          "p50_ms": 110.27664899984302,
+          "p95_ms": 130.22266724960897,
+          "p99_ms": 147.0356856195576,
+          "other_processes_cores": 0.01,
+          "contaminated": false,
+          "started_unix": 1795056267.1
+        }
+      ]
+    },
+    {
+      "backend": "pytorch-fp32",
+      "threads": 4,
+      "p50_ms_per_run": [
+        67.955602000211,
+        64.72247100009554,
+        64.41791350016501
+      ],
+      "min_ms": 64.41791350016501,
+      "max_ms": 67.955602000211,
+      "median_ms": 64.72247100009554,
+      "spread_pct": 5.465935470913596,
+      "runs": [
+        {
+          "file": "bench/results/benchmarks/raw/yolo11n.pt_single_t4_b1.json",
+          "p50_ms": 67.955602000211,
+          "p95_ms": 84.0352551498654,
+          "p99_ms": 96.33782573022371,
+          "other_processes_cores": 0.078,
+          "contaminated": false,
+          "started_unix": 1795052508.5
+        },
+        {
+          "file": "bench/results/benchmarks/repeats/yolo11n.pt_single_t4_b1.run2.json",
+          "p50_ms": 64.72247100009554,
+          "p95_ms": 81.60857800007761,
+          "p99_ms": 89.08217078982489,
+          "other_processes_cores": 0.02,
+          "contaminated": false,
+          "started_unix": 1795056205.2
+        },
+        {
+          "file": "bench/results/benchmarks/repeats/yolo11n.pt_single_t4_b1.run3.json",
+          "p50_ms": 64.41791350016501,
+          "p95_ms": 78.3868645505663,
+          "p99_ms": 83.55947690950414,
+          "other_processes_cores": 0.035,
+          "contaminated": false,
+          "started_unix": 1795056297.3
+        }
+      ]
+    },
+    {
+      "backend": "onnxruntime-fp32",
+      "threads": 4,
+      "p50_ms_per_run": [
+        38.94021700011763,
+        37.500430999898526,
+        38.70012249944921
+      ],
+      "min_ms": 37.500430999898526,
+      "max_ms": 38.94021700011763,
+      "median_ms": 38.70012249944921,
+      "spread_pct": 3.720365485250318,
+      "runs": [
+        {
+          "file": "bench/results/benchmarks/raw/yolo11n.onnx_single_t4_b1.json",
+          "p50_ms": 38.94021700011763,
+          "p95_ms": 50.913473449918456,
+          "p99_ms": 56.6394552001111,
+          "other_processes_cores": 0.024,
+          "contaminated": false,
+          "started_unix": 1795052636.4
+        },
+        {
+          "file": "bench/results/benchmarks/repeats/yolo11n.onnx_single_t4_b1.run2.json",
+          "p50_ms": 37.500430999898526,
+          "p95_ms": 47.58480960063022,
+          "p99_ms": 55.44111668021287,
+          "other_processes_cores": 0.022,
+          "contaminated": false,
+          "started_unix": 1795056223.7
+        },
+        {
+          "file": "bench/results/benchmarks/repeats/yolo11n.onnx_single_t4_b1.run3.json",
+          "p50_ms": 38.70012249944921,
+          "p95_ms": 47.16365524986941,
+          "p99_ms": 50.2135333101887,
+          "other_processes_cores": 0.03,
+          "contaminated": false,
+          "started_unix": 1795056315.7
+        }
+      ]
+    },
+    {
+      "backend": "openvino-fp32",
+      "threads": 4,
+      "p50_ms_per_run": [
+        30.62554549978813,
+        33.42136849960298,
+        36.62628450001648
+      ],
+      "min_ms": 30.62554549978813,
+      "max_ms": 36.62628450001648,
+      "median_ms": 33.42136849960298,
+      "spread_pct": 17.954797393468898,
+      "runs": [
+        {
+          "file": "bench/results/benchmarks/raw/yolo11n_openvino_fp32_single_t4_b1.json",
+          "p50_ms": 30.62554549978813,
+          "p95_ms": 44.044723700017116,
+          "p99_ms": 52.36336000014032,
+          "other_processes_cores": 0.094,
+          "contaminated": false,
+          "started_unix": 1795052685.0
+        },
+        {
+          "file": "bench/results/benchmarks/repeats/yolo11n_openvino_fp32_single_t4_b1.run2.json",
+          "p50_ms": 33.42136849960298,
+          "p95_ms": 40.419143250119305,
+          "p99_ms": 47.37514401020234,
+          "other_processes_cores": 0.032,
+          "contaminated": false,
+          "started_unix": 1795056235.9
+        },
+        {
+          "file": "bench/results/benchmarks/repeats/yolo11n_openvino_fp32_single_t4_b1.run3.json",
+          "p50_ms": 36.62628450001648,
+          "p95_ms": 48.24095460048737,
+          "p99_ms": 53.34911106027901,
+          "other_processes_cores": 0.056,
+          "contaminated": false,
+          "started_unix": 1795056328.0
+        }
+      ]
+    },
+    {
+      "backend": "openvino-bf16",
+      "threads": 4,
+      "p50_ms_per_run": [
+        21.71481249979479,
+        20.615301500129135,
+        23.252057500030787
+      ],
+      "min_ms": 20.615301500129135,
+      "max_ms": 23.252057500030787,
+      "median_ms": 21.71481249979479,
+      "spread_pct": 12.142660683469268,
+      "runs": [
+        {
+          "file": "bench/results/benchmarks/raw/yolo11n_openvino_fp32_bf16_single_t4_b1.json",
+          "p50_ms": 21.71481249979479,
+          "p95_ms": 27.107309900020482,
+          "p99_ms": 30.583259330569458,
+          "other_processes_cores": 0.094,
+          "contaminated": false,
+          "started_unix": 1795053463.5
+        },
+        {
+          "file": "bench/results/benchmarks/repeats/yolo11n_openvino_fp32_bf16_single_t4_b1.run2.json",
+          "p50_ms": 20.615301500129135,
+          "p95_ms": 25.515938800208456,
+          "p99_ms": 29.504947670038735,
+          "other_processes_cores": 0.0,
+          "contaminated": false,
+          "started_unix": 1795056247.2
+        },
+        {
+          "file": "bench/results/benchmarks/repeats/yolo11n_openvino_fp32_bf16_single_t4_b1.run3.json",
+          "p50_ms": 23.252057500030787,
+          "p95_ms": 30.347332099972846,
+          "p99_ms": 35.32763456934843,
+          "other_processes_cores": 0.044,
+          "contaminated": false,
+          "started_unix": 1795056340.0
+        }
+      ]
+    },
+    {
+      "backend": "openvino-int8",
+      "threads": 4,
+      "p50_ms_per_run": [
+        25.938797499748034,
+        27.232678000018495,
+        24.384386999827257
+      ],
+      "min_ms": 24.384386999827257,
+      "max_ms": 27.232678000018495,
+      "median_ms": 25.938797499748034,
+      "spread_pct": 10.980813587132968,
+      "runs": [
+        {
+          "file": "bench/results/benchmarks/raw/yolo11n_openvino_int8_single_t4_b1.json",
+          "p50_ms": 25.938797499748034,
+          "p95_ms": 36.681691999410745,
+          "p99_ms": 44.40120804049909,
+          "other_processes_cores": 0.125,
+          "contaminated": false,
+          "started_unix": 1795053496.4
+        },
+        {
+          "file": "bench/results/benchmarks/repeats/yolo11n_openvino_int8_single_t4_b1.run2.json",
+          "p50_ms": 27.232678000018495,
+          "p95_ms": 32.1272535004482,
+          "p99_ms": 34.753871880266004,
+          "other_processes_cores": 0.034,
+          "contaminated": false,
+          "started_unix": 1795056256.0
+        },
+        {
+          "file": "bench/results/benchmarks/repeats/yolo11n_openvino_int8_single_t4_b1.run3.json",
+          "p50_ms": 24.384386999827257,
+          "p95_ms": 28.287187149499,
+          "p99_ms": 31.06791031972534,
+          "other_processes_cores": 0.076,
+          "contaminated": false,
+          "started_unix": 1795056349.4
+        }
+      ]
+    }
+  ],
+  "speedups_vs_pytorch_fp32": [
+    {
+      "backend": "onnxruntime-fp32",
+      "threads": 4,
+      "speedup_per_run": [
+        1.7451264331682006,
+        1.7259127235169822,
+        1.6645402996096932
+      ],
+      "min": 1.6645402996096932,
+      "max": 1.7451264331682006
+    },
+    {
+      "backend": "openvino-fp32",
+      "threads": 4,
+      "speedup_per_run": [
+        2.2189189087482903,
+        1.9365595696916,
+        1.758789196871335
+      ],
+      "min": 1.758789196871335,
+      "max": 2.2189189087482903
+    },
+    {
+      "backend": "openvino-bf16",
+      "threads": 4,
+      "speedup_per_run": [
+        3.1294583824222846,
+        3.1395355047167324,
+        2.7704177791612516
+      ],
+      "min": 2.7704177791612516,
+      "max": 3.1395355047167324
+    },
+    {
+      "backend": "openvino-int8",
+      "threads": 4,
+      "speedup_per_run": [
+        2.619843961574206,
+        2.37664731320407,
+        2.641768829399786
+      ],
+      "min": 2.37664731320407,
+      "max": 2.641768829399786
+    }
+  ]
+}

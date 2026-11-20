@@ -1,0 +1,25 @@
+import csv, sys
+meta, oi = sys.argv[1], sys.argv[2]
+names = {}
+with open(f"{oi}/oidv7-class-descriptions-boxable.csv", newline="") as f:
+    for r in csv.reader(f):
+        if r[1] in ("Traffic sign", "Stop sign", "Traffic light"):
+            names[r[0]] = r[1]
+for split in ("validation", "test"):
+    boxed = set()
+    with open(f"{oi}/{split}-annotations-bbox.csv", newline="") as f:
+        for r in csv.DictReader(f):
+            if r["LabelName"] in names:
+                boxed.add(r["ImageID"])
+    neg, pos = set(), {}
+    with open(f"{meta}/{split}-annotations-human-imagelabels-boxable.csv", newline="") as f:
+        for r in csv.DictReader(f):
+            if r["LabelName"] in names and r["ImageID"] not in boxed:
+                if r["Confidence"] == "0":
+                    neg.add(r["ImageID"])
+                else:
+                    pos.setdefault(r["ImageID"], set()).add(names[r["LabelName"]])
+    both = neg & set(pos)
+    from collections import Counter
+    print(split, "boxed", len(boxed), "neg-only-candidates", len(neg), "with a positive too", len(both),
+          Counter(tuple(sorted(pos[i])) for i in both))

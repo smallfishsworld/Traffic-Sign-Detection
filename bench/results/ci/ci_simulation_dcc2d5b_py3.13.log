@@ -1,0 +1,38 @@
+commit dcc2d5b45b2abed6e83589ef8a585a773b84f2a2, python 3.13
+Thu Nov 19 11:35:34 UTC 2026
+environment: <scratch>/p3/ci/run-dcc2d5b-py3.13/venv does not exist before the sync
+$ uv sync --locked --extra onnx --extra openvino --extra eval --extra serve
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.5
+ + uvicorn==0.54.0
+SYNC_EXIT 0
+3.13.18 torch installed: False ultralytics installed: False
+$ ruff check .
+All checks passed!
+RUFF_CHECK_EXIT 0
+$ ruff format --check .
+96 files already formatted
+RUFF_FORMAT_EXIT 0
+$ mypy
+Success: no issues found in 45 source files
+MYPY_EXIT 0
+$ pytest -q -rs
+........................................................................ [ 25%]
+...............................................s........................ [ 50%]
+...s.......................ss..................................sssss.... [ 75%]
+...ssssss.......ssss...ssss..........s.................................  [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_benchmark.py:201: <scratch>/p3/ci/run-dcc2d5b-py3.13/src/models/yolo11n.pt not found: run `tsd fetch-assets` to download the yolo11n weights
+SKIPPED [1] tests/test_eval_e2e.py:20: <scratch>/p3/ci/run-dcc2d5b-py3.13/src/models/yolo11n.pt not found: run `tsd fetch-assets` to download the yolo11n weights
+SKIPPED [1] tests/test_export_e2e.py:25: <scratch>/p3/ci/run-dcc2d5b-py3.13/src/models/yolo11n.pt not found: run `tsd fetch-assets` to download the yolo11n weights
+SKIPPED [1] tests/test_export_e2e.py:41: <scratch>/p3/ci/run-dcc2d5b-py3.13/src/models/yolo11n.pt not found: run `tsd fetch-assets` to download the yolo11n weights
+SKIPPED [5] tests/test_postprocess.py:41: torchvision not installed
+SKIPPED [6] tests/test_postprocess.py:95: ultralytics not installed
+SKIPPED [4] tests/test_preprocess.py:64: ultralytics not installed
+SKIPPED [4] tests/test_preprocess.py:87: could not import 'ultralytics.utils.ops': No module named 'ultralytics'
+SKIPPED [1] tests/test_serve.py:207: <scratch>/p3/ci/run-dcc2d5b-py3.13/src/models/yolo11n.pt not found: run `tsd fetch-assets` to download the yolo11n weights
+263 passed, 24 skipped in 9.76s
+PYTEST_EXIT 0
+$ tsd --help (import smoke test)
+TSD_HELP_EXIT 0
+Thu Nov 19 11:35:57 UTC 2026

@@ -1,0 +1,11 @@
+# Docker build of a clean worktree (lock: /home/user/work/bench.lock, held by flock for this script)
+$ date -u +%FT%TZ
+2026-11-19T11:39:48Z
+$ git rev-parse HEAD
+a45e982964ad7477690800d6ad9396e09e168ee1
+$ git status --porcelain   # empty = clean
+(end of status)
+$ docker build --network host --build-arg HTTPS_PROXY=$HTTPS_PROXY --secret id=ca_bundle,src=/root/.ccr/ca-bundle.crt -t tsd-serve:0.1.0 -t tsd-serve:a45e982 <worktree>
+build exit status 0 after 38 s (full BuildKit log: build.log)
+$ date -u +%FT%TZ
+2026-11-19T11:40:26Z

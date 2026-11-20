@@ -1,0 +1,147 @@
+{
+  "requests": 606,
+  "ok": 606,
+  "errors": {},
+  "error_rate": 0.0,
+  "seconds": 20.072922141998788,
+  "throughput_rps": 30.189924302653463,
+  "latency_ms": {
+    "mean": 132.21218154455346,
+    "p50": 131.05853749948437,
+    "p95": 149.62269999887212,
+    "p99": 160.35530079961973,
+    "max": 212.5621829982265
+  },
+  "server_mean_batch_size": 2.0,
+  "concurrency": 4,
+  "max_rps": null,
+  "aborted_on_errors": false,
+  "breakdown_ms": {
+    "n": 606,
+    "all": {
+      "latency": 132.212,
+      "outside": 6.28,
+      "preprocess": 11.045,
+      "queue_wait": 48.819,
+      "inference": 66.068,
+      "batch_size": 2.0,
+      "count": 606
+    },
+    "slowest_5pct": {
+      "latency": 160.164,
+      "outside": 10.774,
+      "preprocess": 14.368,
+      "queue_wait": 58.168,
+      "inference": 76.855,
+      "batch_size": 2.0,
+      "count": 30
+    },
+    "slowest_1pct": {
+      "latency": 179.991,
+      "outside": 26.233,
+      "preprocess": 18.077,
+      "queue_wait": 52.791,
+      "inference": 82.889,
+      "batch_size": 2.0,
+      "count": 6
+    },
+    "percentiles": {
+      "latency": {
+        "p50": 131.059,
+        "p95": 149.623,
+        "p99": 160.355
+      },
+      "outside": {
+        "p50": 5.486,
+        "p95": 10.98,
+        "p99": 18.405
+      },
+      "preprocess": {
+        "p50": 9.985,
+        "p95": 20.779,
+        "p99": 24.675
+      },
+      "queue_wait": {
+        "p50": 49.248,
+        "p95": 61.031,
+        "p99": 67.243
+      },
+      "inference": {
+        "p50": 65.041,
+        "p95": 76.763,
+        "p99": 82.383
+      },
+      "batch_size": {
+        "p50": 2.0,
+        "p95": 2.0,
+        "p99": 2.0
+      }
+    }
+  },
+  "setting": "fixed",
+  "run": 1,
+  "server_env": {
+    "TSD_PARENT_COMMAND": "python bench/serve_compare.py --runs 3",
+    "TSD_MAX_BATCH_SIZE": "8",
+    "TSD_MAX_WAIT_MS": "5",
+    "TSD_BATCH_WAIT": "fixed",
+    "TSD_MODEL_PATH": "models/yolo11n_openvino_int8/yolo11n.xml",
+    "TSD_THREADS": "2",
+    "TSD_PREPROCESS_THREADS": "1",
+    "TSD_QUEUE_SIZE": "64",
+    "TSD_HOST": "127.0.0.1",
+    "TSD_PORT": "8765"
+  },
+  "other_processes_cores": 0.338,
+  "server_cpu_cores": 1.917,
+  "client_cpu_cores": 0.06,
+  "started_unix": 1795073131.6,
+  "provenance": {
+    "git": {
+      "commit": "cfff803426aa0a2c8182944a8ecaa85fbc61295e",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "<scratch>/p3/wt_bench/bench/serve_compare.py --session --setting fixed --run 1 --levels 1,4,8,16 --model models/yolo11n_openvino_int8/yolo11n.xml --duration 20.0 --port 8765 --images-dir <scratch>/p3/wt_bench/data/openimages-traffic/images --out <scratch>/p3/wt_bench/bench/results/serving",
+    "argv": [
+      "<scratch>/p3/wt_bench/bench/serve_compare.py",
+      "--session",
+      "--setting",
+      "fixed",
+      "--run",
+      "1",
+      "--levels",
+      "1,4,8,16",
+      "--model",
+      "models/yolo11n_openvino_int8/yolo11n.xml",
+      "--duration",
+      "20.0",
+      "--port",
+      "8765",
+      "--images-dir",
+      "<scratch>/p3/wt_bench/data/openimages-traffic/images",
+      "--out",
+      "<scratch>/p3/wt_bench/bench/results/serving"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_bench",
+    "tsd_source": "<scratch>/p3/wt_bench/src/tsd",
+    "env": {
+      "PYTHONPATH": "<scratch>/p3/wt_bench/src",
+      "TSD_PARENT_COMMAND": "python bench/serve_compare.py --runs 3"
+    },
+    "recorded_unix": 1795073131.6,
+    "runtime_settings": {
+      "server_cpus": "0-2",
+      "client_cpus": "3"
+    }
+  },
+  "attempt": 1,
+  "contaminated": true
+}

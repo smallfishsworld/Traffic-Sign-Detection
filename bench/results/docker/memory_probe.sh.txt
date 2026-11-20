@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Start-up memory of the service in the image, with the compose security settings but a 3 GiB
+# limit (so that it is not killed), at the lowest CPU weight (--cpu-shares 2, docker's nice).
+# Usage: bash memory_probe.sh <image tag> <out file>
+set -u -o pipefail
+IMG=$1; OUT=$2
+R=/home/user/work/Traffic-Sign-Detection
+PORT=8798
+V=$R/data/openimages-traffic/images/validation/05d4a1a8d2d10d3d.jpg
+run() { echo "\$ $*"; "$@" 2>&1; echo; }
+CG=/sys/fs/cgroup/memory
+{
+echo "# Start-up memory of $IMG (cgroup v1: memory.max_usage_in_bytes is the peak)"
+run date -u +%FT%TZ
+docker rm -f tsd-memprobe >/dev/null 2>&1
+run docker run -d --name tsd-memprobe --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=$PORT -e TSD_THREADS=2 -v "$R/models:/models:ro" --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 3g --cpu-shares 2 "$IMG"
+for _ in $(seq 1 90); do
+  [ "$(docker inspect --format '{{.State.Health.Status}}' tsd-memprobe 2>/dev/null)" = healthy ] && break
+  [ "$(docker inspect --format '{{.State.Running}}' tsd-memprobe 2>/dev/null)" = true ] || break
+  python3 -c "import time; time.sleep(2)"
+done
+run docker inspect --format 'health={{.State.Health.Status}} running={{.State.Running}} oom={{.State.OOMKilled}}' tsd-memprobe
+echo "## after start-up (warm-up of batch sizes 1-8 done)"
+run docker exec tsd-memprobe sh -c "echo peak_bytes=\$(cat $CG/memory.max_usage_in_bytes) now_bytes=\$(cat $CG/memory.usage_in_bytes); grep -E '^(total_)?(rss|cache|shmem) ' $CG/memory.stat"
+run docker stats --no-stream --format '{{.MemUsage}}' tsd-memprobe
+run curl -sS --noproxy '*' -F image=@$V http://127.0.0.1:$PORT/v1/detect
+echo "## after one detection"
+run docker exec tsd-memprobe sh -c "echo peak_bytes=\$(cat $CG/memory.max_usage_in_bytes) now_bytes=\$(cat $CG/memory.usage_in_bytes)"
+run docker logs tsd-memprobe
+docker rm -f tsd-memprobe >/dev/null 2>&1
+run date -u +%FT%TZ
+} > "$OUT" 2>&1

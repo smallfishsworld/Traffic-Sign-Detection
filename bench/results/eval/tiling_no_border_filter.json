@@ -1,0 +1,950 @@
+{
+  "protocol": {
+    "dataset_note": "219 Open Images V7 validation + test images, each with at least one box of a data-set class; verified-negative images without such boxes are not included",
+    "matching": "COCO (pycocotools-equivalent): IoU 0.50:0.05:0.95, 101-point interpolated AP, maxDets 100 per image and class, area ranges (pixels of the original image, bounds inclusive as in pycocotools): small [0, 32^2], medium [32^2, 96^2], large [96^2, inf)",
+    "unverified_classes": "detections of a class that is neither verified present nor verified absent in an image (and has no box there) are dropped",
+    "group_of": "Open Images group-of boxes are COCO crowd regions",
+    "class_hierarchy": "boxes also count for every evaluated ancestor class (Open Images box expansion)",
+    "nms": "conf 0.001, IoU 0.7, multi-label, max 300 per image, evaluated classes only",
+    "bootstrap": {
+      "replicates": 1000,
+      "seed": 0,
+      "method": "percentile 95% interval; images resampled with replacement; one resample per replicate shared by all runs (paired deltas)"
+    }
+  },
+  "runs": {
+    "yolo11n/openvino-fp32": {
+      "model": "models/yolo11n_openvino_fp32/yolo11n.xml",
+      "backend": "openvino-fp32",
+      "source": "yolo11n.pt",
+      "files_sha256": {
+        "yolo11n.xml": "a9bab312ffd6a2ff799e1a1983635a537690481014896e403b3cb467f259bdf2",
+        "yolo11n.bin": "f3bdffd7e09c7084e7c701de9fe5b18ee9a88344b41f9b7536d985bf97a6f342"
+      },
+      "classes": [
+        "Stop sign",
+        "Traffic light"
+      ],
+      "excluded_classes": [
+        "Traffic sign"
+      ],
+      "detections_scored": 7849,
+      "unverified_filter": {
+        "dropped_detections": {
+          "Stop sign": 514,
+          "Traffic light": 1075
+        },
+        "unevaluated_images": {
+          "Stop sign": 123,
+          "Traffic light": 118
+        }
+      },
+      "map50": 0.814055,
+      "map50_95": 0.669039,
+      "map75": 0.686305,
+      "ar100": 0.784465,
+      "ci95": {
+        "map50": [
+          0.770379,
+          0.859974
+        ],
+        "map50_95": [
+          0.633947,
+          0.708827
+        ]
+      },
+      "per_class": {
+        "Stop sign": {
+          "ap50_95": 0.957789,
+          "ap50": 0.983242,
+          "ap75": 0.983242,
+          "ar100": 0.980435
+        },
+        "Traffic light": {
+          "ap50_95": 0.380289,
+          "ap50": 0.644867,
+          "ap75": 0.389369,
+          "ar100": 0.588496
+        }
+      },
+      "by_size": {
+        "small": {
+          "map50_95": 0.175326,
+          "map50": 0.438499,
+          "ar100": 0.344928,
+          "gt_boxes": {
+            "Stop sign": 0,
+            "Traffic light": 69
+          },
+          "per_class": {
+            "Traffic light": {
+              "ap50_95": 0.175326,
+              "ap50": 0.438499,
+              "ap75": 0.116467,
+              "ar100": 0.344928
+            }
+          }
+        },
+        "medium": {
+          "map50_95": 0.487346,
+          "map50": 0.79394,
+          "ar100": 0.636538,
+          "gt_boxes": {
+            "Stop sign": 0,
+            "Traffic light": 104
+          },
+          "per_class": {
+            "Traffic light": {
+              "ap50_95": 0.487346,
+              "ap50": 0.79394,
+              "ap75": 0.531766,
+              "ar100": 0.636538
+            }
+          }
+        },
+        "large": {
+          "map50_95": 0.737805,
+          "map50": 0.865006,
+          "ar100": 0.895773,
+          "gt_boxes": {
+            "Stop sign": 46,
+            "Traffic light": 54
+          },
+          "per_class": {
+            "Stop sign": {
+              "ap50_95": 0.958196,
+              "ap50": 0.983769,
+              "ap75": 0.983769,
+              "ar100": 0.980435
+            },
+            "Traffic light": {
+              "ap50_95": 0.517414,
+              "ap50": 0.746242,
+              "ap75": 0.560516,
+              "ar100": 0.811111
+            }
+          }
+        }
+      },
+      "nms": {
+        "conf_threshold": 0.001,
+        "iou_threshold": 0.7,
+        "max_det": 300,
+        "classes": [
+          11,
+          9
+        ],
+        "multi_label": true,
+        "agnostic": false,
+        "max_candidates": 30000
+      },
+      "extra": {
+        "provenance": {
+          "git": {
+            "commit": "bb7ea723c52e6cbbbe54f1521d3ffc21b7f460e6",
+            "dirty": false,
+            "dirty_paths": [],
+            "checked_paths": [
+              "src",
+              "bench",
+              "pyproject.toml",
+              "uv.lock"
+            ]
+          },
+          "command": "/home/user/work/Traffic-Sign-Detection/.venv/bin/tsd eval models/yolo11n.pt models/yolo11n.onnx models/yolo11n_openvino_fp32/yolo11n.xml models/yolo11n_openvino_fp32/yolo11n.xml@bf16 models/yolo11n_openvino_int8/yolo11n.xml models/yolo11n_openvino_int8/yolo11n.xml@bf16 models/yolo11n_openvino_int8_fullq/yolo11n.xml models/yolo11s.pt models/yolo11s.onnx models/yolo11s_openvino_fp32/yolo11s.xml models/yolo11s_openvino_fp32/yolo11s.xml@bf16 models/yolo11s_openvino_int8/yolo11s.xml models/yolo11s_openvino_int8/yolo11s.xml@bf16 models/yolo11s_openvino_int8_fullq/yolo11s.xml --out bench/results/eval/coco_classes.json",
+          "argv": [
+            "/home/user/work/Traffic-Sign-Detection/.venv/bin/tsd",
+            "eval",
+            "models/yolo11n.pt",
+            "models/yolo11n.onnx",
+            "models/yolo11n_openvino_fp32/yolo11n.xml",
+            "models/yolo11n_openvino_fp32/yolo11n.xml@bf16",
+            "models/yolo11n_openvino_int8/yolo11n.xml",
+            "models/yolo11n_openvino_int8/yolo11n.xml@bf16",
+            "models/yolo11n_openvino_int8_fullq/yolo11n.xml",
+            "models/yolo11s.pt",
+            "models/yolo11s.onnx",
+            "models/yolo11s_openvino_fp32/yolo11s.xml",
+            "models/yolo11s_openvino_fp32/yolo11s.xml@bf16",
+            "models/yolo11s_openvino_int8/yolo11s.xml",
+            "models/yolo11s_openvino_int8/yolo11s.xml@bf16",
+            "models/yolo11s_openvino_int8_fullq/yolo11s.xml",
+            "--out",
+            "bench/results/eval/coco_classes.json"
+          ],
+          "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python3",
+          "cwd": "<scratch>/p3/wt_eval",
+          "tsd_source": "<scratch>/p3/wt_eval/src/tsd",
+          "env": {
+            "OMP_NUM_THREADS": "2",
+            "MKL_NUM_THREADS": "2",
+            "OPENBLAS_NUM_THREADS": "2",
+            "PYTHONPATH": "<scratch>/p3/wt_eval/src"
+          },
+          "recorded_unix": 1795074712.1
+        },
+        "threads": 2,
+        "wall_seconds_not_a_benchmark": 12.7
+      },
+      "detections_file": {
+        "path": "bench/results/eval/detections/yolo11n_openvino_fp32_yolo11n.1c38bb49f6.json.gz",
+        "sha256": "05cf6331972d005cce476100692cb6d65cc5b1690891880d2fa67de830b42286"
+      },
+      "pycocotools": {
+        "stats": {
+          "map50_95": 0.669039,
+          "map50": 0.814055,
+          "map75": 0.686305,
+          "map_small": 0.175326,
+          "map_medium": 0.487346,
+          "map_large": 0.737805,
+          "ar100": 0.784465
+        },
+        "compared_keys": 7,
+        "nan_mismatch": [],
+        "max_abs_diff": 2.220446049250313e-16
+      }
+    },
+    "yolo11n/openvino-fp32+tiles512": {
+      "model": "models/yolo11n_openvino_fp32/yolo11n.xml",
+      "backend": "openvino-fp32",
+      "source": "yolo11n.pt",
+      "files_sha256": {
+        "yolo11n.xml": "a9bab312ffd6a2ff799e1a1983635a537690481014896e403b3cb467f259bdf2",
+        "yolo11n.bin": "f3bdffd7e09c7084e7c701de9fe5b18ee9a88344b41f9b7536d985bf97a6f342"
+      },
+      "classes": [
+        "Stop sign",
+        "Traffic light"
+      ],
+      "excluded_classes": [
+        "Traffic sign"
+      ],
+      "detections_scored": 12448,
+      "unverified_filter": {
+        "dropped_detections": {
+          "Stop sign": 1368,
+          "Traffic light": 2616
+        },
+        "unevaluated_images": {
+          "Stop sign": 123,
+          "Traffic light": 118
+        }
+      },
+      "map50": 0.634795,
+      "map50_95": 0.354801,
+      "map75": 0.331933,
+      "ar100": 0.682128,
+      "ci95": {
+        "map50": [
+          0.572163,
+          0.706495
+        ],
+        "map50_95": [
+          0.305865,
+          0.433596
+        ]
+      },
+      "per_class": {
+        "Stop sign": {
+          "ap50_95": 0.36942,
+          "ap50": 0.672532,
+          "ap75": 0.315749,
+          "ar100": 0.769565
+        },
+        "Traffic light": {
+          "ap50_95": 0.340181,
+          "ap50": 0.597057,
+          "ap75": 0.348116,
+          "ar100": 0.59469
+        }
+      },
+      "by_size": {
+        "small": {
+          "map50_95": 0.243967,
+          "map50": 0.574827,
+          "ar100": 0.410145,
+          "gt_boxes": {
+            "Stop sign": 0,
+            "Traffic light": 69
+          },
+          "per_class": {
+            "Traffic light": {
+              "ap50_95": 0.243967,
+              "ap50": 0.574827,
+              "ap75": 0.133785,
+              "ar100": 0.410145
+            }
+          }
+        },
+        "medium": {
+          "map50_95": 0.491844,
+          "map50": 0.78974,
+          "ar100": 0.650962,
+          "gt_boxes": {
+            "Stop sign": 0,
+            "Traffic light": 104
+          },
+          "per_class": {
+            "Traffic light": {
+              "ap50_95": 0.491844,
+              "ap50": 0.78974,
+              "ap75": 0.536955,
+              "ar100": 0.650962
+            }
+          }
+        },
+        "large": {
+          "map50_95": 0.368917,
+          "map50": 0.624663,
+          "ar100": 0.751449,
+          "gt_boxes": {
+            "Stop sign": 46,
+            "Traffic light": 54
+          },
+          "per_class": {
+            "Stop sign": {
+              "ap50_95": 0.370278,
+              "ap50": 0.673669,
+              "ap75": 0.316585,
+              "ar100": 0.769565
+            },
+            "Traffic light": {
+              "ap50_95": 0.367556,
+              "ap50": 0.575657,
+              "ap75": 0.422352,
+              "ar100": 0.733333
+            }
+          }
+        }
+      },
+      "nms": {
+        "conf_threshold": 0.001,
+        "iou_threshold": 0.7,
+        "max_det": 300,
+        "classes": [
+          11,
+          9
+        ],
+        "multi_label": true,
+        "agnostic": false,
+        "max_candidates": 30000
+      },
+      "extra": {
+        "tiling": {
+          "tile_size": 512,
+          "overlap": 0.2,
+          "full_image": true,
+          "merge_iou": 0.5,
+          "batch_size": 8,
+          "border_margin": null,
+          "rescue_ioa": 0.5
+        },
+        "provenance": {
+          "git": {
+            "commit": "bb7ea723c52e6cbbbe54f1521d3ffc21b7f460e6",
+            "dirty": false,
+            "dirty_paths": [],
+            "checked_paths": [
+              "src",
+              "bench",
+              "pyproject.toml",
+              "uv.lock"
+            ]
+          },
+          "command": "/home/user/work/Traffic-Sign-Detection/.venv/bin/tsd eval models/yolo11n_openvino_fp32/yolo11n.xml models/yolo11n_openvino_fp32/yolo11n.xml@tiles=512 models/yolo11s_openvino_fp32/yolo11s.xml models/yolo11s_openvino_fp32/yolo11s.xml@tiles=512 --no-tile-border-filter --tile-merge-iou 0.5 --out bench/results/eval/tiling_no_border_filter.json",
+          "argv": [
+            "/home/user/work/Traffic-Sign-Detection/.venv/bin/tsd",
+            "eval",
+            "models/yolo11n_openvino_fp32/yolo11n.xml",
+            "models/yolo11n_openvino_fp32/yolo11n.xml@tiles=512",
+            "models/yolo11s_openvino_fp32/yolo11s.xml",
+            "models/yolo11s_openvino_fp32/yolo11s.xml@tiles=512",
+            "--no-tile-border-filter",
+            "--tile-merge-iou",
+            "0.5",
+            "--out",
+            "bench/results/eval/tiling_no_border_filter.json"
+          ],
+          "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python3",
+          "cwd": "<scratch>/p3/wt_eval",
+          "tsd_source": "<scratch>/p3/wt_eval/src/tsd",
+          "env": {
+            "OMP_NUM_THREADS": "2",
+            "MKL_NUM_THREADS": "2",
+            "OPENBLAS_NUM_THREADS": "2",
+            "PYTHONPATH": "<scratch>/p3/wt_eval/src"
+          },
+          "recorded_unix": 1795075684.8
+        },
+        "threads": 2,
+        "wall_seconds_not_a_benchmark": 88.7
+      },
+      "detections_file": {
+        "path": "bench/results/eval/detections/yolo11n_openvino_fp32_yolo11n_tiles512.45ad77828e.json.gz",
+        "sha256": "5166c6ae0952834357cfb2bf91f6b794454b2e0c8ecada70716b5bc03ba72b56"
+      },
+      "baseline": "yolo11n/openvino-fp32",
+      "by_size_delta_vs_baseline": {
+        "small": {
+          "map50_95": 0.068641,
+          "map50": 0.136328,
+          "ar100": 0.065217,
+          "ci95": {
+            "map50": [
+              0.035555,
+              0.246278
+            ],
+            "map50_95": [
+              0.015066,
+              0.110238
+            ]
+          }
+        },
+        "medium": {
+          "map50_95": 0.004498,
+          "map50": -0.0042,
+          "ar100": 0.014423,
+          "ci95": {
+            "map50": [
+              -0.045325,
+              0.035821
+            ],
+            "map50_95": [
+              -0.028912,
+              0.04129
+            ]
+          }
+        },
+        "large": {
+          "map50_95": -0.368888,
+          "map50": -0.240342,
+          "ar100": -0.144324,
+          "ci95": {
+            "map50": [
+              -0.303118,
+              -0.169331
+            ],
+            "map50_95": [
+              -0.427956,
+              -0.29131
+            ]
+          }
+        }
+      },
+      "delta_vs_baseline": {
+        "map50": -0.17926,
+        "map50_95": -0.314239,
+        "ci95": {
+          "map50": [
+            -0.230751,
+            -0.122053
+          ],
+          "map50_95": [
+            -0.358435,
+            -0.243124
+          ]
+        }
+      },
+      "pycocotools": {
+        "stats": {
+          "map50_95": 0.354801,
+          "map50": 0.634795,
+          "map75": 0.331933,
+          "map_small": 0.243967,
+          "map_medium": 0.491844,
+          "map_large": 0.368917,
+          "ar100": 0.682128
+        },
+        "compared_keys": 7,
+        "nan_mismatch": [],
+        "max_abs_diff": 2.220446049250313e-16
+      }
+    },
+    "yolo11s/openvino-fp32": {
+      "model": "models/yolo11s_openvino_fp32/yolo11s.xml",
+      "backend": "openvino-fp32",
+      "source": "yolo11s.pt",
+      "files_sha256": {
+        "yolo11s.xml": "43f782b471768d55a356b23480ec7bc20354a690197659faf7b6faf90b0a80b9",
+        "yolo11s.bin": "a6f4ddce6b802a21d8971d3db7d61cad597d9ac30bf007c0b7132c79a1d8d76c"
+      },
+      "classes": [
+        "Stop sign",
+        "Traffic light"
+      ],
+      "excluded_classes": [
+        "Traffic sign"
+      ],
+      "detections_scored": 5527,
+      "unverified_filter": {
+        "dropped_detections": {
+          "Stop sign": 369,
+          "Traffic light": 777
+        },
+        "unevaluated_images": {
+          "Stop sign": 123,
+          "Traffic light": 118
+        }
+      },
+      "map50": 0.847764,
+      "map50_95": 0.701599,
+      "map75": 0.718867,
+      "ar100": 0.800154,
+      "ci95": {
+        "map50": [
+          0.803948,
+          0.892233
+        ],
+        "map50_95": [
+          0.664034,
+          0.74412
+        ]
+      },
+      "per_class": {
+        "Stop sign": {
+          "ap50_95": 0.947881,
+          "ap50": 0.973095,
+          "ap75": 0.973095,
+          "ar100": 0.982609
+        },
+        "Traffic light": {
+          "ap50_95": 0.455317,
+          "ap50": 0.722432,
+          "ap75": 0.464638,
+          "ar100": 0.617699
+        }
+      },
+      "by_size": {
+        "small": {
+          "map50_95": 0.233194,
+          "map50": 0.560017,
+          "ar100": 0.389855,
+          "gt_boxes": {
+            "Stop sign": 0,
+            "Traffic light": 69
+          },
+          "per_class": {
+            "Traffic light": {
+              "ap50_95": 0.233194,
+              "ap50": 0.560017,
+              "ap75": 0.10371,
+              "ar100": 0.389855
+            }
+          }
+        },
+        "medium": {
+          "map50_95": 0.548476,
+          "map50": 0.83904,
+          "ar100": 0.683654,
+          "gt_boxes": {
+            "Stop sign": 0,
+            "Traffic light": 104
+          },
+          "per_class": {
+            "Traffic light": {
+              "ap50_95": 0.548476,
+              "ap50": 0.83904,
+              "ap75": 0.615821,
+              "ar100": 0.683654
+            }
+          }
+        },
+        "large": {
+          "map50_95": 0.774529,
+          "map50": 0.887392,
+          "ar100": 0.881119,
+          "gt_boxes": {
+            "Stop sign": 46,
+            "Traffic light": 54
+          },
+          "per_class": {
+            "Stop sign": {
+              "ap50_95": 0.948769,
+              "ap50": 0.974216,
+              "ap75": 0.974216,
+              "ar100": 0.982609
+            },
+            "Traffic light": {
+              "ap50_95": 0.600289,
+              "ap50": 0.800567,
+              "ap75": 0.643598,
+              "ar100": 0.77963
+            }
+          }
+        }
+      },
+      "nms": {
+        "conf_threshold": 0.001,
+        "iou_threshold": 0.7,
+        "max_det": 300,
+        "classes": [
+          11,
+          9
+        ],
+        "multi_label": true,
+        "agnostic": false,
+        "max_candidates": 30000
+      },
+      "extra": {
+        "provenance": {
+          "git": {
+            "commit": "bb7ea723c52e6cbbbe54f1521d3ffc21b7f460e6",
+            "dirty": false,
+            "dirty_paths": [],
+            "checked_paths": [
+              "src",
+              "bench",
+              "pyproject.toml",
+              "uv.lock"
+            ]
+          },
+          "command": "/home/user/work/Traffic-Sign-Detection/.venv/bin/tsd eval models/yolo11n.pt models/yolo11n.onnx models/yolo11n_openvino_fp32/yolo11n.xml models/yolo11n_openvino_fp32/yolo11n.xml@bf16 models/yolo11n_openvino_int8/yolo11n.xml models/yolo11n_openvino_int8/yolo11n.xml@bf16 models/yolo11n_openvino_int8_fullq/yolo11n.xml models/yolo11s.pt models/yolo11s.onnx models/yolo11s_openvino_fp32/yolo11s.xml models/yolo11s_openvino_fp32/yolo11s.xml@bf16 models/yolo11s_openvino_int8/yolo11s.xml models/yolo11s_openvino_int8/yolo11s.xml@bf16 models/yolo11s_openvino_int8_fullq/yolo11s.xml --out bench/results/eval/coco_classes.json",
+          "argv": [
+            "/home/user/work/Traffic-Sign-Detection/.venv/bin/tsd",
+            "eval",
+            "models/yolo11n.pt",
+            "models/yolo11n.onnx",
+            "models/yolo11n_openvino_fp32/yolo11n.xml",
+            "models/yolo11n_openvino_fp32/yolo11n.xml@bf16",
+            "models/yolo11n_openvino_int8/yolo11n.xml",
+            "models/yolo11n_openvino_int8/yolo11n.xml@bf16",
+            "models/yolo11n_openvino_int8_fullq/yolo11n.xml",
+            "models/yolo11s.pt",
+            "models/yolo11s.onnx",
+            "models/yolo11s_openvino_fp32/yolo11s.xml",
+            "models/yolo11s_openvino_fp32/yolo11s.xml@bf16",
+            "models/yolo11s_openvino_int8/yolo11s.xml",
+            "models/yolo11s_openvino_int8/yolo11s.xml@bf16",
+            "models/yolo11s_openvino_int8_fullq/yolo11s.xml",
+            "--out",
+            "bench/results/eval/coco_classes.json"
+          ],
+          "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python3",
+          "cwd": "<scratch>/p3/wt_eval",
+          "tsd_source": "<scratch>/p3/wt_eval/src/tsd",
+          "env": {
+            "OMP_NUM_THREADS": "2",
+            "MKL_NUM_THREADS": "2",
+            "OPENBLAS_NUM_THREADS": "2",
+            "PYTHONPATH": "<scratch>/p3/wt_eval/src"
+          },
+          "recorded_unix": 1795074842.9
+        },
+        "threads": 2,
+        "wall_seconds_not_a_benchmark": 28.5
+      },
+      "detections_file": {
+        "path": "bench/results/eval/detections/yolo11s_openvino_fp32_yolo11s.1c38bb49f6.json.gz",
+        "sha256": "07f96feb71627736d4548a9019f8d4a24c55c61b08aa20341a30a3d027c90cd7"
+      },
+      "pycocotools": {
+        "stats": {
+          "map50_95": 0.701599,
+          "map50": 0.847764,
+          "map75": 0.718867,
+          "map_small": 0.233194,
+          "map_medium": 0.548476,
+          "map_large": 0.774529,
+          "ar100": 0.800154
+        },
+        "compared_keys": 7,
+        "nan_mismatch": [],
+        "max_abs_diff": 2.220446049250313e-16
+      }
+    },
+    "yolo11s/openvino-fp32+tiles512": {
+      "model": "models/yolo11s_openvino_fp32/yolo11s.xml",
+      "backend": "openvino-fp32",
+      "source": "yolo11s.pt",
+      "files_sha256": {
+        "yolo11s.xml": "43f782b471768d55a356b23480ec7bc20354a690197659faf7b6faf90b0a80b9",
+        "yolo11s.bin": "a6f4ddce6b802a21d8971d3db7d61cad597d9ac30bf007c0b7132c79a1d8d76c"
+      },
+      "classes": [
+        "Stop sign",
+        "Traffic light"
+      ],
+      "excluded_classes": [
+        "Traffic sign"
+      ],
+      "detections_scored": 9304,
+      "unverified_filter": {
+        "dropped_detections": {
+          "Stop sign": 1009,
+          "Traffic light": 1724
+        },
+        "unevaluated_images": {
+          "Stop sign": 123,
+          "Traffic light": 118
+        }
+      },
+      "map50": 0.639695,
+      "map50_95": 0.446245,
+      "map75": 0.432103,
+      "ar100": 0.749673,
+      "ci95": {
+        "map50": [
+          0.582638,
+          0.720561
+        ],
+        "map50_95": [
+          0.392464,
+          0.53369
+        ]
+      },
+      "per_class": {
+        "Stop sign": {
+          "ap50_95": 0.519585,
+          "ap50": 0.67177,
+          "ap75": 0.495837,
+          "ar100": 0.886957
+        },
+        "Traffic light": {
+          "ap50_95": 0.372905,
+          "ap50": 0.607621,
+          "ap75": 0.36837,
+          "ar100": 0.612389
+        }
+      },
+      "by_size": {
+        "small": {
+          "map50_95": 0.275182,
+          "map50": 0.622324,
+          "ar100": 0.462319,
+          "gt_boxes": {
+            "Stop sign": 0,
+            "Traffic light": 69
+          },
+          "per_class": {
+            "Traffic light": {
+              "ap50_95": 0.275182,
+              "ap50": 0.622324,
+              "ap75": 0.160852,
+              "ar100": 0.462319
+            }
+          }
+        },
+        "medium": {
+          "map50_95": 0.535814,
+          "map50": 0.811226,
+          "ar100": 0.667308,
+          "gt_boxes": {
+            "Stop sign": 0,
+            "Traffic light": 104
+          },
+          "per_class": {
+            "Traffic light": {
+              "ap50_95": 0.535814,
+              "ap50": 0.811226,
+              "ap75": 0.600016,
+              "ar100": 0.667308
+            }
+          }
+        },
+        "large": {
+          "map50_95": 0.45434,
+          "map50": 0.618604,
+          "ar100": 0.796256,
+          "gt_boxes": {
+            "Stop sign": 46,
+            "Traffic light": 54
+          },
+          "per_class": {
+            "Stop sign": {
+              "ap50_95": 0.519663,
+              "ap50": 0.671865,
+              "ap75": 0.495945,
+              "ar100": 0.886957
+            },
+            "Traffic light": {
+              "ap50_95": 0.389017,
+              "ap50": 0.565343,
+              "ap75": 0.375848,
+              "ar100": 0.705556
+            }
+          }
+        }
+      },
+      "nms": {
+        "conf_threshold": 0.001,
+        "iou_threshold": 0.7,
+        "max_det": 300,
+        "classes": [
+          11,
+          9
+        ],
+        "multi_label": true,
+        "agnostic": false,
+        "max_candidates": 30000
+      },
+      "extra": {
+        "tiling": {
+          "tile_size": 512,
+          "overlap": 0.2,
+          "full_image": true,
+          "merge_iou": 0.5,
+          "batch_size": 8,
+          "border_margin": null,
+          "rescue_ioa": 0.5
+        },
+        "provenance": {
+          "git": {
+            "commit": "bb7ea723c52e6cbbbe54f1521d3ffc21b7f460e6",
+            "dirty": false,
+            "dirty_paths": [],
+            "checked_paths": [
+              "src",
+              "bench",
+              "pyproject.toml",
+              "uv.lock"
+            ]
+          },
+          "command": "/home/user/work/Traffic-Sign-Detection/.venv/bin/tsd eval models/yolo11n_openvino_fp32/yolo11n.xml models/yolo11n_openvino_fp32/yolo11n.xml@tiles=512 models/yolo11s_openvino_fp32/yolo11s.xml models/yolo11s_openvino_fp32/yolo11s.xml@tiles=512 --no-tile-border-filter --tile-merge-iou 0.5 --out bench/results/eval/tiling_no_border_filter.json",
+          "argv": [
+            "/home/user/work/Traffic-Sign-Detection/.venv/bin/tsd",
+            "eval",
+            "models/yolo11n_openvino_fp32/yolo11n.xml",
+            "models/yolo11n_openvino_fp32/yolo11n.xml@tiles=512",
+            "models/yolo11s_openvino_fp32/yolo11s.xml",
+            "models/yolo11s_openvino_fp32/yolo11s.xml@tiles=512",
+            "--no-tile-border-filter",
+            "--tile-merge-iou",
+            "0.5",
+            "--out",
+            "bench/results/eval/tiling_no_border_filter.json"
+          ],
+          "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python3",
+          "cwd": "<scratch>/p3/wt_eval",
+          "tsd_source": "<scratch>/p3/wt_eval/src/tsd",
+          "env": {
+            "OMP_NUM_THREADS": "2",
+            "MKL_NUM_THREADS": "2",
+            "OPENBLAS_NUM_THREADS": "2",
+            "PYTHONPATH": "<scratch>/p3/wt_eval/src"
+          },
+          "recorded_unix": 1795075774.0
+        },
+        "threads": 2,
+        "wall_seconds_not_a_benchmark": 215.6
+      },
+      "detections_file": {
+        "path": "bench/results/eval/detections/yolo11s_openvino_fp32_yolo11s_tiles512.45ad77828e.json.gz",
+        "sha256": "9d955e0894e8d2534c7025c57d5f272c77ba6f3981a4aaad07f813e3ab2ed16e"
+      },
+      "baseline": "yolo11s/openvino-fp32",
+      "by_size_delta_vs_baseline": {
+        "small": {
+          "map50_95": 0.041988,
+          "map50": 0.062307,
+          "ar100": 0.072464,
+          "ci95": {
+            "map50": [
+              -0.034045,
+              0.178483
+            ],
+            "map50_95": [
+              0.002472,
+              0.093795
+            ]
+          }
+        },
+        "medium": {
+          "map50_95": -0.012661,
+          "map50": -0.027814,
+          "ar100": -0.016346,
+          "ci95": {
+            "map50": [
+              -0.063947,
+              0.008246
+            ],
+            "map50_95": [
+              -0.047286,
+              0.021444
+            ]
+          }
+        },
+        "large": {
+          "map50_95": -0.320189,
+          "map50": -0.268787,
+          "ar100": -0.084863,
+          "ci95": {
+            "map50": [
+              -0.324744,
+              -0.184924
+            ],
+            "map50_95": [
+              -0.371895,
+              -0.237362
+            ]
+          }
+        }
+      },
+      "delta_vs_baseline": {
+        "map50": -0.208068,
+        "map50_95": -0.255354,
+        "ci95": {
+          "map50": [
+            -0.256313,
+            -0.140594
+          ],
+          "map50_95": [
+            -0.30344,
+            -0.18187
+          ]
+        }
+      },
+      "pycocotools": {
+        "stats": {
+          "map50_95": 0.446245,
+          "map50": 0.639695,
+          "map75": 0.432103,
+          "map_small": 0.275182,
+          "map_medium": 0.535814,
+          "map_large": 0.45434,
+          "ar100": 0.749673
+        },
+        "compared_keys": 7,
+        "nan_mismatch": [],
+        "max_abs_diff": 2.220446049250313e-16
+      }
+    }
+  },
+  "provenance": {
+    "git": {
+      "commit": "31263cca9c27dc3544dd5ab539019912f7c57f52",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "/home/user/work/Traffic-Sign-Detection/.venv/bin/tsd eval models/yolo11n_openvino_fp32/yolo11n.xml models/yolo11n_openvino_fp32/yolo11n.xml@tiles=512 models/yolo11s_openvino_fp32/yolo11s.xml models/yolo11s_openvino_fp32/yolo11s.xml@tiles=512 --no-tile-border-filter --tile-merge-iou 0.5 --out bench/results/eval/tiling_no_border_filter.json",
+    "argv": [
+      "/home/user/work/Traffic-Sign-Detection/.venv/bin/tsd",
+      "eval",
+      "models/yolo11n_openvino_fp32/yolo11n.xml",
+      "models/yolo11n_openvino_fp32/yolo11n.xml@tiles=512",
+      "models/yolo11s_openvino_fp32/yolo11s.xml",
+      "models/yolo11s_openvino_fp32/yolo11s.xml@tiles=512",
+      "--no-tile-border-filter",
+      "--tile-merge-iou",
+      "0.5",
+      "--out",
+      "bench/results/eval/tiling_no_border_filter.json"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python3",
+    "cwd": "<scratch>/p3/wt_eval",
+    "tsd_source": "<scratch>/p3/wt_eval/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "PYTHONPATH": "<scratch>/p3/wt_eval/src"
+    },
+    "recorded_unix": 1795079951.5
+  }
+}

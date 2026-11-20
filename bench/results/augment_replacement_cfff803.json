@@ -1,0 +1,77 @@
+{
+  "replacement": {
+    "disc_by_disc": {
+      "old": "disc15 (circle)",
+      "rarer_template": "disc60 (circle)",
+      "seeds": 50,
+      "replaced": 50,
+      "new_classes": [
+        1
+      ],
+      "old_pixels_visible_mean": 0.0,
+      "old_pixels_visible_max": 0.0
+    },
+    "triangle_by_triangle": {
+      "old": "triangle_a (triangle)",
+      "rarer_template": "triangle_b (triangle)",
+      "seeds": 50,
+      "replaced": 50,
+      "new_classes": [
+        1
+      ],
+      "old_pixels_visible_mean": 0.0,
+      "old_pixels_visible_max": 0.0
+    },
+    "disc_by_triangle": {
+      "old": "disc15 (circle)",
+      "rarer_template": "triangle_b (triangle)",
+      "seeds": 50,
+      "replaced": 50,
+      "new_classes": [
+        1
+      ],
+      "old_pixels_visible_mean": 0.3416,
+      "old_pixels_visible_max": 0.369
+    },
+    "triangle_by_disc": {
+      "old": "triangle_a (triangle)",
+      "rarer_template": "disc60 (circle)",
+      "seeds": 50,
+      "replaced": 50,
+      "new_classes": [
+        1
+      ],
+      "old_pixels_visible_mean": 0.0307,
+      "old_pixels_visible_max": 0.0469
+    }
+  },
+  "code_under_test": {
+    "label": "cfff803 (git archive of src/)",
+    "tsd_source": "<scratch>/p3/arch996/src/tsd"
+  },
+  "provenance": {
+    "git": {
+      "commit": null,
+      "dirty": null,
+      "note": "not a git checkout"
+    },
+    "command": "bench/augment_probes.py --only replacement --code-label 'cfff803 (git archive of src/)' --out bench/results/augment_replacement_cfff803.json",
+    "argv": [
+      "bench/augment_probes.py",
+      "--only",
+      "replacement",
+      "--code-label",
+      "cfff803 (git archive of src/)",
+      "--out",
+      "bench/results/augment_replacement_cfff803.json"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_v2",
+    "tsd_source": "<scratch>/p3/arch996/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "1",
+      "PYTHONPATH": "<scratch>/p3/arch996/src"
+    },
+    "recorded_unix": 1795087366.3
+  }
+}

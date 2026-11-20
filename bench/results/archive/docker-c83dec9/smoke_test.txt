@@ -1,0 +1,17 @@
+# 2026-11-19T03:30:53Z image sha256:eef81854d59d
+$ docker run -d --name tsd-smoke --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=8799 -e TSD_THREADS=2 -v $PWD/models:/models:ro --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 1g tsd-serve:0.1.0
+$ docker inspect --format '{{.State.Health.Status}} user={{.Config.User}} readonly={{.HostConfig.ReadonlyRootfs}}' tsd-smoke
+healthy user=tsd readonly=true
+$ curl -sS http://127.0.0.1:8799/healthz
+{"status":"ok","model":"yolo11n.xml","backend":"openvino-int8","max_batch_size":8,"max_wait_ms":5.0,"queue_depth":0}
+$ curl -sS -F image=@data/openimages-traffic/images/validation/05d4a1a8d2d10d3d.jpg http://127.0.0.1:8799/v1/detect
+{"model":"yolo11n.xml","backend":"openvino-int8","width":681,"height":1024,"detections":[{"class_id":11,"class_name":"stop sign","score":0.95741,"box_xyxy":[218.48,379.5,487.11,952.98]}],"batch_size":1,"queue_wait_ms":5.301,"inference_ms":48.043,"total_ms":113.964}
+$ curl -sS -o /dev/null -w '%{http_code}' -F image=@README.md http://127.0.0.1:8799/v1/detect   # not an image
+400
+$ curl -sS http://127.0.0.1:8799/metrics | grep -E '^tsd_(requests_total|batch_size_count|model_info)'
+tsd_requests_total{endpoint="/v1/detect",status="200"} 1.0
+tsd_requests_total{endpoint="/v1/detect",status="400"} 1.0
+tsd_batch_size_count 1.0
+tsd_model_info{backend="openvino-int8",model="yolo11n.xml"} 1.0
+$ docker stats --no-stream --format '{{.MemUsage}}' tsd-smoke
+534.8MiB / 1GiB

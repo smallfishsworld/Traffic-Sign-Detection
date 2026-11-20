@@ -1,0 +1,152 @@
+{
+  "model": "models/yolo11n.onnx",
+  "backend": "onnxruntime-fp32",
+  "threads": 4,
+  "mode": "single",
+  "batch_size": 1,
+  "warmup": 20,
+  "iterations": 200,
+  "images": [
+    "0135b7a0b1010c08.jpg",
+    "08bf84bb9662086d.jpg",
+    "1cd04797f44a04a1.jpg",
+    "2b3e4a4919cd47b4.jpg",
+    "3b17ab5107bef9bb.jpg",
+    "548c1805b8e211bd.jpg",
+    "644395d01b541528.jpg",
+    "79445a6e49ee53b9.jpg",
+    "8406354c09070f9b.jpg",
+    "989532067e3483bb.jpg",
+    "a70e22ce2700b5a3.jpg",
+    "b657fb701244d7c6.jpg",
+    "c8b3ee6984721a12.jpg",
+    "d67533156d52e10c.jpg",
+    "def75350f572342e.jpg",
+    "ee267b62fd17a9b1.jpg"
+  ],
+  "model_size_bytes": 10720320,
+  "first_call_ms": 46.18476599898713,
+  "e2e": {
+    "n": 200,
+    "mean_ms": 43.456788270041216,
+    "std_ms": 8.286857593358913,
+    "min_ms": 36.334624001028715,
+    "p50_ms": 40.81672800020897,
+    "p95_ms": 57.12555515092387,
+    "p99_ms": 82.73072922955173,
+    "max_ms": 92.63580699916929
+  },
+  "infer": {
+    "n": 200,
+    "mean_ms": 38.374434669976836,
+    "std_ms": 8.098109548818847,
+    "min_ms": 31.664779999118764,
+    "p50_ms": 35.71595600078581,
+    "p95_ms": 52.13588495007568,
+    "p99_ms": 78.03289643936291,
+    "max_ms": 87.29204699920956
+  },
+  "throughput_images_per_s": 24.499759020244845,
+  "started_unix": 1795070875.7,
+  "seconds": 9.7,
+  "loadavg_before": [
+    1.71,
+    1.82,
+    1.61
+  ],
+  "loadavg_after": [
+    2.53,
+    1.99,
+    1.67
+  ],
+  "contamination": {
+    "other_processes_cores": 0.113,
+    "steal_cores": 0.037,
+    "own_cores": 3.879
+  },
+  "cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "opencv-python-headless": "5.1.0.95",
+    "torch": "2.15.0",
+    "onnxruntime": "1.32.0",
+    "openvino": "2026.4.1",
+    "tsd": "0.1.0"
+  },
+  "nms": {
+    "conf_threshold": 0.25,
+    "iou": 0.5
+  },
+  "input_size": [
+    640,
+    640
+  ],
+  "letterbox": "fixed square, auto=False (identical for every runtime)",
+  "opencv_threads": 4,
+  "provenance": {
+    "git": {
+      "commit": "cfff803426aa0a2c8182944a8ecaa85fbc61295e",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "<scratch>/p3/wt_bench/bench/bench_one.py --model models/yolo11n.onnx --threads 4 --mode single --batch-size 1 --precision-hint f32 --warmup 20 --iterations 200 --max-seconds 300.0 --out <scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11n.onnx_single_t4_b1.run2.json --tiles 0 --run 2",
+    "argv": [
+      "<scratch>/p3/wt_bench/bench/bench_one.py",
+      "--model",
+      "models/yolo11n.onnx",
+      "--threads",
+      "4",
+      "--mode",
+      "single",
+      "--batch-size",
+      "1",
+      "--precision-hint",
+      "f32",
+      "--warmup",
+      "20",
+      "--iterations",
+      "200",
+      "--max-seconds",
+      "300.0",
+      "--out",
+      "<scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11n.onnx_single_t4_b1.run2.json",
+      "--tiles",
+      "0",
+      "--run",
+      "2"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_bench",
+    "tsd_source": "<scratch>/p3/wt_bench/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "PYTHONPATH": "<scratch>/p3/wt_bench/src",
+      "TSD_PARENT_COMMAND": "python bench/run_benchmarks.py --runs 3"
+    },
+    "recorded_unix": 1795070885.4,
+    "runtime_settings": {
+      "runtime": "onnxruntime",
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "intra_op_num_threads": 4,
+      "inter_op_num_threads": 1,
+      "execution_mode": "ExecutionMode.ORT_SEQUENTIAL",
+      "graph_optimization_level": "GraphOptimizationLevel.ORT_ENABLE_ALL",
+      "thread_pinning": "none (ONNX Runtime default)"
+    }
+  },
+  "precision_hint": "f32",
+  "run": 2,
+  "attempt": 1,
+  "contaminated": false
+}

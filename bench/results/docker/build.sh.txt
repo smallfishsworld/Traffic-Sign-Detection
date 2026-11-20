@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Run under: flock /home/user/work/bench.lock timeout 900 bash build.sh <clean worktree> <out dir>
+set -u -o pipefail
+WTD=$1; OUT=$2
+SHA=$(git -C "$WTD" rev-parse --short HEAD)
+{
+echo "# Docker build of a clean worktree (lock: /home/user/work/bench.lock, held by flock for this script)"
+echo "\$ date -u +%FT%TZ"; date -u +%FT%TZ
+echo "\$ git rev-parse HEAD"; git -C "$WTD" rev-parse HEAD
+echo "\$ git status --porcelain   # empty = clean"; git -C "$WTD" status --porcelain; echo "(end of status)"
+echo "\$ docker build --network host --build-arg HTTPS_PROXY=\$HTTPS_PROXY --secret id=ca_bundle,src=/root/.ccr/ca-bundle.crt -t tsd-serve:0.1.0 -t tsd-serve:$SHA <worktree>"
+} > "$OUT/build_and_size.txt"
+START=$(date +%s)
+DOCKER_BUILDKIT=1 docker build --progress plain --network host --build-arg HTTPS_PROXY="$HTTPS_PROXY" \
+  --secret id=ca_bundle,src=/root/.ccr/ca-bundle.crt -t tsd-serve:0.1.0 -t "tsd-serve:$SHA" "$WTD" > "$OUT/build.log" 2>&1
+CODE=$?
+END=$(date +%s)
+{
+echo "build exit status $CODE after $((END - START)) s (full BuildKit log: build.log)"
+echo "\$ date -u +%FT%TZ"; date -u +%FT%TZ
+} >> "$OUT/build_and_size.txt"
+exit $CODE

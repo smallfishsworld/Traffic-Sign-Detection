@@ -1,0 +1,40 @@
+# Start-up memory of tsd-serve:a45e982 (cgroup v1: memory.max_usage_in_bytes is the peak)
+$ date -u +%FT%TZ
+2026-11-19T12:11:49Z
+
+$ docker run -d --name tsd-memprobe --network host -e TSD_HOST=127.0.0.1 -e TSD_PORT=8798 -e TSD_THREADS=2 -v /home/user/work/Traffic-Sign-Detection/models:/models:ro --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges:true --cpus 2 --memory 3g --cpu-shares 2 tsd-serve:a45e982
+428d036d4c07d023d7fb291813df3d961f2dc09e7fbbc1add28a72cd57ca101c
+
+$ docker inspect --format health={{.State.Health.Status}} running={{.State.Running}} oom={{.State.OOMKilled}} tsd-memprobe
+health=healthy running=true oom=false
+
+## after start-up (warm-up of batch sizes 1-8 done)
+$ docker exec tsd-memprobe sh -c echo peak_bytes=$(cat /sys/fs/cgroup/memory/memory.max_usage_in_bytes) now_bytes=$(cat /sys/fs/cgroup/memory/memory.usage_in_bytes); grep -E '^(total_)?(rss|cache|shmem) ' /sys/fs/cgroup/memory/memory.stat
+peak_bytes=1156116480 now_bytes=1077919744
+cache 471040
+rss 1071403008
+shmem 0
+total_cache 471040
+total_rss 1071403008
+total_shmem 0
+
+$ docker stats --no-stream --format {{.MemUsage}} tsd-memprobe
+1.004GiB / 3GiB
+
+$ curl -sS --noproxy * -F image=@/home/user/work/Traffic-Sign-Detection/data/openimages-traffic/images/validation/05d4a1a8d2d10d3d.jpg http://127.0.0.1:8798/v1/detect
+{"model":"yolo11n.xml","backend":"openvino-int8","width":681,"height":1024,"detections":[{"class_id":11,"class_name":"stop sign","score":0.95741,"box_xyxy":[218.29,379.5,486.69,952.98]}],"batch_size":1,"queue_wait_ms":0.69,"inference_ms":100.282,"total_ms":168.899}
+## after one detection
+$ docker exec tsd-memprobe sh -c echo peak_bytes=$(cat /sys/fs/cgroup/memory/memory.max_usage_in_bytes) now_bytes=$(cat /sys/fs/cgroup/memory/memory.usage_in_bytes)
+peak_bytes=1156116480 now_bytes=1097814016
+
+$ docker logs tsd-memprobe
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8798 (Press CTRL+C to quit)
+INFO:     127.0.0.1:53050 - "GET /healthz HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56076 - "POST /v1/detect HTTP/1.1" 200 OK
+
+$ date -u +%FT%TZ
+2026-11-19T12:12:08Z
+

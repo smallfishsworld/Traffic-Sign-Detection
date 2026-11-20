@@ -1,0 +1,9 @@
+# Development environment (uv sync with every extra, incl. the CUDA-linked PyTorch wheel), for comparison
+# with the image's /app/.venv (452 MiB by du -sm, 474 MB in docker history; build_and_size.txt). du -h and -m use powers of 1024.
+$ du -sh --apparent-size .venv; du -sh .venv; du -sm .venv/lib/python3.12/site-packages/* | sort -n | tail -4
+6.2G	.venv
+6.3G	.venv
+179	.venv/lib/python3.12/site-packages/openvino
+997	.venv/lib/python3.12/site-packages/triton
+1150	.venv/lib/python3.12/site-packages/torch
+3055	.venv/lib/python3.12/site-packages/nvidia

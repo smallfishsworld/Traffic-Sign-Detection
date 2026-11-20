@@ -1,0 +1,61 @@
+name: CI
+
+# bench/results/ci/ has a local run of the same steps.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Lint, type-check, unit tests (CPU, Python ${{ matrix.python }})
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.12", "3.13"]  # requires-python is >=3.12,<3.14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.32"
+          enable-cache: true
+          python-version: ${{ matrix.python }}
+      # No PyTorch/Ultralytics here (multi-GB CUDA wheels): tests that need them or the cached
+      # yolo11n weights are skipped with a reason; everything else runs.
+      - name: Install
+        run: uv sync --locked --extra onnx --extra openvino --extra eval --extra serve
+      - name: Ruff
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+      - name: Mypy (strict, src/tsd and bench)
+        run: uv run mypy
+      - name: Pytest
+        run: uv run pytest -q -rs
+
+  docker:
+    name: Build the service image
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+          load: true
+          tags: tsd-serve:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: "Smoke-test the image (no model mounted: the CLI and the service imports)"
+        run: |
+          docker run --rm tsd-serve:ci tsd --help
+          docker run --rm tsd-serve:ci python -c "import tsd.serve.app, openvino, fastapi"

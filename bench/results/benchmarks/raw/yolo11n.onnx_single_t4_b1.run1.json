@@ -1,0 +1,152 @@
+{
+  "model": "models/yolo11n.onnx",
+  "backend": "onnxruntime-fp32",
+  "threads": 4,
+  "mode": "single",
+  "batch_size": 1,
+  "warmup": 20,
+  "iterations": 200,
+  "images": [
+    "0135b7a0b1010c08.jpg",
+    "08bf84bb9662086d.jpg",
+    "1cd04797f44a04a1.jpg",
+    "2b3e4a4919cd47b4.jpg",
+    "3b17ab5107bef9bb.jpg",
+    "548c1805b8e211bd.jpg",
+    "644395d01b541528.jpg",
+    "79445a6e49ee53b9.jpg",
+    "8406354c09070f9b.jpg",
+    "989532067e3483bb.jpg",
+    "a70e22ce2700b5a3.jpg",
+    "b657fb701244d7c6.jpg",
+    "c8b3ee6984721a12.jpg",
+    "d67533156d52e10c.jpg",
+    "def75350f572342e.jpg",
+    "ee267b62fd17a9b1.jpg"
+  ],
+  "model_size_bytes": 10720320,
+  "first_call_ms": 47.182693999275216,
+  "e2e": {
+    "n": 200,
+    "mean_ms": 44.49493311001788,
+    "std_ms": 11.65063800295701,
+    "min_ms": 35.50280399940675,
+    "p50_ms": 41.29659299997002,
+    "p95_ms": 69.75114625029164,
+    "p99_ms": 96.14779217998142,
+    "max_ms": 118.53222399986407
+  },
+  "infer": {
+    "n": 200,
+    "mean_ms": 39.47196655502921,
+    "std_ms": 11.343798351634907,
+    "min_ms": 31.064861999766435,
+    "p50_ms": 35.97380300016084,
+    "p95_ms": 64.80672839861653,
+    "p99_ms": 90.93834058876381,
+    "max_ms": 109.16502199870592
+  },
+  "throughput_images_per_s": 24.215072657464166,
+  "started_unix": 1795069241.9,
+  "seconds": 9.7,
+  "loadavg_before": [
+    1.71,
+    0.83,
+    0.67
+  ],
+  "loadavg_after": [
+    2.67,
+    1.06,
+    0.75
+  ],
+  "contamination": {
+    "other_processes_cores": 0.187,
+    "steal_cores": 0.044,
+    "own_cores": 3.8
+  },
+  "cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "opencv-python-headless": "5.1.0.95",
+    "torch": "2.15.0",
+    "onnxruntime": "1.32.0",
+    "openvino": "2026.4.1",
+    "tsd": "0.1.0"
+  },
+  "nms": {
+    "conf_threshold": 0.25,
+    "iou": 0.5
+  },
+  "input_size": [
+    640,
+    640
+  ],
+  "letterbox": "fixed square, auto=False (identical for every runtime)",
+  "opencv_threads": 4,
+  "provenance": {
+    "git": {
+      "commit": "cfff803426aa0a2c8182944a8ecaa85fbc61295e",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "<scratch>/p3/wt_bench/bench/bench_one.py --model models/yolo11n.onnx --threads 4 --mode single --batch-size 1 --precision-hint f32 --warmup 20 --iterations 200 --max-seconds 300.0 --out <scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11n.onnx_single_t4_b1.run1.json --tiles 0 --run 1",
+    "argv": [
+      "<scratch>/p3/wt_bench/bench/bench_one.py",
+      "--model",
+      "models/yolo11n.onnx",
+      "--threads",
+      "4",
+      "--mode",
+      "single",
+      "--batch-size",
+      "1",
+      "--precision-hint",
+      "f32",
+      "--warmup",
+      "20",
+      "--iterations",
+      "200",
+      "--max-seconds",
+      "300.0",
+      "--out",
+      "<scratch>/p3/wt_bench/bench/results/benchmarks/raw/yolo11n.onnx_single_t4_b1.run1.json",
+      "--tiles",
+      "0",
+      "--run",
+      "1"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_bench",
+    "tsd_source": "<scratch>/p3/wt_bench/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "PYTHONPATH": "<scratch>/p3/wt_bench/src",
+      "TSD_PARENT_COMMAND": "python bench/run_benchmarks.py --runs 3"
+    },
+    "recorded_unix": 1795069251.6,
+    "runtime_settings": {
+      "runtime": "onnxruntime",
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "intra_op_num_threads": 4,
+      "inter_op_num_threads": 1,
+      "execution_mode": "ExecutionMode.ORT_SEQUENTIAL",
+      "graph_optimization_level": "GraphOptimizationLevel.ORT_ENABLE_ALL",
+      "thread_pinning": "none (ONNX Runtime default)"
+    }
+  },
+  "precision_hint": "f32",
+  "run": 1,
+  "attempt": 1,
+  "contaminated": false
+}

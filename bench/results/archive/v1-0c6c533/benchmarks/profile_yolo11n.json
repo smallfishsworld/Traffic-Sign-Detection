@@ -1,0 +1,457 @@
+{
+  "openvino-fp32": {
+    "model": "models/yolo11n_openvino_fp32/yolo11n.xml",
+    "precision_hint": "f32",
+    "threads": 4,
+    "runs": 100,
+    "image": "01d3fdb0f6383edb.jpg",
+    "sum_of_node_times_ms": {
+      "median": 25.556,
+      "min": 24.339
+    },
+    "by_precision": [
+      {
+        "name": "F32",
+        "ms_per_inference": 25.733,
+        "share": 1.0
+      }
+    ],
+    "executed_nodes_by_precision": {
+      "F32": 162
+    },
+    "by_node_type": [
+      {
+        "name": "Convolution",
+        "ms_per_inference": 20.182,
+        "share": 0.7843
+      },
+      {
+        "name": "Concat",
+        "ms_per_inference": 1.514,
+        "share": 0.0588
+      },
+      {
+        "name": "Reorder",
+        "ms_per_inference": 1.267,
+        "share": 0.0492
+      },
+      {
+        "name": "VariadicSplit",
+        "ms_per_inference": 0.7,
+        "share": 0.0272
+      },
+      {
+        "name": "GroupConvolution",
+        "ms_per_inference": 0.566,
+        "share": 0.022
+      },
+      {
+        "name": "Add",
+        "ms_per_inference": 0.379,
+        "share": 0.0147
+      },
+      {
+        "name": "MatMul",
+        "ms_per_inference": 0.319,
+        "share": 0.0124
+      },
+      {
+        "name": "Softmax",
+        "ms_per_inference": 0.21,
+        "share": 0.0082
+      },
+      {
+        "name": "Sigmoid",
+        "ms_per_inference": 0.195,
+        "share": 0.0076
+      },
+      {
+        "name": "Interpolate",
+        "ms_per_inference": 0.153,
+        "share": 0.006
+      },
+      {
+        "name": "MaxPool",
+        "ms_per_inference": 0.105,
+        "share": 0.0041
+      },
+      {
+        "name": "Transpose",
+        "ms_per_inference": 0.091,
+        "share": 0.0035
+      }
+    ],
+    "by_kernel": [
+      {
+        "name": "brgconv_avx512_f32",
+        "ms_per_inference": 11.874,
+        "share": 0.4614
+      },
+      {
+        "name": "brgconv_avx512_1x1_f32",
+        "ms_per_inference": 8.308,
+        "share": 0.3229
+      },
+      {
+        "name": "ref_f32",
+        "ms_per_inference": 2.214,
+        "share": 0.086
+      },
+      {
+        "name": "jit_avx512_f32",
+        "ms_per_inference": 1.093,
+        "share": 0.0425
+      },
+      {
+        "name": "reorder_brgemm_f32",
+        "ms_per_inference": 0.822,
+        "share": 0.032
+      },
+      {
+        "name": "brgconv_avx512_dw_f32",
+        "ms_per_inference": 0.566,
+        "share": 0.022
+      },
+      {
+        "name": "reorder_f32",
+        "ms_per_inference": 0.407,
+        "share": 0.0158
+      },
+      {
+        "name": "brgemm_avx512_f32",
+        "ms_per_inference": 0.319,
+        "share": 0.0124
+      },
+      {
+        "name": "unknown_f32",
+        "ms_per_inference": 0.092,
+        "share": 0.0036
+      },
+      {
+        "name": "jit_uni_f32",
+        "ms_per_inference": 0.038,
+        "share": 0.0015
+      }
+    ],
+    "openvino": "2026.4.1-22982-e213a147257-releases/2026/4"
+  },
+  "openvino-bf16": {
+    "model": "models/yolo11n_openvino_fp32/yolo11n.xml",
+    "precision_hint": "bf16",
+    "threads": 4,
+    "runs": 100,
+    "image": "01d3fdb0f6383edb.jpg",
+    "sum_of_node_times_ms": {
+      "median": 13.507,
+      "min": 12.94
+    },
+    "by_precision": [
+      {
+        "name": "BF16",
+        "ms_per_inference": 12.745,
+        "share": 0.9472
+      },
+      {
+        "name": "F32",
+        "ms_per_inference": 0.71,
+        "share": 0.0528
+      }
+    ],
+    "executed_nodes_by_precision": {
+      "F32": 12,
+      "BF16": 150
+    },
+    "by_node_type": [
+      {
+        "name": "Convolution",
+        "ms_per_inference": 9.357,
+        "share": 0.6954
+      },
+      {
+        "name": "Concat",
+        "ms_per_inference": 0.946,
+        "share": 0.0703
+      },
+      {
+        "name": "Reorder",
+        "ms_per_inference": 0.834,
+        "share": 0.062
+      },
+      {
+        "name": "GroupConvolution",
+        "ms_per_inference": 0.592,
+        "share": 0.044
+      },
+      {
+        "name": "VariadicSplit",
+        "ms_per_inference": 0.488,
+        "share": 0.0363
+      },
+      {
+        "name": "Add",
+        "ms_per_inference": 0.348,
+        "share": 0.0259
+      },
+      {
+        "name": "Softmax",
+        "ms_per_inference": 0.25,
+        "share": 0.0186
+      },
+      {
+        "name": "MatMul",
+        "ms_per_inference": 0.163,
+        "share": 0.0121
+      },
+      {
+        "name": "Sigmoid",
+        "ms_per_inference": 0.162,
+        "share": 0.0121
+      },
+      {
+        "name": "MaxPool",
+        "ms_per_inference": 0.115,
+        "share": 0.0086
+      },
+      {
+        "name": "Interpolate",
+        "ms_per_inference": 0.088,
+        "share": 0.0066
+      },
+      {
+        "name": "Transpose",
+        "ms_per_inference": 0.057,
+        "share": 0.0042
+      }
+    ],
+    "by_kernel": [
+      {
+        "name": "brgconv_avx512_amx_bf16",
+        "ms_per_inference": 4.739,
+        "share": 0.3522
+      },
+      {
+        "name": "brgconv_avx512_amx_1x1_bf16",
+        "ms_per_inference": 4.618,
+        "share": 0.3432
+      },
+      {
+        "name": "ref_bf16",
+        "ms_per_inference": 1.194,
+        "share": 0.0888
+      },
+      {
+        "name": "jit_avx512_bf16",
+        "ms_per_inference": 0.794,
+        "share": 0.059
+      },
+      {
+        "name": "brgconv_avx512_dw_bf16",
+        "ms_per_inference": 0.592,
+        "share": 0.044
+      },
+      {
+        "name": "jit_uni_bf16",
+        "ms_per_inference": 0.588,
+        "share": 0.0437
+      },
+      {
+        "name": "jit_uni_f32",
+        "ms_per_inference": 0.246,
+        "share": 0.0183
+      },
+      {
+        "name": "ref_f32",
+        "ms_per_inference": 0.24,
+        "share": 0.0178
+      },
+      {
+        "name": "jit_avx512_f32",
+        "ms_per_inference": 0.223,
+        "share": 0.0166
+      },
+      {
+        "name": "brgemm_avx512_amx_bf16",
+        "ms_per_inference": 0.163,
+        "share": 0.0121
+      },
+      {
+        "name": "unknown_bf16",
+        "ms_per_inference": 0.057,
+        "share": 0.0042
+      },
+      {
+        "name": "unknown_f32",
+        "ms_per_inference": 0.001,
+        "share": 0.0001
+      }
+    ],
+    "openvino": "2026.4.1-22982-e213a147257-releases/2026/4"
+  },
+  "openvino-int8": {
+    "model": "models/yolo11n_openvino_int8/yolo11n.xml",
+    "precision_hint": "f32",
+    "threads": 4,
+    "runs": 100,
+    "image": "01d3fdb0f6383edb.jpg",
+    "sum_of_node_times_ms": {
+      "median": 15.447,
+      "min": 15.221
+    },
+    "by_precision": [
+      {
+        "name": "I8",
+        "ms_per_inference": 11.875,
+        "share": 0.7627
+      },
+      {
+        "name": "F32",
+        "ms_per_inference": 3.694,
+        "share": 0.2373
+      }
+    ],
+    "executed_nodes_by_precision": {
+      "F32": 54,
+      "I8": 124
+    },
+    "by_node_type": [
+      {
+        "name": "Convolution",
+        "ms_per_inference": 10.348,
+        "share": 0.6646
+      },
+      {
+        "name": "Reorder",
+        "ms_per_inference": 1.128,
+        "share": 0.0724
+      },
+      {
+        "name": "FakeQuantize",
+        "ms_per_inference": 1.018,
+        "share": 0.0654
+      },
+      {
+        "name": "Concat",
+        "ms_per_inference": 0.739,
+        "share": 0.0474
+      },
+      {
+        "name": "VariadicSplit",
+        "ms_per_inference": 0.613,
+        "share": 0.0394
+      },
+      {
+        "name": "GroupConvolution",
+        "ms_per_inference": 0.579,
+        "share": 0.0372
+      },
+      {
+        "name": "MatMul",
+        "ms_per_inference": 0.285,
+        "share": 0.0183
+      },
+      {
+        "name": "Softmax",
+        "ms_per_inference": 0.194,
+        "share": 0.0125
+      },
+      {
+        "name": "Add",
+        "ms_per_inference": 0.176,
+        "share": 0.0113
+      },
+      {
+        "name": "Sigmoid",
+        "ms_per_inference": 0.166,
+        "share": 0.0106
+      },
+      {
+        "name": "Interpolate",
+        "ms_per_inference": 0.085,
+        "share": 0.0055
+      },
+      {
+        "name": "Transpose",
+        "ms_per_inference": 0.076,
+        "share": 0.0049
+      }
+    ],
+    "by_kernel": [
+      {
+        "name": "brgconv_avx512_amx_I8",
+        "ms_per_inference": 6.032,
+        "share": 0.3875
+      },
+      {
+        "name": "brgconv_avx512_amx_1x1_I8",
+        "ms_per_inference": 3.843,
+        "share": 0.2468
+      },
+      {
+        "name": "jit_avx512_f32",
+        "ms_per_inference": 1.423,
+        "share": 0.0914
+      },
+      {
+        "name": "ref_f32",
+        "ms_per_inference": 0.91,
+        "share": 0.0584
+      },
+      {
+        "name": "jit_avx512_I8",
+        "ms_per_inference": 0.584,
+        "share": 0.0375
+      },
+      {
+        "name": "reorder_f32",
+        "ms_per_inference": 0.443,
+        "share": 0.0284
+      },
+      {
+        "name": "ref_I8",
+        "ms_per_inference": 0.432,
+        "share": 0.0278
+      },
+      {
+        "name": "reorder_brgemm_f32",
+        "ms_per_inference": 0.427,
+        "share": 0.0274
+      },
+      {
+        "name": "jit_avx512_amx_1x1_I8",
+        "ms_per_inference": 0.408,
+        "share": 0.0262
+      },
+      {
+        "name": "brgemm_avx512_f32",
+        "ms_per_inference": 0.285,
+        "share": 0.0183
+      },
+      {
+        "name": "brgconv_avx512_dw_I8",
+        "ms_per_inference": 0.279,
+        "share": 0.0179
+      },
+      {
+        "name": "jit_uni_I8",
+        "ms_per_inference": 0.181,
+        "share": 0.0116
+      },
+      {
+        "name": "unknown_f32",
+        "ms_per_inference": 0.076,
+        "share": 0.0049
+      },
+      {
+        "name": "jit_avx512_i8",
+        "ms_per_inference": 0.068,
+        "share": 0.0044
+      },
+      {
+        "name": "brgconv_avx512_1x1_f32",
+        "ms_per_inference": 0.064,
+        "share": 0.0041
+      }
+    ],
+    "openvino": "2026.4.1-22982-e213a147257-releases/2026/4"
+  }
+}

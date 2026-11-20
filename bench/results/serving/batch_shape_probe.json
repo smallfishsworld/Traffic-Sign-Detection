@@ -1,0 +1,150 @@
+{
+  "model": "models/yolo11n_openvino_int8/yolo11n.xml",
+  "threads": 2,
+  "cpus": "0,1,2",
+  "images": [
+    "0135b7a0b1010c08.jpg",
+    "1cd04797f44a04a1.jpg",
+    "3b17ab5107bef9bb.jpg",
+    "644395d01b541528.jpg",
+    "8406354c09070f9b.jpg",
+    "a70e22ce2700b5a3.jpg",
+    "c8b3ee6984721a12.jpg",
+    "def75350f572342e.jpg"
+  ],
+  "service_start_up_before_fix": {
+    "warmed_sizes": [
+      1,
+      8
+    ],
+    "sizes": {
+      "2": {
+        "first_ms": 354.32,
+        "median_of_next_5_ms": 59.85,
+        "first_over_rest": 5.92
+      },
+      "3": {
+        "first_ms": 397.65,
+        "median_of_next_5_ms": 83.51,
+        "first_over_rest": 4.76
+      },
+      "4": {
+        "first_ms": 401.06,
+        "median_of_next_5_ms": 107.31,
+        "first_over_rest": 3.74
+      },
+      "5": {
+        "first_ms": 464.57,
+        "median_of_next_5_ms": 140.33,
+        "first_over_rest": 3.31
+      },
+      "6": {
+        "first_ms": 468.85,
+        "median_of_next_5_ms": 158.64,
+        "first_over_rest": 2.96
+      },
+      "7": {
+        "first_ms": 494.02,
+        "median_of_next_5_ms": 183.58,
+        "first_over_rest": 2.69
+      }
+    },
+    "runtime": {
+      "runtime": "openvino",
+      "INFERENCE_NUM_THREADS": "2",
+      "NUM_STREAMS": "1",
+      "INFERENCE_PRECISION_HINT": "<Type: 'float32'>",
+      "PERFORMANCE_HINT": "LATENCY",
+      "ENABLE_CPU_PINNING": "True",
+      "ENABLE_HYPER_THREADING": "False",
+      "SCHEDULING_CORE_TYPE": "SchedulingCoreType.ANY_CORE",
+      "EXECUTION_MODE_HINT": "ExecutionMode.PERFORMANCE",
+      "OPTIMAL_NUMBER_OF_INFER_REQUESTS": "1"
+    }
+  },
+  "every_size_warmed": {
+    "warmed_sizes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "sizes": {
+      "2": {
+        "first_ms": 62.47,
+        "median_of_next_5_ms": 61.74,
+        "first_over_rest": 1.01
+      },
+      "3": {
+        "first_ms": 97.12,
+        "median_of_next_5_ms": 102.68,
+        "first_over_rest": 0.95
+      },
+      "4": {
+        "first_ms": 124.91,
+        "median_of_next_5_ms": 125.83,
+        "first_over_rest": 0.99
+      },
+      "5": {
+        "first_ms": 147.32,
+        "median_of_next_5_ms": 142.91,
+        "first_over_rest": 1.03
+      },
+      "6": {
+        "first_ms": 179.19,
+        "median_of_next_5_ms": 172.74,
+        "first_over_rest": 1.04
+      },
+      "7": {
+        "first_ms": 207.36,
+        "median_of_next_5_ms": 197.42,
+        "first_over_rest": 1.05
+      }
+    },
+    "runtime": {
+      "runtime": "openvino",
+      "INFERENCE_NUM_THREADS": "2",
+      "NUM_STREAMS": "1",
+      "INFERENCE_PRECISION_HINT": "<Type: 'float32'>",
+      "PERFORMANCE_HINT": "LATENCY",
+      "ENABLE_CPU_PINNING": "True",
+      "ENABLE_HYPER_THREADING": "False",
+      "SCHEDULING_CORE_TYPE": "SchedulingCoreType.ANY_CORE",
+      "EXECUTION_MODE_HINT": "ExecutionMode.PERFORMANCE",
+      "OPTIMAL_NUMBER_OF_INFER_REQUESTS": "1"
+    }
+  },
+  "contamination": {
+    "other_processes_cores": 0.11,
+    "steal_cores": 0.021,
+    "own_cores": 1.658
+  },
+  "provenance": {
+    "git": {
+      "commit": "bb7ea723c52e6cbbbe54f1521d3ffc21b7f460e6",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "bench/batch_shape_probe.py",
+    "argv": [
+      "bench/batch_shape_probe.py"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_eval",
+    "tsd_source": "<scratch>/p3/wt_eval/src/tsd",
+    "env": {
+      "PYTHONPATH": "<scratch>/p3/wt_eval/src"
+    },
+    "recorded_unix": 1795076755.5
+  }
+}

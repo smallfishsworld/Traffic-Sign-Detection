@@ -1,0 +1,229 @@
+{
+  "label": "openvino-bf16",
+  "model": "models/yolo11s_openvino_fp32/yolo11s.xml",
+  "precision_hint": "bf16",
+  "threads": 4,
+  "runs": 100,
+  "image": "01d3fdb0f6383edb.jpg",
+  "sum_of_node_times_ms": {
+    "median": 25.518,
+    "min": 24.588
+  },
+  "request_wall_ms": {
+    "median": 25.062,
+    "min": 22.85
+  },
+  "by_precision": [
+    {
+      "name": "BF16",
+      "ms_per_inference": 24.836,
+      "share": 0.9713
+    },
+    {
+      "name": "F32",
+      "ms_per_inference": 0.735,
+      "share": 0.0287
+    }
+  ],
+  "executed_nodes_by_precision": {
+    "F32": 12,
+    "BF16": 153
+  },
+  "by_node_type": [
+    {
+      "name": "Convolution",
+      "ms_per_inference": 19.722,
+      "share": 0.7713
+    },
+    {
+      "name": "Concat",
+      "ms_per_inference": 1.6,
+      "share": 0.0626
+    },
+    {
+      "name": "GroupConvolution",
+      "ms_per_inference": 0.973,
+      "share": 0.038
+    },
+    {
+      "name": "Reorder",
+      "ms_per_inference": 0.869,
+      "share": 0.034
+    },
+    {
+      "name": "VariadicSplit",
+      "ms_per_inference": 0.757,
+      "share": 0.0296
+    },
+    {
+      "name": "Add",
+      "ms_per_inference": 0.475,
+      "share": 0.0186
+    },
+    {
+      "name": "Softmax",
+      "ms_per_inference": 0.301,
+      "share": 0.0118
+    },
+    {
+      "name": "MatMul",
+      "ms_per_inference": 0.209,
+      "share": 0.0082
+    },
+    {
+      "name": "Interpolate",
+      "ms_per_inference": 0.204,
+      "share": 0.008
+    },
+    {
+      "name": "MaxPool",
+      "ms_per_inference": 0.182,
+      "share": 0.0071
+    },
+    {
+      "name": "Sigmoid",
+      "ms_per_inference": 0.167,
+      "share": 0.0065
+    },
+    {
+      "name": "Transpose",
+      "ms_per_inference": 0.053,
+      "share": 0.0021
+    },
+    {
+      "name": "PowerStatic",
+      "ms_per_inference": 0.044,
+      "share": 0.0017
+    },
+    {
+      "name": "Multiply",
+      "ms_per_inference": 0.011,
+      "share": 0.0004
+    },
+    {
+      "name": "Reshape",
+      "ms_per_inference": 0.003,
+      "share": 0.0001
+    }
+  ],
+  "by_kernel": [
+    {
+      "name": "brgconv_avx512_amx_bf16",
+      "ms_per_inference": 10.339,
+      "share": 0.4043
+    },
+    {
+      "name": "brgconv_avx512_amx_1x1_bf16",
+      "ms_per_inference": 9.382,
+      "share": 0.3669
+    },
+    {
+      "name": "ref_bf16",
+      "ms_per_inference": 2.111,
+      "share": 0.0826
+    },
+    {
+      "name": "jit_avx512_bf16",
+      "ms_per_inference": 1.159,
+      "share": 0.0453
+    },
+    {
+      "name": "brgconv_avx512_dw_bf16",
+      "ms_per_inference": 0.973,
+      "share": 0.038
+    },
+    {
+      "name": "jit_uni_bf16",
+      "ms_per_inference": 0.607,
+      "share": 0.0237
+    },
+    {
+      "name": "jit_uni_f32",
+      "ms_per_inference": 0.263,
+      "share": 0.0103
+    },
+    {
+      "name": "ref_f32",
+      "ms_per_inference": 0.246,
+      "share": 0.0096
+    },
+    {
+      "name": "jit_avx512_f32",
+      "ms_per_inference": 0.225,
+      "share": 0.0088
+    },
+    {
+      "name": "brgemm_avx512_amx_bf16",
+      "ms_per_inference": 0.209,
+      "share": 0.0082
+    },
+    {
+      "name": "unknown_bf16",
+      "ms_per_inference": 0.056,
+      "share": 0.0022
+    },
+    {
+      "name": "unknown_f32",
+      "ms_per_inference": 0.001,
+      "share": 0.0
+    }
+  ],
+  "contamination": {
+    "other_processes_cores": 0.111,
+    "steal_cores": 0.047,
+    "own_cores": 3.72
+  },
+  "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+  "provenance": {
+    "git": {
+      "commit": "cfff803426aa0a2c8182944a8ecaa85fbc61295e",
+      "dirty": false,
+      "dirty_paths": [],
+      "checked_paths": [
+        "src",
+        "bench",
+        "pyproject.toml",
+        "uv.lock"
+      ]
+    },
+    "command": "<scratch>/p3/wt_bench/bench/profile_ops.py --one openvino-bf16 --model yolo11s --threads 4 --runs 100 --image <scratch>/p3/wt_bench/data/openimages-traffic/images/validation --result <scratch>/p3/wt_bench/bench/results/benchmarks/profile/yolo11s_openvino-bf16.json",
+    "argv": [
+      "<scratch>/p3/wt_bench/bench/profile_ops.py",
+      "--one",
+      "openvino-bf16",
+      "--model",
+      "yolo11s",
+      "--threads",
+      "4",
+      "--runs",
+      "100",
+      "--image",
+      "<scratch>/p3/wt_bench/data/openimages-traffic/images/validation",
+      "--result",
+      "<scratch>/p3/wt_bench/bench/results/benchmarks/profile/yolo11s_openvino-bf16.json"
+    ],
+    "python": "/home/user/work/Traffic-Sign-Detection/.venv/bin/python",
+    "cwd": "<scratch>/p3/wt_bench",
+    "tsd_source": "<scratch>/p3/wt_bench/src/tsd",
+    "env": {
+      "OMP_NUM_THREADS": "4",
+      "PYTHONPATH": "<scratch>/p3/wt_bench/src",
+      "TSD_PARENT_COMMAND": "python bench/profile_ops.py"
+    },
+    "recorded_unix": 1795072963.1,
+    "runtime_settings": {
+      "runtime": "openvino",
+      "INFERENCE_NUM_THREADS": "4",
+      "NUM_STREAMS": "1",
+      "INFERENCE_PRECISION_HINT": "<Type: 'bfloat16'>",
+      "PERFORMANCE_HINT": "LATENCY",
+      "ENABLE_CPU_PINNING": "True",
+      "ENABLE_HYPER_THREADING": "False",
+      "SCHEDULING_CORE_TYPE": "SchedulingCoreType.ANY_CORE",
+      "EXECUTION_MODE_HINT": "ExecutionMode.PERFORMANCE",
+      "OPTIMAL_NUMBER_OF_INFER_REQUESTS": "1"
+    }
+  },
+  "attempt": 1,
+  "contaminated": false
+}

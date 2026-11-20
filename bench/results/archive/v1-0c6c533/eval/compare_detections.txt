@@ -1,0 +1,3 @@
+# command (from the repository root, after copying the fix round detections into bench/results/eval/detections):
+# nice -n 19 .venv/bin/python -I bench/results/archive/v1-0c6c533/eval/compare_detections.py.txt
+images 219 same detection count 219 scores and classes identical True max box difference px 2.21

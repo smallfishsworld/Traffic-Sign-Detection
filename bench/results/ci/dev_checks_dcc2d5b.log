@@ -1,0 +1,26 @@
+commit dcc2d5b45b2abed6e83589ef8a585a773b84f2a2 in a clean worktree
+Thu Nov 19 11:50:29 UTC 2026
+$ git status --porcelain   # before (empty = clean)
+(end of status)
+3.12.3 tsd from <scratch>/p3/wt_dev_dcc2d5b/src/tsd/__init__.py
+torch installed: True ultralytics installed: True
+weights for the real-model tests: /home/user/work/Traffic-Sign-Detection/models/yolo11n.pt
+$ ruff check .
+All checks passed!
+RUFF_CHECK_EXIT 0
+$ ruff format --check .
+96 files already formatted
+RUFF_FORMAT_EXIT 0
+$ mypy
+Success: no issues found in 45 source files
+MYPY_EXIT 0
+$ pytest -q -rs
+........................................................................ [ 25%]
+........................................................................ [ 50%]
+........................................................................ [ 75%]
+.......................................................................  [100%]
+287 passed in 23.84s
+PYTEST_EXIT 0
+$ git status --porcelain   # after (the checks change no tracked file)
+(end of status)
+Thu Nov 19 11:51:16 UTC 2026

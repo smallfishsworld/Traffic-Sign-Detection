@@ -1,0 +1,83 @@
+{
+  "model": "models/yolo11s.pt",
+  "backend": "pytorch-fp32",
+  "threads": 4,
+  "mode": "batch",
+  "batch_size": 8,
+  "warmup": 3,
+  "iterations": 30,
+  "images": [
+    "0135b7a0b1010c08.jpg",
+    "08bf84bb9662086d.jpg",
+    "1cd04797f44a04a1.jpg",
+    "2b3e4a4919cd47b4.jpg",
+    "3b17ab5107bef9bb.jpg",
+    "548c1805b8e211bd.jpg",
+    "644395d01b541528.jpg",
+    "79445a6e49ee53b9.jpg",
+    "8406354c09070f9b.jpg",
+    "989532067e3483bb.jpg",
+    "a70e22ce2700b5a3.jpg",
+    "b657fb701244d7c6.jpg",
+    "c8b3ee6984721a12.jpg",
+    "d67533156d52e10c.jpg",
+    "def75350f572342e.jpg",
+    "ee267b62fd17a9b1.jpg"
+  ],
+  "model_size_bytes": 19313732,
+  "first_call_ms": 1196.7334330001904,
+  "e2e": {
+    "n": 30,
+    "mean_ms": 1084.5858276666452,
+    "std_ms": 209.94432133392243,
+    "min_ms": 955.5617639998673,
+    "p50_ms": 1054.5668225004192,
+    "p95_ms": 1157.917601850295,
+    "p99_ms": 1865.0894574600634,
+    "max_ms": 2152.988849999929
+  },
+  "infer": {
+    "n": 30,
+    "mean_ms": 1038.9000889001181,
+    "std_ms": 209.87890258077627,
+    "min_ms": 910.0063239993688,
+    "p50_ms": 1009.5677005001562,
+    "p95_ms": 1108.2003147997057,
+    "p99_ms": 1817.9608417099562,
+    "max_ms": 2107.7126310001404
+  },
+  "throughput_images_per_s": 7.586053182511172,
+  "started_unix": 1795053621.0,
+  "seconds": 35.9,
+  "loadavg_before": [
+    2.24,
+    1.23,
+    1.1
+  ],
+  "loadavg_after": [
+    3.02,
+    1.54,
+    1.21
+  ],
+  "contamination": {
+    "other_processes_cores": 0.13,
+    "steal_cores": 0.022
+  },
+  "cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "opencv-python-headless": "5.1.0.95",
+    "torch": "2.15.0",
+    "onnxruntime": "1.32.0",
+    "openvino": "2026.4.1",
+    "tsd": "0.1.0"
+  },
+  "nms": {
+    "conf_threshold": 0.25,
+    "iou": 0.5
+  },
+  "precision_hint": "f32",
+  "attempt": 1,
+  "contaminated": false
+}

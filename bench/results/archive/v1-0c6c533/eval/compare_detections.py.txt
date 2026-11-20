@@ -1,0 +1,16 @@
+"""First round vs fix round: the same model's saved detections (YOLO11n PyTorch FP32).
+Run from the repository root with the fix round's detections in bench/results/eval/detections."""
+import gzip
+import json
+from pathlib import Path
+
+import numpy as np
+
+old = json.loads(gzip.decompress(Path("bench/results/archive/v1-0c6c533/eval/detections/yolo11n.pt.json.gz").read_bytes()))
+new = json.loads(gzip.decompress(sorted(Path("bench/results/eval/detections").glob("yolo11n.pt.*.json.gz"))[0].read_bytes()))
+assert old["image_ids"] == new["image_ids"]
+pairs = list(zip(old["detections"], new["detections"]))
+same_count = sum(len(a["boxes"]) == len(b["boxes"]) for a, b in pairs)
+scores_same = all(a["scores"] == b["scores"] and a["class_ids"] == b["class_ids"] for a, b in pairs)
+dmax = max(float(np.abs(np.array(a["boxes"]) - np.array(b["boxes"])).max()) for a, b in pairs if a["boxes"])
+print("images", len(pairs), "same detection count", same_count, "scores and classes identical", scores_same, "max box difference px", round(dmax, 3))
